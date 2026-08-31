@@ -2,18 +2,18 @@
   "schema_version": "1.0",
   "team_id": "contest2026_470_huanledoudizhu",
   "github_login": "YangMaxpro",
-  "generator": "qoderwork",
+  "generator": "qoderwork@0.1.60-qw",
+  "updated_at": "2026-08-31T12:59:42.000+00:00",
   "sessions": [
     {
       "session_id": "e06d80c6-72d7-44cb-88f7-c65861b19c4d",
-      "tool": "qoderwork",
+      "tool": "claude-code",
       "started_at": "2026-08-31T02:22:06.097Z",
-      "last_event_at": "2026-08-31T12:31:44.675Z",
-      "event_count": 2161,
-      "file_path": "logs/YangMaxpro/2026-08-31/qoderwork__e06d80c6-72d7-44cb-88f7-c65861b19c4d.jsonl",
-      "collection_mode": "desktop",
+      "last_event_at": "2026-08-31T12:32:00.094Z",
+      "event_count": 2170,
+      "file_path": "logs/YangMaxpro/2026-08-31/claude-code__e06d80c6-72d7-44cb-88f7-c65861b19c4d.jsonl",
+      "collection_mode": "cli",
       "health": "ok"
     }
-  ],
-  "updated_at": "2026-08-31T12:31:45.000+00:00"
+  ]
 }
