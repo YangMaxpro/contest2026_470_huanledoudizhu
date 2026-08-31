@@ -1,11 +1,9 @@
+# Contest 2026 team 470 - BK7258 DevKit board (Agora & Broadcom Conversational AI Dev Kit R1)
 #
-# Contest 2026 team 000 board placeholder
-#
+# NOTE: No `if` guard here. This Kconfig is sourced as the board Kconfig via
+# CONFIG_ARCH_BOARD_CUSTOM (boards/dummy/Kconfig symlink), so all options must
+# be globally visible for the defconfig to select them.
 
-if ARCH_BOARD_CONTEST2026_000_BOARD
-
-config ARCH_BOARD_CONTEST2026_000_BOARD_TAG
-	string "Board tag"
-	default "contest2026_000_board"
-
-endif
+config ARCH_BOARD_BK7258_DEVKIT
+    bool "BK7258 DevKit (Agora & Broadcom Conversational AI Dev Kit R1)"
+    default n
