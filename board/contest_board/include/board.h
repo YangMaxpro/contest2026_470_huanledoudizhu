@@ -42,12 +42,13 @@
 /* Board UART muxing (used by the real-hardware bring-up, the board
  * schematic routes UART0 to these GPIOs):
  *
- *   UART0_TX: GPIO1
- *   UART0_RX: GPIO2
+ *   UART0_TX: GPIO11
+ *   UART0_RX: GPIO10
  */
 
-#define BK7258_BOARD_UART0_TX_PIN   1
-#define BK7258_BOARD_UART0_RX_PIN   2
+#define BK7258_BOARD_UART0_TX_PIN   11
+#define BK7258_BOARD_UART0_RX_PIN   10
+#define BK7258_BOARD_UART0_BAUD      115200
 
 /****************************************************************************
  * Public Data

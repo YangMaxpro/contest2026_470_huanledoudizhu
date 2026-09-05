@@ -21,26 +21,17 @@
  * Name: openvela_board_initialize
  *
  * Description:
- *   Early board initialization, called from nx_start() before the serial
- *   console is fully up.  For the BK7258 DevKit this is the place to:
- *
- *     - enable the UART0 clock gate (system control unit registers)
- *     - route the UART0 TX/RX pins through the GPIO matrix
- *       (see Beken Armino SDK: gpio_map.h, UART0_TX_PIN / UART0_RX_PIN)
- *     - bring up the 26 MHz crystal / PLL if not started by the bootloader
- *
- *   NOTE: first bring-up step is compile validation (L0); the pin mux and
- *   clock gate register details are documented in the Armino SDK and will
- *   be wired up on real hardware bring-up.
+ *   The chip reset entry configures the UART0 clock and GPIO matrix before
+ *   early serial initialization.  This board hook is intentionally kept free
+ *   of console register writes so GPIO11 TX / GPIO10 RX are not reprogrammed
+ *   after the chip-level setup.
  *
  ****************************************************************************/
 
 void openvela_board_initialize(void)
 {
-  /* TODO(BK7258): enable UART0 clock gate + GPIO mux for real hardware.
-   *   - SYSTEM_CTRL_UART0_CLK_GATE via the system control unit
-   *   - UART0_TX_PIN (GPIO 1) / UART0_RX_PIN (GPIO 2) muxed as UART function
-   */
+  /* Reserved for board-only peripherals.  UART0 is configured earlier in
+   * bk7258_start.c, before the serial driver starts. */
 }
 
 /****************************************************************************

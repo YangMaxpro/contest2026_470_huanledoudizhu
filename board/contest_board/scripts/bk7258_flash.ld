@@ -22,8 +22,10 @@
 
 /* BK7258 memory layout (Beken Armino SDK, SPE mode):
  *
- *   flash (rx)  : 8MB NOR flash, XIP alias at 0x02000000
- *   sram  (rwx) : AP core SRAM, 336K at 0x28000000 (ram_regions.csv:
+ *   flash (rx)  : 8MB NOR flash, AP app in NOR at physical 0x165000,
+ *                 XIP alias 0x02150000 (physical / 34 * 32)
+ *   sram  (rwx) : AP core SRAM, 336K at 0x28010000 (0x28000000-0x2800ffff
+ *                 is reserved for the AP spinlock region; see ram_regions.csv:
  *                 AP_RAM, 0x054000 bytes)
  *
  * Code runs XIP from the flash alias, .data/.bss live in SRAM.  An
@@ -33,8 +35,8 @@
 
 MEMORY
 {
-  flash (rx)  : ORIGIN = 0x02000000, LENGTH = 8M
-  sram  (rwx) : ORIGIN = 0x28000000, LENGTH = 336K
+  flash (rx)  : ORIGIN = 0x02150000, LENGTH = 8M - 0x150000
+  sram  (rwx) : ORIGIN = 0x28010000, LENGTH = 336K
 }
 
 OUTPUT_ARCH(arm)
@@ -113,6 +115,16 @@ SECTIONS
         . = ALIGN(4);
         _ebss = ABSOLUTE(.);
     } > sram
+
+    /* Drop the build-id / note prelude so the vector table in .text
+     * sits at the start of the AP virtual partition (0x02150000).
+     * orphan .note.gnu.build-id is placed first and pushes _vectors
+     * at the start of the AP virtual partition (0x02150000). */
+
+    /DISCARD/ : {
+        *(.note.gnu.build-id)
+        *(.note*)
+    }
 
     /* Stabs debugging sections. */
 
