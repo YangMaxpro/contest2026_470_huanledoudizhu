@@ -7,11 +7,137 @@
  ****************************************************************************/
 
 #include <errno.h>
+#include <stdbool.h>
+#include <stdint.h>
 
 #include <nuttx/board.h>
 #include <nuttx/config.h>
 
+#include "../include/board.h"
+
 #ifdef CONFIG_ARCH_BOARD_BK7258_DEVKIT
+
+static inline uint32_t bk7258_board_read(uintptr_t address)
+{
+  return *(volatile uint32_t *)address;
+}
+
+static inline void bk7258_board_write(uintptr_t address, uint32_t value)
+{
+  *(volatile uint32_t *)address = value;
+}
+
+static int bk7258_board_configure_led(unsigned int pin, bool on)
+{
+  uintptr_t func_address;
+  uintptr_t gpio_address;
+  uint32_t func_shift;
+  uint32_t value;
+
+  if (pin >= 56)
+    {
+      return -EINVAL;
+    }
+
+  /* Each system-function register contains eight four-bit pin selectors.
+   * Selector zero is the ordinary GPIO function. */
+
+  func_address = BK7258_BOARD_GPIO_FUNC_BASE + (pin / 8) * 4;
+  func_shift = (pin % 8) * 4;
+  value = bk7258_board_read(func_address);
+  value &= ~(0xfu << func_shift);
+  bk7258_board_write(func_address, value);
+
+  /* Keep unrelated GPIO fields intact.  In particular, do not write the
+   * whole word with 0x2/0x0: the SDK uses bit 3 as an active-low output
+   * enable, and other bits may belong to pull or alternate-function setup. */
+
+  gpio_address = BK7258_BOARD_AON_GPIO_BASE + pin * 4;
+  value = bk7258_board_read(gpio_address);
+  value &= ~(BK7258_BOARD_GPIO_MODE_MASK |
+             BK7258_BOARD_GPIO_VALUE |
+             BK7258_BOARD_GPIO_PULL_MODE |
+             BK7258_BOARD_GPIO_PULL_EN |
+             BK7258_BOARD_GPIO_2ND_FUNC);
+  if (on == (BK7258_BOARD_LED_ACTIVE_HIGH != 0))
+    {
+      value |= BK7258_BOARD_GPIO_VALUE;
+    }
+
+  bk7258_board_write(gpio_address, value);
+  return 0;
+}
+
+bool bk7258_board_feedback_available(void)
+{
+  return true;
+}
+
+int bk7258_board_set_led(unsigned int led, bool on)
+{
+  unsigned int pin;
+
+  if (led == 0)
+    {
+      pin = BK7258_BOARD_RED_LED_PIN;
+    }
+  else if (led == 1)
+    {
+      pin = BK7258_BOARD_GREEN_LED_PIN;
+    }
+  else
+    {
+      return -EINVAL;
+    }
+
+  return bk7258_board_configure_led(pin, on);
+}
+
+int bk7258_board_set_feedback(enum bk7258_board_feedback_e feedback)
+{
+  bool red;
+  bool green;
+
+  switch (feedback)
+    {
+      case BK7258_BOARD_FEEDBACK_LISTENING:
+        red = false;
+        green = true;
+        break;
+
+      case BK7258_BOARD_FEEDBACK_THINKING:
+        red = true;
+        green = true;
+        break;
+
+      case BK7258_BOARD_FEEDBACK_RESPONDING:
+        red = false;
+        green = true;
+        break;
+
+      case BK7258_BOARD_FEEDBACK_REMINDER:
+      case BK7258_BOARD_FEEDBACK_ERROR:
+        red = true;
+        green = false;
+        break;
+
+      case BK7258_BOARD_FEEDBACK_OFF:
+        red = false;
+        green = false;
+        break;
+
+      default:
+        return -EINVAL;
+    }
+
+  if (bk7258_board_set_led(0, red) < 0 ||
+      bk7258_board_set_led(1, green) < 0)
+    {
+      return -EIO;
+    }
+
+  return 0;
+}
 
 /****************************************************************************
  * Public Functions
@@ -30,8 +156,9 @@
 
 void openvela_board_initialize(void)
 {
-  /* Reserved for board-only peripherals.  UART0 is configured earlier in
-   * bk7258_start.c, before the serial driver starts. */
+  /* UART0 is configured earlier in bk7258_start.c.  Leave both status LEDs
+   * off until an application state claims them. */
+  (void)bk7258_board_set_feedback(BK7258_BOARD_FEEDBACK_OFF);
 }
 
 /****************************************************************************

@@ -44,6 +44,7 @@ board/contest_board/
   - 寄存器 32 位按结构体偏移（`0x10` config / `0x18` fifo_status / `0x1C` fifo_port …）
   - 时钟源 `UART_CLOCK = 26 MHz` 晶振；`baud = 26MHz / (clk_div + 1)`
   - UART0 基址 `0x44820000`，IRQ 向量 20；UART1 `0x45830000`/31；UART2 `0x45840000`/32
+- **R1 状态灯**：红灯 GPIO40、绿灯 GPIO41，板级代码按高电平点亮，并通过 `xiaopai led` 提供手动测试入口
 - **IRQ**：NVIC 64 条外设中断线（`InterruptMAX_IRQn`），`CONFIG_BK7258_NR_IRQS=80`（16 系统异常 + 64 外设）
 
 ## 三、构建方法
@@ -72,6 +73,7 @@ cd openvela
 | L0 | UART0 驱动（115200 8N1 console，寄存器级） | ✅ 编译通过；参数已按 SDK 固化 |
 | L1 | 真机 bring-up：UART0 时钟门控 + GPIO mux（TX=GPIO11 / RX=GPIO10） | ✅ 代码已接入；待 AP 启动链路确认 |
 | L1 | SysTick 时钟校准（480 MHz 核时钟） | ✅ 代码与链接验证；待 NSH 启动确认 |
+| L1 | R1 红/绿状态灯（GPIO40/41）和 XiaoPai 状态反馈 | ✅ 已接入；需真机观察灯态 |
 | L2 | WiFi/蓝牙（BK7258 射频）、PSRAM 压力测试、NSH 网络栈 | 📅 规划 |
 
 ### 芯片 BSP 组成（`nuttx/arch/arm/src/bk7258/`）

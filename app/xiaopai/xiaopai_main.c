@@ -16,6 +16,8 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
+#include <arch/board/board.h>
+
 #define XIAOPAI_TEXT_MAX 96
 
 enum xiaopai_state_e
@@ -95,7 +97,8 @@ static void xiaopai_probe(struct xiaopai_ctx_s *ctx)
   ctx->network = xiaopai_any_node(network_nodes);
   ctx->video = xiaopai_any_node(video_nodes);
   ctx->display = xiaopai_any_node(display_nodes);
-  ctx->feedback = xiaopai_any_node(feedback_nodes);
+  ctx->feedback = xiaopai_any_node(feedback_nodes) ||
+                  bk7258_board_feedback_available();
 }
 
 static int xiaopai_join_args(int argc, char *argv[], int first,
@@ -154,6 +157,22 @@ static void xiaopai_print_help(void)
   printf("  ask <text>          run the cloud-dialogue state path\n");
   printf("  remind <text>       create a local reminder event\n");
   printf("  demo                exercise the complete control path\n");
+  printf("  led <off|red|green|both>  manually test R1 status LEDs\n");
+}
+
+static int xiaopai_set_feedback(struct xiaopai_ctx_s *ctx,
+                                 enum bk7258_board_feedback_e feedback)
+{
+  int ret;
+
+  ret = bk7258_board_set_feedback(feedback);
+  if (ret < 0)
+    {
+      ctx->feedback = false;
+      printf("XiaoPai: board feedback unavailable (%d)\n", ret);
+    }
+
+  return ret;
 }
 
 static int xiaopai_ask(struct xiaopai_ctx_s *ctx, const char *text)
@@ -171,22 +190,27 @@ static int xiaopai_ask(struct xiaopai_ctx_s *ctx, const char *text)
   if (ctx->state != XIAOPAI_LISTENING)
     {
       ctx->state = XIAOPAI_LISTENING;
+      (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_LISTENING);
       printf("XiaoPai local wake accepted\n");
     }
 
   ctx->state = XIAOPAI_THINKING;
+  (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_THINKING);
   printf("XiaoPai request queued: %s\n", text);
 
   if (!ctx->network)
     {
       ctx->state = XIAOPAI_IDLE;
+      (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_ERROR);
       printf("XiaoPai: network unavailable; request kept local\n");
       return -ENETUNREACH;
     }
 
   ctx->state = XIAOPAI_RESPONDING;
+  (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_RESPONDING);
   printf("XiaoPai: cloud transport ready; application adapter is next\n");
   ctx->state = XIAOPAI_IDLE;
+  (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_OFF);
   return 0;
 }
 
@@ -203,15 +227,20 @@ static int xiaopai_demo_worker(int argc, char *argv[])
     }
 
   ctx->state = XIAOPAI_LISTENING;
+  (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_LISTENING);
   printf("[1/4] local wake accepted (worker task)\n");
   ctx->state = XIAOPAI_THINKING;
+  (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_THINKING);
   printf("[2/4] request classified locally (worker task)\n");
   ctx->state = XIAOPAI_RESPONDING;
+  (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_RESPONDING);
   printf("[3/4] response path selected (%s)\n",
          ctx->network ? "cloud" : "local fallback");
   ctx->state = XIAOPAI_REMINDER;
+  (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_REMINDER);
   printf("[4/4] reminder/state notification committed\n");
   ctx->state = XIAOPAI_IDLE;
+  (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_OFF);
   return 0;
 }
 
@@ -277,6 +306,7 @@ static int xiaopai_command(struct xiaopai_ctx_s *ctx, int argc,
     {
       xiaopai_probe(ctx);
       ctx->state = XIAOPAI_LISTENING;
+      (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_LISTENING);
       printf("XiaoPai wake accepted; listening locally\n");
       if (!ctx->audio)
         {
@@ -308,8 +338,46 @@ static int xiaopai_command(struct xiaopai_ctx_s *ctx, int argc,
         }
 
       ctx->state = XIAOPAI_REMINDER;
+      (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_REMINDER);
       printf("XiaoPai reminder stored: %s\n", text);
       ctx->state = XIAOPAI_IDLE;
+      return 0;
+    }
+
+  if (strcmp(command, "led") == 0)
+    {
+      const char *mode = argc > 2 ? argv[2] : "off";
+      bool red = false;
+      bool green = false;
+
+      if (strcmp(mode, "red") == 0)
+        {
+          red = true;
+        }
+      else if (strcmp(mode, "green") == 0)
+        {
+          green = true;
+        }
+      else if (strcmp(mode, "both") == 0)
+        {
+          red = true;
+          green = true;
+        }
+      else if (strcmp(mode, "off") != 0)
+        {
+          printf("xiaopai: led expects off, red, green or both\n");
+          return -EINVAL;
+        }
+
+      if (bk7258_board_set_led(0, red) < 0 ||
+          bk7258_board_set_led(1, green) < 0)
+        {
+          printf("xiaopai: LED write failed\n");
+          return -EIO;
+        }
+
+      printf("XiaoPai LEDs: red=%s green=%s\n",
+             red ? "on" : "off", green ? "on" : "off");
       return 0;
     }
 

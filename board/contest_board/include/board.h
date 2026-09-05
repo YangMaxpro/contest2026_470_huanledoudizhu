@@ -29,6 +29,9 @@
 
 #include <nuttx/config.h>
 
+#include <stdbool.h>
+#include <stdint.h>
+
 /****************************************************************************
  * Pre-processor Definitions
  ****************************************************************************/
@@ -50,6 +53,35 @@
 #define BK7258_BOARD_UART0_RX_PIN   10
 #define BK7258_BOARD_UART0_BAUD      115200
 
+/* R1 status LEDs.  The Agora reference application registers these pins as
+ * red=GPIO40 and green=GPIO41, and drives a high output to turn an LED on. */
+
+#define BK7258_BOARD_RED_LED_PIN     40
+#define BK7258_BOARD_GREEN_LED_PIN   41
+#define BK7258_BOARD_LED_ACTIVE_HIGH 1
+
+/* BK7258 AON GPIO and system function registers (SPE address map). */
+
+#define BK7258_BOARD_SYS_REG_BASE    0x44010000u
+#define BK7258_BOARD_AON_GPIO_BASE   0x44000400u
+#define BK7258_BOARD_GPIO_FUNC_BASE  (BK7258_BOARD_SYS_REG_BASE + 0xc0u)
+
+#define BK7258_BOARD_GPIO_VALUE      (1u << 1)
+#define BK7258_BOARD_GPIO_MODE_MASK  (3u << 2)
+#define BK7258_BOARD_GPIO_PULL_MODE  (1u << 4)
+#define BK7258_BOARD_GPIO_PULL_EN    (1u << 5)
+#define BK7258_BOARD_GPIO_2ND_FUNC   (1u << 6)
+
+enum bk7258_board_feedback_e
+{
+  BK7258_BOARD_FEEDBACK_OFF = 0,
+  BK7258_BOARD_FEEDBACK_LISTENING,
+  BK7258_BOARD_FEEDBACK_THINKING,
+  BK7258_BOARD_FEEDBACK_RESPONDING,
+  BK7258_BOARD_FEEDBACK_REMINDER,
+  BK7258_BOARD_FEEDBACK_ERROR
+};
+
 /****************************************************************************
  * Public Data
  ****************************************************************************/
@@ -68,6 +100,10 @@ extern "C"
 /****************************************************************************
  * Public Function Prototypes
  ****************************************************************************/
+
+EXTERN int bk7258_board_set_feedback(enum bk7258_board_feedback_e feedback);
+EXTERN int bk7258_board_set_led(unsigned int led, bool on);
+EXTERN bool bk7258_board_feedback_available(void);
 
 #undef EXTERN
 #if defined(__cplusplus)

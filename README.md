@@ -23,7 +23,7 @@
 | 云端 AI 对话 | `netdev` + TLS/HTTP 或 MQTT | `xiaopai` 已预留状态路径，等待 Wi-Fi 6 驱动 |
 | 视觉看护（可选） | `video` + DVP/ISP | 按需能力探测，等待摄像头驱动 |
 | 屏幕反馈（可选） | `fb` + RGB LCD | 按需能力探测，等待 framebuffer 驱动 |
-| LED/马达通知 | `gpio` / `pwm` | 按需能力探测，等待板级引脚确认 |
+| LED/马达通知 | `gpio` / `pwm` | R1 红/绿 LED（GPIO40/41）已接入状态反馈；PWM/马达待驱动 |
 | 多任务调度 | NuttX scheduler、消息队列 | 当前控制状态机可验证，驱动接入后拆分音频/网络/UI 任务 |
 
 最近一次干净 CMake 构建产物 `nuttx.bin` 为 146560 B（约 143.1 KiB），Flash 占用 1.75%、SRAM 占用 2.12%。当前镜像已包含 XiaoPai 控制层，但音频、Wi-Fi、DVP、LCD、PWM 仍需按 R1 原理图和厂商 SDK 完成设备驱动适配。
@@ -81,6 +81,10 @@ nsh> xiaopai status
 nsh> xiaopai wake
 nsh> xiaopai ask hello world
 nsh> xiaopai remind take medicine
+nsh> xiaopai led green
+nsh> xiaopai led red
+nsh> xiaopai led both
+nsh> xiaopai led off
 nsh> xiaopai demo
 ```
 

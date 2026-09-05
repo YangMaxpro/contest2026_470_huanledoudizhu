@@ -12,6 +12,7 @@ xiaopai wake
 xiaopai ask "现在几点"
 xiaopai remind "吃药"
 xiaopai demo
+xiaopai led green
 ```
 
 `status` 会探测以下节点：
@@ -22,9 +23,20 @@ xiaopai demo
 | Wi-Fi 6 | `/dev/wlan0` | 依赖 BK7258 netdev 驱动 |
 | DVP/ISP 摄像头 | `/dev/video0` | 可选，依赖 video 驱动 |
 | RGB LCD | `/dev/fb0` | 可选，依赖 framebuffer 驱动 |
-| LED/马达 | `/dev/pwm0` 或 `/dev/led0` | 依赖 PWM/LED 驱动 |
+| LED/马达 | `/dev/pwm0` 或 `/dev/led0` | R1 红/绿 LED 已由板级 GPIO 反馈接入；PWM/马达待驱动 |
 
 未注册设备节点时，命令仍可执行本地状态流转，并明确显示 `unavailable`；这让 BSP 可以先通过 NSH 验证，再逐项接入真实硬件。
+
+R1 板级状态灯使用 GPIO40（红灯）和 GPIO41（绿灯），高电平点亮。可以用下面的命令单独确认 LED 和 GPIO 映射：
+
+```text
+xiaopai led off       # 全灭
+xiaopai led red       # 红灯
+xiaopai led green     # 绿灯
+xiaopai led both      # 红绿同时亮
+```
+
+状态机也会自动控制 LED：监听为绿灯、思考为红绿同亮、响应为绿灯、提醒或错误为红灯，回到空闲后全灭。
 
 `demo` 会创建一个名为 `xiaopai_worker` 的 NuttX 任务，依次执行唤醒、请求分类、响应路径选择和提醒状态提交，然后由命令进程回收任务。worker 的优先级和栈大小可通过以下 Kconfig 项调整：
 
