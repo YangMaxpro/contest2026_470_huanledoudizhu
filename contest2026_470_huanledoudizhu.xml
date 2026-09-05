@@ -10,6 +10,7 @@
 
   <project path="contest2026_470_huanledoudizhu" name="contest2026_470_huanledoudizhu">
     <linkfile src="app/hello_app" dest="packages/demos/contest2026_470_hello_app"/>
+    <linkfile src="app/xiaopai" dest="packages/demos/contest2026_470_xiaopai"/>
     <linkfile src="quickapp/hello_quickapp" dest="packages/apps/contest2026_470_hello_quickapp"/>
     <linkfile src="board/contest_board" dest="vendor/openvela/boards/contest2026_470_board"/>
   </project>

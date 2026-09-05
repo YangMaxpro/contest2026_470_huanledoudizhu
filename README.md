@@ -6,7 +6,7 @@
 
 - 芯片层：在 `openvela/nuttx` 新增 `arch/arm/src/bk7258/` 芯片 BSP（启动、串口、SysTick 定时器、NVIC 中断管理、堆内存），提交在 `YangMaxpro/nuttx` 的 `feat/bk7258-chip` 分支；
 - 板级层：在本仓 `board/contest_board/` 提供 BK7258 DevKit 板级配置（defconfig、Flash 链接脚本、板级初始化、board.h），以 PR #1 提交；
-- 应用层：`app/hello_app/` 提供 HelloWorld 示例应用验证 NSH 与任务调度。
+- 应用层：`app/hello_app/` 提供 HelloWorld 示例应用验证 NSH 与任务调度；`app/xiaopai/` 提供“小派”控制层，验证离线唤醒、问答、提醒状态机和可选硬件能力探测。
 
 编译产物 `nuttx.bin` 146KB，Flash 占用 1.74%、SRAM 占用 2.12%，为后续音频编解码、对话引擎等 AI 能力预留了充足资源。
 
@@ -25,6 +25,7 @@
 │   ├── CMakeLists.txt            # 挂载 LD_SCRIPT 与 board 库源文件
 │   └── README.md                 # BSP 移植文档（含 5 个已验证的坑）
 ├── app/hello_app/                # HelloWorld 示例应用（映射到 packages/demos/contest2026_470_hello_app）
+├── app/xiaopai/                  # 小派控制层（映射到 packages/demos/contest2026_470_xiaopai）
 ├── logs/                         # AI Coding 会话日志（QoderWork，经官方 schema 校验）
 │   └── YangMaxpro/
 └── contest2026_470_huanledoudizhu.xml   # 本仓作品目录 → openvela 编译树映射
@@ -57,6 +58,8 @@ cd contest2026_470_huanledoudizhu/..
 #    RST 复位后若 USB 串口重新枚举，先执行 ls /dev/ttyUSB*，将 -p 改为对应端口序号
 nsh> hello
 nsh> help
+nsh> xiaopai status
+nsh> xiaopai demo
 ```
 
 验证结论（L0/L1 基线）：

@@ -1,0 +1,12 @@
+#
+# For a description of the syntax of this configuration file,
+# see the NuttX tools repository documentation.
+#
+
+config LVX_USE_DEMO_CONTEST2026_470_XIAOPAI
+	bool "Contest 2026 team 470 XiaoPai offline voice terminal"
+	default n
+	---help---
+		Enable the XiaoPai device service demo.  The service exposes a
+		stable command/state interface and probes optional audio, network,
+		video, framebuffer and PWM device nodes at runtime.
