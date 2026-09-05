@@ -341,6 +341,7 @@ static int xiaopai_command(struct xiaopai_ctx_s *ctx, int argc,
       (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_REMINDER);
       printf("XiaoPai reminder stored: %s\n", text);
       ctx->state = XIAOPAI_IDLE;
+      (void)xiaopai_set_feedback(ctx, BK7258_BOARD_FEEDBACK_OFF);
       return 0;
     }
 
