@@ -36,8 +36,8 @@
 
 ```bash
 # 1. 拉取 openvela 全量工程（含本专属仓）
-repo init -u https://github.com/open-vela/contest2026_470_huanledoudizhu \
-  -b dev-ai-contest-2026 -m contest2026_470_huanledoudizhu.xml
+repo init -u https://github.com/YangMaxpro/contest2026_470_huanledoudizhu \
+  -b feat/bk7258-devkit -m contest2026_470_huanledoudizhu.xml
 repo sync -c -j8
 # manifest 会自动拉取 YangMaxpro/nuttx@feat/bk7258-chip
 

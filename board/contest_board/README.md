@@ -50,7 +50,7 @@ board/contest_board/
 
 ```bash
 # 1. 拉取工程（见仓根 README）
-repo init -u https://gitee.com/open-vela/contest2026_470_huanledoudizhu -b dev-ai-contest-2026 -m contest2026_470_huanledoudizhu.xml
+repo init -u https://github.com/YangMaxpro/contest2026_470_huanledoudizhu -b feat/bk7258-devkit -m contest2026_470_huanledoudizhu.xml
 repo sync -c -j8
 
 # 2. 编译 BK7258 DevKit NSH 配置（CMake 模式）
