@@ -1,5 +1,11 @@
 # 470 欢乐斗地主 — BK7258 对话式 AI 开发套件新硬件适配
 
+## 小派项目定位
+
+**项目名称**：基于 R1 套件的离线语音控制终端——“小派”
+
+**一句话定位**：面向居家独居老人和儿童，提供本地离线语音唤醒，结合云端大模型完成语音问答、生活提醒和按需视觉看护，降低传统智能音箱的唤醒延迟并扩展居家陪护能力。
+
 ## 一、作品简介
 
 本作品完成 **声网 & 博通集成「对话式 AI 开发套件 R1」**（Beken BK7258，ARMv8-M Cortex-M33F 双核 SoC）在 openvela 上的完整 BSP 移植，属于新硬件适配赛道。作品以「最小 NSH 基线」为目标：
@@ -7,6 +13,18 @@
 - 芯片层：在 `openvela/nuttx` 新增 `arch/arm/src/bk7258/` 芯片 BSP（启动、串口、SysTick 定时器、NVIC 中断管理、堆内存），提交在 `YangMaxpro/nuttx` 的 `feat/bk7258-chip` 分支；
 - 板级层：在本仓 `board/contest_board/` 提供 BK7258 DevKit 板级配置（defconfig、Flash 链接脚本、板级初始化、board.h），以 PR #1 提交；
 - 应用层：`app/hello_app/` 提供 HelloWorld 示例应用验证 NSH 与任务调度；`app/xiaopai/` 提供“小派”控制层，验证离线唤醒、问答、提醒状态机和可选硬件能力探测。
+
+核心功能按硬件能力分层实现：
+
+| 功能 | NuttX 子系统 | 当前状态 |
+| ---- | ---- | ---- |
+| 本地语音唤醒 | `audio` + I2S + 本地唤醒引擎 | 控制层已就绪，等待双麦克风/I2S 驱动 |
+| 采集与降噪 | `audio` + BK7258 DSP 封装 | 接口已规划，等待 DSP 驱动 |
+| 云端 AI 对话 | `netdev` + TLS/HTTP 或 MQTT | `xiaopai` 已预留状态路径，等待 Wi-Fi 6 驱动 |
+| 视觉看护（可选） | `video` + DVP/ISP | 按需能力探测，等待摄像头驱动 |
+| 屏幕反馈（可选） | `fb` + RGB LCD | 按需能力探测，等待 framebuffer 驱动 |
+| LED/马达通知 | `gpio` / `pwm` | 按需能力探测，等待板级引脚确认 |
+| 多任务调度 | NuttX scheduler、消息队列 | 当前控制状态机可验证，驱动接入后拆分音频/网络/UI 任务 |
 
 编译产物 `nuttx.bin` 146KB，Flash 占用 1.74%、SRAM 占用 2.12%，为后续音频编解码、对话引擎等 AI 能力预留了充足资源。
 
