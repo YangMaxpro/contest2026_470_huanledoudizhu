@@ -26,9 +26,18 @@ xiaopai demo
 
 未注册设备节点时，命令仍可执行本地状态流转，并明确显示 `unavailable`；这让 BSP 可以先通过 NSH 验证，再逐项接入真实硬件。
 
+`demo` 会创建一个名为 `xiaopai_worker` 的 NuttX 任务，依次执行唤醒、请求分类、响应路径选择和提醒状态提交，然后由命令进程回收任务。worker 的优先级和栈大小可通过以下 Kconfig 项调整：
+
+```text
+CONFIG_LVX_USE_DEMO_CONTEST2026_470_XIAOPAI_TASK_PRIORITY=110
+CONFIG_LVX_USE_DEMO_CONTEST2026_470_XIAOPAI_TASK_STACKSIZE=3072
+```
+
+`ask` 和 `remind` 支持多个参数拼接成一条文本，最大长度为 96 字节；超过长度时会截断，避免在早期 bring-up 阶段引入动态内存分配。
+
 ## 分阶段实现
 
-1. **L0（已接入）**：BK7258 启动、UART0/NSH、状态机、能力探测和提醒事件。
+1. **L0（已接入）**：BK7258 启动、UART0/NSH、状态机、能力探测、提醒事件和 worker 任务验证。
 2. **L1**：接入 BK7258 I2S 双麦克风、GPIO/PWM，并把本地唤醒词引擎放在音频采集任务上；唤醒和录音必须在本地完成，不能依赖云端。
 3. **L2**：接入 Wi-Fi netdev 和 HTTPS/MQTT 云端适配器；网络任务与音频任务分离，使用队列传递压缩后的语音帧。
 4. **L3（可选）**：接入 DVP/ISP 和 RGB LCD。视觉帧采用低帧率、事件触发上传，默认关闭持续视频，控制功耗和隐私风险。

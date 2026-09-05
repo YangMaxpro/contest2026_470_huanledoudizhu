@@ -8,11 +8,11 @@
 
 ## 一、作品简介
 
-本作品完成 **声网 & 博通集成「对话式 AI 开发套件 R1」**（Beken BK7258，ARMv8-M Cortex-M33F 双核 SoC）在 openvela 上的完整 BSP 移植，属于新硬件适配赛道。作品以「最小 NSH 基线」为目标：
+本作品完成 **声网 & 博通集成「对话式 AI 开发套件 R1」**（Beken BK7258，ARMv8-M Cortex-M33F 双核 SoC）在 openvela 上的 BSP L0 基线，属于新硬件适配赛道。当前先打通可复现的启动、编译、应用挂载和 NSH 控制链路，再逐项接入真实外设驱动：
 
 - 芯片层：在 `openvela/nuttx` 新增 `arch/arm/src/bk7258/` 芯片 BSP（启动、串口、SysTick 定时器、NVIC 中断管理、堆内存），提交在 `YangMaxpro/nuttx` 的 `feat/bk7258-chip` 分支；
 - 板级层：在本仓 `board/contest_board/` 提供 BK7258 DevKit 板级配置（defconfig、Flash 链接脚本、板级初始化、board.h），以 PR #1 提交；
-- 应用层：`app/hello_app/` 提供 HelloWorld 示例应用验证 NSH 与任务调度；`app/xiaopai/` 提供“小派”控制层，验证离线唤醒、问答、提醒状态机和可选硬件能力探测。
+- 应用层：`app/hello_app/` 提供 HelloWorld 示例应用验证 NSH；`app/xiaopai/` 提供“小派”控制层，验证离线唤醒、问答、提醒状态机、worker 任务调度和可选硬件能力探测；`app/demos/` 提供 `packages/demos` 顶层聚合入口，确保这些应用进入镜像。
 
 核心功能按硬件能力分层实现：
 
@@ -26,7 +26,7 @@
 | LED/马达通知 | `gpio` / `pwm` | 按需能力探测，等待板级引脚确认 |
 | 多任务调度 | NuttX scheduler、消息队列 | 当前控制状态机可验证，驱动接入后拆分音频/网络/UI 任务 |
 
-编译产物 `nuttx.bin` 146KB，Flash 占用 1.74%、SRAM 占用 2.12%，为后续音频编解码、对话引擎等 AI 能力预留了充足资源。
+最近一次干净 CMake 构建产物 `nuttx.bin` 为 146560 B（约 143.1 KiB），Flash 占用 1.75%、SRAM 占用 2.12%。当前镜像已包含 XiaoPai 控制层，但音频、Wi-Fi、DVP、LCD、PWM 仍需按 R1 原理图和厂商 SDK 完成设备驱动适配。
 
 ## 二、选题方向
 
@@ -44,6 +44,7 @@
 │   └── README.md                 # BSP 移植文档（含 5 个已验证的坑）
 ├── app/hello_app/                # HelloWorld 示例应用（映射到 packages/demos/contest2026_470_hello_app）
 ├── app/xiaopai/                  # 小派控制层（映射到 packages/demos/contest2026_470_xiaopai）
+├── app/demos/                    # packages/demos 顶层 CMake/Make 聚合入口
 ├── logs/                         # AI Coding 会话日志（QoderWork，经官方 schema 校验）
 │   └── YangMaxpro/
 └── contest2026_470_huanledoudizhu.xml   # 本仓作品目录 → openvela 编译树映射
@@ -65,7 +66,7 @@ cd contest2026_470_huanledoudizhu/..
 ./build.sh contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh --cmake
 
 # 3. 产物
-#    cmake_out/configs_nsh/nuttx.bin  （约 143KB）
+#    cmake_out/configs_nsh/nuttx.bin  （最近一次构建为 146560 B）
 #    BK7258 UART0（GPIO11 TX / GPIO10 RX，115200 8N1）为 NSH 串口控制台
 
 # 4. 烧录与运行
@@ -77,6 +78,9 @@ cd contest2026_470_huanledoudizhu/..
 nsh> hello
 nsh> help
 nsh> xiaopai status
+nsh> xiaopai wake
+nsh> xiaopai ask hello world
+nsh> xiaopai remind take medicine
 nsh> xiaopai demo
 ```
 
@@ -89,8 +93,9 @@ nsh> xiaopai demo
 | UART0 串口驱动 + NSH 控制台代码接入 | ✅ 编译通过；UART0 引脚/波特率已按真机 SDK 固化 |
 | SysTick 系统时钟 + `up_irqinitialize` 中断初始化 | ✅ |
 | 芯片 BSP 通过 checkpatch 与 CLA 检查 | ✅ |
+| XiaoPai 控制层、能力探测、worker 任务编译进镜像 | ✅ |
 
-真机记录：BKFIL 2.1.11.8 完整线性包在 1500000 波特率下曾返回 `Writing Flash OK`；复位后串口可见原厂 CP `$` CLI。当前记录尚未观测到 openvela `nsh>` 提示符，AP/CP 启动选择仍需在后续硬件联调中确认。
+真机记录：BKFIL 2.1.11.8 完整线性包在 1500000 波特率下曾返回 `Writing Flash OK`；复位后串口可见原厂 CP `$` CLI。当前记录尚未观测到 openvela `nsh>` 提示符，AP/CP 启动选择仍需在后续硬件联调中确认。因此本阶段结论是“源码已编译进镜像，烧录链路已验证，NSH 真机启动待联调”，不把预留设备节点描述为已完成驱动。
 
 ## 五、AI Coding 使用说明
 

@@ -10,3 +10,15 @@ config LVX_USE_DEMO_CONTEST2026_470_XIAOPAI
 		Enable the XiaoPai device service demo.  The service exposes a
 		stable command/state interface and probes optional audio, network,
 		video, framebuffer and PWM device nodes at runtime.
+
+if LVX_USE_DEMO_CONTEST2026_470_XIAOPAI
+
+config LVX_USE_DEMO_CONTEST2026_470_XIAOPAI_TASK_PRIORITY
+	int "XiaoPai worker task priority"
+	default 110
+
+config LVX_USE_DEMO_CONTEST2026_470_XIAOPAI_TASK_STACKSIZE
+	int "XiaoPai worker task stack size"
+	default 3072
+
+endif

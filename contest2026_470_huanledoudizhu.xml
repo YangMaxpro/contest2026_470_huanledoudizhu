@@ -9,6 +9,9 @@
   <include name="openvela.xml"/>
 
   <project path="contest2026_470_huanledoudizhu" name="contest2026_470_huanledoudizhu">
+    <linkfile src="app/demos/CMakeLists.txt" dest="packages/demos/CMakeLists.txt"/>
+    <linkfile src="app/demos/Make.defs" dest="packages/demos/Make.defs"/>
+    <linkfile src="app/demos/Makefile" dest="packages/demos/Makefile"/>
     <linkfile src="app/hello_app" dest="packages/demos/contest2026_470_hello_app"/>
     <linkfile src="app/xiaopai" dest="packages/demos/contest2026_470_xiaopai"/>
     <linkfile src="quickapp/hello_quickapp" dest="packages/apps/contest2026_470_hello_quickapp"/>

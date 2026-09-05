@@ -10,9 +10,13 @@
 
 #include <errno.h>
 #include <stdbool.h>
+#include <sched.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
+
+#define XIAOPAI_TEXT_MAX 96
 
 enum xiaopai_state_e
 {
@@ -32,6 +36,8 @@ struct xiaopai_ctx_s
   bool display;
   bool feedback;
 };
+
+static struct xiaopai_ctx_s *g_xiaopai_worker_ctx;
 
 static const char *xiaopai_state_name(enum xiaopai_state_e state)
 {
@@ -90,6 +96,37 @@ static void xiaopai_probe(struct xiaopai_ctx_s *ctx)
   ctx->video = xiaopai_any_node(video_nodes);
   ctx->display = xiaopai_any_node(display_nodes);
   ctx->feedback = xiaopai_any_node(feedback_nodes);
+}
+
+static int xiaopai_join_args(int argc, char *argv[], int first,
+                             char *buffer, size_t buffer_len)
+{
+  size_t used = 0;
+  int i;
+
+  if (buffer_len == 0)
+    {
+      return 0;
+    }
+
+  buffer[0] = '\0';
+  for (i = first; i < argc; i++)
+    {
+      const char *src = argv[i];
+
+      if (i > first && used + 1 < buffer_len)
+        {
+          buffer[used++] = ' ';
+        }
+
+      while (*src != '\0' && used + 1 < buffer_len)
+        {
+          buffer[used++] = *src++;
+        }
+    }
+
+  buffer[used] = '\0';
+  return (int)used;
 }
 
 static void xiaopai_print_capability(const char *name, bool available)
@@ -153,6 +190,69 @@ static int xiaopai_ask(struct xiaopai_ctx_s *ctx, const char *text)
   return 0;
 }
 
+static int xiaopai_demo_worker(int argc, char *argv[])
+{
+  struct xiaopai_ctx_s *ctx = g_xiaopai_worker_ctx;
+
+  UNUSED(argc);
+  UNUSED(argv);
+
+  if (ctx == NULL)
+    {
+      return 1;
+    }
+
+  ctx->state = XIAOPAI_LISTENING;
+  printf("[1/4] local wake accepted (worker task)\n");
+  ctx->state = XIAOPAI_THINKING;
+  printf("[2/4] request classified locally (worker task)\n");
+  ctx->state = XIAOPAI_RESPONDING;
+  printf("[3/4] response path selected (%s)\n",
+         ctx->network ? "cloud" : "local fallback");
+  ctx->state = XIAOPAI_REMINDER;
+  printf("[4/4] reminder/state notification committed\n");
+  ctx->state = XIAOPAI_IDLE;
+  return 0;
+}
+
+static int xiaopai_run_demo(struct xiaopai_ctx_s *ctx)
+{
+  int status;
+  pid_t pid;
+
+  g_xiaopai_worker_ctx = ctx;
+  pid = task_create("xiaopai_worker",
+                    CONFIG_LVX_USE_DEMO_CONTEST2026_470_XIAOPAI_TASK_PRIORITY,
+                    CONFIG_LVX_USE_DEMO_CONTEST2026_470_XIAOPAI_TASK_STACKSIZE,
+                    xiaopai_demo_worker, NULL);
+  if (pid < 0)
+    {
+      int errcode = errno;
+
+      g_xiaopai_worker_ctx = NULL;
+      printf("xiaopai: worker task creation failed: %d\n", errcode);
+      return -errcode;
+    }
+
+  if (waitpid(pid, &status, 0) != pid)
+    {
+      int errcode = errno;
+
+      g_xiaopai_worker_ctx = NULL;
+      printf("xiaopai: worker task wait failed: %d\n", errcode);
+      return -errcode;
+    }
+
+  g_xiaopai_worker_ctx = NULL;
+  if (!WIFEXITED(status) || WEXITSTATUS(status) != 0)
+    {
+      printf("xiaopai: worker task exited abnormally\n");
+      return -EIO;
+    }
+
+  return 0;
+}
+
 static int xiaopai_command(struct xiaopai_ctx_s *ctx, int argc,
                             char *argv[])
 {
@@ -187,19 +287,28 @@ static int xiaopai_command(struct xiaopai_ctx_s *ctx, int argc,
 
   if (strcmp(command, "ask") == 0)
     {
-      return xiaopai_ask(ctx, argc >= 3 ? argv[2] : NULL);
+      char text[XIAOPAI_TEXT_MAX];
+
+      if (xiaopai_join_args(argc, argv, 2, text, sizeof(text)) == 0)
+        {
+          return xiaopai_ask(ctx, NULL);
+        }
+
+      return xiaopai_ask(ctx, text);
     }
 
   if (strcmp(command, "remind") == 0)
     {
-      if (argc < 3 || argv[2][0] == '\0')
+      char text[XIAOPAI_TEXT_MAX];
+
+      if (xiaopai_join_args(argc, argv, 2, text, sizeof(text)) == 0)
         {
           printf("xiaopai: remind requires text\n");
           return -EINVAL;
         }
 
       ctx->state = XIAOPAI_REMINDER;
-      printf("XiaoPai reminder stored: %s\n", argv[2]);
+      printf("XiaoPai reminder stored: %s\n", text);
       ctx->state = XIAOPAI_IDLE;
       return 0;
     }
@@ -207,17 +316,7 @@ static int xiaopai_command(struct xiaopai_ctx_s *ctx, int argc,
   if (strcmp(command, "demo") == 0)
     {
       xiaopai_probe(ctx);
-      ctx->state = XIAOPAI_LISTENING;
-      printf("[1/4] local wake accepted\n");
-      ctx->state = XIAOPAI_THINKING;
-      printf("[2/4] request classified locally\n");
-      ctx->state = XIAOPAI_RESPONDING;
-      printf("[3/4] response path selected (%s)\n",
-             ctx->network ? "cloud" : "local fallback");
-      ctx->state = XIAOPAI_REMINDER;
-      printf("[4/4] reminder/state notification committed\n");
-      ctx->state = XIAOPAI_IDLE;
-      return 0;
+      return xiaopai_run_demo(ctx);
     }
 
   if (strcmp(command, "help") == 0)
