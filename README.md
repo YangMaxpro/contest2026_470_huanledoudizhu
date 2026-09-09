@@ -50,7 +50,7 @@
 └── contest2026_470_huanledoudizhu.xml   # 本仓作品目录 → openvela 编译树映射
 ```
 
-配套提交：芯片 BSP 的上游提交为 [`open-vela/nuttx` PR #360](https://github.com/open-vela/nuttx/pull/360)。PR 合入前，本仓 `openvela.xml` 固定到 `YangMaxpro/nuttx@39eea47931392421e4cdbd8190d6de865db48d21` 以保证 `repo sync` 可复现；合入后应改回官方 `dev-ai-contest-2026` revision。
+配套提交：芯片 BSP 的上游提交为 [`open-vela/nuttx` PR #360](https://github.com/open-vela/nuttx/pull/360)。PR 合入前，本仓 `openvela.xml` 固定到 `YangMaxpro/nuttx@ebd2bba1677d695586860ee7050f987b60bdfe06` 以保证 `repo sync` 可复现；合入后应改回官方 `dev-ai-contest-2026` revision。
 
 ## 四、运行方式
 
