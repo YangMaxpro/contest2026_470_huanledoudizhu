@@ -32,8 +32,8 @@
 | 本地语音唤醒 | `audio` + I2S + 本地唤醒引擎 | 控制层已就绪，等待双麦克风/I2S 驱动 |
 | 采集与降噪 | `audio` + BK7258 DSP 封装 | 模拟音频/PCM 诊断链路已接入；标准 audio upper-half 与 DSP 降噪待完善 |
 | 云端 AI 对话 | `netdev` + TLS/HTTP 或 MQTT | CP IPC Wi-Fi netdev、DHCP、DNS 和 TLS 检查已接入；云端大模型业务协议待完成 |
-| 视觉看护（可选） | `video` + DVP/ISP | 按需能力探测，等待摄像头驱动 |
-| 屏幕反馈（可选） | `fb` + RGB LCD | 按需能力探测，等待 framebuffer 驱动 |
+| 视觉看护 | `video` + DVP/ISP | 按需能力探测，等待摄像头驱动 |
+| 屏幕反馈 | `fb` + RGB LCD | 按需能力探测，等待 framebuffer 驱动 |
 | LED/马达通知 | `gpio` / `pwm` | R1 红/绿 LED（GPIO40/41）已接入状态反馈；PWM/马达待驱动 |
 | 多任务调度 | NuttX scheduler、消息队列 | 当前控制状态机可验证，驱动接入后拆分音频/网络/UI 任务 |
 
