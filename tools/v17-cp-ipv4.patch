@@ -1,0 +1,146 @@
+diff --git a/cp/components/controller_if/Kconfig b/cp/components/controller_if/Kconfig
+old mode 100755
+new mode 100644
+index 78c9155..b21c781
+--- a/cp/components/controller_if/Kconfig
++++ b/cp/components/controller_if/Kconfig
+@@ -8,6 +8,13 @@ menu "Controller IF"
+ 	config CONTROLLER_WAR
+ 		bool "Controller RX Buf Directly push to AP"
+ 		default y
++	config WIFI_VNET_AP_IPV4
++		bool "OpenVela AP owns STA IPv4"
++		depends on WIFI_VNET_CONTROLLER && CONTROLLER_RX_DIRECT_PSH
++		default n
++		help
++		  Forward STA ARP/IPv4 to AP and disable CP STA DHCP. Radio and
++		  EAPOL remain on CP. Use with the OpenVela mailbox netdev driver.
+ 	config CONTROLLER_DEBUG
+ 		bool "Controller Debug"
+ 		default n
+diff --git a/cp/components/controller_if/cif_wifi_dp.c b/cp/components/controller_if/cif_wifi_dp.c
+old mode 100755
+new mode 100644
+index c86579a..015cfeb
+--- a/cp/components/controller_if/cif_wifi_dp.c
++++ b/cp/components/controller_if/cif_wifi_dp.c
+@@ -300,11 +300,17 @@ static void cif_send_mem_free_req(void *mem_addr)
+ }
+ #endif
+ 
+-bool cif_rx_local_packet_check(struct pbuf **p_ptr, struct eth_hdr * ethhdr,void* vif, uint8_t dst_idx)
+-{
++bool cif_rx_local_packet_check(struct pbuf **p_ptr, struct eth_hdr * ethhdr,void* vif, uint8_t dst_idx)
++{
+     bool upload2ctrl = true;
+     struct pbuf *p = *p_ptr;
+-    bk_err_t ret = BK_OK;
++    bk_err_t ret = BK_OK;
++#if CONFIG_WIFI_VNET_AP_IPV4
++    const bool ap_owns_ipv4 = cif_env.host_wifi_init &&
++        wifi_netif_vif_to_netif_type(vif) == NETIF_IF_STA;
++#else
++    const bool ap_owns_ipv4 = false;
++#endif
+ 
+     CIF_LOGV("%s p:%x next:0x%x payload:0x%x sizeof:%d\r\n",__func__, p, p->next, p->payload, sizeof(struct pbuf));
+ 
+@@ -333,8 +339,15 @@ bool cif_rx_local_packet_check(struct pbuf **p_ptr, struct eth_hdr * ethhdr,void
+             struct pbuf* p_copy = NULL;
+             CIF_LOGV("ARP RX\n");
+ 
+-#if CONFIG_CONTROLLER_RX_DIRECT_PSH
+-            p_copy = pbuf_alloc(PBUF_RAW,p->len+sizeof(cpdu_t),PBUF_RAM_RX);
++#if CONFIG_CONTROLLER_RX_DIRECT_PSH
++            if (ap_owns_ipv4)
++            {
++                p_copy = p;
++                upload2ctrl = false;
++            }
++            else
++            {
++            p_copy = pbuf_alloc(PBUF_RAW,p->len+sizeof(cpdu_t),PBUF_RAM_RX);
+ #if CONFIG_BRIDGE
+             upload2ctrl = false;
+ #endif
+@@ -350,13 +363,14 @@ bool cif_rx_local_packet_check(struct pbuf **p_ptr, struct eth_hdr * ethhdr,void
+ #if CONFIG_BRIDGE
+             pbuf_free(p);
+ #else
+-            if(cif_is_arp_request(p))
++            if(cif_is_arp_request(p))
+             {
+                 upload2ctrl = false;
+                 pbuf_free(p);
+-            }
+-#endif
+-#else
++            }
++#endif
++            }
++#else
+             p_copy = (struct pbuf*)cif_maclloc_rx_buf();
+ 
+             upload2ctrl = true;
+@@ -411,7 +425,7 @@ bool cif_rx_local_packet_check(struct pbuf **p_ptr, struct eth_hdr * ethhdr,void
+         }
+         case ETHTYPE_IP:
+         {
+-            if (cif_filter_check_ip_data(p) == false)
++            if (ap_owns_ipv4 || cif_filter_check_ip_data(p) == false)
+             {
+                 //pbuf_header_force(p, (s16)macif_get_rxl_payload_offset() + sizeof(struct cpdu_t));
+                 /*
+diff --git a/cp/components/lwip_intf_v2_1/lwip-2.1.2/port/net.c b/cp/components/lwip_intf_v2_1/lwip-2.1.2/port/net.c
+index f754b45..bac7ad6 100755
+--- a/cp/components/lwip_intf_v2_1/lwip-2.1.2/port/net.c
++++ b/cp/components/lwip_intf_v2_1/lwip-2.1.2/port/net.c
+@@ -534,6 +534,10 @@ void sta_ip_down(void)
+ 
+ void sta_ip_start(void)
+ {
++#if CONFIG_WIFI_VNET_AP_IPV4
++	/* The AP owns the address and DHCP lease for this shared STA MAC. */
++	return;
++#endif
+ #ifdef CONFIG_WIFI_ENABLE
+ 	struct wlan_ip_config address = { 0 };
+ 
+@@ -1112,6 +1116,9 @@ bool g_bk_ap_connected = false;
+ #endif
+ void net_begin_send_arp_reply(bool is_send_arp, bool is_allow_send_req)
+ {
++#if CONFIG_WIFI_VNET_AP_IPV4
++	return;
++#endif
+ #if CONFIG_BRIDGE
+ 	// If connected to beken repeater, don't send arp response
+ 	if (g_bk_ap_connected)
+@@ -1277,4 +1284,3 @@ void eth_ip_down(void)
+ 	}
+ }
+ #endif
+-
+diff --git a/cp/components/wpa_supplicant-2.10/wpa_supplicant/notify.c b/cp/components/wpa_supplicant-2.10/wpa_supplicant/notify.c
+old mode 100755
+new mode 100644
+index 666a44a..14a09b8
+--- a/cp/components/wpa_supplicant-2.10/wpa_supplicant/notify.c
++++ b/cp/components/wpa_supplicant-2.10/wpa_supplicant/notify.c
+@@ -317,6 +317,16 @@ void wpas_notify_connected(struct wpa_supplicant *wpa_s)
+ 		}
+ 		BK_LOG_ON_ERR(bk_event_post(EVENT_MOD_WIFI, EVENT_WIFI_STA_CONNECTED,
+ 					&sta_connected, sizeof(sta_connected), BEKEN_NEVER_TIMEOUT));
++#if CONFIG_WIFI_VNET_AP_IPV4
++		/* OpenVela link-event ABI: event 0x12, STA_CONNECTED=2, no data.
++		 * Association must not wait for a CP DHCP lease in AP-owned mode.
++		 */
++		{
++			uint16_t link_event[2] = {2, 0};
++			BK_LOG_ON_ERR(cif_bk_send_event(0x12, (uint8_t *)link_event,
++						      sizeof(link_event)));
++		}
++#endif
+ #if BK_SUPPLICANT
+ 		wlan_sta_bss_flush(0);
+ 		/* parse mac rates in the beacon frame and set 11b flags */

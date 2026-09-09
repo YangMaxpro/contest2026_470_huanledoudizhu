@@ -1,131 +1,189 @@
-/****************************************************************************
- * boards/contest2026_470_board/scripts/bk7258_flash.ld
- *
- * SPDX-License-Identifier: Apache-2.0
- *
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.  The
- * ASF licenses this file to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance with the
- * License.  You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
- * License for the specific language governing permissions and limitations
- * under the License.
- *
- ****************************************************************************/
+/* SPDX-License-Identifier: Apache-2.0 */
 
-/* BK7258 memory layout (Beken Armino SDK, SPE mode):
- *
- *   flash (rx)  : 8MB NOR flash, XIP alias at 0x02000000
- *   sram  (rwx) : AP core SRAM, 336K at 0x28000000 (ram_regions.csv:
- *                 AP_RAM, 0x054000 bytes)
- *
- * Code runs XIP from the flash alias, .data/.bss live in SRAM.  An
- * additional 8M PSRAM heap region is added at runtime by
- * bk7258_allocateheap.c (CONFIG_MM_REGIONS > 1).
+OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
+OUTPUT_ARCH(arm)
+ENTRY(__start)
+
+/* g_bk7258_boot_vectors and _vectors (bk7258_vectors.c) are matched into
+ * the .bk_boot_vectors / .ram_vectors output sections below purely by
+ * input section name.  Nothing in the C code references either symbol
+ * directly, so without this EXTERN() the linker never has a reason to
+ * pull bk7258_vectors.o out of libarch.a in the first place: KEEP() only
+ * protects sections that are already part of the link from
+ * --gc-sections, it does not force extraction of an otherwise-unused
+ * static archive member.  Without this, both output sections silently
+ * come out empty (verified via nuttx.map) and the boot/runtime vector
+ * tables are missing at runtime, not just failing the size ASSERT below.
  */
+EXTERN(g_bk7258_boot_vectors)
+EXTERN(g_bk7258_cpu1_vectors)
+EXTERN(_vectors)
 
 MEMORY
 {
-  flash (rx)  : ORIGIN = 0x02000000, LENGTH = 8M
-  sram  (rwx) : ORIGIN = 0x28000000, LENGTH = 336K
+  /* 4148K is the largest code-aligned AP partition before fixed data. */
+  FLASH (rx)  : ORIGIN = 0x02150000, LENGTH = 0x003d0000
+  RAM   (rwx) : ORIGIN = 0x28010000, LENGTH = 0x00054000
+  SWAP  (rw)  : ORIGIN = 0x2809f800, LENGTH = 0x00000800
+  PSRAM_SECTION (rw) : ORIGIN = 0x60a00000, LENGTH = 0x00600000
 }
 
-OUTPUT_ARCH(arm)
-EXTERN(_vectors)
-ENTRY(__start)
+__ap_ram_start = ORIGIN(RAM);
+__ap_ram_end = ORIGIN(RAM) + LENGTH(RAM);
 
 SECTIONS
 {
-    .text : {
-        _stext = ABSOLUTE(.);
-        *(.vectors)
-        *(.text .text.*)
-        *(.fixup)
-        *(.gnu.warning)
-        *(.rodata .rodata.*)
-        *(.gnu.linkonce.t.*)
-        *(.glue_7)
-        *(.glue_7t)
-        *(.got)
-        *(.gcc_except_table)
-        *(.gnu.linkonce.r.*)
-        _etext = ABSOLUTE(.);
-    } > flash
+  .bk_boot_vectors ORIGIN(FLASH) : ALIGN(512)
+  {
+    KEEP(*(.bk_boot_vectors))
+  } > FLASH
 
-    .init_section : ALIGN(4) {
-        _sinit = ABSOLUTE(.);
-        KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*)))
-        KEEP(*(.init_array EXCLUDE_FILE(*crtbegin.o *crtbegin?.o *crtend.o *crtend?.o) .ctors))
-        _einit = ABSOLUTE(.);
-    } > flash
+  /* BK7258 CPU1 loader expects its second vector table at AP image offset
+   * 0x200, matching the vendor app1.bin layout. */
+  .bk_cpu1_vectors ORIGIN(FLASH) + 0x200 : ALIGN(512)
+  {
+    KEEP(*(.bk_cpu1_vectors))
+  } > FLASH
 
-    .ARM.extab : ALIGN(4) {
-        *(.ARM.extab*)
-    } > flash
+  .gnu.sgstubs : ALIGN(32)
+  {
+    KEEP(*(.gnu.sgstubs*))
+  } > FLASH
 
-    .ARM.exidx : ALIGN(4) {
-        __exidx_start = ABSOLUTE(.);
-        *(.ARM.exidx*)
-        __exidx_end = ABSOLUTE(.);
-    } > flash
+  .text : ALIGN(4)
+  {
+    _stext = .;
+    KEEP(*(.start_text))
+    *(.text .text.*)
+    *(.rodata .rodata.*)
+    KEEP(*(.init))
+    KEEP(*(.fini))
+    _etext = .;
+  } > FLASH
 
-    .tdata : {
-        _stdata = ABSOLUTE(.);
-        *(.tdata .tdata.* .gnu.linkonce.td.*);
-        _etdata = ABSOLUTE(.);
-    } > flash
+  .init_array : ALIGN(4)
+  {
+    __init_array_start = .;
+    KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*)))
+    KEEP(*(.init_array))
+    __init_array_end = .;
+  } > FLASH
 
-    .tbss : {
-        _stbss = ABSOLUTE(.);
-        *(.tbss .tbss.* .gnu.linkonce.tb.* .tcommon);
-        _etbss = ABSOLUTE(.);
-    } > flash
+  .ARM.extab : ALIGN(4)
+  {
+    *(.ARM.extab* .gnu.linkonce.armextab.*)
+  } > FLASH
 
-    _eronly = ABSOLUTE(.);
+  __exidx_start = .;
+  .ARM.exidx : ALIGN(4)
+  {
+    *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+  } > FLASH
+  __exidx_end = .;
 
-    /* The RAM vector table (if present) should lie at the beginning of SRAM */
+  .data : ALIGN(8)
+  {
+    _sdata = .;
+    *(.data .data.* .sdata .sdata.*)
+    _edata = .;
+  } > RAM AT > FLASH
+  _eronly = LOADADDR(.data);
 
-    .ram_vectors : {
-        *(.ram_vectors)
-    } > sram
+  .ram_vectors : ALIGN(512)
+  {
+    __ram_vectors_start = .;
+    KEEP(*(.ram_vectors))
+    __ram_vectors_end = .;
+  } > RAM AT > FLASH
+  __ram_vectors_load = LOADADDR(.ram_vectors);
 
-    .data : ALIGN(4) {
-        _sdata = ABSOLUTE(.);
-        *(.data .data.*)
-        *(.gnu.linkonce.d.*)
-        CONSTRUCTORS
-        . = ALIGN(4);
-        _edata = ABSOLUTE(.);
-    } > sram AT > flash
+  .bss (NOLOAD) : ALIGN(8)
+  {
+    _sbss = .;
+    *(.bss .bss.* .sbss .sbss.*)
+    *(COMMON)
+    _ebss = .;
+  } > RAM
 
-    .bss : ALIGN(4) {
-        _sbss = ABSOLUTE(.);
-        *(.bss .bss.*)
-        *(.gnu.linkonce.b.*)
-        *(COMMON)
-        . = ALIGN(4);
-        _ebss = ABSOLUTE(.);
-    } > sram
+  .noinit (NOLOAD) : ALIGN(8)
+  {
+    *(.noinit .noinit.*)
+  } > RAM
 
-    /* Stabs debugging sections. */
+  .idle_stack (NOLOAD) : ALIGN(8)
+  {
+    __idle_stack_base = .;
+    . += 0x1000;
+    __idle_stack_top = .;
+  } > RAM
 
-    .stab 0 : { *(.stab) }
-    .stabstr 0 : { *(.stabstr) }
-    .stab.excl 0 : { *(.stab.excl) }
-    .stab.exclstr 0 : { *(.stab.exclstr) }
-    .stab.index 0 : { *(.stab.index) }
-    .stab.indexstr 0 : { *(.stab.indexstr) }
-    .comment 0 : { *(.comment) }
-    .debug_abbrev 0 : { *(.debug_abbrev) }
-    .debug_info 0 : { *(.debug_info) }
-    .debug_line 0 : { *(.debug_line) }
-    .debug_pubnames 0 : { *(.debug_pubnames) }
-    .debug_aranges 0 : { *(.debug_aranges) }
+  .swap (NOLOAD) : ALIGN(32)
+  {
+    __swap_start = .;
+    KEEP(*(.swap .swap.*))
+    __swap_end = ORIGIN(SWAP) + LENGTH(SWAP);
+  } > SWAP
+
+  .psram.data : ALIGN(8)
+  {
+    __ap_psram_data_start = .;
+    *(.psram.data .psram.data.*)
+    __ap_psram_data_end = .;
+  } > PSRAM_SECTION AT > FLASH
+
+  .psram.bss (NOLOAD) : ALIGN(8)
+  {
+    __ap_psram_bss_start = .;
+    *(.psram.bss .psram.bss.*)
+    __ap_psram_bss_end = .;
+  } > PSRAM_SECTION
+
+  .psram.noinit (NOLOAD) : ALIGN(8)
+  {
+    __ap_psram_noinit_start = .;
+    *(.psram.noinit .psram.noinit.*)
+    __ap_psram_noinit_end = .;
+  } > PSRAM_SECTION
+
+  __ap_psram_section_start = ORIGIN(PSRAM_SECTION);
+  __ap_psram_section_end = ORIGIN(PSRAM_SECTION) + LENGTH(PSRAM_SECTION);
+
+  __heap_start = ALIGN(ADDR(.idle_stack) + SIZEOF(.idle_stack), 8);
+  __heap_end = __ap_ram_end;
+  _eram = __ap_ram_end;
+
+  /DISCARD/ :
+  {
+    *(.note .note.*)
+    *(.comment)
+  }
+
+  ASSERT(ADDR(.bk_boot_vectors) == ORIGIN(FLASH),
+         "AP boot vector is not at image offset zero")
+  ASSERT((ADDR(.bk_boot_vectors) & 0x1ff) == 0,
+         "AP boot vector is not 512-byte aligned")
+  ASSERT((ADDR(.ram_vectors) & 0x1ff) == 0,
+         "AP runtime vector is not 512-byte aligned")
+  ASSERT(SIZEOF(.bk_boot_vectors) >= 0x108,
+         "AP boot vector does not contain BK legacy magic")
+  ASSERT(_ebss <= __ap_ram_end, "AP bss overlaps CP RAM")
+  ASSERT(__heap_start < __heap_end, "AP heap is empty")
+  ASSERT(__heap_end <= __ap_ram_end, "AP heap overlaps CP RAM")
+  ASSERT(ORIGIN(SWAP) == 0x2809f800, "app_ab SWAP base mismatch")
+  ASSERT(LENGTH(SWAP) == 0x00000800, "app_ab SWAP size mismatch")
+  ASSERT(ADDR(.swap) == ORIGIN(SWAP), "SWAP section base mismatch")
+  ASSERT(SIZEOF(.swap) == 0, "AP must not allocate objects in shared SWAP")
+  ASSERT(__heap_end <= ORIGIN(SWAP), "AP heap overlaps shared SWAP")
+  ASSERT(ORIGIN(PSRAM_SECTION) == 0x60a00000,
+         "AP PSRAM section base mismatch")
+  ASSERT(LENGTH(PSRAM_SECTION) == 0x00600000,
+         "AP PSRAM section size mismatch")
+  ASSERT(__ap_psram_section_end == 0x61000000,
+         "16 MB PSRAM layout end mismatch")
+  ASSERT(SIZEOF(.psram.data) == 0,
+         ".psram.data requires reset-stage copy support")
+  ASSERT(SIZEOF(.psram.bss) == 0,
+         ".psram.bss requires reset-stage clear support")
+  ASSERT(SIZEOF(.psram.noinit) == 0,
+         ".psram.noinit is not enabled for the initial PSRAM port")
 }

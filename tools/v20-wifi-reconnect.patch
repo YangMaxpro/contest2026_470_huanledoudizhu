@@ -1,0 +1,52 @@
+--- a/arch/arm/src/bk7258/bk7258_wifi.c
++++ b/arch/arm/src/bk7258/bk7258_wifi.c
+@@ -2744,15 +2744,31 @@
+   enum wifi_role role;
+   int32_t status = 0;
+   uint16_t result_length = 0;
+-  size_t ssid_length;
+-  size_t password_length;
+-  irqstate_t flags;
+-  int ret;
+-
+-  (void)lower;
+-  nxmutex_lock(&g_wifi.packet_lock);
+-  flags = rspin_lock_irqsave(&g_bk7258_driver_lock);
+-  if (!g_wifi.admin_up)
++  size_t ssid_length;
++  size_t password_length;
++  bool restart;
++  irqstate_t flags;
++  int ret;
++
++  (void)lower;
++  /* A new ESSID request is an explicit restart, including while the CP is
++   * retrying a lost STA link. Stop the old role before replacing it. */
++  flags = rspin_lock_irqsave(&g_bk7258_driver_lock);
++  restart = g_wifi.configured_role == WIFI_ROLE_STA &&
++            g_wifi.active_role == WIFI_ROLE_STA && g_wifi.admin_up;
++  rspin_unlock_irqrestore(&g_bk7258_driver_lock, flags);
++  if (restart)
++    {
++      ret = wifi_stop_active_role();
++      if (ret < 0)
++        {
++          return ret;
++        }
++    }
++
++  nxmutex_lock(&g_wifi.packet_lock);
++  flags = rspin_lock_irqsave(&g_bk7258_driver_lock);
++  if (!g_wifi.admin_up)
+     {
+       ret = -ENETDOWN;
+       goto connect_unlock;
+@@ -2802,7 +2818,7 @@
+ 
+   if (role == WIFI_ROLE_STA)
+     {
+-      bool auto_reconnect = false;
++      bool auto_reconnect = true;
+ 
+       ret = wifi_command(BK7258_WIFI_CMD_SET_AUTO_RECONNECT,
+                          &auto_reconnect, sizeof(auto_reconnect),

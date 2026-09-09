@@ -1,0 +1,40 @@
+# BK7258 新硬件适配报告
+
+本报告按官方《新硬件适配赛道详细指引》组织，目标硬件为声网 & 博通对话式 AI 开发套件 R1（Beken BK7258）。代码入口在本仓库，芯片级改动通过 manifest 固定到 `YangMaxpro/nuttx@8f2eefdf575341b146b0e22c5dfb9b6fa218120c`，便于在上游 PR #360 合入前复现。
+
+## 1. 适配范围
+
+| 官方要求 | 本作品实现 | 代码位置 / 证据 |
+| --- | --- | --- |
+| 芯片级 BSP | Cortex-M33F 启动入口、向量表、FPU、BSS/data 初始化、NVIC、SysTick、堆和 PSRAM 区域 | `nuttx/arch/arm/src/bk7258/`；`board/contest_board/README.md` |
+| 板级初始化 | R1 时钟/引脚、UART0 控制台、红绿 LED、音频 PA 控制、CP/AP mailbox 启动 | `board/contest_board/src/board_boot.c`、`include/board.h` |
+| 基础外设 | BK7258 UART0 寄存器级收发，115200 8N1；GPIO40/41 状态灯 | `nuttx/arch/arm/src/bk7258/bk7258_serial.c`、板级代码 |
+| 构建集成 | defconfig、CMake/Make 入口、Flash 链接脚本、manifest linkfile | `board/contest_board/configs/.../defconfig`、`contest2026_470_huanledoudizhu.xml` |
+| 可运行 Demo | NSH、`hello`、`xiaopai` 状态机、Wi-Fi 初始化、LED 反馈 | `app/hello_app/`、`app/xiaopai/` |
+
+## 2. 可复现流程
+
+```bash
+repo init -u https://github.com/open-vela/contest2026_470_huanledoudizhu \
+  -b dev-ai-contest-2026 -m contest2026_470_huanledoudizhu.xml
+repo sync -c -j8
+./build.sh contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh --cmake
+```
+
+BK7258 R1 使用 UART0（GPIO11 TX、GPIO10 RX，115200 8N1）。烧录时使用保留原厂 bootloader、并按 BK7258 CRC16 格式编码的完整镜像；镜像生成和 BKFIL 命令见根目录 `README.md`。
+
+## 3. 真机验收
+
+设备：BK7258 R1；串口：`/dev/ttyUSB0`，115200 8N1。原始日志和通过标准见 [`xts-test-evidence.md`](xts-test-evidence.md)。已确认：
+
+- `ostest` 输出 `ostest_main: Exiting with status 0`；
+- `mm` 输出 `TEST COMPLETE`；
+- `scanftest` 在先执行 `mount -t tmpfs tmpfs /tmp` 后输出 `OK: 164, FAILED: 0`；
+- `hello` 输出 `Hello, World!!`；
+- Wi-Fi 关联、DHCP 和 NSH 网络链路已在串口日志中观察到。
+
+`getprime` 当前只输出线程启动信息，没有完成标志，因此保留为 BLOCKED；GPIO、SPI/I2C、音频、BLE 和 LCD 需要相应外设或测试资源，未在报告中冒充已完成。
+
+## 4. 提交与后续上游贡献
+
+完整源码已经推送到个人 fork 的 `dev-ai-contest-2026`。下一步是向官方作品仓同名分支发起 PR，并在 PR 描述中保留构建命令、真机日志路径和限制项。芯片级 NuttX PR #360 仍需签署 CLA 后整理提交历史并继续推进；合入后将 `contest2026_470_huanledoudizhu.xml` 的 NuttX revision 切换到官方分支。

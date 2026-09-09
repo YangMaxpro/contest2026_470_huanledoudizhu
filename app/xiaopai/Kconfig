@@ -1,0 +1,108 @@
+#
+# For a description of the syntax of this configuration file,
+# see the NuttX tools repository documentation.
+#
+
+config LVX_USE_DEMO_CONTEST2026_470_XIAOPAI
+	bool "Contest 2026 team 470 XiaoPai offline voice terminal"
+	default n
+	---help---
+		Enable the XiaoPai device service demo.  The service exposes a
+		stable command/state interface and probes optional audio, network,
+		video, framebuffer and PWM device nodes at runtime.
+
+if LVX_USE_DEMO_CONTEST2026_470_XIAOPAI
+
+config XIAOPAI_NETWATCH
+	bool "XiaoPai runtime DHCP link monitor"
+	depends on BK7258_WIFI && BUILD_FLAT && NET_IPv4 && NET_UDP
+	depends on NETDB_DNSCLIENT && !DISABLE_PTHREAD
+	depends on NET_SOCKOPTS && LIBC_NETDB
+	select NETUTILS_DHCPC
+	select NETUTILS_NETLIB
+	select NETUTILS_NTPCLIENT
+	default n
+	---help---
+		Opt-in netwatch start/stop/status service for the single-interface
+		board. Owns DHCP and resolver settings until stopped. Do not run
+		renew or another address manager concurrently. Credentials remain
+		in the Wi-Fi driver RAM; they are not persisted by this service. NTP
+		starts after the first successful DHCP lease and uses DNS hostnames.
+
+config XIAOPAI_WIFI_PERSIST
+	bool "XiaoPai persistent Wi-Fi profile and boot connection"
+	depends on XIAOPAI_NETWATCH && WIRELESS_WAPI && SYSTEM_NSH
+	default n
+	help
+		Save a single WPA/WPA2 profile to CP EasyFlash on explicit command.
+		Credentials are plaintext, not encrypted secure storage. Boot reads
+		only; no cloud key is saved. Requires matching v33 CP firmware and
+		INIT_ENTRYPOINT="xiaopai_boot_main" for boot auto-connect.
+
+config XIAOPAI_RNGCHECK
+	bool "XiaoPai CP random source diagnostic"
+	depends on BK7258_CP_TRNG
+	default n
+
+config XIAOPAI_HTTPCHECK
+	bool "XiaoPai bounded HTTP connectivity check"
+	depends on NET_TCP
+	select NETUTILS_WEBCLIENT
+	default n
+	---help---
+		Add httpcheck using the NuttX HTTP parser and nonblocking sockets.
+		Plain HTTP only. No credentials, redirects or saved response bodies.
+
+config XIAOPAI_HTTPSCHECK
+	bool "XiaoPai certificate-verified HTTPS diagnostic"
+	depends on BK7258_CP_TRNG && NET_TCP && !DISABLE_PTHREAD
+	select XIAOPAI_HTTPCHECK
+	select CRYPTO_MBEDTLS
+	select MBEDTLS_HAVE_TIME_DATE
+	select MBEDTLS_NO_PLATFORM_ENTROPY
+	default n
+	---help---
+		TLS 1.2 diagnostic with an explicit CP random entropy callback.
+		ISRG Root X1 trust anchor only. Requires accurate operator-set UTC;
+		no insecure bypass, redirects, saved credentials or cloud traffic.
+
+config XIAOPAI_MIMO
+	bool "XiaoPai MiMo text conversation"
+	depends on BUILD_FLAT && XIAOPAI_HTTPSCHECK
+	select NETUTILS_CJSON
+	default n
+	---help---
+		Single-turn MiMo text requests with a volatile, interactively entered
+		API key. Accepts sk- pay-as-you-go and tp- Token Plan endpoints. No automatic requests,
+		retries, audio upload or device command execution.
+
+config XIAOPAI_VOICE
+	bool "XiaoPai device-direct MiMo voice turns"
+	depends on XIAOPAI_MIMO && BK7258_PCM && !DISABLE_PTHREAD
+	select BK7258_PSRAM
+	default n
+	help
+		Explicit start/stop/status for one microphone-ASR-model-TTS turn.
+		Uploads 1..10 seconds of 16 kHz WAV via verified TLS; plays MiMo
+		24 kHz streamed PCM with bounded SSE events. RAM-only credentials,
+		no always-on microphone, persistent recordings or automatic retries.
+
+config LVX_USE_DEMO_CONTEST2026_470_XIAOPAI_TASK_PRIORITY
+	int "XiaoPai worker task priority"
+	default 110
+
+config XIAOPAI_RTSA_PROBE
+	bool "Experimental RTSA local lifecycle probe (CMake only)"
+	depends on BUILD_FLAT && BK7258_PSRAM && NET_LOOPBACK
+	depends on PTHREAD_MUTEX_TYPES && !DISABLE_PTHREAD
+	default n
+	help
+		Explicit once-per-boot init/create/destroy/fini diagnostic.
+		No channel join, tokens, microphone capture or automatic startup.
+		Requires the audited vendor SDK path in XIAOPAI_RTSA_SDK_DIR.
+
+config LVX_USE_DEMO_CONTEST2026_470_XIAOPAI_TASK_STACKSIZE
+	int "XiaoPai worker task stack size"
+	default 3072
+
+endif
