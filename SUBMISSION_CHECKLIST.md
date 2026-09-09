@@ -6,7 +6,7 @@
 
 - [x] 完整源码已通过 PR #2 合入官方作品仓的 `dev-ai-contest-2026` 分支。
 - [x] 提交源码、配置、板级文件和文档；`.bin` 只作为辅助产物，不能替代源码。
-- [x] `openvela.xml` 固定到 BK7258 NuttX 提交 `39eea47931392421e4cdbd8190d6de865db48d21`。
+- [x] `openvela.xml` 固定到 BK7258 NuttX 提交 `ebd2bba1677d695586860ee7050f987b60bdfe06`。
 - [x] `board/contest_board/`、`app/xiaopai/` 和 `tools/` 的修改均有说明。
 
 ## 当前仓库状态（2026-09-09 核查）
