@@ -2,7 +2,7 @@
 
 对照基线：[openvela xTS 认证测试用例精简集](https://github.com/open-vela/docs/blob/dev/zh-cn/test_dev_guide/openvela_xts_test_cases.md)，核对日期：2026-09-09。
 
-本轮串口结果由测试者确认为 v16 固件输出；固件文件名和 SHA256 尚未随日志保存。判定只依据已经保存的 BK7258 真机输出。测试仅启动、只出现中间输出、或 `ostest` 内部包含同名子测试，均不算对应的独立官方用例通过。关键原文见 [`serial-key-results.log`](../evidence/xts/2026-09-09/serial-key-results.log)。
+本轮串口结果由本人确认为 v16 固件输出；固件文件名和 SHA256 尚未随日志保存。判定只依据已经保存的 BK7258 真机输出。测试仅启动、只出现中间输出、或 `ostest` 内部包含同名子测试，均不算对应的独立官方用例通过。关键原文见 [`serial-key-results.log`](../evidence/xts/2026-09-09/serial-key-results.log)。
 
 ## 结果概览
 
