@@ -35,7 +35,7 @@ BK7258 R1 使用 UART0（GPIO11 TX、GPIO10 RX，115200 8N1）。烧录时使用
 
 ## 3. 真机验收
 
-设备：BK7258 R1；串口：`/dev/ttyUSB0`，115200 8N1。原始日志和通过标准见 [`xts-test-evidence.md`](xts-test-evidence.md)。已确认：
+设备：BK7258 R1；串口：`/dev/ttyUSB0`，115200 8N1。原始日志和通过标准见 [`xts-test-evidence.md`](xts-test-evidence.md)，35 项官方通用自测的逐项状态见 [`xts-official-coverage.md`](xts-official-coverage.md)。已确认：
 
 - `ostest` 输出 `ostest_main: Exiting with status 0`；
 - `mm` 输出 `TEST COMPLETE`；

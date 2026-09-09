@@ -4,7 +4,11 @@
 
 串口：`/dev/ttyUSB0`，115200 8N1
 
+固件：v16（本轮测试者确认；待补固件完整文件名和 SHA256）
+
 关键串口原文摘录：[`evidence/xts/2026-09-09/serial-key-results.log`](../evidence/xts/2026-09-09/serial-key-results.log)
+
+与官方 35 项通用自测的逐项对照见 [`xts-official-coverage.md`](xts-official-coverage.md)。
 
 ## 已完成
 
