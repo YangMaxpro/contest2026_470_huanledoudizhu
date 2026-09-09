@@ -1,5 +1,16 @@
 # 470 欢乐斗地主 — BK7258 对话式 AI 开发套件新硬件适配
 
+## 参赛信息
+
+| 项目 | 内容 |
+| --- | --- |
+| 队伍编号 | 470 |
+| 队伍名称 | 欢乐斗地主 |
+| 选题方向 | 新硬件适配 |
+| 成员与分工 | YangMaxpro：BK7258 芯片/板级 BSP、构建烧录、真机 XTS 验证、文档和 AI Coding 材料 |
+| 官方作品仓 | [`open-vela/contest2026_470_huanledoudizhu`](https://github.com/open-vela/contest2026_470_huanledoudizhu) |
+| 芯片上游贡献 | [`open-vela/nuttx` PR #360](https://github.com/open-vela/nuttx/pull/360) |
+
 ## 小派项目定位
 
 **项目名称**：基于 R1 套件的离线语音控制终端——“小派”
@@ -45,7 +56,7 @@
 ├── app/hello_app/                # HelloWorld 示例应用（映射到 packages/demos/contest2026_470_hello_app）
 ├── app/xiaopai/                  # 小派控制层（映射到 packages/demos/contest2026_470_xiaopai）
 ├── app/demos/                    # packages/demos 顶层 CMake/Make 聚合入口
-├── logs/                         # AI Coding 会话日志（QoderWork，经官方 schema 校验）
+├── logs/                         # AI Coding 真实会话日志（经官方 schema 校验）
 │   └── YangMaxpro/
 └── contest2026_470_huanledoudizhu.xml   # 本仓作品目录 → openvela 编译树映射
 ```
@@ -59,7 +70,7 @@
 repo init -u https://github.com/open-vela/contest2026_470_huanledoudizhu \
   -b dev-ai-contest-2026 -m contest2026_470_huanledoudizhu.xml
 repo sync -c -j8
-# PR #360 合入前，manifest 拉取固定的 YangMaxpro/nuttx@39eea479313
+# PR #360 合入前，manifest 拉取固定的 YangMaxpro/nuttx@ebd2bba1677d
 
 # 2. 进入 openvela 工作区根目录（本仓上一级），编译 BK7258 DevKit NSH 镜像
 cd contest2026_470_huanledoudizhu/..
@@ -97,11 +108,11 @@ nsh> xiaopai demo
 
 | 项目 | 状态 |
 | --- | --- |
-| 编译通过（CMake，1099 targets） | ✅ |
+| 编译通过（CMake，1507 targets） | ✅ |
 | Flash 链接 / 向量表 / 启动入口 | ✅ `_vectors`@0x02150000，`__start`@0x02150220 |
 | UART0 串口驱动 + NSH 控制台代码接入 | ✅ 编译通过；UART0 引脚/波特率已按真机 SDK 固化 |
 | SysTick 系统时钟 + `up_irqinitialize` 中断初始化 | ✅ |
-| 芯片 BSP 上游 PR #360 | ⚠️ 1 commit / 44 files；CLA 已通过，等待 CI 与 code owner review |
+| 芯片 BSP 上游 PR #360 | ⚠️ 1 commit / 44 files；checkpatch 和 CLA 已通过，其余 CI 执行中，等待 code owner review |
 | XiaoPai 控制层、能力探测、worker 任务编译进镜像 | ✅ |
 
 真机记录：BKFIL 2.1.11.8 能返回 `Writing Flash OK`。使用 CRC16 编码的镜像在 BK7258 R1 上已观测到 `nsh>`，并完成 `ostest`（status 0）、`mm`（`TEST COMPLETE`）、`scanftest`（挂载 `/tmp` tmpfs 后 `OK: 164, FAILED: 0`）和 `hello` 真机验证。未编码的 CP/AP 线性镜像会在启动校验阶段失败，烧录时必须使用 CRC 编码镜像；完整测试限制和复测命令见 `docs/xts-test-evidence.md`。

@@ -2,6 +2,16 @@
 
 本报告按官方《新硬件适配赛道详细指引》组织，目标硬件为声网 & 博通对话式 AI 开发套件 R1（Beken BK7258）。代码入口在本仓库，芯片级改动通过 manifest 固定到 `YangMaxpro/nuttx@ebd2bba1677d695586860ee7050f987b60bdfe06`，便于在上游 PR #360 合入前复现。
 
+## 参赛信息
+
+| 项目 | 内容 |
+| --- | --- |
+| 队伍编号 / 名称 | 470 / 欢乐斗地主 |
+| 选题方向 | 新硬件适配 |
+| 成员与分工 | YangMaxpro：BK7258 芯片/板级 BSP、构建烧录、真机 XTS 验证、文档和 AI Coding 材料 |
+| 官方作品仓 | <https://github.com/open-vela/contest2026_470_huanledoudizhu> |
+| 芯片上游 PR | <https://github.com/open-vela/nuttx/pull/360> |
+
 ## 1. 适配范围
 
 | 官方要求 | 本作品实现 | 代码位置 / 证据 |
@@ -37,4 +47,4 @@ BK7258 R1 使用 UART0（GPIO11 TX、GPIO10 RX，115200 8N1）。烧录时使用
 
 ## 4. 提交与后续上游贡献
 
-完整源码已通过 PR #2 合入官方作品仓的 `dev-ai-contest-2026` 分支。芯片级 NuttX PR #360 已整理为 1 commit / 44 files，CLA 已通过；当前等待 CI 和 code owner review。PR 合入后，将 `openvela.xml` 的 NuttX remote/revision 切换到官方仓对应提交。
+完整源码已通过 PR #2 合入官方作品仓的 `dev-ai-contest-2026` 分支，PR #4 已同步最终 NuttX 固定提交。芯片级 NuttX PR #360 已整理为 1 commit / 44 files，checkpatch 和 CLA 已通过；其余 CI 执行中，当前等待 code owner review。格式修正前后的 21 个 BK7258 对象文件可加载段哈希一致，未改变 BK7258 机器码。PR 合入后，将 `openvela.xml` 的 NuttX remote/revision 切换到官方仓对应提交。
