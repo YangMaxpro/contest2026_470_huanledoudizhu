@@ -125,6 +125,6 @@ nsh> xiaopai demo
 
 ## 六、当前验收状态
 
-新硬件适配赛道的真机证据和限制见 `docs/xts-test-evidence.md`，提交前检查项见 `SUBMISSION_CHECKLIST.md`。当前已确认 `ostest`、`mm`、`scanftest`（挂载 tmpfs 后）、`hello` 通过；`getprime` 和依赖额外外设的 Cmocka/BLE/Wi-Fi 用例仍需单独处理，报告中按实际结果记录。
+新硬件适配赛道的真机证据和限制见 [`docs/xts-test-evidence.md`](docs/xts-test-evidence.md)，与官方 35 项通用自测的逐项对照见 [`docs/xts-official-coverage.md`](docs/xts-official-coverage.md)，提交前检查项见 [`SUBMISSION_CHECKLIST.md`](SUBMISSION_CHECKLIST.md)。当前已确认 `ostest`、`mm`、`scanftest`（挂载 tmpfs 后）、`hello` 和烧写测试通过，RAM 占用统计已完成；其他项目按证据分别记录为部分完成、阻塞、未构建或未测试。
 
 
