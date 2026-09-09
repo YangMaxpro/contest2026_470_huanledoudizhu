@@ -4,18 +4,18 @@
 
 ## 代码
 
-- [x] 将当前完整源码推送到个人 fork 的 `dev-ai-contest-2026` 工作分支；待向官方仓库同名分支发起 PR。
+- [x] 完整源码已通过 PR #2 合入官方作品仓的 `dev-ai-contest-2026` 分支。
 - [x] 提交源码、配置、板级文件和文档；`.bin` 只作为辅助产物，不能替代源码。
-- [x] `openvela.xml` 固定到 BK7258 NuttX 提交 `8f2eefdf575341b146b0e22c5dfb9b6fa218120c`。
+- [x] `openvela.xml` 固定到 BK7258 NuttX 提交 `39eea47931392421e4cdbd8190d6de865db48d21`。
 - [x] `board/contest_board/`、`app/xiaopai/` 和 `tools/` 的修改均有说明。
 
 ## 当前仓库状态（2026-09-09 核查）
 
-- 官方作品仓 `open-vela/contest2026_470_huanledoudizhu` 的默认分支正确；需从个人 fork 的 `dev-ai-contest-2026` 向其发起 PR。
+- 官方作品仓 PR #2 已合入 `dev-ai-contest-2026`，合并提交为 `2cce7a0`。
 - 个人 fork 的 `dev-ai-contest-2026` 已于 2026-09-09 更新为完整提交 `85fccfe`，包含源码、证据和 AI Coding 材料。
-- NuttX fork 的 `feat/bk7258-chip` 已更新到 `8f2eefdf575`，包含当前真机使用的 BK7258 芯片级实现。
-- 官方仓 PR 尚未创建；创建后将 PR 链接补入本清单和 README。
-- `open-vela/nuttx` PR #360 仍为 Open，当前显示 30 commits / 76 files，且 CLA 检查提示 `1409614428@qq.com` 未签署。应先签署 CLA，再执行 `/check-cla`；同时把 PR 整理为仅包含 BK7258 芯片级改动，避免夹带目标分支的公共提交。
+- NuttX fork 的 `feat/bk7258-chip` 已整理为单提交 `39eea479313`，包含当前真机使用的 BK7258 芯片级实现。
+- 官方作品仓 PR：<https://github.com/open-vela/contest2026_470_huanledoudizhu/pull/2>（已合入）。
+- `open-vela/nuttx` PR #360 仍为 Open，现为 1 commit / 44 files，全部位于 `arch/arm/src/bk7258/`。CLA 已通过，中文源码检查修正已推送，等待 CI 完成和 code owner review。
 
 ## 新硬件适配说明
 
