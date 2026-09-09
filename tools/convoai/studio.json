@@ -1,0 +1,55 @@
+{
+  "api_origin": "https://api.sd-rtn.com",
+  "app_id": "f458b56136964d83acc1053c3b133cd0",
+  "properties": {
+    "asr": {
+      "params": {"studio_agent_resource_uuid": "21c0560342fc42929031be9115b04556"},
+      "vendor": "fengming",
+      "language": "zh-CN"
+    },
+    "llm": {
+      "url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "params": {"model": "qwen-plus", "top_p": 0.8, "temperature": 0.8},
+      "vendor": "aliyun",
+      "api_key": "",
+      "max_history": 32,
+      "failure_message": "\u62b1\u6b49\uff0c\u6211\u65e0\u6cd5\u56de\u7b54\u8fd9\u4e2a\u95ee\u9898\u3002",
+      "system_messages": [{"role": "system", "content": "You are a helpful chatbot."}],
+      "greeting_message": "\u672c\u6b21\u901a\u8bdd\u5185\u5bb9\u7531AI\u751f\u6210\u3002\u60a8\u597d\uff0c\u6709\u4ec0\u4e48\u53ef\u4ee5\u5e2e\u60a8\uff1f",
+      "studio_agent_resource_uuid": "a3fd65a6d89841a18f46784cc4a9a7d8"
+    },
+    "tts": {
+      "params": {
+        "api_key": "",
+        "speaker": "zh_female_shuangkuaisisi_moon_bigtts",
+        "studio_agent_resource_uuid": "dd894510f7254087b4ef18b138b23a00"
+      },
+      "vendor": "bytedance_duplex"
+    },
+    "parameters": {
+      "transcript": {"enable": true, "protocol_version": "v2", "enable_words": true, "redundant": false},
+      "enable_dump": false,
+      "data_channel": "rtm",
+      "enable_metrics": true,
+      "silence_config": {"action": "think", "content": "", "timeout_ms": 4000},
+      "enable_flexible": true,
+      "enable_error_message": true
+    },
+    "idle_timeout": 120,
+    "turn_detection": {
+      "mode": "default",
+      "config": {
+        "speech_threshold": 0.5,
+        "start_of_speech": {
+          "mode": "vad",
+          "vad_config": {"interrupt_duration_ms": 160, "speaking_interrupt_duration_ms": 160, "prefix_padding_ms": 800}
+        },
+        "end_of_speech": {
+          "mode": "semantic",
+          "semantic_config": {"silence_duration_ms": 240, "max_wait_ms": 1000, "pause_state_enabled": false}
+        }
+      }
+    },
+    "advanced_features": {"enable_rtm": true, "enable_sal": false}
+  }
+}

@@ -24,7 +24,7 @@ board/contest_board/
 ├── include/
 │   └── board.h              # 板级宏（晶振频率、UART0 引脚规划）
 ├── scripts/
-│   └── bk7258_flash.ld      # 链接脚本（Flash XIP @0x02000000 + SRAM @0x28000000）
+│   └── bk7258_flash.ld      # 链接脚本（AP Flash XIP @0x02150000 + SRAM @0x28010000）
 ├── src/
 │   ├── CMakeLists.txt       # 板级源文件 + LD_SCRIPT 传递
 │   └── board_boot.c         # board_early_initialize / board_app_initialize
@@ -37,20 +37,21 @@ board/contest_board/
 
 - **CPU**：双核（AP: ARMv8-M Cortex-M33F @480MHz + CP)，NuttX 当前运行于 AP 核
 - **内存**：
-  - AP SRAM：336 KB @ `0x28000000`（`CONFIG_RAM_START` / `CONFIG_RAM_SIZE=344064`）
+  - AP SRAM：336 KB @ `0x28010000`（`0x28000000-0x2800ffff` 为 AP spinlock 保留区）
   - PSRAM：8 MB @ `0x60000000`（通过 `CONFIG_MM_REGIONS=2` + `arm_addregion` 并入堆）
-  - Flash：8 MB，XIP @ `0x02000000`（代码原地执行，`.data` 从 Flash 拷贝到 SRAM）
+  - Flash：8 MB；AP 分区物理地址 `0x165000`，XIP 虚拟地址 `0x02150000`（物理地址按 `/34*32` 转换）
 - **UART**（博通自研 IP，非 PL011/NS16550）：
   - 寄存器 32 位按结构体偏移（`0x10` config / `0x18` fifo_status / `0x1C` fifo_port …）
   - 时钟源 `UART_CLOCK = 26 MHz` 晶振；`baud = 26MHz / (clk_div + 1)`
   - UART0 基址 `0x44820000`，IRQ 向量 20；UART1 `0x45830000`/31；UART2 `0x45840000`/32
+- **R1 状态灯**：红灯 GPIO40、绿灯 GPIO41，板级代码按高电平点亮，并通过 `xiaopai led` 提供手动测试入口
 - **IRQ**：NVIC 64 条外设中断线（`InterruptMAX_IRQn`），`CONFIG_BK7258_NR_IRQS=80`（16 系统异常 + 64 外设）
 
 ## 三、构建方法
 
 ```bash
 # 1. 拉取工程（见仓根 README）
-repo init -u https://gitee.com/open-vela/contest2026_470_huanledoudizhu -b dev-ai-contest-2026 -m contest2026_470_huanledoudizhu.xml
+repo init -u https://github.com/open-vela/contest2026_470_huanledoudizhu -b dev-ai-contest-2026 -m contest2026_470_huanledoudizhu.xml
 repo sync -c -j8
 
 # 2. 编译 BK7258 DevKit NSH 配置（CMake 模式）
@@ -58,7 +59,7 @@ cd openvela
 ./build.sh contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh --cmake
 
 # 产物
-#   cmake_out/configs_nsh/nuttx.bin    146 KB（Flash 0x02000000 起始）
+#   cmake_out/configs_nsh/nuttx.bin    约 143 KB（AP Flash XIP @0x02150000）
 #   cmake_out/configs_nsh/nuttx.hex / System.map
 ```
 
@@ -69,10 +70,12 @@ cd openvela
 | 阶段 | 内容 | 状态 |
 | ---- | ---- | ---- |
 | L0 | 芯片 BSP 骨架 + NSH 最小系统编译通过 | ✅ 完成 |
-| L0 | UART0 驱动（115200 8N1 console，寄存器级） | ✅ 完成（待真机验证） |
-| L1 | 真机 bring-up：UART0 时钟门控 + GPIO mux（TX=GPIO1 / RX=GPIO2） | ⏳ 待办 |
-| L1 | SysTick 时钟校准（480 MHz 核时钟） | ⏳ 真机联调 |
-| L2 | WiFi/蓝牙（BK7258 射频）、PSRAM 压力测试、NSH 网络栈 | 📅 规划 |
+| L0 | UART0 驱动（115200 8N1 console，寄存器级） | ✅ 编译通过；参数已按 SDK 固化 |
+| L1 | 真机 bring-up：UART0 时钟门控 + GPIO mux（TX=GPIO11 / RX=GPIO10） | ✅ 已在 BK7258 R1 真机启动并进入 NSH |
+| L1 | SysTick 时钟校准（480 MHz 核时钟） | ✅ 已随 `ostest`、`mm` 和调度测试运行验证 |
+| L1 | R1 红/绿状态灯（GPIO40/41）和 XiaoPai 状态反馈 | ✅ 已接入；需真机观察灯态 |
+| L2 | Wi-Fi CP IPC netdev、PSRAM、NSH 网络栈 | ✅ 已完成关联、DHCP、ICMP、DNS 与基础 TLS 真机验证 |
+| L2 | BLE、Wi-Fi 性能/压力、标准音频设备和显示 | 📅 待对应外设与测试环境继续验证 |
 
 ### 芯片 BSP 组成（`nuttx/arch/arm/src/bk7258/`）
 

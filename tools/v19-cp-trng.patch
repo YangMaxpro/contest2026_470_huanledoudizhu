@@ -1,0 +1,141 @@
+diff --git a/cp/components/controller_if/cif_cntrl.c b/cp/components/controller_if/cif_cntrl.c
+index 2df61a4..8042f84 100644
+--- a/cp/components/controller_if/cif_cntrl.c
++++ b/cp/components/controller_if/cif_cntrl.c
+@@ -11,7 +11,8 @@
+ #include "components/bluetooth/bk_dm_bluetooth_types.h"
+ #include "cif_ipc.h"
+ #include "cif_wifi_api.h"
+-#include "lwip/stats.h"
++#include "lwip/stats.h"
++#include <driver/trng.h>
+ 
+ extern int bmsg_tx_sender(struct pbuf *p, uint32_t vif_idx);
+ extern void stack_mem_dump(uint32_t stack_top, uint32_t stack_bottom);
+@@ -635,12 +636,32 @@ bk_err_t cif_handle_bk_cmd_lwipmem_addr_req(struct bk_msg_hdr *msg)
+     return cif_bk_cmd_confirm(msg, (uint8_t *)&param.stats_mem_addr, sizeof(struct cif_lwip_stats));
+ }
+ #endif
+-bk_err_t cif_handle_wifi_ctrnl_cmd(struct bk_msg_hdr *msg)
++bk_err_t cif_handle_wifi_ctrnl_cmd(struct bk_msg_hdr *msg)
+ {
+     bk_err_t ret = BK_OK;
+ 
+-    switch(msg->cmd_id)
+-    {
++    switch(msg->cmd_id)
++    {
++        case BK_CMD_OPENVELA_TRNG:
++        {
++            /* Fixed ABI: status, version, then 32 full-width TRNG bytes.
++             * Never use bk_rand(): it masks off bits with RAND_MAX. */
++            struct {
++                int32_t status;
++                uint32_t version;
++                uint8_t bytes[32];
++            } response = { .status = -1, .version = 1 };
++
++            if (msg->len == 0)
++                response.status = bk_fill_rand(response.bytes,
++                                               sizeof(response.bytes));
++            if (response.status != 0)
++                memset(response.bytes, 0, sizeof(response.bytes));
++            ret = cif_bk_cmd_confirm(msg, (uint8_t *)&response,
++                                    sizeof(response));
++            memset(&response, 0, sizeof(response));
++            break;
++        }
+         case BK_CMD_CONNECT:
+         {
+             cif_env.host_wifi_init = true;
+diff --git a/cp/components/controller_if/cif_main.h b/cp/components/controller_if/cif_main.h
+index bfe7e88..c7eb0e7 100644
+--- a/cp/components/controller_if/cif_main.h
++++ b/cp/components/controller_if/cif_main.h
+@@ -122,7 +122,8 @@ enum BK_CMD_TYPE
+     BK_CMD_CUSTOMER_DATA       = 0x209,
+     BK_CMD_START_OTA           = 0x20A,
+     BK_CMD_SEND_OTA_PKT        = 0x20B,
+-    BK_CMD_STOP_OTA            = 0x20C,
++    BK_CMD_STOP_OTA            = 0x20C,
++    BK_CMD_OPENVELA_TRNG       = 0x213,
+ 
+     BK_CMD_WIFI_API_START      = 0x300,
+     BK_CMD_WIFI_API_END        = 0x5FF,
+diff --git a/cp/middleware/driver/trng/trng_driver.c b/cp/middleware/driver/trng/trng_driver.c
+index c7ad729..86dde6b 100644
+--- a/cp/middleware/driver/trng/trng_driver.c
++++ b/cp/middleware/driver/trng/trng_driver.c
+@@ -108,7 +108,14 @@ bk_err_t bk_trng_stop(void)
+ int bk_rand(void)
+ {
+ 	int i = 0, number = 0;
+-	bk_trng_start();
++	GLOBAL_INT_DECLARATION();
++	/* CP owns the TRNG. Keep start/read/stop atomic against its Wi-Fi
++	 * callers and the AP entropy request handler. */
++	GLOBAL_INT_DISABLE();
++	if (bk_trng_start() != BK_OK) {
++		GLOBAL_INT_RESTORE();
++		return 0;
++	}
+ 	bk_delay_us(50);  //add delay to make trng disckg take effect
+ 
+ 	/*Different board , same time point, the trng generate random number maybe same*/
+@@ -119,20 +126,26 @@ int bk_rand(void)
+ 	number = (int)trng_get_random_number();
+ 
+ 	bk_trng_stop();  //close it after finish for power save
++	GLOBAL_INT_RESTORE();
+ 
+ 	return (number & RAND_MAX);
+ }
+ 
+-int bk_fill_rand(void *buff, size_t len)
++static int trng_fill_chunk(void *buff, size_t len)
+ {
+     size_t i = 0;
+     uint32_t rnd;
++    GLOBAL_INT_DECLARATION();
+ 
+     if(buff == NULL || len == 0) {
+         return -1;
+     }
+ 
+-    bk_trng_start();
++    GLOBAL_INT_DISABLE();
++    if (bk_trng_start() != BK_OK) {
++        GLOBAL_INT_RESTORE();
++        return -1;
++    }
+     bk_delay_us(50);  //add delay to make trng disckg take effect
+ 
+     /*Different board , same time point, the trng generate random number maybe same*/
+@@ -158,6 +171,25 @@ int bk_fill_rand(void *buff, size_t len)
+     }
+ 
+     bk_trng_stop();  //close it after finish for power save
++    GLOBAL_INT_RESTORE();
+ 
+     return 0;
+-}
+\ No newline at end of file
++}
++
++int bk_fill_rand(void *buff, size_t len)
++{
++    uint8_t *p = buff;
++    if (buff == NULL || len == 0)
++        return -1;
++
++    /* Bound interrupt masking even if another CP caller requests a large
++     * buffer. Each chunk preserves the vendor warm-up/discard sequence. */
++    while (len > 0) {
++        size_t count = len < 32 ? len : 32;
++        if (trng_fill_chunk(p, count) != 0)
++            return -1;
++        p += count;
++        len -= count;
++    }
++    return 0;
++}

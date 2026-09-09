@@ -1,0 +1,8 @@
+{
+  "native_link_exit": 0,
+  "diagnostics": "/home/yang/openvela/prebuilts/gcc/linux-x86_64/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.4.0/../../../../arm-none-eabi/bin/ld: warning: .note.gnu.build-id section discarded, --build-id ignored\n",
+  "baseline_unchanged": true,
+  "firmware_ready": false,
+  "note": "Temporary link only. No execution, image packaging or board validation.",
+  "size": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n1088748\t   4844\t 178252\t1271844\t 136824\t/tmp/rtsa-native-link-to68b8p9/audit.elf\n"
+}

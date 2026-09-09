@@ -1,0 +1,55 @@
+BK7258 R1 openvela XTS/NSH serial evidence excerpts
+UART: /dev/ttyUSB0, 115200 8N1
+Date: 2026-09-09
+
+=== ostest ===
+ostest: memory checkpoint 34 settle end ret=0 errno=11
+user_main: vfork() test
+vfork_test: Child 479 ran successfully
+Final memory usage:
+user_main: Exiting
+ostest_main: Exiting with status 0
+
+=== mm ===
+(31)Releasing memory at 0x2803d2c0 (size=24 bytes)
+     mallinfo:
+       Total space allocated from system = 167056
+       Number of non-inuse chunks        = 3
+       Largest non-inuse chunk           = 126736
+       Total allocated space             = 40040
+       Total non-inuse space             = 127016
+TEST COMPLETE
+
+=== scanftest prerequisite ===
+nsh> mount -t tmpfs tmpfs /tmp
+nsh> mount
+  /proc type procfs
+  /tmp type tmpfs
+
+=== scanftest ===
+Back to Back Test...
+Test PASSED.
+Test #24 PASSED.
+Test #25 PASSED.
+Scanf tests done... OK: 164, FAILED: 0
+
+=== hello ===
+nsh> hello
+Hello, World!!
+
+=== free ===
+      total       used       free    maxused    maxfree  nused  nfree name
+    3014656        392    3014264        376    3014264      2      1 ap-psram
+     167056      36208     130848     165168     130544     55      2 Umem
+
+=== df -h ===
+Filesystem      Size      Used  Available Mounted on
+procfs            0B        0B         0B /proc
+
+=== getprime (not passed) ===
+Set thread priority to 10
+Set thread policy to SCHED_RR
+Start thread #0
+thread #0 started, looking for primes < 10000, doing 10 run(s)
+
+No final timing or shell prompt was observed. Result: BLOCKED.

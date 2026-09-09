@@ -1,0 +1,42 @@
+--- a/components/controller_if/CMakeLists.txt
++++ b/components/controller_if/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ set(incs)
+ set(srcs)
+ 
+-set(prev_req bk_common bk_wifi lwip_intf_v2_1 bk_pm app demos)
++set(prev_req bk_common bk_wifi lwip_intf_v2_1 bk_pm app demos easy_flash)
+ 
+ #if(CONFIG_WIFI_VNET_CONTROLLER)
+ 	list(APPEND incs . include)
+--- a/components/controller_if/cif_cntrl.c
++++ b/components/controller_if/cif_cntrl.c
+@@ -14,5 +14,6 @@
+ #include "cif_wifi_api.h"
+ #include "lwip/stats.h"
+ #include <driver/trng.h>
++#include "xiaopai_wifi_profile_service.h"
+ 
+ extern int bmsg_tx_sender(struct pbuf *p, uint32_t vif_idx);
+@@ -36,5 +37,5 @@
+ #endif
+ 
+-    CTRL_IF_CMD("ssid:%s key:%s\r\n", cif_sta_config.ssid, cif_sta_config.password);
++    CTRL_IF_CMD("station configuration received\r\n");
+     bk_wifi_sta_set_config(&cif_sta_config);
+     bk_wifi_sta_start();
+@@ -641,5 +642,14 @@
+     switch(msg->cmd_id)
+     {
++        case BK7258_WIFI_PROFILE_CMD:
++        {
++            struct bk7258_wifi_profile_response response;
++            xiaopai_profile_service(msg + 1, msg->len, &response);
++            ret = cif_bk_cmd_confirm(msg, (uint8_t *)&response,
++                                    sizeof(response));
++            xiaopai_profile_wipe(&response, sizeof(response));
++            break;
++        }
+         case BK_CMD_OPENVELA_TRNG:
+         {
+             /* Fixed ABI: status, version, then 32 full-width TRNG bytes.
