@@ -12,10 +12,11 @@
 ## 当前仓库状态（2026-09-09 核查）
 
 - 官方作品仓 PR #2 已合入 `dev-ai-contest-2026`，合并提交为 `2cce7a0`。
+- 官方作品仓 PR #4 已合入 `dev-ai-contest-2026`，将 NuttX 固定提交更新为 `ebd2bba1677d695586860ee7050f987b60bdfe06`。
 - 个人 fork 的 `dev-ai-contest-2026` 已于 2026-09-09 更新为完整提交 `85fccfe`，包含源码、证据和 AI Coding 材料。
-- NuttX fork 的 `feat/bk7258-chip` 已整理为单提交 `39eea479313`，包含当前真机使用的 BK7258 芯片级实现。
+- NuttX fork 的 `feat/bk7258-chip` 已整理为单提交 `ebd2bba1677d`，包含当前真机使用的 BK7258 芯片级实现及最终格式修正。
 - 官方作品仓 PR：<https://github.com/open-vela/contest2026_470_huanledoudizhu/pull/2>（已合入）。
-- `open-vela/nuttx` PR #360 仍为 Open，现为 1 commit / 44 files，全部位于 `arch/arm/src/bk7258/`。CLA 已通过，中文源码检查修正已推送，等待 CI 完成和 code owner review。
+- `open-vela/nuttx` PR #360 仍为 Open，现为 1 commit / 44 files，全部位于 `arch/arm/src/bk7258/`。checkpatch 和 CLA 已通过，其余 CI 执行中，等待 code owner review。
 
 ## 新硬件适配说明
 
@@ -33,7 +34,7 @@
 
 ## 报告与演示
 
-- [ ] 填写队伍名称、成员分工、选题方向和仓库链接。
-- [ ] 如实区分已完成、待适配和需要额外硬件的能力。
-- [ ] 附上真机照片、串口日志或录屏；日志中保留 `ostest_main: Exiting with status 0`、`TEST COMPLETE` 和 `OK: 164, FAILED: 0`。
-- [ ] 演示视频在提交前完整播放一遍，并确认文件可解码。
+- [x] README 已填写队伍名称、成员分工、选题方向和仓库链接。
+- [x] README 和适配报告已区分已完成、待适配和需要额外硬件的能力。
+- [x] `evidence/xts/2026-09-09/serial-key-results.log` 已保留 `ostest_main: Exiting with status 0`、`TEST COMPLETE` 和 `OK: 164, FAILED: 0` 真机串口证据。
+- [ ] 演示视频尚未入仓；提交前需完整播放一次并确认文件可解码。
