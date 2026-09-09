@@ -184,7 +184,7 @@
   <project path="frameworks/system/utils" name="frameworks_system_utils"/>
   <project path="frameworks/system/utils/uv" name="frameworks_system_utils_uv"/>
   <project path="frameworks/system/vibrator" name="frameworks_system_vibrator"/>
-  <project path="nuttx" name="nuttx" remote="teamgit" revision="8f2eefdf575341b146b0e22c5dfb9b6fa218120c">
+  <project path="nuttx" name="nuttx" remote="teamgit" revision="39eea47931392421e4cdbd8190d6de865db48d21">
     <linkfile src="tools/build.sh" dest="build.sh"/>
   </project>
   <project path="nuttx/drivers/mtd/dhara" name="nuttx_drivers_mtd_dhara"/>

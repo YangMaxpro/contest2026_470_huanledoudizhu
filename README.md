@@ -50,7 +50,7 @@
 └── contest2026_470_huanledoudizhu.xml   # 本仓作品目录 → openvela 编译树映射
 ```
 
-配套提交：芯片 BSP 的上游提交为 `open-vela/nuttx` PR #360。PR 合入前，本仓 `openvela.xml` 固定到 `YangMaxpro/nuttx@8f2eefdf575341b146b0e22c5dfb9b6fa218120c` 以保证 `repo sync` 可复现；合入后应改回官方 `dev-ai-contest-2026` revision。
+配套提交：芯片 BSP 的上游提交为 [`open-vela/nuttx` PR #360](https://github.com/open-vela/nuttx/pull/360)。PR 合入前，本仓 `openvela.xml` 固定到 `YangMaxpro/nuttx@39eea47931392421e4cdbd8190d6de865db48d21` 以保证 `repo sync` 可复现；合入后应改回官方 `dev-ai-contest-2026` revision。
 
 ## 四、运行方式
 
@@ -59,7 +59,7 @@
 repo init -u https://github.com/open-vela/contest2026_470_huanledoudizhu \
   -b dev-ai-contest-2026 -m contest2026_470_huanledoudizhu.xml
 repo sync -c -j8
-# PR #360 合入前，manifest 拉取固定的 YangMaxpro/nuttx@8f2eefdf575
+# PR #360 合入前，manifest 拉取固定的 YangMaxpro/nuttx@39eea479313
 
 # 2. 进入 openvela 工作区根目录（本仓上一级），编译 BK7258 DevKit NSH 镜像
 cd contest2026_470_huanledoudizhu/..
@@ -101,7 +101,7 @@ nsh> xiaopai demo
 | Flash 链接 / 向量表 / 启动入口 | ✅ `_vectors`@0x02150000，`__start`@0x02150220 |
 | UART0 串口驱动 + NSH 控制台代码接入 | ✅ 编译通过；UART0 引脚/波特率已按真机 SDK 固化 |
 | SysTick 系统时钟 + `up_irqinitialize` 中断初始化 | ✅ |
-| 芯片 BSP 上游 PR #360 | ⚠️ 已提交；CLA 与部分 CI 尚未完成 |
+| 芯片 BSP 上游 PR #360 | ⚠️ 1 commit / 44 files；CLA 已通过，等待 CI 与 code owner review |
 | XiaoPai 控制层、能力探测、worker 任务编译进镜像 | ✅ |
 
 真机记录：BKFIL 2.1.11.8 能返回 `Writing Flash OK`。使用 CRC16 编码的镜像在 BK7258 R1 上已观测到 `nsh>`，并完成 `ostest`（status 0）、`mm`（`TEST COMPLETE`）、`scanftest`（挂载 `/tmp` tmpfs 后 `OK: 164, FAILED: 0`）和 `hello` 真机验证。未编码的 CP/AP 线性镜像会在启动校验阶段失败，烧录时必须使用 CRC 编码镜像；完整测试限制和复测命令见 `docs/xts-test-evidence.md`。
