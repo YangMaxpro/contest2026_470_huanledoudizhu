@@ -1,0 +1,5 @@
+audio: tone bounds, ramps, ADC settling/stats, replay/clamp, clear,
+       busy, no recording, allocation/setup failure, timeout and interruption passed
+v24: transfer timing, raw counts, ADC threshold, before/after flags and status passed
+audio MMIO: PWC ordering/errors, reset, mono FIFO packing, IRQ masking,
+            analog timeout and partial-setup shutdown passed

@@ -1,0 +1,1508 @@
+Script started on 2026-09-10 19:19:54+08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+--- Miniterm on /dev/ttyUSB0  115200,8,N,1 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+se~ ap_bridg:I(3):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(6):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(8):EasyFlash V4.1.0 is initialize success.
+I(11):driver_init: psram init ok
+sensor:W(11):uncali sdmadc value:[0 0]
+cal:W(21):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(110):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+wakeup
+
+$ap0: PWC: worker ready
+ap0: PWC: CPU1 boot-ready acknowledged by CP transport
+ap0: IPC: v31 heartbeat worker active, interval=2000 ms; use xiaopai ipc status
+ap0: BK7258 mailbox, heartbeat and CPU1 boot-ready services active
+ap0: PWC: v36 PSRAM ready; dedicated AP heap online
+ap0: BK7258 Wi-Fi netdev initialized
+ap0: 
+ap0: NuttShell (NSH)
+wifi:I(823):fast_connect
+wifid:I(835):mm_add_if_req: vif_idx=0, type=0, p2p=0, status=0
+wpa:I(843):State: DISCONNECTED -> INACTIVE
+wpa:I(844):State: INACTIVE -> DISCONNECTED
+lwip:I(844):mac c8:47:8c:4b:cd:d7
+wpa:I(847):update psk, scan pending 0
+wpa:I(847):State: DISCONNECTED -> INACTIVE
+wpa:I(847):Setting scan request: 0.000000 sec
+wpa:I(848):State: INACTIVE -> SCANNING
+wifid:I(849):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(850):[KW:]scanu_start_req:ssid=vivoX300
+ap0: nsh> ␛[Knetwatch v20: DHCP monitor started on xiaopai
+ap0: netwatch: link=down; old IPv4 cleared
+ap0: wifi v33: connection requested; netwatch owns DHCP
+wifid:I(2578):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=13,time=1729175us,result=0,rfcli=1
+wpa:I(2579):Scan completed in 1.727000 seconds
+hitf:W(2579):get scan result: empty
+wpa:I(2579):Setting scan request: 2.000000 sec
+wifid:I(4580):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(4580):[KW:]scanu_start_req:ssid=vivoX300
+
+$
+$
+$
+$ap_console open
+switching UART0 to AP console...
+
+$
+AP console open; exit with Ctrl-], release, then press .
+
+nsh> ␛[K
+nsh> ␛[Khelp
+help usage:  help [-v] [<cmd>]
+
+    .           cmp         false       ls          readlink    uname       
+    [           dirname     fdinfo      mkdir       reboot      umount      
+    ?           date        free        mkfifo      rm          unset       
+    alias       dd          help        mkrd        rmdir       uptime      
+    unalias     df          hexdump     mount       set         usleep      
+    arp         dmesg       ifconfig    mv          sleep       watch       
+    basename    echo        ifdown      nslookup    source      wget        
+    break       env         ifup        pidof       test        xd          
+    cat         exec        kill        printf      time        wait        
+    cd          exit        pkill       ps          true        
+    cp          expr        ln          pwd         truncate    
+
+Builtin Apps:
+    renew                      cmocka_syscall_test        
+    nsh                        cmocka_mm_test             
+    sh                         mem_batch_opt_perf_test    
+    ping                       mem_cycle_opt_perf_test    
+    cmocka                     wapi                       
+    cxxtest                    hello_app                  
+    fstest                     xiaopai                    
+    scanftest                  hello                      
+    mm                         helloxx                    
+    ramtest                    pipe                       
+    ostest                     popen                      
+    getprime                   md5_test                   
+    cmocka_sched_test          
+nsh> ␛[K
+nsh> ␛[Kreboot
+
+AP link down; returned to CP CLI
+$ap0: PWC: worker ready
+ap0: PWC: CPU1 boot-ready acknowledged by CP transport
+ap0: IPC: v31 heartbeat worker active, interval=2000 ms; use xiaopai ipc status
+ap0: BK7258 mailbox, heartbeat and CPU1 boot-ready services active
+ap0: PWC: v36 PSRAM ready; dedicated AP heap online
+ap0: BK7258 Wi-Fi netdev initialized
+ap0: 
+ap0: NuttShell (NSH)
+wpa:I(17284):State: SCANNING -> DISCONNECTED
+wpa:I(17286):Setting scan request: 0.000000 sec
+wifi:I(17286):fast_connect
+wpa:I(17287):State: DISCONNECTED -> SCANNING
+wpa:I(17287):State: SCANNING -> DISCONNECTED
+wpa:I(17287):Setting scan request: 1.000000 sec
+ap0: nsh> ␛[Kwifi v33: connection requested; netwatch owns DHCP
+ap0: netwatch v20: DHCP monitor started on xiaopai
+ap0: netwatch: link=down; old IPv4 cleared
+wifid:I(17498):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=13,time=1731038us,result=0,rfcli=1
+wpa:I(17499):Scan completed in 1.729000 seconds
+hitf:W(17499):get scan result: empty
+wpa:I(18287):State: DISCONNECTED -> SCANNING
+wifid:I(18288):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(18288):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(20015):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728500us,result=0,rfcli=1
+wpa:I(20016):Scan completed in 1.727000 seconds
+hitf:W(20016):get scan result: empty
+wpa:I(20016):Setting scan request: 2.000000 sec
+cal:I(20162):idx:51=51+(0),r:54,xtal:45,pwr_gain:a0ab7197
+wifid:I(22018):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(22018):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(23745):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728647us,result=0,rfcli=1
+wpa:I(23746):Scan completed in 1.727000 seconds
+hitf:W(23746):get scan result: empty
+wpa:I(23746):Setting scan request: 2.000000 sec
+wifid:I(25747):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(25747):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(27474):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728297us,result=0,rfcli=1
+wpa:I(27475):Scan completed in 1.727000 seconds
+hitf:W(27475):get scan result: empty
+wpa:I(27475):Setting scan request: 2.000000 sec
+wifid:I(29476):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(29476):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(31203):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728514us,result=0,rfcli=1
+wpa:I(31204):Scan completed in 1.727000 seconds
+hitf:W(31204):get scan result: empty
+wpa:I(31204):Setting scan request: 2.000000 sec
+wifid:I(33205):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(33205):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(34932):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728383us,result=0,rfcli=1
+wpa:I(34933):Scan completed in 1.727000 seconds
+hitf:W(34933):get scan result: empty
+wpa:I(34933):Setting scan request: 2.000000 sec
+wifid:I(36934):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(36934):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(38661):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728460us,result=0,rfcli=1
+wpa:I(38662):Scan completed in 1.727000 seconds
+hitf:W(38662):get scan result: empty
+wpa:I(38662):Setting scan request: 2.000000 sec
+wifid:I(40663):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(40663):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(42390):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728587us,result=0,rfcli=1
+wpa:I(42391):Scan completed in 1.727000 seconds
+hitf:W(42391):get scan result: empty
+wpa:I(42391):Setting scan request: 2.000000 sec
+wifid:I(44392):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(44392):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(46119):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=14,time=1728701us,result=0,rfcli=1
+wpa:I(46120):Scan completed in 1.727000 seconds
+hitf:W(46120):get scan result: empty
+wpa:I(46120):Setting scan request: 2.000000 sec
+wifid:I(48121):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(48121):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(49848):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728899us,result=0,rfcli=1
+wpa:I(49849):Scan completed in 1.727000 seconds
+hitf:W(49849):get scan result: empty
+wpa:I(49849):Setting scan request: 2.000000 sec
+wifid:I(51850):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(51850):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(53577):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728484us,result=0,rfcli=1
+wpa:I(53578):Scan completed in 1.727000 seconds
+hitf:W(53578):get scan result: empty
+wpa:I(53578):Setting scan request: 2.000000 sec
+wifid:I(55579):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(55579):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(57307):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1729194us,result=0,rfcli=1
+wpa:I(57308):Scan completed in 1.728000 seconds
+hitf:W(57308):get scan result: empty
+wpa:I(57308):Setting scan request: 2.000000 sec
+wifid:I(59309):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(59309):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(61036):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=16,time=1728523us,result=0,rfcli=1
+wpa:I(61037):Scan completed in 1.727000 seconds
+hitf:W(61037):get scan result: empty
+wpa:I(61037):Setting scan request: 2.000000 sec
+wifid:I(63038):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(63038):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(64765):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728431us,result=0,rfcli=1
+wpa:I(64766):Scan completed in 1.727000 seconds
+hitf:W(64766):get scan result: empty
+wpa:I(64766):Setting scan request: 2.000000 sec
+wifid:I(66767):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(66767):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(68494):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728997us,result=0,rfcli=1
+wpa:I(68495):Scan completed in 1.727000 seconds
+hitf:W(68495):get scan result: empty
+wpa:I(68495):Setting scan request: 2.000000 sec
+wifid:I(70496):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(70496):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(72223):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=14,time=1728806us,result=0,rfcli=1
+wpa:I(72224):Scan completed in 1.727000 seconds
+hitf:W(72224):get scan result: empty
+wpa:I(72224):Setting scan request: 2.000000 sec
+wifid:I(74225):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(74225):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(75952):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=16,time=1729335us,result=0,rfcli=1
+wpa:I(75953):Scan completed in 1.727000 seconds
+hitf:W(75953):get scan result: empty
+wpa:I(75953):Setting scan request: 2.000000 sec
+wifid:I(77954):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(77954):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(79681):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=15,time=1729276us,result=0,rfcli=1
+wpa:I(79682):Scan completed in 1.727000 seconds
+hitf:W(79682):get scan result: empty
+wpa:I(79682):Setting scan request: 2.000000 sec
+wifid:I(81683):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(81683):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(83411):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=15,time=1728985us,result=0,rfcli=1
+wpa:I(83412):Scan completed in 1.728000 seconds
+hitf:W(83412):get scan result: empty
+wpa:I(83412):Setting scan request: 2.000000 sec
+wifid:I(85413):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(85413):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(87140):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728579us,result=0,rfcli=1
+wpa:I(87141):Scan completed in 1.727000 seconds
+hitf:W(87141):get scan result: empty
+wpa:I(87141):Setting scan request: 2.000000 sec
+wifid:I(89142):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(89142):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(90869):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728755us,result=0,rfcli=1
+wpa:I(90870):Scan completed in 1.727000 seconds
+hitf:W(90870):get scan result: empty
+wpa:I(90870):Setting scan request: 2.000000 sec
+wifid:I(92871):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(92871):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(94598):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=15,time=1729023us,result=0,rfcli=1
+wpa:I(94599):Scan completed in 1.727000 seconds
+hitf:W(94599):get scan result: empty
+wpa:I(94599):Setting scan request: 2.000000 sec
+wifid:I(96600):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(96600):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(98327):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728634us,result=0,rfcli=1
+wpa:I(98328):Scan completed in 1.727000 seconds
+hitf:W(98328):get scan result: empty
+wpa:I(98328):Setting scan request: 2.000000 sec
+wifid:I(100329):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(100329):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(102056):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1729188us,result=0,rfcli=1
+wpa:I(102057):Scan completed in 1.727000 seconds
+hitf:W(102057):get scan result: empty
+wpa:I(102057):Setting scan request: 2.000000 sec
+wifid:I(104058):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(104058):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(105786):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=11,time=1729133us,result=0,rfcli=1
+wpa:I(105787):Scan completed in 1.728000 seconds
+hitf:W(105787):get scan result: empty
+wpa:I(105787):Setting scan request: 2.000000 sec
+wifid:I(107788):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(107788):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(109515):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=12,time=1728820us,result=0,rfcli=1
+wpa:I(109516):Scan completed in 1.727000 seconds
+hitf:W(109516):get scan result: empty
+wpa:I(109516):Setting scan request: 2.000000 sec
+wifid:I(111517):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(111517):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(113244):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=15,time=1728663us,result=0,rfcli=1
+wpa:I(113245):Scan completed in 1.727000 seconds
+hitf:W(113245):get scan result: empty
+wpa:I(113245):Setting scan request: 2.000000 sec
+wifid:I(115246):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(115246):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(116973):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728874us,result=0,rfcli=1
+wpa:I(116974):Scan completed in 1.727000 seconds
+hitf:W(116974):get scan result: empty
+wpa:I(116974):Setting scan request: 2.000000 sec
+wifid:I(118975):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(118975):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(120702):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=16,time=1729043us,result=0,rfcli=1
+wpa:I(120703):Scan completed in 1.727000 seconds
+hitf:W(120703):get scan result: empty
+wpa:I(120703):Setting scan request: 2.000000 sec
+wifid:I(122704):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(122704):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(124431):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=15,time=1728997us,result=0,rfcli=1
+wpa:I(124432):Scan completed in 1.727000 seconds
+hitf:W(124432):get scan result: empty
+wpa:I(124432):Setting scan request: 2.000000 sec
+wifid:I(126433):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(126433):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(128161):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=15,time=1728981us,result=0,rfcli=1
+wpa:I(128162):Scan completed in 1.728000 seconds
+hitf:W(128162):get scan result: empty
+wpa:I(128162):Setting scan request: 2.000000 sec
+wifid:I(130163):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(130163):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(131890):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1729059us,result=0,rfcli=1
+wpa:I(131891):Scan completed in 1.727000 seconds
+hitf:W(131891):get scan result: empty
+wpa:I(131891):Setting scan request: 2.000000 sec
+wifid:I(133892):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(133892):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(135619):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728449us,result=0,rfcli=1
+wpa:I(135620):Scan completed in 1.727000 seconds
+hitf:W(135620):get scan result: empty
+wpa:I(135620):Setting scan request: 2.000000 sec
+wifid:I(137621):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(137621):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(139348):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728683us,result=0,rfcli=1
+wpa:I(139349):Scan completed in 1.727000 seconds
+hitf:W(139349):get scan result: empty
+wpa:I(139349):Setting scan request: 2.000000 sec
+wifid:I(141350):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(141350):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(143077):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1729018us,result=0,rfcli=1
+wpa:I(143078):Scan completed in 1.727000 seconds
+hitf:W(143078):get scan result: empty
+wpa:I(143078):Setting scan request: 2.000000 sec
+wifid:I(145079):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(145079):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(146807):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728742us,result=0,rfcli=1
+wpa:I(146808):Scan completed in 1.728000 seconds
+hitf:W(146808):get scan result: empty
+wpa:I(146808):Setting scan request: 2.000000 sec
+wifid:I(148809):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(148809):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(150536):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=14,time=1728541us,result=0,rfcli=1
+wpa:I(150537):Scan completed in 1.727000 seconds
+hitf:W(150537):get scan result: empty
+wpa:I(150537):Setting scan request: 2.000000 sec
+wifid:I(152538):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(152538):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(154265):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=12,time=1728895us,result=0,rfcli=1
+wpa:I(154266):Scan completed in 1.727000 seconds
+hitf:W(154266):get scan result: empty
+wpa:I(154266):Setting scan request: 2.000000 sec
+wifid:I(156268):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(156268):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(157995):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728514us,result=0,rfcli=1
+wpa:I(157996):Scan completed in 1.727000 seconds
+hitf:W(157996):get scan result: empty
+wpa:I(157996):Setting scan request: 2.000000 sec
+wifid:I(159997):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(159997):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(161724):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=12,time=1728667us,result=0,rfcli=1
+wpa:I(161725):Scan completed in 1.727000 seconds
+hitf:W(161725):get scan result: empty
+wpa:I(161725):Setting scan request: 2.000000 sec
+wifid:I(163726):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(163726):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(165453):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=13,time=1728660us,result=0,rfcli=1
+wpa:I(165454):Scan completed in 1.727000 seconds
+hitf:W(165454):get scan result: empty
+wpa:I(165454):Setting scan request: 2.000000 sec
+wifid:I(167455):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(167455):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(169182):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728585us,result=0,rfcli=1
+wpa:I(169183):Scan completed in 1.727000 seconds
+hitf:W(169183):get scan result: empty
+wpa:I(169183):Setting scan request: 2.000000 sec
+wifid:I(171184):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(171184):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(172912):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728675us,result=0,rfcli=1
+wpa:I(172913):Scan completed in 1.728000 seconds
+hitf:W(172913):get scan result: empty
+wpa:I(172913):Setting scan request: 2.000000 sec
+wifid:I(174914):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(174914):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(176641):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728675us,result=0,rfcli=1
+wpa:I(176642):Scan completed in 1.727000 seconds
+hitf:W(176642):get scan result: empty
+wpa:I(176642):Setting scan request: 2.000000 sec
+wifid:I(178643):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(178643):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(180370):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=11,time=1728270us,result=0,rfcli=1
+wpa:I(180371):Scan completed in 1.727000 seconds
+hitf:W(180371):get scan result: empty
+wpa:I(180371):Setting scan request: 2.000000 sec
+wifid:I(182372):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(182372):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(184099):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728771us,result=0,rfcli=1
+wpa:I(184100):Scan completed in 1.727000 seconds
+hitf:W(184100):get scan result: empty
+wpa:I(184100):Setting scan request: 2.000000 sec
+wifid:I(186101):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(186101):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(187828):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=16,time=1729083us,result=0,rfcli=1
+wpa:I(187829):Scan completed in 1.727000 seconds
+hitf:W(187829):get scan result: empty
+wpa:I(187829):Setting scan request: 2.000000 sec
+wifid:I(189830):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(189830):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(191557):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728897us,result=0,rfcli=1
+wpa:I(191558):Scan completed in 1.727000 seconds
+hitf:W(191558):get scan result: empty
+wpa:I(191558):Setting scan request: 2.000000 sec
+wifid:I(193559):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(193559):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(195286):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728868us,result=0,rfcli=1
+wpa:I(195287):Scan completed in 1.727000 seconds
+hitf:W(195287):get scan result: empty
+wpa:I(195287):Setting scan request: 2.000000 sec
+wifid:I(197288):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(197288):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(199015):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1729140us,result=0,rfcli=1
+wpa:I(199016):Scan completed in 1.727000 seconds
+hitf:W(199016):get scan result: empty
+wpa:I(199016):Setting scan request: 2.000000 sec
+wifid:I(201017):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(201017):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(202744):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728631us,result=0,rfcli=1
+wpa:I(202745):Scan completed in 1.727000 seconds
+hitf:W(202745):get scan result: empty
+wpa:I(202745):Setting scan request: 2.000000 sec
+wifid:I(204746):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(204746):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(206474):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1729074us,result=0,rfcli=1
+wpa:I(206475):Scan completed in 1.728000 seconds
+hitf:W(206475):get scan result: empty
+wpa:I(206475):Setting scan request: 2.000000 sec
+wifid:I(208476):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(208476):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(210203):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=15,time=1728832us,result=0,rfcli=1
+wpa:I(210204):Scan completed in 1.727000 seconds
+hitf:W(210204):get scan result: empty
+wpa:I(210204):Setting scan request: 2.000000 sec
+wifid:I(212205):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(212205):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(213932):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1729345us,result=0,rfcli=1
+wpa:I(213933):Scan completed in 1.727000 seconds
+hitf:W(213933):get scan result: empty
+wpa:I(213933):Setting scan request: 2.000000 sec
+wifid:I(215934):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(215934):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(217661):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728784us,result=0,rfcli=1
+wpa:I(217662):Scan completed in 1.727000 seconds
+hitf:W(217662):get scan result: empty
+wpa:I(217662):Setting scan request: 2.000000 sec
+wifid:I(219662):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(219663):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(221390):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1729211us,result=0,rfcli=1
+wpa:I(221391):Scan completed in 1.727000 seconds
+hitf:W(221391):get scan result: empty
+wpa:I(221391):Setting scan request: 2.000000 sec
+wifid:I(223392):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(223392):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(225120):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1729094us,result=0,rfcli=1
+wpa:I(225121):Scan completed in 1.728000 seconds
+hitf:W(225121):get scan result: empty
+wpa:I(225121):Setting scan request: 2.000000 sec
+wifid:I(227122):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(227122):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(228850):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1729022us,result=0,rfcli=1
+wpa:I(228851):Scan completed in 1.728000 seconds
+hitf:W(228851):get scan result: empty
+wpa:I(228851):Setting scan request: 2.000000 sec
+wifid:I(230852):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(230852):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(232579):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728651us,result=0,rfcli=1
+wpa:I(232580):Scan completed in 1.727000 seconds
+hitf:W(232580):get scan result: empty
+wpa:I(232580):Setting scan request: 2.000000 sec
+wifid:I(234581):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(234581):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(236308):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728728us,result=0,rfcli=1
+wpa:I(236309):Scan completed in 1.727000 seconds
+hitf:W(236309):get scan result: empty
+wpa:I(236309):Setting scan request: 2.000000 sec
+wifid:I(238310):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(238310):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(240037):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728594us,result=0,rfcli=1
+wpa:I(240038):Scan completed in 1.727000 seconds
+hitf:W(240038):get scan result: empty
+wpa:I(240038):Setting scan request: 2.000000 sec
+wifid:I(242039):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(242039):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(243766):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728770us,result=0,rfcli=1
+wpa:I(243767):Scan completed in 1.727000 seconds
+hitf:W(243767):get scan result: empty
+wpa:I(243767):Setting scan request: 2.000000 sec
+wifid:I(245768):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(245768):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(247495):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728289us,result=0,rfcli=1
+wpa:I(247496):Scan completed in 1.727000 seconds
+hitf:W(247496):get scan result: empty
+wpa:I(247496):Setting scan request: 2.000000 sec
+wifid:I(249497):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(249497):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(251224):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728778us,result=0,rfcli=1
+wpa:I(251225):Scan completed in 1.727000 seconds
+hitf:W(251225):get scan result: empty
+wpa:I(251225):Setting scan request: 2.000000 sec
+wifid:I(253226):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(253226):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(254953):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1729085us,result=0,rfcli=1
+wpa:I(254954):Scan completed in 1.727000 seconds
+hitf:W(254954):get scan result: empty
+wpa:I(254954):Setting scan request: 2.000000 sec
+wifid:I(256955):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(256955):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(258683):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1729062us,result=0,rfcli=1
+wpa:I(258684):Scan completed in 1.728000 seconds
+hitf:W(258684):get scan result: empty
+wpa:I(258684):Setting scan request: 2.000000 sec
+wifid:I(260685):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(260685):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(262412):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728721us,result=0,rfcli=1
+wpa:I(262413):Scan completed in 1.727000 seconds
+hitf:W(262413):get scan result: empty
+wpa:I(262413):Setting scan request: 2.000000 sec
+wifid:I(264414):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(264414):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(266142):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1729370us,result=0,rfcli=1
+wpa:I(266143):Scan completed in 1.728000 seconds
+hitf:W(266143):get scan result: empty
+wpa:I(266143):Setting scan request: 2.000000 sec
+wifid:I(268144):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(268144):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(269872):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728969us,result=0,rfcli=1
+wpa:I(269873):Scan completed in 1.728000 seconds
+hitf:W(269873):get scan result: empty
+wpa:I(269873):Setting scan request: 2.000000 sec
+wifid:I(271874):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(271874):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(273601):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728518us,result=0,rfcli=1
+wpa:I(273602):Scan completed in 1.727000 seconds
+hitf:W(273602):get scan result: empty
+wpa:I(273602):Setting scan request: 2.000000 sec
+wifid:I(275603):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(275603):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(277331):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1729217us,result=0,rfcli=1
+wpa:I(277332):Scan completed in 1.728000 seconds
+hitf:W(277332):get scan result: empty
+wpa:I(277332):Setting scan request: 2.000000 sec
+wifid:I(279333):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(279333):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(281060):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728686us,result=0,rfcli=1
+wpa:I(281061):Scan completed in 1.727000 seconds
+hitf:W(281061):get scan result: empty
+wpa:I(281061):Setting scan request: 2.000000 sec
+wifid:I(283062):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(283062):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(284789):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728369us,result=0,rfcli=1
+wpa:I(284790):Scan completed in 1.727000 seconds
+hitf:W(284790):get scan result: empty
+wpa:I(284790):Setting scan request: 2.000000 sec
+wifid:I(286791):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(286791):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(288518):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=35,time=1728809us,result=0,rfcli=1
+wpa:I(288519):Scan completed in 1.727000 seconds
+hitf:W(288519):get scan result: empty
+wpa:I(288519):Setting scan request: 2.000000 sec
+wifid:I(290520):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(290520):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(292247):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728588us,result=0,rfcli=1
+wpa:I(292248):Scan completed in 1.727000 seconds
+hitf:W(292248):get scan result: empty
+wpa:I(292248):Setting scan request: 2.000000 sec
+wifid:I(294249):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(294249):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(295977):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728744us,result=0,rfcli=1
+wpa:I(295978):Scan completed in 1.728000 seconds
+hitf:W(295978):get scan result: empty
+wpa:I(295978):Setting scan request: 2.000000 sec
+wifid:I(297979):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(297979):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(299706):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728568us,result=0,rfcli=1
+wpa:I(299707):Scan completed in 1.727000 seconds
+hitf:W(299707):get scan result: empty
+wpa:I(299707):Setting scan request: 2.000000 sec
+wifid:I(301708):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(301708):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(303435):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728616us,result=0,rfcli=1
+wpa:I(303436):Scan completed in 1.727000 seconds
+hitf:W(303436):get scan result: empty
+wpa:I(303436):Setting scan request: 2.000000 sec
+wifid:I(305437):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(305437):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(307164):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=16,time=1728762us,result=0,rfcli=1
+wpa:I(307165):Scan completed in 1.727000 seconds
+hitf:W(307165):get scan result: empty
+wpa:I(307165):Setting scan request: 2.000000 sec
+wifid:I(309166):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(309166):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(310894):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728815us,result=0,rfcli=1
+wpa:I(310895):Scan completed in 1.728000 seconds
+hitf:W(310895):get scan result: empty
+wpa:I(310895):Setting scan request: 2.000000 sec
+wifid:I(312896):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(312896):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(314623):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728886us,result=0,rfcli=1
+wpa:I(314624):Scan completed in 1.727000 seconds
+hitf:W(314624):get scan result: empty
+wpa:I(314624):Setting scan request: 2.000000 sec
+wifid:I(316625):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(316625):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(318352):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=11,time=1728697us,result=0,rfcli=1
+wpa:I(318353):Scan completed in 1.727000 seconds
+hitf:W(318353):get scan result: empty
+wpa:I(318353):Setting scan request: 2.000000 sec
+wifid:I(320354):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(320354):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(322081):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1729019us,result=0,rfcli=1
+wpa:I(322082):Scan completed in 1.727000 seconds
+hitf:W(322082):get scan result: empty
+wpa:I(322082):Setting scan request: 2.000000 sec
+wifid:I(324083):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(324083):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(325812):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=10,time=1729115us,result=0,rfcli=1
+wpa:I(325813):Scan completed in 1.729000 seconds
+hitf:W(325813):get scan result: empty
+wpa:I(325813):Setting scan request: 2.000000 sec
+wifid:I(327814):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(327814):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(329541):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728345us,result=0,rfcli=1
+wpa:I(329542):Scan completed in 1.727000 seconds
+hitf:W(329542):get scan result: empty
+wpa:I(329542):Setting scan request: 2.000000 sec
+wifid:I(331543):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(331543):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(333270):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=12,time=1728503us,result=0,rfcli=1
+wpa:I(333271):Scan completed in 1.727000 seconds
+hitf:W(333271):get scan result: empty
+wpa:I(333271):Setting scan request: 2.000000 sec
+wifid:I(335273):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(335273):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(336999):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728253us,result=0,rfcli=1
+wpa:I(337000):Scan completed in 1.726000 seconds
+hitf:W(337000):get scan result: empty
+wpa:I(337000):Setting scan request: 2.000000 sec
+wifid:I(339001):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(339001):[KW:]scanu_start_req:ssid=vivoX300
+os:I(340007):psram:0x60700000,size:131072
+wifid:I(340705):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=9,recv_cnt=27,time=1705758us,result=1,rfcli=1
+wpa:I(340706):Scan completed in 1.704000 seconds
+hitf:I(340706):get scan result:1
+wpa:I(340707):State: SCANNING -> ASSOCIATING
+wifid:I(340708):[KW:]conn vif0-0,auth_type:0,bssid:52ba-87bb-8f7b,ssid:vivoX300,is encryp:8.
+wifid:I(340708):chan_ctxt_add: CTXT0,freq2462MHz,bw20MHz,pwr127dBm
+wifid:I(340708):chan_reg_fix:VIF0,CTXT0,type3,ctxt_s0,nb_vif0
+wifid:I(340709):mm_sta_add:vif 0,sta 0,status 0
+wifid:I(340714):[KW:]auth_send:seq1, txtype0, auth_type0, seq4049
+wifid:I(340737):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(340737):[KW:]assoc_req_send:is ht, seq_num:4050
+wifid:I(340842):[KW:]assoc_rsp:status0,tx_s0x80800000
+wifid:I(340845):[KW:]mm_set_vif_state,vif=0,vif_type=0,is_active=1, aid=0x1,rssi=-42
+wpa:I(340847):State: ASSOCIATING -> ASSOCIATED
+wpa:I(340903):State: ASSOCIATED -> 4WAY_HANDSHAKE
+wpa:I(340913):State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+hitf:I(340916):add CCMP
+wpa:I(340916):State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+hitf:I(340917):add CCMP
+wpa:I(340917):State: GROUP_HANDSHAKE -> COMPLETED
+ap0: netwatch: link=up; old IPv4 cleared
+ap0: bk7258_wifi: TX batch reached 1 frame(s)
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: netwatch: DHCP ready ip=10.109.88.138 lease=3600s
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: netwatch: NTP sync active pid=13
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=111 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+
+$
+$ap_console open
+switching UART0 to AP console...
+
+$
+AP console open; exit with Ctrl-], release, then press .
+
+nsh> ␛[K
+nsh> ␛[Kreboot
+
+AP link down; returned to CP CLI
+$ap0: PWC: worker ready
+ap0: PWC: CPU1 boot-ready acknowledged by CP transport
+ap0: IPC: v31 heartbeat worker active, interval=2000 ms; use xiaopai ipc status
+ap0: BK7258 mailbox, heartbeat and CPU1 boot-ready services active
+ap0: PWC: v36 PSRAM ready; dedicated AP heap online
+ap0: BK7258 Wi-Fi netdev initialized
+ap0: 
+ap0: NuttShell (NSH)
+wifid:I(368632):[KW:]mm_set_vif_state,vif=0,vif_type=0,is_active=0, aid=0x0,rssi=-42
+wifid:I(368633):sta_del_req 0
+wifid:I(368634):chan_unreg_fix:VIF0,CTXT0,nb_vif1
+wpa:I(368640):State: COMPLETED -> DISCONNECTED
+wpa:I(368640):State: DISCONNECTED -> DISCONNECTED
+wpa:I(368641):Setting scan request: 0.000000 sec
+wifi:I(368642):fast_connect
+wpa:I(368643):State: DISCONNECTED -> SCANNING
+wifid:I(368646):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(368646):[KW:]scanu_start_req:ssid=vivoX300
+ap0: nsh> ␛[Knetwatch v20: DHCP monitor started on xiaopai
+ap0: netwatch: link=down; old IPv4 cleared
+ap0: wifi v33: connection requested; netwatch owns DHCP
+wifid:I(370351):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=11,recv_cnt=33,time=1706064us,result=1,rfcli=1
+wpa:I(370352):Scan completed in 1.704000 seconds
+hitf:I(370352):get scan result:1
+wpa:I(370353):State: SCANNING -> ASSOCIATING
+wifid:I(370354):[KW:]conn vif0-0,auth_type:0,bssid:52ba-87bb-8f7b,ssid:vivoX300,is encryp:8.
+wifid:I(370354):chan_ctxt_add: CTXT1,freq2462MHz,bw20MHz,pwr127dBm
+wifid:I(370354):chan_reg_fix:VIF0,CTXT1,type3,ctxt_s0,nb_vif0
+wifid:I(370356):mm_sta_add:vif 0,sta 1,status 0
+wifid:I(370358):[KW:]auth_send:seq1, txtype0, auth_type0, seq4097
+wifid:I(370396):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(370396):[KW:]assoc_req_send:is ht, seq_num:4098
+wifid:I(370544):[KW:]assoc_rsp:status0,tx_s0x80800000
+wifid:I(370545):[KW:]mm_set_vif_state,vif=0,vif_type=0,is_active=1, aid=0x2,rssi=-46
+wpa:I(370547):State: ASSOCIATING -> ASSOCIATED
+wpa:I(370556):State: ASSOCIATED -> 4WAY_HANDSHAKE
+wpa:I(370564):State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+hitf:I(370570):add CCMP
+wpa:I(370570):State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+hitf:I(370571):add CCMP
+wpa:I(370571):State: GROUP_HANDSHAKE -> COMPLETED
+ap0: netwatch: link=up; old IPv4 cleared
+ap0: bk7258_wifi: TX batch reached 1 frame(s)
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: netwatch: DHCP ready ip=10.109.88.138 lease=3600s
+ap0: netwatch: NTP sync active pid=13
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=111 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+
+$
+$ap_console open'
+usage: ap_console open|close|status
+
+$
+$
+$
+$ap_console open
+switching UART0 to AP console...
+
+$
+AP console open; exit with Ctrl-], release, then press .
+
+nsh> ␛[K
+nsh> ␛[Kmount -t tmpfs tmpfs /tmp
+nsh> ␛[K
+nsh> ␛[Kfstest -n 10 -m /tmp
+
+=== FILLING 1 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/EDzRM44G
+  File size:    2388
+  Write offset: 0
+  Write size:   164
+Filled file system
+  Number of files: 24
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+ 2. Type[8]: File  Name: zyDsbhZ0Va
+ 3. Type[8]: File  Name: eriB1tdTWBO4MLs6KeTGD43hjT
+ 4. Type[8]: File  Name: inxmn22B95ay
+ 5. Type[8]: File  Name: E0SSae6eriB1tdTWBO
+ 6. Type[8]: File  Name: 4bFXVCykg3
+ 7. Type[8]: File  Name: ykg3dpPWEy
+ 8. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+ 9. Type[8]: File  Name: PcGJyrfEpy
+10. Type[8]: File  Name: ywIiq8
+11. Type[8]: File  Name: GD43hjTMVvLDotZPVw
+12. Type[8]: File  Name: IwgSG4
+13. Type[8]: File  Name: LfFRJeVTjNibtrhikaP3YeU
+14. Type[8]: File  Name: rfEpylQLGn8bTgITrphFr
+15. Type[8]: File  Name: ETeugEU7Sl
+16. Type[8]: File  Name: cndetd
+17. Type[8]: File  Name: rgqHhF8lHYF2k2si044bxtiI
+18. Type[8]: File  Name: z1O3ABs8yQKajkfsVyF
+19. Type[8]: File  Name: rk3nncD1UuCniHPtRCTY08
+20. Type[8]: File  Name: iesWNGJfbQ0bFaowO0
+21. Type[8]: File  Name: qeVVdKahy9CzyDsbhZ0VaK
+22. Type[8]: File  Name: aZbgk
+23. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+24. Type[8]: File  Name: PRMIRHz9ZwgHga
+Total file size: 97180
+
+=== DELETING 1 ============================
+Deleted some files
+  Number of files: 24
+  Number deleted:  7
+Directory:
+ 1. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+ 2. Type[8]: File  Name: PcGJyrfEpy
+ 3. Type[8]: File  Name: ywIiq8
+ 4. Type[8]: File  Name: GD43hjTMVvLDotZPVw
+ 5. Type[8]: File  Name: IwgSG4
+ 6. Type[8]: File  Name: inxmn22B95ay
+ 7. Type[8]: File  Name: zyDsbhZ0Va
+ 8. Type[8]: File  Name: ETeugEU7Sl
+ 9. Type[8]: File  Name: cndetd
+10. Type[8]: File  Name: ykg3dpPWEy
+11. Type[8]: File  Name: z1O3ABs8yQKajkfsVyF
+12. Type[8]: File  Name: rk3nncD1UuCniHPtRCTY08
+13. Type[8]: File  Name: iesWNGJfbQ0bFaowO0
+14. Type[8]: File  Name: eriB1tdTWBO4MLs6KeTGD43hjT
+15. Type[8]: File  Name: aZbgk
+16. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+17. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 65186
+File System:
+  Block Size:      512
+  No. Blocks:      140
+  Free Blocks:     9
+  Avail. Blocks:   9
+  No. File Nodes:  17
+  Free File Nodes: 10
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks         1       12       11
+mxordblk    1a4a0     28b8 fffe8418
+uordblks     def0    1f7f8    11908
+fordblks    1a4a0     8b98 fffee6f8
+
+=== FILLING 2 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/BKLVzBzL0
+  File size:    6898
+  Write offset: 4441
+  Write size:   238
+Filled file system
+  Number of files: 24
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: HPtRCTY0
+ 2. Type[8]: File  Name: CEZ1gCqZ
+ 3. Type[8]: File  Name: tEBKLVzBzL0pMQiV
+ 4. Type[8]: File  Name: Z0VaKf9aq2YQa4Ga
+ 5. Type[8]: File  Name: FaowO0epAVtsWwWHiuUqCk4tO
+ 6. Type[8]: File  Name: kEIwgSG4cAyl8JDWsv8
+ 7. Type[8]: File  Name: m4969L
+ 8. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+ 9. Type[8]: File  Name: PcGJyrfEpy
+10. Type[8]: File  Name: ywIiq8
+11. Type[8]: File  Name: GD43hjTMVvLDotZPVw
+12. Type[8]: File  Name: IwgSG4
+13. Type[8]: File  Name: inxmn22B95ay
+14. Type[8]: File  Name: zyDsbhZ0Va
+15. Type[8]: File  Name: ETeugEU7Sl
+16. Type[8]: File  Name: cndetd
+17. Type[8]: File  Name: ykg3dpPWEy
+18. Type[8]: File  Name: z1O3ABs8yQKajkfsVyF
+19. Type[8]: File  Name: rk3nncD1UuCniHPtRCTY08
+20. Type[8]: File  Name: iesWNGJfbQ0bFaowO0
+21. Type[8]: File  Name: eriB1tdTWBO4MLs6KeTGD43hjT
+22. Type[8]: File  Name: aZbgk
+23. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+24. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 88524
+
+=== DELETING 2 ============================
+Deleted some files
+  Number of files: 24
+  Number deleted:  9
+Directory:
+ 1. Type[8]: File  Name: kEIwgSG4cAyl8JDWsv8
+ 2. Type[8]: File  Name: CEZ1gCqZ
+ 3. Type[8]: File  Name: IwgSG4
+ 4. Type[8]: File  Name: inxmn22B95ay
+ 5. Type[8]: File  Name: zyDsbhZ0Va
+ 6. Type[8]: File  Name: HPtRCTY0
+ 7. Type[8]: File  Name: cndetd
+ 8. Type[8]: File  Name: m4969L
+ 9. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+10. Type[8]: File  Name: rk3nncD1UuCniHPtRCTY08
+11. Type[8]: File  Name: tEBKLVzBzL0pMQiV
+12. Type[8]: File  Name: eriB1tdTWBO4MLs6KeTGD43hjT
+13. Type[8]: File  Name: FaowO0epAVtsWwWHiuUqCk4tO
+14. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+15. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 55208
+File System:
+  Block Size:      512
+  No. Blocks:      119
+  Free Blocks:     9
+  Avail. Blocks:   9
+  No. File Nodes:  15
+  Free File Nodes: 12
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks        12       14        2
+mxordblk     28b8     3598      ce0
+uordblks    1f7f8    1cf38 ffffd740
+fordblks     8b98     b458     28c0
+
+=== FILLING 3 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/E7fgewG
+  File size:    6412
+  Write offset: 2319
+  Write size:   261
+Filled file system
+  Number of files: 27
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+ 2. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+ 3. Type[8]: File  Name: AiYhGsOO
+ 4. Type[8]: File  Name: CTY08cP0df
+ 5. Type[8]: File  Name: kXNJj4E0S
+ 6. Type[8]: File  Name: 2qupu3uB
+ 7. Type[8]: File  Name: 6kUhWXN38DnI1JMaZbgkiMf0aPb
+ 8. Type[8]: File  Name: EDzRM44G
+ 9. Type[8]: File  Name: k3nncD1UuCniHPtRCTY08cP0df
+10. Type[8]: File  Name: tdTWBO4MLs6KeTG
+11. Type[8]: File  Name: n1KSV0Lrtmigq9Yg4Sa
+12. Type[8]: File  Name: QLGn8bTgITrphF
+13. Type[8]: File  Name: kEIwgSG4cAyl8JDWsv8
+14. Type[8]: File  Name: CEZ1gCqZ
+15. Type[8]: File  Name: IwgSG4
+16. Type[8]: File  Name: inxmn22B95ay
+17. Type[8]: File  Name: zyDsbhZ0Va
+18. Type[8]: File  Name: HPtRCTY0
+19. Type[8]: File  Name: cndetd
+20. Type[8]: File  Name: m4969L
+21. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+22. Type[8]: File  Name: rk3nncD1UuCniHPtRCTY08
+23. Type[8]: File  Name: tEBKLVzBzL0pMQiV
+24. Type[8]: File  Name: eriB1tdTWBO4MLs6KeTGD43hjT
+25. Type[8]: File  Name: FaowO0epAVtsWwWHiuUqCk4tO
+26. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+27. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 92606
+
+=== DELETING 3 ============================
+Deleted some files
+  Number of files: 27
+  Number deleted:  5
+Directory:
+ 1. Type[8]: File  Name: 2qupu3uB
+ 2. Type[8]: File  Name: 6kUhWXN38DnI1JMaZbgkiMf0aPb
+ 3. Type[8]: File  Name: EDzRM44G
+ 4. Type[8]: File  Name: k3nncD1UuCniHPtRCTY08cP0df
+ 5. Type[8]: File  Name: tdTWBO4MLs6KeTG
+ 6. Type[8]: File  Name: AiYhGsOO
+ 7. Type[8]: File  Name: QLGn8bTgITrphF
+ 8. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+ 9. Type[8]: File  Name: CEZ1gCqZ
+10. Type[8]: File  Name: CTY08cP0df
+11. Type[8]: File  Name: inxmn22B95ay
+12. Type[8]: File  Name: zyDsbhZ0Va
+13. Type[8]: File  Name: HPtRCTY0
+14. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+15. Type[8]: File  Name: m4969L
+16. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+17. Type[8]: File  Name: rk3nncD1UuCniHPtRCTY08
+18. Type[8]: File  Name: tEBKLVzBzL0pMQiV
+19. Type[8]: File  Name: kXNJj4E0S
+20. Type[8]: File  Name: FaowO0epAVtsWwWHiuUqCk4tO
+21. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+22. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 68856
+File System:
+  Block Size:      512
+  No. Blocks:      153
+  Free Blocks:     14
+  Avail. Blocks:   14
+  No. File Nodes:  22
+  Free File Nodes: 14
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks        14       13       -1
+mxordblk     3598     1fe0 ffffea48
+uordblks    1cf38    21358     4420
+fordblks     b458     7038 ffffbbe0
+
+=== FILLING 4 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/h08HKweiJaUkEIwgSG4cAyl8J
+  File size:    5745
+  Write offset: 5043
+  Write size:   145
+Filled file system
+  Number of files: 25
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: TgITrphFrk3nncD1
+ 2. Type[8]: File  Name: JyrfEpylQLGn8bTgI
+ 3. Type[8]: File  Name: VCykg3dpPWEytnzvhBV4v8
+ 4. Type[8]: File  Name: 2qupu3uB
+ 5. Type[8]: File  Name: 6kUhWXN38DnI1JMaZbgkiMf0aPb
+ 6. Type[8]: File  Name: EDzRM44G
+ 7. Type[8]: File  Name: k3nncD1UuCniHPtRCTY08cP0df
+ 8. Type[8]: File  Name: tdTWBO4MLs6KeTG
+ 9. Type[8]: File  Name: AiYhGsOO
+10. Type[8]: File  Name: QLGn8bTgITrphF
+11. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+12. Type[8]: File  Name: CEZ1gCqZ
+13. Type[8]: File  Name: CTY08cP0df
+14. Type[8]: File  Name: inxmn22B95ay
+15. Type[8]: File  Name: zyDsbhZ0Va
+16. Type[8]: File  Name: HPtRCTY0
+17. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+18. Type[8]: File  Name: m4969L
+19. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+20. Type[8]: File  Name: rk3nncD1UuCniHPtRCTY08
+21. Type[8]: File  Name: tEBKLVzBzL0pMQiV
+22. Type[8]: File  Name: kXNJj4E0S
+23. Type[8]: File  Name: FaowO0epAVtsWwWHiuUqCk4tO
+24. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+25. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 83773
+
+=== DELETING 4 ============================
+Deleted some files
+  Number of files: 25
+  Number deleted:  18
+Directory:
+ 1. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+ 2. Type[8]: File  Name: zyDsbhZ0Va
+ 3. Type[8]: File  Name: m4969L
+ 4. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+ 5. Type[8]: File  Name: HPtRCTY0
+ 6. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+ 7. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 20848
+File System:
+  Block Size:      512
+  No. Blocks:      48
+  Free Blocks:     6
+  Avail. Blocks:   6
+  No. File Nodes:  7
+  Free File Nodes: 29
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks        13       12       -1
+mxordblk     1fe0     6658     4678
+uordblks    21358    13e90 ffff2b38
+fordblks     7038    14500     d4c8
+
+=== FILLING 5 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/E0SSae6eriB1tdTWBO
+  File size:    5759
+  Write offset: 1628
+  Write size:   89
+Filled file system
+  Number of files: 25
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 9LH4Uf67RL4bFXVCykg3
+ 2. Type[8]: File  Name: KweiJaUkEIwgSG4cAyl8JDWsv8x
+ 3. Type[8]: File  Name: V0Lrtmig
+ 4. Type[8]: File  Name: 3Ojs6kUhWXN38DnI1JMaZbgki
+ 5. Type[8]: File  Name: 81cGEK0
+ 6. Type[8]: File  Name: R0kiuN2zXLbEsm49
+ 7. Type[8]: File  Name: AdH9cFYgc9JeUDH5yjJcpf
+ 8. Type[8]: File  Name: 38DnI1
+ 9. Type[8]: File  Name: bxtiIcoJFskMfoTXOA
+10. Type[8]: File  Name: nW1co0ozXz
+11. Type[8]: File  Name: ttEBKLVzBzL0pMQiV7zqt
+12. Type[8]: File  Name: q9Yg4SauoD4fiR9ckKjfmpdc
+13. Type[8]: File  Name: BRac0EJIpwlkY22VEiesWNGJfbQ
+14. Type[8]: File  Name: EDzRM44G
+15. Type[8]: File  Name: CTY08cP0df
+16. Type[8]: File  Name: kXNJj4E0S
+17. Type[8]: File  Name: 2qupu3uB
+18. Type[8]: File  Name: 6kUhWXN38DnI1JMaZbgkiMf0aPb
+19. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+20. Type[8]: File  Name: zyDsbhZ0Va
+21. Type[8]: File  Name: m4969L
+22. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+23. Type[8]: File  Name: HPtRCTY0
+24. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+25. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 88500
+
+=== DELETING 5 ============================
+Deleted some files
+  Number of files: 25
+  Number deleted:  13
+Directory:
+ 1. Type[8]: File  Name: 9LH4Uf67RL4bFXVCykg3
+ 2. Type[8]: File  Name: ttEBKLVzBzL0pMQiV7zqt
+ 3. Type[8]: File  Name: kXNJj4E0S
+ 4. Type[8]: File  Name: KweiJaUkEIwgSG4cAyl8JDWsv8x
+ 5. Type[8]: File  Name: 6kUhWXN38DnI1JMaZbgkiMf0aPb
+ 6. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+ 7. Type[8]: File  Name: zyDsbhZ0Va
+ 8. Type[8]: File  Name: m4969L
+ 9. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+10. Type[8]: File  Name: AdH9cFYgc9JeUDH5yjJcpf
+11. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+12. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 47110
+File System:
+  Block Size:      512
+  No. Blocks:      103
+  Free Blocks:     9
+  Avail. Blocks:   9
+  No. File Nodes:  12
+  Free File Nodes: 24
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks        12       18        6
+mxordblk     6658     3568 ffffcf10
+uordblks    13e90    1ae20     6f90
+fordblks    14500     d570 ffff9070
+
+=== FILLING 6 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/iV7zqtYqQuVh6n4e5f
+  File size:    8155
+  Write offset: 7088
+  Write size:   324
+Filled file system
+  Number of files: 16
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: h08HKweiJaUkEIwgSG4cAyl8J
+ 2. Type[8]: File  Name: TgITrphFrk3nncD1
+ 3. Type[8]: File  Name: JyrfEpylQLGn8bTgI
+ 4. Type[8]: File  Name: VCykg3dpPWEytnzvhBV4v8
+ 5. Type[8]: File  Name: 9LH4Uf67RL4bFXVCykg3
+ 6. Type[8]: File  Name: ttEBKLVzBzL0pMQiV7zqt
+ 7. Type[8]: File  Name: kXNJj4E0S
+ 8. Type[8]: File  Name: KweiJaUkEIwgSG4cAyl8JDWsv8x
+ 9. Type[8]: File  Name: 6kUhWXN38DnI1JMaZbgkiMf0aPb
+10. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+11. Type[8]: File  Name: zyDsbhZ0Va
+12. Type[8]: File  Name: m4969L
+13. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+14. Type[8]: File  Name: AdH9cFYgc9JeUDH5yjJcpf
+15. Type[8]: File  Name: RAtgf4VqAdH9cFYgc9JeUDH
+16. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+Total file size: 67772
+
+=== DELETING 6 ============================
+Deleted some files
+  Number of files: 16
+  Number deleted:  14
+Directory:
+ 1. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+ 2. Type[8]: File  Name: m4969L
+Total file size: 10378
+File System:
+  Block Size:      512
+  No. Blocks:      23
+  Free Blocks:     2
+  Avail. Blocks:   2
+  No. File Nodes:  2
+  Free File Nodes: 34
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks        18        7      -11
+mxordblk     3568     7670     4108
+uordblks    1ae20    10c90 ffff5e70
+fordblks     d570    17700     a190
+
+=== FILLING 7 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/SbB5s8jRRCE0akD8BaHzTRK0Grd
+  File size:    7943
+  Write offset: 1773
+  Write size:   124
+Filled file system
+  Number of files: 24
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: F8TV3YtOTB8fUg
+ 2. Type[8]: File  Name: kaP3YeUgwXODC
+ 3. Type[8]: File  Name: OJLfFRJeV
+ 4. Type[8]: File  Name: co0ozXz1O3ABs8yQKajkfsVy
+ 5. Type[8]: File  Name: DsbhZ0VaKf9aq2YQa4GaX2WRnIj
+ 6. Type[8]: File  Name: btrhikaP3YeUgw
+ 7. Type[8]: File  Name: xmn22B95ayOY92qupu3
+ 8. Type[8]: File  Name: sv8xKN
+ 9. Type[8]: File  Name: 2OETeugEU7SlqusA0kTQ
+10. Type[8]: File  Name: TRK0GrdFwzs0JKZ4U5KywI
+11. Type[8]: File  Name: H4Uf67R
+12. Type[8]: File  Name: WRnI
+13. Type[8]: File  Name: rdFwzs0JKZ4U5KywIiq8rxgoDR
+14. Type[8]: File  Name: vhBV4v8TlzHhq
+15. Type[8]: File  Name: 7RL4bFXVCykg3dpPWEytnzv
+16. Type[8]: File  Name: zmMUWLp0vuMv
+17. Type[8]: File  Name: RJeVTjNibtrhi
+18. Type[8]: File  Name: FRJeV
+19. Type[8]: File  Name: Esne08D2OETeugEU7S
+20. Type[8]: File  Name: hy9CzyDsbhZ0VaKf9aq2YQa4
+21. Type[8]: File  Name: 4E0SSae6eriB1tdTWB
+22. Type[8]: File  Name: fsVyF4BDQ70c1znKEEWzPcGJy
+23. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+24. Type[8]: File  Name: m4969L
+Total file size: 93878
+
+=== DELETING 7 ============================
+Deleted some files
+  Number of files: 24
+  Number deleted:  20
+Directory:
+ 1. Type[8]: File  Name: F8TV3YtOTB8fUg
+ 2. Type[8]: File  Name: kaP3YeUgwXODC
+ 3. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+ 4. Type[8]: File  Name: m4969L
+Total file size: 13729
+File System:
+  Block Size:      512
+  No. Blocks:      32
+  Free Blocks:     4
+  Avail. Blocks:   4
+  No. File Nodes:  4
+  Free File Nodes: 32
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks         7       11        4
+mxordblk     7670     74c0 fffffe50
+uordblks    10c90    11d70     10e0
+fordblks    17700    16620 ffffef20
+
+=== FILLING 8 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/n8bTgITrphFrk3nncD1UuCn
+  File size:    7861
+  Write offset: 1689
+  Write size:   301
+Filled file system
+  Number of files: 30
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: F4BDQ70c1znK
+ 2. Type[8]: File  Name: O0epAVtsWwWHiuUq
+ 3. Type[8]: File  Name: 70c1znKEEWzP
+ 4. Type[8]: File  Name: MQiV7zqtYqQuVh6n4e5fF
+ 5. Type[8]: File  Name: MaZbgkiMf0aPbBRac0EJIpw
+ 6. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+ 7. Type[8]: File  Name: AiYhGsOO
+ 8. Type[8]: File  Name: CTY08cP0df
+ 9. Type[8]: File  Name: kXNJj4E0S
+10. Type[8]: File  Name: 2qupu3uB
+11. Type[8]: File  Name: 6kUhWXN38DnI1JMaZbgkiMf0aPb
+12. Type[8]: File  Name: EDzRM44G
+13. Type[8]: File  Name: 1UuCniHPtRCTY08cP0df
+14. Type[8]: File  Name: zyDsbhZ0Va
+15. Type[8]: File  Name: eriB1tdTWBO4MLs6KeTGD43hjT
+16. Type[8]: File  Name: inxmn22B95ay
+17. Type[8]: File  Name: E0SSae6eriB1tdTWBO
+18. Type[8]: File  Name: 9LH4Uf67RL4bFXVCykg3
+19. Type[8]: File  Name: KweiJaUkEIwgSG4cAyl8JDWsv8x
+20. Type[8]: File  Name: V0Lrtmig
+21. Type[8]: File  Name: 3Ojs6kUhWXN38DnI1JMaZbgki
+22. Type[8]: File  Name: R81cGEK0
+23. Type[8]: File  Name: 0FFPVj7sIAMt2s0
+24. Type[8]: File  Name: W1k5kbaZD38gcndetdEkXNJj
+25. Type[8]: File  Name: CBmwAHkVZqmYCJFs0YBuVED
+26. Type[8]: File  Name: Lw7F3Ojs6k
+27. Type[8]: File  Name: F8TV3YtOTB8fUg
+28. Type[8]: File  Name: kaP3YeUgwXODC
+29. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+30. Type[8]: File  Name: m4969L
+Total file size: 90374
+
+=== DELETING 8 ============================
+Deleted some files
+  Number of files: 30
+  Number deleted:  23
+Directory:
+ 1. Type[8]: File  Name: MaZbgkiMf0aPbBRac0EJIpw
+ 2. Type[8]: File  Name: F4BDQ70c1znK
+ 3. Type[8]: File  Name: O0epAVtsWwWHiuUq
+ 4. Type[8]: File  Name: MQiV7zqtYqQuVh6n4e5fF
+ 5. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+ 6. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+ 7. Type[8]: File  Name: m4969L
+Total file size: 22455
+File System:
+  Block Size:      512
+  No. Blocks:      51
+  Free Blocks:     6
+  Avail. Blocks:   6
+  No. File Nodes:  7
+  Free File Nodes: 29
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks        11       13        2
+mxordblk     74c0     5980 ffffe4c0
+uordblks    11d70    14590     2820
+fordblks    16620    13e00 ffffd7e0
+
+=== FILLING 9 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/4bFXVCykg3
+  File size:    4151
+  Write offset: 3119
+  Write size:   333
+Filled file system
+  Number of files: 23
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: ykg3dpPWEy
+ 2. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+ 3. Type[8]: File  Name: PcGJyrfEpy
+ 4. Type[8]: File  Name: ywIiq8
+ 5. Type[8]: File  Name: GD43hjTMVvLDotZPVw
+ 6. Type[8]: File  Name: IwgSG4
+ 7. Type[8]: File  Name: LfFRJeVTjNibtrhikaP3YeU
+ 8. Type[8]: File  Name: rfEpylQLGn8bTgITrphFr
+ 9. Type[8]: File  Name: BKLVzBzL0
+10. Type[8]: File  Name: HPtRCTY0
+11. Type[8]: File  Name: CEZ1gCqZ
+12. Type[8]: File  Name: tEBKLVzBzL0pMQiV
+13. Type[8]: File  Name: Z0VaKf9aq2YQa4Ga
+14. Type[8]: File  Name: FaowO0epAVtsWwWHiuUqCk4tO
+15. Type[8]: File  Name: kEIwgSG4cAyl8JDWsv8
+16. Type[8]: File  Name: ne08D2OETeugEU7SlqusA0kT
+17. Type[8]: File  Name: MaZbgkiMf0aPbBRac0EJIpw
+18. Type[8]: File  Name: F4BDQ70c1znK
+19. Type[8]: File  Name: O0epAVtsWwWHiuUq
+20. Type[8]: File  Name: MQiV7zqtYqQuVh6n4e5fF
+21. Type[8]: File  Name: GaX2WRnIjinxmn22B95ayOY92qu
+22. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+23. Type[8]: File  Name: m4969L
+Total file size: 86465
+
+=== DELETING 9 ============================
+Deleted some files
+  Number of files: 23
+  Number deleted:  8
+Directory:
+ 1. Type[8]: File  Name: LfFRJeVTjNibtrhikaP3YeU
+ 2. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+ 3. Type[8]: File  Name: CEZ1gCqZ
+ 4. Type[8]: File  Name: PcGJyrfEpy
+ 5. Type[8]: File  Name: IwgSG4
+ 6. Type[8]: File  Name: GD43hjTMVvLDotZPVw
+ 7. Type[8]: File  Name: kEIwgSG4cAyl8JDWsv8
+ 8. Type[8]: File  Name: ne08D2OETeugEU7SlqusA0kT
+ 9. Type[8]: File  Name: MaZbgkiMf0aPbBRac0EJIpw
+10. Type[8]: File  Name: F4BDQ70c1znK
+11. Type[8]: File  Name: O0epAVtsWwWHiuUq
+12. Type[8]: File  Name: MQiV7zqtYqQuVh6n4e5fF
+13. Type[8]: File  Name: ywIiq8
+14. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+15. Type[8]: File  Name: m4969L
+Total file size: 62605
+File System:
+  Block Size:      512
+  No. Blocks:      134
+  Free Blocks:     9
+  Avail. Blocks:   9
+  No. File Nodes:  15
+  Free File Nodes: 21
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks        13       16        3
+mxordblk     5980     28b8 ffffcf38
+uordblks    14590    1ed50     a7c0
+fordblks    13e00     9640 ffff5840
+
+=== FILLING 10 =============================
+ERROR: Failed to write file: 12
+  File name:    /tmp/XVCykg3dpPWEytnz
+  File size:    2002
+  Write offset: 1810
+  Write size:   153
+Filled file system
+  Number of files: 22
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: Rac0EJIpwlkY22VEie
+ 2. Type[8]: File  Name: IAMt2s0jj2n1KSV
+ 3. Type[8]: File  Name: trhikaP
+ 4. Type[8]: File  Name: tmigq
+ 5. Type[8]: File  Name: UkEIwgSG4cAyl8JDWs
+ 6. Type[8]: File  Name: nncD1UuCniHPtRCTY08c
+ 7. Type[8]: File  Name: GOa8h08HKweiJaUk
+ 8. Type[8]: File  Name: LfFRJeVTjNibtrhikaP3YeU
+ 9. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+10. Type[8]: File  Name: CEZ1gCqZ
+11. Type[8]: File  Name: PcGJyrfEpy
+12. Type[8]: File  Name: IwgSG4
+13. Type[8]: File  Name: GD43hjTMVvLDotZPVw
+14. Type[8]: File  Name: kEIwgSG4cAyl8JDWsv8
+15. Type[8]: File  Name: ne08D2OETeugEU7SlqusA0kT
+16. Type[8]: File  Name: MaZbgkiMf0aPbBRac0EJIpw
+17. Type[8]: File  Name: F4BDQ70c1znK
+18. Type[8]: File  Name: O0epAVtsWwWHiuUq
+19. Type[8]: File  Name: MQiV7zqtYqQuVh6n4e5fF
+20. Type[8]: File  Name: ywIiq8
+21. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+22. Type[8]: File  Name: m4969L
+Total file size: 86114
+
+=== DELETING 10 ============================
+Deleted some files
+  Number of files: 22
+  Number deleted:  16
+Directory:
+ 1. Type[8]: File  Name: F4BDQ70c1znK
+ 2. Type[8]: File  Name: O0epAVtsWwWHiuUq
+ 3. Type[8]: File  Name: bSioI2sW1k5kbaZD38gcndetdEk
+ 4. Type[8]: File  Name: Rac0EJIpwlkY22VEie
+ 5. Type[8]: File  Name: eLw7F3Ojs6kUhWXN38DnI1J
+ 6. Type[8]: File  Name: m4969L
+Total file size: 24106
+File System:
+  Block Size:      512
+  No. Blocks:      53
+  Free Blocks:     4
+  Avail. Blocks:   4
+  No. File Nodes:  6
+  Free File Nodes: 30
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks        16       16        0
+mxordblk     28b8     5c88     33d0
+uordblks    1ed50    14800 ffff5ab0
+fordblks     9640    13b90     a550
+
+Final memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena       28390    28390        0
+ordblks         1        2        1
+mxordblk    1a4a0    129b8 ffff8518
+uordblks     def0     e018      128
+fordblks    1a4a0    1a378 fffffed8
+File system tests done... OK: 20, FAILED: 0
+nsh> ␛[K
+nsh> ␛[Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+    3014656        392    3014264        376    3014264      2      1 ap-psram
+     164752      36920     127832     164840      76216     59      3 Umem
+nsh> ␛[K
+nsh> ␛[Kramtest -s 65536
+RAMTest: Marching ones: 28050648 65536
+RAMTest: Marching zeroes: 28050648 65536
+RAMTest: Pattern test: 28050648 65536 55555555 aaaaaaaa
+RAMTest: Pattern test: 28050648 65536 66666666 99999999
+RAMTest: Pattern test: 28050648 65536 33333333 cccccccc
+RAMTest: Address-in-address test: 28050648 65536
+nsh> ␛[K
+nsh> ␛[Kdf -h
+  Filesystem      Size      Used  Available Mounted on
+  procfs            0B        0B         0B /proc
+  tmpfs           512B        0B       512B /tmp
+nsh> ␛[K
+nsh> ␛[KException in thread rx:
+Traceback (most recent call last):
+  File "/home/yang/.local/lib/python3.10/site-packages/serial/tools/miniterm.py", line 499, in reader
+    data = self.serial.read(self.serial.in_waiting or 1)
+  File "/home/yang/.local/lib/python3.10/site-packages/serial/serialposix.py", line 595, in read
+    raise SerialException(
+serial.serialutil.SerialException: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yang/.local/lib/python3.10/site-packages/serial/tools/miniterm.py", line 510, in reader
+    self.console.cancel()
+  File "/home/yang/.local/lib/python3.10/site-packages/serial/tools/miniterm.py", line 219, in cancel
+    fcntl.ioctl(self.fd, termios.TIOCSTI, b'\0')
+OSError: [Errno 5] Input/output error
+
+--- exit ---
+
+Script done on 2026-09-10 19:42:40+08:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,37 @@
+PASS: valid
+PASS: chunked
+PASS: wrong-host
+PASS: expired
+PASS: future
+PASS: untrusted
+PASS: redirect
+PASS: truncated
+PASS: unclean
+PASS: stall
+PASS: epoch-zero
+PASS: 14 HTTPS cases, real TLS/parser, certificate rejection before HTTP, time gate, deadlines and descriptor cleanup
+PASS: MiMo TLS POST ok
+PASS: MiMo TLS POST chunked
+PASS: MiMo TLS POST 401
+PASS: MiMo TLS POST 429
+PASS: MiMo TLS POST 500
+PASS: MiMo TLS POST length
+PASS: MiMo TLS POST oversize
+PASS: MiMo TLS POST json
+PASS: MiMo TLS POST reflect
+PASS: MiMo TLS POST redirect
+PASS: MiMo TLS POST truncated
+HTTPS check v21: GET, 32 KiB limit, CA/hostname/date required
+Socket deadline=60 s; DNS uses system resolver timeouts
+TLS verified: TLSv1.2, TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256
+HTTP response status=200
+HTTPS check passed: status=200 body_bytes=4067; TLS certificate verified
+
+PASS: public endpoint with production ISRG Root X1 (host only)
+HTTPS check v21: GET, 32 KiB limit, CA/hostname/date required
+Socket deadline=60 s; DNS uses system resolver timeouts
+TLS verified: TLSv1.2, TLS-ECDHE-RSA-WITH-CHACHA20-POLY1305-SHA256
+HTTP response status=401
+HTTPS check failed: stage=HTTP response status=401 body_bytes=165 error=71
+
+PASS: MiMo hostname/production CA chain, unauthenticated GET only; no model call

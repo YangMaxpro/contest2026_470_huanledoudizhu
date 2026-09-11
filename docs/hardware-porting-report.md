@@ -35,7 +35,7 @@ BK7258 R1 使用 UART0（GPIO11 TX、GPIO10 RX，115200 8N1）。烧录时使用
 
 ## 3. 真机验收
 
-设备：BK7258 R1；串口：`/dev/ttyUSB0`，115200 8N1。原始日志和通过标准见 [`xts-test-evidence.md`](xts-test-evidence.md)，35 项官方通用自测的逐项状态见 [`xts-official-coverage.md`](xts-official-coverage.md)。已确认：
+设备：BK7258 R1；串口：`/dev/ttyUSB0`，115200 8N1；固件口径为 v23–v25，v25 更新包 SHA256 为 `668cd05f3ae9424d1b8d9d694e057cdc9a40f7edb4514e4e270534cc194ee4ec`。原始日志和通过标准见 [`xts-test-evidence.md`](xts-test-evidence.md)，35 项官方通用自测的逐项状态见 [`xts-official-coverage.md`](xts-official-coverage.md)。已确认：
 
 - `ostest` 输出 `ostest_main: Exiting with status 0`；
 - `mm` 输出 `TEST COMPLETE`；
@@ -43,8 +43,9 @@ BK7258 R1 使用 UART0（GPIO11 TX、GPIO10 RX，115200 8N1）。烧录时使用
 - `hello` 输出 `Hello, World!!`；
 - Wi-Fi 关联、DHCP 和 NSH 网络链路已在串口日志中观察到。
 
-`getprime` 当前只输出线程启动信息，没有完成标志，因此保留为 BLOCKED；GPIO、SPI/I2C、音频、BLE 和 LCD 需要相应外设或测试资源，未在报告中冒充已完成。
+`getprime` 已输出 `Done` 和最终耗时 `102387 msec`，判定为 PASS；GPIO、SPI/I2C、音频、BLE 和 LCD 需要相应外设或测试资源，未在报告中冒充已完成。
 
 ## 4. 提交与后续上游贡献
 
 完整源码已通过 PR #2 合入官方作品仓的 `dev-ai-contest-2026` 分支，PR #4 已同步最终 NuttX 固定提交。芯片级 NuttX PR #360 已整理为 1 commit / 44 files，checkpatch 和 CLA 已通过；其余 CI 执行中，当前等待 code owner review。格式修正前后的 21 个 BK7258 对象文件可加载段哈希一致，未改变 BK7258 机器码。PR 合入后，将 `openvela.xml` 的 NuttX remote/revision 切换到官方仓对应提交。
+

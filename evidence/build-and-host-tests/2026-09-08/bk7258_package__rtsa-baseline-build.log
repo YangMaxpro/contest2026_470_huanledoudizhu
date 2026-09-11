@@ -1,0 +1,15 @@
+[1/14] cd /home/yang/openvela/cmake_out/configs_nsh/libs/libc/misc && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/yang/openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/14] Generating bin output directories
+[3/14] cd /home/yang/openvela/nuttx && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh/defconfig -DNUTTX_DIR=/home/yang/openvela/nuttx -DCMAKE_BINARY_DIR=/home/yang/openvela/cmake_out/configs_nsh -P /home/yang/openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[4/14] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_utsname.c.o
+[5/14] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_psram.c.o
+[6/14] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_pm_pwc.c.o
+[7/14] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_voice.c.o
+[8/14] Linking C static library apps/packages/demos/contest2026_470_xiaopai/libapps_xiaopai.a
+[9/14] Linking C static library arch/libarch.a
+[10/14] Linking C static library libs/libc/libc.a
+[11/14] Linking C executable nuttx
+/home/yang/openvela/prebuilts/gcc/linux-x86_64/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.4.0/../../../../arm-none-eabi/bin/ld: warning: .note.gnu.build-id section discarded, --build-id ignored
+[12/14] Generating nuttx.bin
+[13/14] Generating nuttx.hex
+[14/14] Generating System.map

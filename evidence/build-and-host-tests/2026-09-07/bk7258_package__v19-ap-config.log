@@ -1,0 +1,26 @@
+LIBCLANG_PATH set to: /home/yang/openvela/prebuilts/rust/linux/extra_libs
+including vendor/infineon/boards/aurix/build/vendorsetup.sh
+including vendor/infineon/boards/aurix_tc3/build/vendorsetup.sh
+including vendor/openvela/boards/build/vendorsetup.sh
+ lunch ../contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh cmake_out/.._contest2026_470_huanledoudizhu 
+The current build configuration lunched with: [32m[nuttx]-[..]-[contest2026_470_huanledoudizhu]![0m
+
+[32m#### BINARY directory is set: /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu[0m
+
+  cmake --build /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu -t resetconfig
+[0/1] Re-running CMake...
+-- NuttX Host Tools
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/bin_host
+-- ╭─────────────────────────────────────────────────╮
+-- │  Vela build custom modules base on NuttX build  |
+-- ╰─────────────────────────────────────────────────╯
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu
+[1/2] cd /home/yang/openvela/nuttx && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E copy /home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh/defconfig /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/.config && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E env KCONFIG_CONFIG=/home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/.config EXTERNALDIR=dummy APPSDIR=/home/yang/openvela/apps DRIVERS_PLATFORM_DIR=dummy APPSBINDIR=/home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/apps BINDIR=/home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu olddefconfig && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E copy /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/.config /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/.config.orig && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/yang/openvela/nuttx/CMakeLists.txt
+Loaded configuration '/home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/.config'
+Configuration saved to '/home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/.config'
+
+#### build completed successfully (4 seconds) ####

@@ -1,0 +1,840 @@
+Script started on 2026-09-09 22:34:00+08:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+--- Miniterm on /dev/ttyUSB1  115200,8,N,1 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+se␡ ap_bridg:I(3):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(6):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(8):EasyFlash V4.1.0 is initialize success.
+I(11):driver_init: psram init ok
+sensor:W(11):uncali sdmadc value:[0 0]
+cal:W(21):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(112):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+wakeup
+
+$ap0: PWC: worker ready
+ap0: PWC: CPU1 boot-ready acknowledged by CP transport
+ap0: IPC: v31 heartbeat worker active, interval=2000 ms; use xiaopai ipc status
+ap0: BK7258 mailbox, heartbeat and CPU1 boot-ready services active
+ap0: PWC: v36 PSRAM ready; dedicated AP heap online
+ap0: BK7258 Wi-Fi netdev initialized
+ap0: 
+ap0: NuttShell (NSH)
+wifi:I(820):fast_connect
+wifid:I(832):mm_add_if_req: vif_idx=0, type=0, p2p=0, status=0
+wpa:I(840):State: DISCONNECTED -> INACTIVE
+wpa:I(841):State: INACTIVE -> DISCONNECTED
+lwip:I(841):mac c8:47:8c:4b:cd:d7
+wpa:I(843):update psk, scan pending 0
+wpa:I(844):State: DISCONNECTED -> INACTIVE
+wpa:I(844):Setting scan request: 0.000000 sec
+wpa:I(845):State: INACTIVE -> SCANNING
+wifid:I(846):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=1,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(846):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(846):[KW:]scanu_start_req:chan_idx=11
+ap0: nsh> ␛[Knetwatch v20: DHCP monitor started on xiaopai
+os:I(855):psram:0x60700000,size:131072
+ap0: netwatch: link=down; old IPv4 cleared
+ap0: wifi v33: connection requested; netwatch owns DHCP
+wifid:I(889):chan_unregister_once_req: VIF0,type=11
+wifid:I(889):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=2,recv_cnt=2,time=43598us,result=1,rfcli=1
+wpa:I(890):Scan completed in 0.041000 seconds
+hitf:I(890):get scan result:1
+wpa:I(891):State: SCANNING -> ASSOCIATING
+wifid:I(893):[KW:]conn vif0-0,auth_type:0,bssid:52ba-87bb-8f7b,ssid:vivoX300,is encryp:8.
+wifid:I(894):chan_ctxt_add: CTXT0,freq2462MHz,bw20MHz,pwr127dBm
+wifid:I(894):chan_reg_fix:VIF0,CTXT0,type3,ctxt_s0,nb_vif0
+wifid:I(895):mm_sta_add:vif 0,sta 0,status 0
+wifid:I(898):[KW:]auth_send:seq1, txtype0, auth_type0, seq3
+wifid:I(904):[KW:]sm_deauth_handler: reason code 6, state 5
+wifid:W(906):sm_tx_cfm:Err frame cfm.
+wifid:I(906):[KW:]auth_send:seq1, txtype0, auth_type0, seq5
+wifid:I(973):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(973):[KW:]assoc_req_send:is ht, seq_num:6
+wifid:I(1026):[KW:]assoc_rsp:status0,tx_s0x80800000
+wifid:I(1026):[KW:]mm_set_vif_state,vif=0,vif_type=0,is_active=1, aid=0xc,rssi=-27
+wpa:I(1027):State: ASSOCIATING -> ASSOCIATED
+wpa:I(103D -> 4WAY_HANDSHAKE
+wpa:I(1044):State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+hitf:I(1045):add CCMP
+wpa:I(1045):State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+hitf:I(1045):add CCMP
+wpa:I(1046):State: GROUP_HANDSHAKE -> COMPLETED
+ap0: netwatch: link=up; old IPv4 cleared
+ap0: bk7258_wifi: TX batch reached 1 frame(s)
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: netwatch: DHCP ready ip=10.109.88.138 lease=3599s
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: netwatch: NTP sync active pid=13
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=111 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+
+$
+$ap_console open
+switching UART0 to AP console...
+
+$cxxtest
+AP console open; exit with Ctrl-], release, then press .
+bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[Kcxxtest
+Test std::vector =============================
+v1=1 2 3
+s1=Hello, World!
+Hello World Good Luck 
+Test std::map ===============================
+Test C++17 features ==========================
+File /proc/meminfo exists!
+File /invalid does not exist!
+File /proc/version exists!
+Test RTTI =============================
+extend
+nsh> ␛[K
+nsh> ␛[Kpopen
+Calling popen("help")
+help usage:  help [-v] [<cmd>]
+
+    .           cmp         false       ls          readlink    umount      
+    [           dirname     fdinfo      mkdir       rm          unset       
+    ?           date        free        mkfifo      rmdir       uptime      
+    alias       dd          help        mkrd        set         usleep      
+    unalias     df          hexdump     mount       sleep       watch       
+    arp         dmesg       ifconfig    mv          source      wget        
+    basename    echo        ifdown      nslookup    test        xd          
+    break       env         ifup        pidof       time        wait        
+    cat         exec        kill        printf      true        
+    cd          exit        pkill       ps          truncate    
+    cp          expr        ln          pwd         uname       
+
+Builtin Apps:
+    renew                      cmocka_mm_test             
+    nsh                        mem_batch_opt_perf_test    
+    sh                         mem_cycle_opt_perf_test    
+    ping                       wapi                       
+    cmocka                     hello_app                  
+    cxxtest                    xiaopai                    
+    scanftest                  hello                      
+    mm                         helloxx                    
+    ostest                     pipe                       
+    getprime                   popen                      
+    cmocka_sched_test          md5_test                   
+    cmocka_syscall_test        
+End of data
+Calling pclose()
+nsh> ␛[K
+nsh> ␛[Kbk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+pipe
+
+pipe_main: Performing FIFO test
+open_write_only: Opening FIFO for write access
+open_write_only: Waiting for open_write_only thread
+pipe_main: open_write_only returned 0
+transfer_test: fdin=4 fdout=3
+transfer_test: Starting transfer_reader thread
+transfer_test: Starting transfer_writer thread
+transfer_test: Waiting for transfer_writer thread
+transfer_reader: started
+transfer_writer: started
+transfer_writer: 18200 bytes written
+transfer_reader: 18200 bytes read
+transfer_test: transfer_writer returned 0
+transfer_test: Waiting for transfer_reader thread
+transfer_test: transfer_reader returned 0
+transfer_test: returning 0
+transfer_test: fdin=4 fdout=3
+transfer_test: Boost priority of transfer_readerthread to 101
+transfer_test: Starting transfer_reader thread
+transfer_reader: started
+transfer_test: Starting transfer_writer thread
+transfer_test: Waiting for transfer_writer thread
+transfer_writer: started
+transfer_reader: 18200 bytes read
+transfer_writer: 18200 bytes written
+transfer_test: transfer_writer returned 0
+transfer_test: Waiting for transfer_reader thread
+transfer_test: transfer_reader returned 0
+transfer_test: returning 0
+transfer_test: fdin=4 fdout=3
+transfer_test: Starting transfer_reader thread
+transfer_test: Boost priority of transfer_writerthread to 101
+transfer_test: Starting transfer_writer thread
+transfer_writer: started
+transfer_test: Waiting for transfer_writer thread
+transfer_reader: started
+transfer_writer: 18200 bytes written
+transfer_reader: 18200 bytes read
+transfer_test: transfer_writer returned 0
+transfer_test: Waiting for transfer_reader thread
+transfer_test: transfer_reader returned 0
+transfer_test: returning 0
+transfer_test: fdin=4 fdout=3
+transfer_test: Boost priority of transfer_readerthread to 101
+transfer_test: Starting transfer_reader thread
+transfer_reader: started
+transfer_test: Boost priority of transfer_writerthread to 101
+transfer_test: Starting transfer_writer thread
+transfer_writer: started
+transfer_writer: 18200 bytes written
+transfer_reader: 18200 bytes read
+transfer_test: Waiting for transfer_writer thread
+transfer_test: transfer_writer returned 0
+transfer_test: Waiting for transfer_reader thread
+transfer_test: transfer_reader returned 0
+transfer_test: returning 0
+
+pipe_main: Performing pipe interlock test
+interlock_test: Starting null_writer thread
+interlock_test: Opening FIFO for read access
+null_writer: started -- sleeping
+null_writer: Opening FIFO for write access
+null_writer: Opened /var/testfifo-2 for writing -- sleeping
+interlock_test: Reading from /var/testfifo-2
+null_writer: Closing /var/testfifo-2
+interlock_test: read returned
+interlock_test: Closing /var/testfifo-2
+interlock_test: Waiting for null_writer thread
+null_writer: Returning success
+interlock_test: writer returned 0
+interlock_test: Starting null_reader thread
+interlock_test: Opening FIFO for write access
+null_reader: started -- sleeping
+null_reader: Opening FIFO for read access
+null_reader: Opened /var/testfifo-2 for reading -- sleeping
+interlock_test: Writing to /var/testfifo-2
+interlock_test: Wrote 16 bytes of data
+interlock_test: write returned
+interlock_test: Closing /var/testfifo-2
+interlock_test: Waiting for null_reader thread
+null_reader: Closing /var/testfifo-2
+null_reader: Returning success
+interlock_test: reader returned 0
+interlock_test: Returning 0
+pipe_main: FIFO interlock test PASSED
+pipe_main: FIFO test PASSED
+
+pipe_main: Performing pipe test
+transfer_test: fdin=4 fdout=3
+transfer_test: Starting transfer_reader thread
+transfer_test: Starting transfer_writer thread
+transfer_test: Waiting for transfer_writer thread
+transfer_reader: started
+transfer_writer: started
+transfer_writer: 18200 bytes written
+transfer_reader: 18200 bytes read
+transfer_test: transfer_writer returned 0
+transfer_test: Waiting for transfer_reader thread
+transfer_test: transfer_reader returned 0
+transfer_test: returning 0
+transfer_test: fdin=4 fdout=3
+transfer_test: Boost priority of transfer_readerthread to 101
+transfer_test: Starting transfer_reader thread
+transfer_reader: started
+transfer_test: Starting transfer_writer thread
+transfer_test: Waiting for transfer_writer thread
+transfer_writer: started
+transfer_reader: 18200 bytes read
+transfer_writer: 18200 bytes written
+transfer_test: transfer_writer returned 0
+transfer_test: Waiting for transfer_reader thread
+transfer_test: transfer_reader returned 0
+transfer_test: returning 0
+transfer_test: fdin=4 fdout=3
+transfer_test: Starting transfer_reader thread
+transfer_test: Boost priority of transfer_writerthread to 101
+transfer_test: Starting transfer_writer thread
+transfer_writer: started
+transfer_test: Waiting for transfer_writer thread
+transfer_reader: started
+transfer_writer: 18200 bytes written
+transfer_reader: 18200 bytes read
+transfer_test: transfer_writer returned 0
+transfer_test: Waiting for transfer_reader thread
+transfer_test: transfer_reader returned 0
+transfer_test: returning 0
+transfer_test: fdin=4 fdout=3
+transfer_test: Boost priority of transfer_readerthread to 101
+transfer_test: Starting transfer_reader thread
+transfer_reader: started
+transfer_test: Boost priority of transfer_writerthread to 101
+transfer_test: Starting transfer_writer thread
+transfer_writer: started
+transfer_writer: 18200 bytes written
+transfer_reader: 18200 bytes read
+transfer_test: Waiting for transfer_writer thread
+transfer_test: transfer_writer returned 0
+transfer_test: Waiting for transfer_reader thread
+transfer_test: transfer_reader returned 0
+transfer_test: returning 0
+
+pipe_main: Performing redirection test
+redirection_test: Starting redirect_writer task with fd=3
+redirection_test: Starting redirect_reader task with fd=4
+redirection_test: Waiting for null_reader thread
+redirect_writer: started with fdout=3
+redirect_reader: started with fdin=4
+
+Four score and seven years ago our fathers broughtforth on this continent a new nation,
+conceived in Liberty, and dedicated to the propositionthat all men are created equal.
+
+Now we are engaged in a great civil war, testingwhether that nation, or any nation, so
+conceived and so dedicated, can long endure. We are meton a great battle-field of that war.
+We have come to dedicate a portion of that field, as afinal resting place for those who here
+gave their lives that that nation might live. It isaltogether fitting and proper that we
+should do this.
+
+But, in a larger sense, we can not dedicate - we cannot consecrate - we can not hallow - this ground.
+The brave men, living and dead, who struggled here, haveconsecrated it, far above our poor power
+to add or detract. The world will little note, nor longremember what we say here, but it can
+never forget what they did here. It is for us theliving, rather, to be dedicated here to the
+unfinished work which they who fought here have thus farso nobly advanced. It is rathredirect_writer: 1456 bytes written
+redirect_writer: Returning success
+er for us to
+be here dedicated to the great task remaining before us- that from these honored dead we take
+increased devotion to that cause for which they gave thelast full measure of devotion - that we
+here highly resolve that these dead shall not have diedin vain - that this nation, under God,
+shall have a new birth of freedom - and that governmentof the people, by the people, for the
+people, shall not perish from the earth.
+
+redirect_reader: 1456 bytes read
+redirect_reader: Returning success
+redirection_test: Waiting...
+redirection_test: returning 0
+pipe_main: PIPE redirection test PASSED
+pipe_main: PIPE test PASSED
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[Krm /var/testfifo-1
+nsh: rm: unlink failed: 2
+nsh> ␛[K
+nsh> ␛[Krm /var/testfifo-2
+nsh: rm: unlink failed: 2
+nsh> ␛[K
+nsh> ␛[Kmount -t tmpfs tmpfs /tmp
+nsh> ␛[K
+nsh> ␛[Kecho xts-bk7258 > /tmp/1.txt
+nsh> ␛[K
+nsh> ␛[Kmd5_test -f /tmp/1.txt -c 100
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+file /tmp/1.txt md5 is 546ee11b17df68ebaa62c5b0a9a748c7
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[Kcmocka_mm_test
+[==========] nuttx_mm_test_suites: Running 8 test(s).
+[ RUN      ] test_nuttx_mm01
+[       OK ] test_nuttx_mm01
+[ RUN      ] test_nuttx_mm02
+[       OK ] test_nuttx_mm02
+[ RUN      ] test_nuttx_mm03
+[       OK ] test_nuttx_mm03
+[ RUN      ] test_nuttx_mm04
+[       OK ] test_nuttx_mm04
+[ RUN      ] test_nuttx_mm05
+[       OK ] test_nuttx_mm05
+[ RUN      ] test_nuttx_mm06
+[       OK ] test_nuttx_mm06
+[ RUN      ] test_nuttx_mm07
+SET memsize to:688
+TEST END because of the mem_info.mxordblk is:120
+[       OK ] test_nuttx_mm07
+[ RUN      ] test_nuttx_mm08
+[       OK ] test_nuttx_mm08
+[==========] nuttx_mm_test_suites: 8 test(s) run.
+[  PASSED  ] 8 test(s).
+nsh> ␛[K
+nsh> ␛[Kcmocka_sched_test
+[==========] nuttx_sched_test_suites: Running 16 test(s).
+[ RUN      ] test_nuttx_sched_pthread01
+[       OK ] test_nuttx_sched_pthread01
+[ RUN      ] test_nuttx_sched_pthread02
+[       OK ] test_nuttx_sched_pthread02
+[ RUN      ] test_nuttx_sched_pthread03
+[       OK ] test_nuttx_sched_pthread03
+[ RUN      ] test_nuttx_sched_pthread04
+[       OK ] test_nuttx_sched_pthread04
+[ RUN      ] test_nuttx_sched_pthread05
+[       OK ] test_nuttx_sched_pthread05
+[ RUN      ] test_nuttx_sched_pthread06
+[       OK ] test_nuttx_sched_pthread06
+[ RUN      ] test_nuttx_sched_pthread07
+[       OK ] test_nuttx_sched_pthread07
+[ RUN      ] test_nuttx_sched_pthread08
+[       OK ] test_nuttx_sched_pthread08
+[ RUN      ] test_nuttx_sched_pthread09
+[       OK ] test_nuttx_sched_pthread09
+[ RUN      ] test_nuttx_sched_task01
+[       OK ] test_nuttx_sched_task01
+[ RUN      ] test_nuttx_sched_task02
+[       OK ] test_nuttx_sched_task02
+[ RUN      ] test_nuttx_sched_task03
+[       OK ] test_nuttx_sched_task03
+[ RUN      ] test_nuttx_sched_task04
+[test_nuttx_sched_task04]:scheduling policy is RR!
+[       OK ] test_nuttx_sched_task04
+[ RUN      ] test_nuttx_sched_task05
+[       OK ] test_nuttx_sched_task05
+[ RUN      ] test_nuttx_sched_task06
+[       OK ] test_nuttx_sched_task06
+[ RUN      ] test_nuttx_sched_task07
+[       OK ] test_nuttx_sched_task07
+[==========] nuttx_sched_test_suites: 16 test(s) run.
+[  PASSED  ] 16 test(s).
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[KV
+nsh: V: command not found
+nsh> ␛[K
+nsh> ␛[Kcmocka_syscall_test
+[==========] nuttx_syscall_test_suites: Running 83 test(s).
+[ RUN      ] test_nuttx_syscall_chdir01
+ERROR: Failed to switch the mount dir
+nsh> ␛[K
+nsh> ␛[Kmkdir /data
+nsh> ␛[K
+nsh> ␛[KV
+nsh: V: command not found
+nsh> ␛[K
+nsh> ␛[Kmount -t tmpfs tmpfs /data
+nsh> ␛[K
+nsh> ␛[Kcmocka_syscall_test
+[==========] nuttx_syscall_test_suites: Running 83 test(s).
+[ RUN      ] test_nuttx_syscall_chdir01
+[       OK ] test_nuttx_syscall_chdir01
+[ RUN      ] test_nuttx_syscall_chdir02
+[       OK ] test_nuttx_syscall_chdir02
+[ RUN      ] test_nuttx_syscall_getitimer01
+[       OK ] test_nuttx_syscall_getitimer01
+[ RUN      ] test_nuttx_syscall_clockgettime01
+[       OK ] test_nuttx_syscall_clockgettime01
+[ RUN      ] test_nuttx_syscall_clocknanosleep01
+[       OK ] test_nuttx_syscall_clocknanosleep01
+[ RUN      ] test_nuttx_syscall_clocksettime01
+[       OK ] test_nuttx_syscall_clocksettime01
+[ RUN      ] test_nuttx_syscall_close01
+[       OK ] test_nuttx_syscall_close01
+[ RUN      ] test_nuttx_syscall_close02
+[       OK ] test_nuttx_syscall_close02
+[ RUN      ] test_nuttx_syscall_close03
+[  ERROR   ] --- ERROR: open test file fail !
+
+[   LINE   ] --- /testing/testsuites/kernel/syscall/cases/close_test.c:146: error: Failure!
+[  FAILED  ] test_nuttx_syscall_close03
+[ RUN      ] test_nuttx_syscall_creat01
+[       OK ] test_nuttx_syscall_creat01
+[ RUN      ] test_nuttx_syscall_creat02
+[       OK ] test_nuttx_syscall_creat02
+[ RUN      ] test_nuttx_syscall_fcntl02
+[       OK ] test_nuttx_syscall_fcntl02
+[ RUN      ] test_nuttx_syscall_fcntl03
+[       OK ] test_nuttx_syscall_fcntl03
+[ RUN      ] test_nuttx_syscall_fcntl04
+[       OK ] test_nuttx_syscall_fcntl04
+[ RUN      ] test_nuttx_syscall_fcntl06
+[       OK ] test_nuttx_syscall_fcntl06
+[ RUN      ] test_nuttx_syscall_fstatfs01
+[       OK ] test_nuttx_syscall_fstatfs01
+[ RUN      ] test_nuttx_syscall_fsync01
+[       OK ] test_nuttx_syscall_fsync01
+[ RUN      ] test_nuttx_syscall_fsync02
+[       OK ] test_nuttx_syscall_fsync02
+[ RUN      ] test_nuttx_syscall_fsync03
+[       OK ] test_nuttx_syscall_fsync03
+[ RUN      ] test_nuttx_syscall_getpeername01
+[       OK ] test_nuttx_syscall_getpeername01
+[ RUN      ] test_nuttx_syscall_getsockopt01
+[       OK ] test_nuttx_syscall_getsockopt01
+[ RUN      ] test_nuttx_syscall_setsockopt01
+[       OK ] test_nuttx_syscall_setsockopt01
+[ RUN      ] test_nuttx_syscall_listen01
+listen(-400, 0) failed
+bad file descriptor successful
+listen(3, 0) failed
+not a socket successful
+listen(4, 0) failed
+UDP listen successful
+[       OK ] test_nuttx_syscall_listen01
+[ RUN      ] test_nuttx_syscall_socketpair02
+[       OK ] test_nuttx_syscall_socketpair02
+[ RUN      ] test_nuttx_syscall_ftruncate01
+[       OK ] test_nuttx_syscall_ftruncate01
+[ RUN      ] test_nuttx_syscall_getcwd01
+[       OK ] test_nuttx_syscall_getcwd01
+[ RUN      ] test_nuttx_syscall_getcwd02
+[       OK ] test_nuttx_syscall_getcwd02
+[ RUN      ] test_nuttx_syscall_getpid01
+[       OK ] test_nuttx_syscall_getpid01
+[ RUN      ] test_nuttx_syscall_getppid01
+[       OK ] test_nuttx_syscall_getppid01
+[ RUN      ] test_nuttx_syscall_gethostname01
+[       OK ] test_nuttx_syscall_gethostname01
+[ RUN      ] test_nuttx_syscall_gettimeofday01
+[       OK ] test_nuttx_syscall_gettimeofday01
+[ RUN      ] test_nuttx_syscall_lseek01
+[       OK ] test_nuttx_syscall_lseek01
+[ RUN      ] test_nuttx_syscall_lseek07
+[       OK ] test_nuttx_syscall_lseek07
+[ RUN      ] test_nuttx_syscall_lstat01
+[       OK ] test_nuttx_syscall_lstat01
+[ RUN      ] test_nuttx_syscall_dup01
+[       OK ] test_nuttx_syscall_dup01
+[ RUN      ] test_nuttx_syscall_dup02
+[       OK ] test_nuttx_syscall_dup02
+[ RUN      ] test_nuttx_syscall_dup03
+[       OK ] test_nuttx_syscall_dup03
+[ RUN      ] test_nuttx_syscall_dup04
+[       OK ] test_nuttx_syscall_dup04
+[ RUN      ] test_nuttx_syscall_dup05
+[       OK ] test_nuttx_syscall_dup05
+[ RUN      ] test_nuttx_syscall_dup201
+[       OK ] test_nuttx_syscall_dup201
+[ RUN      ] test_nuttx_syscall_dup202
+[       OK ] test_nuttx_syscall_dup202
+[ RUN      ] test_nuttx_syscall_fpathconf01
+[  ERROR   ] --- fd > 0
+[   LINE   ] --- /testing/testsuites/kernel/syscall/cases/fpathconf_test.c:89: error: Failure!
+[  FAILED  ] test_nuttx_syscall_fpathconf01
+[ RUN      ] test_nuttx_syscall_getegid01
+[       OK ] test_nuttx_syscall_getegid01
+[ RUN      ] test_nuttx_syscall_getegid02
+[       OK ] test_nuttx_syscall_getegid02
+[ RUN      ] test_nuttx_syscall_geteuid01
+[       OK ] test_nuttx_syscall_geteuid01
+[ RUN      ] test_nuttx_syscall_getgid01
+[       OK ] test_nuttx_syscall_getgid01
+[ RUN      ] test_nuttx_syscall_getgid02
+[       OK ] test_nuttx_syscall_getgid02
+[ RUN      ] test_nuttx_syscall_getuid01
+[       OK ] test_nuttx_syscall_getuid01
+[ RUN      ] test_nuttx_syscall_pathconf01
+[       OK ] test_nuttx_syscall_pathconf01
+[ RUN      ] test_nuttx_syscall_pipe01
+[       OK ] test_nuttx_syscall_pipe01
+[ RUN      ] test_nuttx_syscall_pipe02
+[       OK ] test_nuttx_syscall_pipe02
+[ RUN      ] test_nuttx_syscall_pread01
+[       OK ] test_nuttx_syscall_pread01
+[ RUN      ] test_nuttx_syscall_pwrite01
+[       OK ] test_nuttx_syscall_pwrite01
+[ RUN      ] test_nuttx_syscall_pwrite02
+[       OK ] test_nuttx_syscall_pwrite02
+[ RUN      ] test_nuttx_syscall_rmdir01
+[       OK ] test_nuttx_syscall_rmdir01
+[ RUN      ] test_nuttx_syscall_rmdir02
+[       OK ] test_nuttx_syscall_rmdir02
+[ RUN      ] test_nuttx_syscall_truncate01
+open test file fail !
+[  ERROR   ] --- ERROR: test fail !
+[   LINE   ] --- /testing/testsuites/kernel/syscall/cases/truncate_test.c:84: error: Failure!
+[  FAILED  ] test_nuttx_syscall_truncate01
+[ RUN      ] test_nuttx_syscall_unlink01
+[       OK ] test_nuttx_syscall_unlink01
+[ RUN      ] test_nuttx_syscall_nansleep01
+[       OK ] test_nuttx_syscall_nansleep01
+[ RUN      ] test_nuttx_syscall_nansleep02
+[       OK ] test_nuttx_syscall_nansleep02
+[ RUN      ] test_nuttx_syscall_time01
+[       OK ] test_nuttx_syscall_time01
+[ RUN      ] test_nuttx_syscall_time02
+[       OK ] test_nuttx_syscall_time02
+[ RUN      ] test_nuttx_syscall_timercreate01
+[       OK ] test_nuttx_syscall_timercreate01
+[ RUN      ] test_nuttx_syscall_timerdelete01
+[       OK ] test_nuttx_syscall_timerdelete01
+[ RUN      ] test_nuttx_syscall_timergettime01
+[       OK ] test_nuttx_syscall_timergettime01
+[ RUN      ] test_nuttx_syscall_mkdir01
+[       OK ] test_nuttx_syscall_mkdir01
+[ RUN      ] test_nuttx_syscall_mkdir02
+[       OK ] test_nuttx_syscall_mkdir02
+[ RUN      ] test_nuttx_syscall_mkdir03
+[       OK ] test_nuttx_syscall_mkdir03
+[ RUN      ] test_nuttx_syscall_sched01
+[       OK ] test_nuttx_syscall_sched01
+[ RUN      ] test_nuttx_syscall_sched02
+[       OK ] test_nuttx_syscall_sched02
+[ RUN      ] test_nuttx_syscall_sched03
+[       OK ] test_nuttx_syscall_sched03
+[ RUN      ] test_nuttx_syscall_sched04
+[       OK ] test_nuttx_syscall_sched04
+[ RUN      ] test_nuttx_syscall_write01
+[       OK ] test_nuttx_syscall_write01
+[ RUN      ] test_nuttx_syscall_write02
+[       OK ] test_nuttx_syscall_write02
+[ RUN      ] test_nuttx_syscall_write03
+[  ERROR   ] --- fd > 0
+[   LINE   ] --- /testing/testsuites/kernel/syscall/cases/write_test.c:140: error: Failure!
+[  FAILED  ] test_nuttx_syscall_write03
+[ RUN      ] test_nuttx_syscall_read01
+[       OK ] test_nuttx_syscall_read01
+[ RUN      ] test_nuttx_syscall_read02
+[       OK ] test_nuttx_syscall_read02
+[ RUN      ] test_nuttx_syscall_read03
+[       OK ] test_nuttx_syscall_read03
+[ RUN      ] test_nuttx_syscall_read04
+[       OK ] test_nuttx_syscall_read04
+[ RUN      ] test_nuttx_syscall_symlink01
+[  ERROR   ] --- fd > 0
+[   LINE   ] --- /testing/testsuites/kernel/syscall/cases/symlink_test.c:58: error: Failure!
+[  FAILED  ] test_nuttx_syscall_symlink01
+[ RUN      ] test_nuttx_syscall_symlink02
+open test file fail !
+[  ERROR   ] --- ERROR: test fail !
+[   LINE   ] --- /testing/testsuites/kernel/syscall/cases/symlink_test.c:92: error: Failure!
+[  FAILED  ] test_nuttx_syscall_symlink02
+[ RUN      ] test_nuttx_syscall_sockettest01
+NO.1 do socket() test, ret=-1  erron=22 experrno=97
+NO.2 do socket() test, ret=-1  erron=93 experrno=97
+NO.3 do socket() test, ret=-1  erron=93 experrno=97
+NO.4 do socket() test, ret=-1  erron=93 experrno=97
+NO.6 do socket() test, ret=-1  erron=93 experrno=97
+[       OK ] test_nuttx_syscall_sockettest01
+[ RUN      ] test_nuttx_syscall_sockettest02
+[       OK ] test_nuttx_syscall_sockettest02
+[==========] nuttx_syscall_test_suites: 83 test(s) run.
+[  PASSED  ] 77 test(s).
+[  FAILED  ] nuttx_syscall_test_suites: 6 test(s), listed below:
+[  FAILED  ] test_nuttx_syscall_close03
+[  FAILED  ] test_nuttx_syscall_fpathconf01
+[  FAILED  ] test_nuttx_syscall_truncate01
+[  FAILED  ] test_nuttx_syscall_write03
+[  FAILED  ] test_nuttx_syscall_symlink01
+[  FAILED  ] test_nuttx_syscall_symlink02
+
+ 6 FAILED TEST(S)
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+    3014656        392    3014264        376    3014264      2      1 ap-psram
+     165272      40344     124928     165520     123632     72      5 Umem
+nsh> ␛[K
+nsh> ␛[Kdf -h
+  Filesystem      Size      Used  Available Mounted on
+  tmpfs           512B        0B       512B /data
+  procfs            0B        0B         0B /proc
+  tmpfs             1K        0B         1K /tmp
+nsh> ␛[K
+nsh> ␛[Kls -l /data
+/data:
+nsh> ␛[K
+nsh> ␛[Kls -l /data/CM_syscall_testdir
+nsh: ls: stat failed: 2
+nsh> ␛[K
+nsh> ␛[Kfdinfo
+
+pid:0
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:1
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:2
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:3
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:4
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:5
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:7
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:8
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:9
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:10
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 3   3073    0    10        /proc//      
+ 4   1025    3    0                      
+ 
+pid:12
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 
+pid:13
+FD  OFLAGS  TYPE POS       PATH           
+0   3       1    0         /dev/console 
+ 1   3       1    0         /dev/console 
+ 2   3       1    0         /dev/console 
+ 3   3       9    0         udp:[0.0.0.0:20376<->84.16.67.12:123, tx 0/0, rx 0/0, flg 1
+ nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K

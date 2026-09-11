@@ -1,0 +1,15 @@
+[1/9] cd /home/yang/openvela/cmake_out/configs_nsh/libs/libc/misc && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/yang/openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/9] Generating bin output directories
+[3/9] cd /home/yang/openvela/nuttx && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh/defconfig -DNUTTX_DIR=/home/yang/openvela/nuttx -DCMAKE_BINARY_DIR=/home/yang/openvela/cmake_out/configs_nsh -P /home/yang/openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[4/9] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_pcm.c.o
+[5/9] Linking C static library arch/libarch.a
+[6/9] Linking C executable nuttx
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      678208 B      3904 KB     16.96%
+             RAM:      168088 B       336 KB     48.85%
+            SWAP:           0 B         2 KB      0.00%
+   PSRAM_SECTION:           0 B         6 MB      0.00%
+/home/yang/openvela/prebuilts/gcc/linux-x86_64/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.4.0/../../../../arm-none-eabi/bin/ld: warning: .note.gnu.build-id section discarded, --build-id ignored
+[7/9] Generating nuttx.bin
+[8/9] Generating nuttx.hex
+[9/9] Generating System.map

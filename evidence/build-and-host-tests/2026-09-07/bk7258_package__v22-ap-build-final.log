@@ -1,0 +1,16 @@
+[1/10] cd /home/yang/openvela/cmake_out/configs_nsh/libs/libc/misc && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/yang/openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/10] Generating bin output directories
+[3/10] cd /home/yang/openvela/nuttx && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh/defconfig -DNUTTX_DIR=/home/yang/openvela/nuttx -DCMAKE_BINARY_DIR=/home/yang/openvela/cmake_out/configs_nsh -P /home/yang/openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[4/10] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_httpcheck.c.o
+[5/10] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_mimo.c.o
+[6/10] Linking C static library apps/packages/demos/contest2026_470_xiaopai/libapps_xiaopai.a
+[7/10] Linking C executable nuttx
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      667968 B      3904 KB     16.71%
+             RAM:      167904 B       336 KB     48.80%
+            SWAP:           0 B         2 KB      0.00%
+   PSRAM_SECTION:           0 B         6 MB      0.00%
+/home/yang/openvela/prebuilts/gcc/linux-x86_64/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.4.0/../../../../arm-none-eabi/bin/ld: warning: .note.gnu.build-id section discarded, --build-id ignored
+[8/10] Generating nuttx.bin
+[9/10] Generating nuttx.hex
+[10/10] Generating System.map

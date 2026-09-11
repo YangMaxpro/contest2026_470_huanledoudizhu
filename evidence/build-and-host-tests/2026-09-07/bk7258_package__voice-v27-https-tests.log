@@ -1,0 +1,29 @@
+PASS: valid
+PASS: chunked
+PASS: wrong-host
+PASS: expired
+PASS: future
+PASS: untrusted
+PASS: redirect
+PASS: truncated
+PASS: unclean
+PASS: stall
+PASS: epoch-zero
+PASS: 14 HTTPS cases, real TLS/parser, certificate rejection before HTTP, time gate, deadlines and descriptor cleanup
+PASS: streaming TLS POST mode=0
+PASS: streaming TLS POST mode=1
+PASS: streaming TLS POST mode=2
+PASS: streaming TLS POST mode=3
+PASS: streaming TLS POST mode=4
+PASS: streaming TLS POST mode=5
+PASS: MiMo TLS POST ok
+PASS: MiMo TLS POST chunked
+PASS: MiMo TLS POST 401
+PASS: MiMo TLS POST 429
+PASS: MiMo TLS POST 500
+PASS: MiMo TLS POST length
+PASS: MiMo TLS POST oversize
+PASS: MiMo TLS POST json
+PASS: MiMo TLS POST reflect
+PASS: MiMo TLS POST redirect
+PASS: MiMo TLS POST truncated

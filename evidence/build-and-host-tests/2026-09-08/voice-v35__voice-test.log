@@ -1,0 +1,148 @@
+Usage: xiaopai voice start [1..10 seconds]|stop|status
+voice: requires cloud key, accurate UTC and an idle MiMo client
+Usage: xiaopai voice start [1..10 seconds]|stop|status
+Usage: xiaopai voice start [1..10 seconds]|stop|status
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: recognizing
+You: hello
+voice: thinking
+XiaoPai: Hello friend
+voice: synthesizing
+voice: speaking (24 kHz; keep speaker away from ears)
+voice: playback samples=600 inserted_silence=0
+voice: complete result=0; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: configure xiaopai cloud key first (RAM only)
+voice: failed result=-13; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: cancelled result=-125; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: failed result=-5; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: capture ring overrun; request aborted, no retry; sent audio cannot be recalled
+voice: failed result=-75; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: recognizing
+You: hello
+voice: thinking
+voice: failed result=-71; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: recognizing
+You: hello
+voice: thinking
+XiaoPai: Hello friend
+voice: synthesizing
+voice: speaking (24 kHz; keep speaker away from ears)
+voice: playback samples=600 inserted_silence=0
+voice: failed result=-71; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: recognizing
+You: hello
+voice: thinking
+XiaoPai: Hello friend
+voice: synthesizing
+voice: speaking (24 kHz; keep speaker away from ears)
+voice: playback samples=600 inserted_silence=0
+voice: cancelled result=-125; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: recognizing
+You: hello
+voice: thinking
+XiaoPai: Hello friend
+voice: synthesizing
+voice: speaking (24 kHz; keep speaker away from ears)
+voice: playback samples=0 inserted_silence=0
+voice: failed result=-5; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: recognizing
+You: hello
+voice: thinking
+XiaoPai: Hello friend
+voice: synthesizing
+voice: speaking (24 kHz; keep speaker away from ears)
+voice: playback samples=600 inserted_silence=0
+voice: failed result=-110; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: failed result=-12; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: cancelled result=-125; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 1 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: recognizing
+You: hello
+voice: thinking
+XiaoPai: Hello friend
+voice: synthesizing
+voice: speaking (24 kHz; keep speaker away from ears)
+voice: playback samples=600 inserted_silence=0
+voice: complete result=0; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 3 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: recognizing
+You: hello
+voice: thinking
+XiaoPai: Hello friend
+voice: synthesizing
+voice: speaking (24 kHz; keep speaker away from ears)
+voice: playback samples=600 inserted_silence=0
+voice: complete result=0; microphone/speaker stopped, audio buffers cleared
+voice: one turn started; ASR/model/TTS use Xiaomi API quota; no automatic retries
+voice: connecting ASR; recording starts only after verified TLS
+voice: recording locally; speak now
+voice: 10 s, 16 kHz mono; upload follows microphone stop
+voice: uploading recorded audio; microphone stopped
+voice: recognizing
+You: hello
+voice: thinking
+XiaoPai: Hello friend
+voice: synthesizing
+voice: speaking (24 kHz; keep speaker away from ears)
+voice: playback samples=600 inserted_silence=0
+voice: complete result=0; microphone/speaker stopped, audio buffers cleared
+PASS voice: WAV/base64, partial capture/TX, ASR/model/TTS schemas, SSE splits,
+bounds, malformed/truncated streams, cancellation, overrun, errors and cleanup
+

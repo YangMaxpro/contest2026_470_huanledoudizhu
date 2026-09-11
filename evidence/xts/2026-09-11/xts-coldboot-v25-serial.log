@@ -1,0 +1,1995 @@
+Script started on 2026-09-11 14:04:38+08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+--- Miniterm on /dev/ttyUSB0  115200,8,N,1 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+se�ap_bridg:I(3):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(5):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(8):EasyFlash V4.1.0 is initialize success.
+I(11):driver_init: psram init ok
+sensor:W(11):uncali sdmadc value:[0 0]
+cal:W(21):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(110):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+wakeup
+
+$ap0: PWC: worker ready
+ap0: PWC: CPU1 boot-ready acknowledged by CP transport
+ap0: IPC: v31 heartbeat worker active, interval=2000 ms; use xiaopai ipc status
+ap0: BK7258 mailbox, heartbeat and CPU1 boot-ready services active
+ap0: PWC: v36 PSRAM ready; dedicated AP heap online
+ap0: BK7258 Wi-Fi netdev initialized
+ap0: 
+ap0: NuttShell (NSH)
+wifi:I(823):fast_connect
+wifid:I(835):mm_add_if_req: vif_idx=0, type=0, p2p=0, status=0
+wpa:I(843):State: DISCONNECTED -> INACTIVE
+wpa:I(844):State: INACTIVE -> DISCONNECTED
+lwip:I(844):mac c8:47:8c:4b:cd:d7
+wpa:I(847):update psk, scan pending 0
+wpa:I(847):State: DISCONNECTED -> INACTIVE
+wpa:I(848):Setting scan request: 0.000000 sec
+wpa:I(848):State: INACTIVE -> SCANNING
+wifid:I(850):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=1,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(850):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(850):[KW:]scanu_start_req:chan_idx=11
+ap0: nsh> ␛[Knetwatch v20: DHCP monitor started on xiaopai
+os:I(857):psram:0x60700000,size:131072
+ap0: netwatch: link=down; old IPv4 cleared
+ap0: wifi v33: connection requested; netwatch owns DHCP
+wifid:I(893):chan_unregister_once_req: VIF0,type=11
+wifid:I(893):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=3,recv_cnt=3,time=43570us,result=1,rfcli=1
+wpa:I(894):Scan completed in 0.042000 seconds
+hitf:I(894):get scan result:1
+wpa:I(895):State: SCANNING -> ASSOCIATING
+wifid:I(896):[KW:]conn vif0-0,auth_type:0,bssid:52ba-87bb-8f7b,ssid:vivoX300,is encryp:8.
+wifid:I(896):chan_ctxt_add: CTXT0,freq2462MHz,bw20MHz,pwr127dBm
+wifid:I(896):chan_reg_fix:VIF0,CTXT0,type3,ctxt_s0,nb_vif0
+wifid:I(897):mm_sta_add:vif 0,sta 0,status 0
+wifid:I(900):[KW:]auth_send:seq1, txtype0, auth_type0, seq3
+wifid:I(929):[KW:]sm_deauth_handler: reason code 6, state 5
+wifid:I(931):[KW:]auth_send:seq1, txtype0, auth_type0, seq5
+wifid:I(935):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(935):[KW:]assoc_req_send:is ht, seq_num:6
+wifid:I(1008):[KW:]sm_deauth_handler: reason code 2, state 8
+wifid:I(1008):[KW:]SM_DISCONNECTING cause=14,status=1,rssi=-36
+wifid:I(1008):sta_del_req 0
+wifid:I(1008):chan_unreg_fix:VIF0,CTXT0,nb_vif1
+wpa:I(1010):Setting scan request: 0.100000 sec
+wpa:I(1010):State: ASSOCIATING -> DISCONNECTED
+wpa:I(1110):State: DISCONNECTED -> SCANNING
+wifid:I(1111):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1111):[KW:]scanu_start_req:ssid=vivoX300
+
+$
+$
+$
+$wifid:I(2816):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=10,recv_cnt=36,time=1706789us,result=1,rfcli=1
+wpa:I(2817):Scan completed in 1.703000 seconds
+hitf:I(2817):get scan result:1
+wpa:I(2818):State: SCANNING -> ASSOCIATING
+wifid:I(2819):[KW:]conn vif0-0,auth_type:0,bssid:52ba-87bb-8f7b,ssid:vivoX300,is encryp:8.
+wifid:I(2819):chan_ctxt_add: CTXT1,freq2462MHz,bw20MHz,pwr127dBm
+wifid:I(2819):chan_reg_fix:VIF0,CTXT1,type3,ctxt_s0,nb_vif0
+wifid:I(2821):mm_sta_add:vif 0,sta 1,status 0
+wifid:I(2823):[KW:]auth_send:seq1, txtype0, auth_type0, seq51
+wifid:I(2856):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(2856):[KW:]assoc_req_send:is ht, seq_num:52
+wifid:I(2905):[KW:]assoc_rsp:status0,tx_s0x80800000
+wifid:I(2905):[KW:]mm_set_vif_state,vif=0,vif_type=0,is_active=1, aid=0x5,rssi=-44
+wpa:I(2906):State: ASSOCIATING -> ASSOCIATED
+wpa:I(2918):State: ASSOCIATED -> 4WAY_HANDSHAKE
+wpa:I(2925):State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+hitf:I(2926):add CCMP
+wpa:I(2927):State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+hitf:I(2927):add CCMP
+wpa:I(2927):State: GROUP_HANDSHAKE -> COMPLETED
+ap0: netwatch: link=up; old IPv4 cleared
+ap0: bk7258_wifi: TX batch reached 1 frame(s)
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: netwatch: DHCP ready ip=10.109.88.138 lease=3599s
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: netwatch: NTP sync active pid=13
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=111 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+
+$
+$ap_console open
+switching UART0 to AP console...
+
+$
+AP console open; exit with Ctrl-], release, then press .
+
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[Kbk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[Kls /dev
+/dev:
+ console
+ null
+ random
+ ttyMB0
+ zero
+nsh> ␛[K
+nsh> ␛[Kmkrd -m 10 -s 1000 1024
+nsh: mkrd: boardctl(BOARDIOC_MKRD) failed: 1
+nsh> ␛[K
+nsh> ␛[Kls /dev
+/dev:
+ console
+ null
+ random
+ ttyMB0
+ zero
+nsh> ␛[K
+nsh> ␛[Kcmocka_driver_block -m /dev/ram10
+[==========] tests: Running 3 test(s).
+[ RUN      ] drivertest_block_stress
+pre->fd < 0
+[   LINE   ] --- ../../apps/testing/drivers/drivertest/drivertest_block.c:178: error: Failure!Test setup failed
+[  ERROR   ] drivertest_block_stress
+[ RUN      ] drivertest_block_single_write
+ret != 0
+[   LINE   ] --- ../../apps/testing/drivers/drivertest/drivertest_block.c:206: error: Failure!Test setup failed
+[  ERROR   ] drivertest_block_single_write
+[ RUN      ] drivertest_block_cache_write
+ret != 0
+[   LINE   ] --- ../../apps/testing/drivers/drivertest/drivertest_block.c:206: error: Failure!Test setup failed
+[  ERROR   ] drivertest_block_cache_write
+[==========] tests: 3 test(s) run.
+[  PASSED  ] 0 test(s).
+nsh> ␛[K
+nsh> ␛[Kbk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[Kmkrd -m 10 -s 512 64
+nsh> ␛[K
+nsh> ␛[Kls /dev
+/dev:
+ console
+ null
+ ram10
+ random
+ ttyMB0
+ zero
+nsh> ␛[K
+nsh> ␛[Kcmocka_driver_block -m /dev/ram10
+[==========] tests: Running 3 test(s).
+[ RUN      ] drivertest_block_stress
+[       OK ] drivertest_block_stress
+[ RUN      ] drivertest_block_single_write
+[       OK ] drivertest_block_single_write
+[ RUN      ] drivertest_block_cache_write
+[       OK ] drivertest_block_cache_write
+[==========] tests: 3 test(s) run.
+[  PASSED  ] 3 test(s).
+nsh> ␛[K
+nsh> ␛[Kls /dev
+/dev:
+ console
+ null
+ ram10
+ random
+ ttyMB0
+ zero
+nsh> ␛[K
+nsh> ␛[Kdate
+Fri, Sep 11 06:19:57 2026
+nsh> ␛[K
+nsh> ␛[Kls /dev
+/dev:
+ console
+ null
+ ram10
+ random
+ ttyMB0
+ zero
+nsh> ␛[K
+nsh> ␛[Kmount
+  /proc type procfs
+nsh> ␛[K
+nsh> ␛[Kdmesg
+nsh: dmesg: open failed: 2
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[K
+nsh> ␛[Kdf -h
+  Filesystem      Size      Used  Available Mounted on
+  procfs            0B        0B         0B /proc
+nsh> ␛[K
+nsh> ␛[Knetwatch: DHCP ready ip=10.109.88.138 lease=3600s
+netwatch: NTP sync active pid=13
+netwatch: link=down; old IPv4 cleared
+netwatch: link=up; old IPv4 cleared
+netwatch: DHCP ready ip=10.109.88.138 lease=3599s
+netwatch: NTP sync active pid=13
+netwatch: link=down; old IPv4 cleared
+netwatch: link=up; old IPv4 cleared
+netwatch: DHCP ready ip=10.109.88.138 lease=3600s
+netwatch: NTP sync active pid=13
+netwatch: link=down; old IPv4 cleared
+hrt:E(4301152):IPC[1]heartbeat timeout 4293151,4301152
+(4301152)Assert at: mb_ipc_task:297
+set�ap_bridg:I(2):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(4):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(7):EasyFlash V4.1.0 is initialize success.
+I(9):driver_init: psram init ok
+sensor:W(9):uncali sdmadc value:[0 0]
+cal:W(22):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(118):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+wakeup
+
+$ap0: PWC: worker ready
+ap0: PWC: CPU1 boot-ready acknowledged by CP transport
+ap0: IPC: v31 heartbeat worker active, interval=2000 ms; use xiaopai ipc status
+ap0: BK7258 mailbox, heartbeat and CPU1 boot-ready services active
+ap0: PWC: v36 PSRAM ready; dedicated AP heap online
+ap0: BK7258 Wi-Fi netdev initialized
+ap0: 
+ap0: NuttShell (NSH)
+wifi:I(831):fast_connect
+wifid:I(844):mm_add_if_req: vif_idx=0, type=0, p2p=0, status=0
+wpa:I(853):State: DISCONNECTED -> INACTIVE
+wpa:I(853):State: INACTIVE -> DISCONNECTED
+lwip:I(853):mac c8:47:8c:4b:cd:d7
+wpa:I(856):update psk, scan pending 0
+wpa:I(856):State: DISCONNECTED -> INACTIVE
+wpa:I(857):Setting scan request: 0.000000 sec
+wpa:I(857):State: INACTIVE -> SCANNING
+wifid:I(859):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=1,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(859):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(859):[KW:]scanu_start_req:chan_idx=11
+ap0: nsh> ␛[Knetwatch v20: DHCP monitor started on xiaopai
+ap0: netwatch: link=down; old IPv4 cleared
+ap0: wifi v33: connection requested; netwatch owns DHCP
+wifid:I(976):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=5,time=119270us,result=0,rfcli=1
+wpa:I(977):Scan completed in 0.116000 seconds
+hitf:W(977):get scan result: empty
+wpa:I(1011):Setting scan request: 2.000000 sec
+wifid:I(3012):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(3012):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(4739):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1728875us,result=0,rfcli=1
+wpa:I(4740):Scan completed in 1.727000 seconds
+hitf:W(4740):get scan result: empty
+wpa:I(4741):Setting scan request: 2.000000 sec
+wifid:I(6743):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(6743):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(8470):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1729352us,result=0,rfcli=1
+wpa:I(8471):Scan completed in 1.727000 seconds
+hitf:W(8471):get scan result: empty
+wpa:I(8471):Setting scan request: 2.000000 sec
+wifid:I(10472):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(10472):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(12199):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1729037us,result=0,rfcli=1
+wpa:I(12200):Scan completed in 1.727000 seconds
+hitf:W(12200):get scan result: empty
+wpa:I(12200):Setting scan request: 2.000000 sec
+wifid:I(14201):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(14201):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(15928):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1728686us,result=0,rfcli=1
+wpa:I(15929):Scan completed in 1.727000 seconds
+hitf:W(15929):get scan result: empty
+wpa:I(15929):Setting scan request: 2.000000 sec
+wifid:I(17930):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(17930):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(19657):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1729092us,result=0,rfcli=1
+wpa:I(19658):Scan completed in 1.727000 seconds
+hitf:W(19658):get scan result: empty
+wpa:I(19658):Setting scan request: 2.000000 sec
+wifid:I(21659):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(21659):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(23386):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728782us,result=0,rfcli=1
+wpa:I(23387):Scan completed in 1.727000 seconds
+hitf:W(23387):get scan result: empty
+wpa:I(23387):Setting scan request: 2.000000 sec
+wifid:I(25388):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(25388):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(27115):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728698us,result=0,rfcli=1
+wpa:I(27116):Scan completed in 1.727000 seconds
+hitf:W(27116):get scan result: empty
+wpa:I(27116):Setting scan request: 2.000000 sec
+wifid:I(29117):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(29117):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(30844):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=33,time=1728688us,result=0,rfcli=1
+wpa:I(30845):Scan completed in 1.727000 seconds
+hitf:W(30845):get scan result: empty
+wpa:I(30845):Setting scan request: 2.000000 sec
+wifid:I(32846):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(32846):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(34573):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=38,time=1729003us,result=0,rfcli=1
+wpa:I(34574):Scan completed in 1.727000 seconds
+hitf:W(34574):get scan result: empty
+wpa:I(34574):Setting scan request: 2.000000 sec
+wifid:I(36575):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(36575):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(38301):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=33,time=1728492us,result=0,rfcli=1
+wpa:I(38302):Scan completed in 1.726000 seconds
+hitf:W(38302):get scan result: empty
+wpa:I(38302):Setting scan request: 2.000000 sec
+wifid:I(40303):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(40303):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(42030):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=40,time=1729224us,result=0,rfcli=1
+wpa:I(42031):Scan completed in 1.727000 seconds
+hitf:W(42031):get scan result: empty
+wpa:I(42031):Setting scan request: 2.000000 sec
+wifid:I(44032):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(44032):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(45759):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=34,time=1728758us,result=0,rfcli=1
+wpa:I(45760):Scan completed in 1.727000 seconds
+hitf:W(45760):get scan result: empty
+wpa:I(45760):Setting scan request: 2.000000 sec
+wifid:I(47761):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(47761):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(49488):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728514us,result=0,rfcli=1
+wpa:I(49489):Scan completed in 1.727000 seconds
+hitf:W(49489):get scan result: empty
+wpa:I(49489):Setting scan request: 2.000000 sec
+wifid:I(51490):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(51490):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(53217):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728506us,result=0,rfcli=1
+wpa:I(53218):Scan completed in 1.727000 seconds
+hitf:W(53218):get scan result: empty
+wpa:I(53218):Setting scan request: 2.000000 sec
+wifid:I(55219):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(55219):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(56945):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1728585us,result=0,rfcli=1
+wpa:I(56946):Scan completed in 1.726000 seconds
+hitf:W(56946):get scan result: empty
+wpa:I(56946):Setting scan request: 2.000000 sec
+wifid:I(58947):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(58947):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(60674):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=37,time=1728640us,result=0,rfcli=1
+wpa:I(60675):Scan completed in 1.727000 seconds
+hitf:W(60675):get scan result: empty
+wpa:I(60675):Setting scan request: 2.000000 sec
+wifid:I(62676):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(62676):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(64403):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728618us,result=0,rfcli=1
+wpa:I(64404):Scan completed in 1.727000 seconds
+hitf:W(64404):get scan result: empty
+wpa:I(64404):Setting scan request: 2.000000 sec
+wifid:I(66405):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(66405):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(68132):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728638us,result=0,rfcli=1
+wpa:I(68133):Scan completed in 1.727000 seconds
+hitf:W(68133):get scan result: empty
+wpa:I(68133):Setting scan request: 2.000000 sec
+wifid:I(70134):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(70134):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(71862):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728809us,result=0,rfcli=1
+wpa:I(71863):Scan completed in 1.728000 seconds
+hitf:W(71863):get scan result: empty
+wpa:I(71863):Setting scan request: 2.000000 sec
+wifid:I(73864):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(73864):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(75591):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1729182us,result=0,rfcli=1
+wpa:I(75592):Scan completed in 1.727000 seconds
+hitf:W(75592):get scan result: empty
+wpa:I(75592):Setting scan request: 2.000000 sec
+wifid:I(77593):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(77593):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(79320):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1729302us,result=0,rfcli=1
+wpa:I(79321):Scan completed in 1.726000 seconds
+hitf:W(79321):get scan result: empty
+wpa:I(79321):Setting scan request: 2.000000 sec
+wifid:I(81322):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(81322):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(83049):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=35,time=1729092us,result=0,rfcli=1
+wpa:I(83050):Scan completed in 1.727000 seconds
+hitf:W(83050):get scan result: empty
+wpa:I(83050):Setting scan request: 2.000000 sec
+wifid:I(85052):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(85052):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(86779):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=45,time=1728420us,result=0,rfcli=1
+wpa:I(86780):Scan completed in 1.727000 seconds
+hitf:W(86780):get scan result: empty
+wpa:I(86781):Setting scan request: 2.000000 sec
+wifid:I(88782):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(88782):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(90510):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1729447us,result=0,rfcli=1
+wpa:I(90512):Scan completed in 1.729000 seconds
+hitf:W(90512):get scan result: empty
+wpa:I(90512):Setting scan request: 2.000000 sec
+wifid:I(92513):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(92513):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(94240):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=42,time=1729238us,result=0,rfcli=1
+wpa:I(94241):Scan completed in 1.727000 seconds
+hitf:W(94241):get scan result: empty
+wpa:I(94241):Setting scan request: 2.000000 sec
+wifid:I(96242):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(96242):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(97968):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728277us,result=0,rfcli=1
+wpa:I(97969):Scan completed in 1.726000 seconds
+hitf:W(97969):get scan result: empty
+wpa:I(97969):Setting scan request: 2.000000 sec
+wifid:I(99970):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(99970):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(101698):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728847us,result=0,rfcli=1
+wpa:I(101699):Scan completed in 1.728000 seconds
+hitf:W(101699):get scan result: empty
+wpa:I(101699):Setting scan request: 2.000000 sec
+wifid:I(103700):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(103700):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(105427):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=34,time=1728719us,result=0,rfcli=1
+wpa:I(105428):Scan completed in 1.727000 seconds
+hitf:W(105428):get scan result: empty
+wpa:I(105428):Setting scan request: 2.000000 sec
+wifid:I(107429):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(107429):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(109156):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1729051us,result=0,rfcli=1
+wpa:I(109157):Scan completed in 1.727000 seconds
+hitf:W(109157):get scan result: empty
+wpa:I(109157):Setting scan request: 2.000000 sec
+wifid:I(111158):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(111158):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(112885):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=33,time=1729043us,result=0,rfcli=1
+wpa:I(112886):Scan completed in 1.727000 seconds
+hitf:W(112886):get scan result: empty
+wpa:I(112886):Setting scan request: 2.000000 sec
+wifid:I(114887):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(114887):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(116615):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1729100us,result=0,rfcli=1
+wpa:I(116616):Scan completed in 1.728000 seconds
+hitf:W(116616):get scan result: empty
+wpa:I(116616):Setting scan request: 2.000000 sec
+wifid:I(118617):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(118617):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(120344):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=36,time=1728818us,result=0,rfcli=1
+wpa:I(120345):Scan completed in 1.727000 seconds
+hitf:W(120345):get scan result: empty
+wpa:I(120345):Setting scan request: 2.000000 sec
+wifid:I(122346):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(122346):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(124072):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=35,time=1728569us,result=0,rfcli=1
+wpa:I(124073):Scan completed in 1.726000 seconds
+hitf:W(124073):get scan result: empty
+wpa:I(124073):Setting scan request: 2.000000 sec
+wifid:I(126074):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(126074):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(127801):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1729132us,result=0,rfcli=1
+wpa:I(127802):Scan completed in 1.727000 seconds
+hitf:W(127802):get scan result: empty
+wpa:I(127802):Setting scan request: 2.000000 sec
+wifid:I(129803):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(129803):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(131530):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=39,time=1728598us,result=0,rfcli=1
+wpa:I(131531):Scan completed in 1.727000 seconds
+hitf:W(131531):get scan result: empty
+wpa:I(131531):Setting scan request: 2.000000 sec
+wifid:I(133532):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(133532):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(135259):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=36,time=1728892us,result=0,rfcli=1
+wpa:I(135260):Scan completed in 1.727000 seconds
+hitf:W(135260):get scan result: empty
+wpa:I(135260):Setting scan request: 2.000000 sec
+wifid:I(137261):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(137261):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(138988):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1728496us,result=0,rfcli=1
+wpa:I(138989):Scan completed in 1.727000 seconds
+hitf:W(138989):get scan result: empty
+wpa:I(138989):Setting scan request: 2.000000 sec
+wifid:I(140990):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(140990):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(142717):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=36,time=1728433us,result=0,rfcli=1
+wpa:I(142718):Scan completed in 1.727000 seconds
+hitf:W(142718):get scan result: empty
+wpa:I(142718):Setting scan request: 2.000000 sec
+wifid:I(144719):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(144719):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(146445):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728281us,result=0,rfcli=1
+wpa:I(146446):Scan completed in 1.726000 seconds
+hitf:W(146446):get scan result: empty
+wpa:I(146446):Setting scan request: 2.000000 sec
+wifid:I(148448):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(148448):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(150174):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728593us,result=0,rfcli=1
+wpa:I(150175):Scan completed in 1.726000 seconds
+hitf:W(150175):get scan result: empty
+wpa:I(150175):Setting scan request: 2.000000 sec
+wifid:I(152177):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(152177):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(153905):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=38,time=1729197us,result=0,rfcli=1
+wpa:I(153906):Scan completed in 1.727000 seconds
+hitf:W(153906):get scan result: empty
+wpa:I(153907):Setting scan request: 2.000000 sec
+wifid:I(155908):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(155908):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(157635):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=38,time=1728659us,result=0,rfcli=1
+wpa:I(157636):Scan completed in 1.727000 seconds
+hitf:W(157636):get scan result: empty
+wpa:I(157636):Setting scan request: 2.000000 sec
+wifid:I(159637):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(159637):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(161364):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728838us,result=0,rfcli=1
+wpa:I(161365):Scan completed in 1.727000 seconds
+hitf:W(161365):get scan result: empty
+wpa:I(161366):Setting scan request: 2.000000 sec
+wifid:I(163367):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(163367):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(165094):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1729026us,result=0,rfcli=1
+wpa:I(165095):Scan completed in 1.727000 seconds
+hitf:W(165095):get scan result: empty
+wpa:I(165095):Setting scan request: 2.000000 sec
+wifid:I(167096):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(167096):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(168824):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728850us,result=0,rfcli=1
+wpa:I(168825):Scan completed in 1.728000 seconds
+hitf:W(168825):get scan result: empty
+wpa:I(168825):Setting scan request: 2.000000 sec
+wifid:I(170826):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(170826):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(172552):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=43,time=1728373us,result=0,rfcli=1
+wpa:I(172553):Scan completed in 1.726000 seconds
+hitf:W(172553):get scan result: empty
+wpa:I(172553):Setting scan request: 2.000000 sec
+wifid:I(174554):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(174554):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(176281):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1728834us,result=0,rfcli=1
+wpa:I(176282):Scan completed in 1.727000 seconds
+hitf:W(176282):get scan result: empty
+wpa:I(176282):Setting scan request: 2.000000 sec
+wifid:I(178283):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(178283):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(180010):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728670us,result=0,rfcli=1
+wpa:I(180011):Scan completed in 1.727000 seconds
+hitf:W(180011):get scan result: empty
+wpa:I(180011):Setting scan request: 2.000000 sec
+wifid:I(182012):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(182012):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(183739):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=35,time=1728625us,result=0,rfcli=1
+wpa:I(183740):Scan completed in 1.727000 seconds
+hitf:W(183740):get scan result: empty
+wpa:I(183740):Setting scan request: 2.000000 sec
+wifid:I(185741):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(185741):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(187468):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=35,time=1728621us,result=0,rfcli=1
+wpa:I(187469):Scan completed in 1.727000 seconds
+hitf:W(187469):get scan result: empty
+wpa:I(187469):Setting scan request: 2.000000 sec
+wifid:I(189470):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(189470):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(191196):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728452us,result=0,rfcli=1
+wpa:I(191197):Scan completed in 1.726000 seconds
+hitf:W(191197):get scan result: empty
+wpa:I(191197):Setting scan request: 2.000000 sec
+wifid:I(193198):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(193198):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(194925):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=36,time=1729183us,result=0,rfcli=1
+wpa:I(194926):Scan completed in 1.727000 seconds
+hitf:W(194926):get scan result: empty
+wpa:I(194926):Setting scan request: 2.000000 sec
+wifid:I(196928):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(196928):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(198654):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=38,time=1728547us,result=0,rfcli=1
+wpa:I(198655):Scan completed in 1.726000 seconds
+hitf:W(198655):get scan result: empty
+wpa:I(198655):Setting scan request: 2.000000 sec
+wifid:I(200656):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(200656):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(202383):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=35,time=1728977us,result=0,rfcli=1
+wpa:I(202384):Scan completed in 1.727000 seconds
+hitf:W(202384):get scan result: empty
+wpa:I(202384):Setting scan request: 2.000000 sec
+wifid:I(204385):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(204385):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(206111):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728502us,result=0,rfcli=1
+wpa:I(206112):Scan completed in 1.726000 seconds
+hitf:W(206112):get scan result: empty
+wpa:I(206112):Setting scan request: 2.000000 sec
+wifid:I(208114):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(208114):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(209841):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=34,time=1728586us,result=0,rfcli=1
+wpa:I(209842):Scan completed in 1.727000 seconds
+hitf:W(209842):get scan result: empty
+wpa:I(209842):Setting scan request: 2.000000 sec
+wifid:I(211843):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(211843):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(213571):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=34,time=1728836us,result=0,rfcli=1
+wpa:I(213572):Scan completed in 1.728000 seconds
+hitf:W(213572):get scan result: empty
+wpa:I(213572):Setting scan request: 2.000000 sec
+wifid:I(215573):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(215573):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(217301):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728891us,result=0,rfcli=1
+wpa:I(217302):Scan completed in 1.728000 seconds
+hitf:W(217302):get scan result: empty
+wpa:I(217302):Setting scan request: 2.000000 sec
+wifid:I(219304):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(219304):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(221030):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728437us,result=0,rfcli=1
+wpa:I(221031):Scan completed in 1.726000 seconds
+hitf:W(221031):get scan result: empty
+wpa:I(221031):Setting scan request: 2.000000 sec
+wifid:I(223032):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(223032):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(224759):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=41,time=1728613us,result=0,rfcli=1
+wpa:I(224760):Scan completed in 1.727000 seconds
+hitf:W(224760):get scan result: empty
+wpa:I(224760):Setting scan request: 2.000000 sec
+wifid:I(226761):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(226761):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(228488):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=35,time=1728594us,result=0,rfcli=1
+wpa:I(228489):Scan completed in 1.727000 seconds
+hitf:W(228489):get scan result: empty
+wpa:I(228489):Setting scan request: 2.000000 sec
+wifid:I(230490):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(230490):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(232218):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1729222us,result=0,rfcli=1
+wpa:I(232219):Scan completed in 1.728000 seconds
+hitf:W(232219):get scan result: empty
+wpa:I(232219):Setting scan request: 2.000000 sec
+wifid:I(234220):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(234220):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(235946):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=35,time=1728804us,result=0,rfcli=1
+wpa:I(235947):Scan completed in 1.726000 seconds
+hitf:W(235947):get scan result: empty
+wpa:I(235947):Setting scan request: 2.000000 sec
+wifid:I(237948):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(237948):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(239676):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728945us,result=0,rfcli=1
+wpa:I(239677):Scan completed in 1.728000 seconds
+hitf:W(239677):get scan result: empty
+wpa:I(239677):Setting scan request: 2.000000 sec
+wifid:I(241678):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(241678):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(243406):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1729073us,result=0,rfcli=1
+wpa:I(243407):Scan completed in 1.727000 seconds
+hitf:W(243407):get scan result: empty
+wpa:I(243408):Setting scan request: 2.000000 sec
+wifid:I(245409):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(245409):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(247136):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728768us,result=0,rfcli=1
+wpa:I(247138):Scan completed in 1.727000 seconds
+hitf:W(247138):get scan result: empty
+wpa:I(247138):Setting scan request: 2.000000 sec
+wifid:I(249139):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(249139):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(250866):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728787us,result=0,rfcli=1
+wpa:I(250867):Scan completed in 1.727000 seconds
+hitf:W(250867):get scan result: empty
+wpa:I(250867):Setting scan request: 2.000000 sec
+wifid:I(252868):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(252868):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(254595):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1728577us,result=0,rfcli=1
+wpa:I(254596):Scan completed in 1.727000 seconds
+hitf:W(254596):get scan result: empty
+wpa:I(254596):Setting scan request: 2.000000 sec
+wifid:I(256597):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(256597):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(258324):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728756us,result=0,rfcli=1
+wpa:I(258325):Scan completed in 1.727000 seconds
+hitf:W(258325):get scan result: empty
+wpa:I(258325):Setting scan request: 2.000000 sec
+wifid:I(260326):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(260326):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(262052):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728617us,result=0,rfcli=1
+wpa:I(262053):Scan completed in 1.726000 seconds
+hitf:W(262053):get scan result: empty
+wpa:I(262053):Setting scan request: 2.000000 sec
+wifid:I(264054):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(264054):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(265781):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728736us,result=0,rfcli=1
+wpa:I(265782):Scan completed in 1.727000 seconds
+hitf:W(265782):get scan result: empty
+wpa:I(265782):Setting scan request: 2.000000 sec
+wifid:I(267783):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(267783):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(269510):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728625us,result=0,rfcli=1
+wpa:I(269511):Scan completed in 1.727000 seconds
+hitf:W(269511):get scan result: empty
+wpa:I(269511):Setting scan request: 2.000000 sec
+wifid:I(271512):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(271512):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(273239):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728254us,result=0,rfcli=1
+wpa:I(273240):Scan completed in 1.727000 seconds
+hitf:W(273240):get scan result: empty
+wpa:I(273240):Setting scan request: 2.000000 sec
+wifid:I(275241):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(275241):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(276968):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=35,time=1729006us,result=0,rfcli=1
+wpa:I(276969):Scan completed in 1.727000 seconds
+hitf:W(276969):get scan result: empty
+wpa:I(276969):Setting scan request: 2.000000 sec
+wifid:I(278970):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(278970):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(280697):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728604us,result=0,rfcli=1
+wpa:I(280698):Scan completed in 1.727000 seconds
+hitf:W(280698):get scan result: empty
+wpa:I(280698):Setting scan request: 2.000000 sec
+wifid:I(282699):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(282699):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(284427):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728969us,result=0,rfcli=1
+wpa:I(284428):Scan completed in 1.728000 seconds
+hitf:W(284428):get scan result: empty
+wpa:I(284428):Setting scan request: 2.000000 sec
+wifid:I(286429):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(286429):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(288156):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1729263us,result=0,rfcli=1
+wpa:I(288157):Scan completed in 1.727000 seconds
+hitf:W(288157):get scan result: empty
+wpa:I(288157):Setting scan request: 2.000000 sec
+wifid:I(290158):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(290158):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(291886):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1729073us,result=0,rfcli=1
+wpa:I(291887):Scan completed in 1.728000 seconds
+hitf:W(291887):get scan result: empty
+wpa:I(291887):Setting scan request: 2.000000 sec
+wifid:I(293888):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(293888):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(295616):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1729119us,result=0,rfcli=1
+wpa:I(295617):Scan completed in 1.728000 seconds
+hitf:W(295617):get scan result: empty
+wpa:I(295617):Setting scan request: 2.000000 sec
+wifid:I(297618):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(297618):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(299346):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=37,time=1729905us,result=0,rfcli=1
+wpa:I(299347):Scan completed in 1.727000 seconds
+hitf:W(299347):get scan result: empty
+wpa:I(299348):Setting scan request: 2.000000 sec
+wifid:I(301349):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(301349):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(303076):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=33,time=1728850us,result=0,rfcli=1
+wpa:I(303077):Scan completed in 1.727000 seconds
+hitf:W(303078):get scan result: empty
+wpa:I(303078):Setting scan request: 2.000000 sec
+wifid:I(305079):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(305079):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(306806):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1729354us,result=0,rfcli=1
+wpa:I(306807):Scan completed in 1.727000 seconds
+hitf:W(306808):get scan result: empty
+wpa:I(306808):Setting scan request: 2.000000 sec
+wifid:I(308809):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(308809):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(310536):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=41,time=1728350us,result=0,rfcli=1
+wpa:I(310537):Scan completed in 1.727000 seconds
+hitf:W(310537):get scan result: empty
+wpa:I(310537):Setting scan request: 2.000000 sec
+wifid:I(312538):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(312538):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(314264):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728644us,result=0,rfcli=1
+wpa:I(314265):Scan completed in 1.726000 seconds
+hitf:W(314265):get scan result: empty
+wpa:I(314265):Setting scan request: 2.000000 sec
+wifid:I(316266):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(316266):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(317993):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728951us,result=0,rfcli=1
+wpa:I(317994):Scan completed in 1.727000 seconds
+hitf:W(317994):get scan result: empty
+wpa:I(317994):Setting scan request: 2.000000 sec
+wifid:I(319995):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(319995):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(321722):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728765us,result=0,rfcli=1
+wpa:I(321723):Scan completed in 1.727000 seconds
+hitf:W(321723):get scan result: empty
+wpa:I(321723):Setting scan request: 2.000000 sec
+wifid:I(323724):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(323724):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(325451):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728611us,result=0,rfcli=1
+wpa:I(325452):Scan completed in 1.727000 seconds
+hitf:W(325452):get scan result: empty
+wpa:I(325452):Setting scan request: 2.000000 sec
+wifid:I(327453):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(327453):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(329180):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1728406us,result=0,rfcli=1
+wpa:I(329181):Scan completed in 1.727000 seconds
+hitf:W(329181):get scan result: empty
+wpa:I(329181):Setting scan request: 2.000000 sec
+wifid:I(331182):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(331182):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(332909):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728750us,result=0,rfcli=1
+wpa:I(332910):Scan completed in 1.727000 seconds
+hitf:W(332910):get scan result: empty
+wpa:I(332910):Setting scan request: 2.000000 sec
+wifid:I(334911):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(334911):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(336638):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728540us,result=0,rfcli=1
+wpa:I(336639):Scan completed in 1.727000 seconds
+hitf:W(336639):get scan result: empty
+wpa:I(336639):Setting scan request: 2.000000 sec
+wifid:I(338640):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(338640):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(340367):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728435us,result=0,rfcli=1
+wpa:I(340368):Scan completed in 1.727000 seconds
+hitf:W(340368):get scan result: empty
+wpa:I(340368):Setting scan request: 2.000000 sec
+wifid:I(342369):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(342369):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(344096):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728506us,result=0,rfcli=1
+wpa:I(344097):Scan completed in 1.727000 seconds
+hitf:W(344097):get scan result: empty
+wpa:I(344097):Setting scan request: 2.000000 sec
+wifid:I(346098):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(346098):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(347825):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728493us,result=0,rfcli=1
+wpa:I(347826):Scan completed in 1.727000 seconds
+hitf:W(347826):get scan result: empty
+wpa:I(347826):Setting scan request: 2.000000 sec
+wifid:I(349827):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(349827):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(351554):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728898us,result=0,rfcli=1
+wpa:I(351555):Scan completed in 1.727000 seconds
+hitf:W(351555):get scan result: empty
+wpa:I(351555):Setting scan request: 2.000000 sec
+wifid:I(353556):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(353556):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(355282):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728389us,result=0,rfcli=1
+wpa:I(355283):Scan completed in 1.726000 seconds
+hitf:W(355283):get scan result: empty
+wpa:I(355283):Setting scan request: 2.000000 sec
+wifid:I(357284):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(357284):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(359011):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728826us,result=0,rfcli=1
+wpa:I(359012):Scan completed in 1.727000 seconds
+hitf:W(359012):get scan result: empty
+wpa:I(359012):Setting scan request: 2.000000 sec
+wifid:I(361013):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(361013):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(362740):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728420us,result=0,rfcli=1
+wpa:I(362741):Scan completed in 1.727000 seconds
+hitf:W(362741):get scan result: empty
+wpa:I(362741):Setting scan request: 2.000000 sec
+wifid:I(364742):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(364742):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(366469):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1728336us,result=0,rfcli=1
+wpa:I(366470):Scan completed in 1.727000 seconds
+hitf:W(366470):get scan result: empty
+wpa:I(366470):Setting scan request: 2.000000 sec
+wifid:I(368471):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(368471):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(370197):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728499us,result=0,rfcli=1
+wpa:I(370198):Scan completed in 1.726000 seconds
+hitf:W(370198):get scan result: empty
+wpa:I(370198):Setting scan request: 2.000000 sec
+wifid:I(372199):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(372199):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(373926):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728454us,result=0,rfcli=1
+wpa:I(373927):Scan completed in 1.727000 seconds
+hitf:W(373927):get scan result: empty
+wpa:I(373927):Setting scan request: 2.000000 sec
+wifid:I(375928):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(375928):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(377655):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728589us,result=0,rfcli=1
+wpa:I(377656):Scan completed in 1.727000 seconds
+hitf:W(377656):get scan result: empty
+wpa:I(377656):Setting scan request: 2.000000 sec
+wifid:I(379657):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(379657):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(381384):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728563us,result=0,rfcli=1
+wpa:I(381385):Scan completed in 1.727000 seconds
+hitf:W(381385):get scan result: empty
+wpa:I(381385):Setting scan request: 2.000000 sec
+wifid:I(383386):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(383386):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(385113):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728459us,result=0,rfcli=1
+wpa:I(385114):Scan completed in 1.727000 seconds
+hitf:W(385114):get scan result: empty
+wpa:I(385114):Setting scan request: 2.000000 sec
+wifid:I(387115):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(387115):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(388842):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728432us,result=0,rfcli=1
+wpa:I(388843):Scan completed in 1.727000 seconds
+hitf:W(388843):get scan result: empty
+wpa:I(388843):Setting scan request: 2.000000 sec
+wifid:I(390844):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(390844):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(392571):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728572us,result=0,rfcli=1
+wpa:I(392572):Scan completed in 1.727000 seconds
+hitf:W(392572):get scan result: empty
+wpa:I(392572):Setting scan request: 2.000000 sec
+wifid:I(394573):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(394573):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(396300):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728652us,result=0,rfcli=1
+wpa:I(396301):Scan completed in 1.727000 seconds
+hitf:W(396301):get scan result: empty
+wpa:I(396301):Setting scan request: 2.000000 sec
+wifid:I(398302):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(398302):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(400030):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1729249us,result=0,rfcli=1
+wpa:I(400031):Scan completed in 1.728000 seconds
+hitf:W(400031):get scan result: empty
+wpa:I(400031):Setting scan request: 2.000000 sec
+wifid:I(402032):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(402032):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(403759):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728603us,result=0,rfcli=1
+wpa:I(403760):Scan completed in 1.727000 seconds
+hitf:W(403760):get scan result: empty
+wpa:I(403760):Setting scan request: 2.000000 sec
+wifid:I(405761):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(405761):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(407489):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=33,time=1729042us,result=0,rfcli=1
+wpa:I(407490):Scan completed in 1.728000 seconds
+hitf:W(407490):get scan result: empty
+wpa:I(407490):Setting scan request: 2.000000 sec
+wifid:I(409491):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(409491):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(411218):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728413us,result=0,rfcli=1
+wpa:I(411219):Scan completed in 1.727000 seconds
+hitf:W(411219):get scan result: empty
+wpa:I(411219):Setting scan request: 2.000000 sec
+wifid:I(413220):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(413220):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(414947):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728902us,result=0,rfcli=1
+wpa:I(414948):Scan completed in 1.727000 seconds
+hitf:W(414948):get scan result: empty
+wpa:I(414948):Setting scan request: 2.000000 sec
+wifid:I(416949):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(416949):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(418675):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728559us,result=0,rfcli=1
+wpa:I(418676):Scan completed in 1.726000 seconds
+hitf:W(418676):get scan result: empty
+wpa:I(418676):Setting scan request: 2.000000 sec
+wifid:I(420677):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(420677):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(422404):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728995us,result=0,rfcli=1
+wpa:I(422405):Scan completed in 1.727000 seconds
+hitf:W(422405):get scan result: empty
+wpa:I(422405):Setting scan request: 2.000000 sec
+wifid:I(424406):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(424406):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(426133):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728516us,result=0,rfcli=1
+wpa:I(426134):Scan completed in 1.727000 seconds
+hitf:W(426134):get scan result: empty
+wpa:I(426134):Setting scan request: 2.000000 sec
+wifid:I(428135):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(428135):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(429862):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728621us,result=0,rfcli=1
+wpa:I(429863):Scan completed in 1.727000 seconds
+hitf:W(429863):get scan result: empty
+wpa:I(429863):Setting scan request: 2.000000 sec
+wifid:I(431864):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(431864):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(433591):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728781us,result=0,rfcli=1
+wpa:I(433592):Scan completed in 1.727000 seconds
+hitf:W(433592):get scan result: empty
+wpa:I(433592):Setting scan request: 2.000000 sec
+wifid:I(435593):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(435593):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(437320):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728370us,result=0,rfcli=1
+wpa:I(437321):Scan completed in 1.727000 seconds
+hitf:W(437321):get scan result: empty
+wpa:I(437321):Setting scan request: 2.000000 sec
+wifid:I(439322):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(439322):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(441049):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728771us,result=0,rfcli=1
+wpa:I(441050):Scan completed in 1.727000 seconds
+hitf:W(441050):get scan result: empty
+wpa:I(441050):Setting scan request: 2.000000 sec
+wifid:I(443051):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(443051):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(444778):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728804us,result=0,rfcli=1
+wpa:I(444779):Scan completed in 1.727000 seconds
+hitf:W(444779):get scan result: empty
+wpa:I(444779):Setting scan request: 2.000000 sec
+wifid:I(446781):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(446781):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(448508):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728632us,result=0,rfcli=1
+wpa:I(448509):Scan completed in 1.727000 seconds
+hitf:W(448509):get scan result: empty
+wpa:I(448510):Setting scan request: 2.000000 sec
+wifid:I(450511):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(450512):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(452238):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728505us,result=0,rfcli=1
+wpa:I(452239):Scan completed in 1.726000 seconds
+hitf:W(452239):get scan result: empty
+wpa:I(452239):Setting scan request: 2.000000 sec
+wifid:I(454241):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(454241):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(455969):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728948us,result=0,rfcli=1
+wpa:I(455970):Scan completed in 1.728000 seconds
+hitf:W(455970):get scan result: empty
+wpa:I(455970):Setting scan request: 2.000000 sec
+wifid:I(457971):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(457971):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(459699):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728883us,result=0,rfcli=1
+wpa:I(459700):Scan completed in 1.728000 seconds
+hitf:W(459700):get scan result: empty
+wpa:I(459700):Setting scan request: 2.000000 sec
+wifid:I(461701):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(461701):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(463428):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728596us,result=0,rfcli=1
+wpa:I(463429):Scan completed in 1.727000 seconds
+hitf:W(463429):get scan result: empty
+wpa:I(463429):Setting scan request: 2.000000 sec
+wifid:I(465430):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(465430):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(467157):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728866us,result=0,rfcli=1
+wpa:I(467158):Scan completed in 1.727000 seconds
+hitf:W(467158):get scan result: empty
+wpa:I(467158):Setting scan request: 2.000000 sec
+wifid:I(469159):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(469159):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(470886):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1729255us,result=0,rfcli=1
+wpa:I(470887):Scan completed in 1.727000 seconds
+hitf:W(470887):get scan result: empty
+wpa:I(470888):Setting scan request: 2.000000 sec
+wifid:I(472889):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(472889):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(474616):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728552us,result=0,rfcli=1
+wpa:I(474617):Scan completed in 1.727000 seconds
+hitf:W(474617):get scan result: empty
+wpa:I(474617):Setting scan request: 2.000000 sec
+wifid:I(476618):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(476618):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(478345):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728713us,result=0,rfcli=1
+wpa:I(478346):Scan completed in 1.727000 seconds
+hitf:W(478346):get scan result: empty
+wpa:I(478346):Setting scan request: 2.000000 sec
+wifid:I(480347):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(480347):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(482074):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728845us,result=0,rfcli=1
+wpa:I(482075):Scan completed in 1.727000 seconds
+hitf:W(482075):get scan result: empty
+wpa:I(482075):Setting scan request: 2.000000 sec
+wifid:I(484076):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(484076):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(485803):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728536us,result=0,rfcli=1
+wpa:I(485804):Scan completed in 1.727000 seconds
+hitf:W(485804):get scan result: empty
+wpa:I(485804):Setting scan request: 2.000000 sec
+wifid:I(487805):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(487805):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(489532):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728411us,result=0,rfcli=1
+wpa:I(489533):Scan completed in 1.727000 seconds
+hitf:W(489533):get scan result: empty
+wpa:I(489533):Setting scan request: 2.000000 sec
+wifid:I(491534):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(491534):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(493261):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728301us,result=0,rfcli=1
+wpa:I(493262):Scan completed in 1.727000 seconds
+hitf:W(493262):get scan result: empty
+wpa:I(493262):Setting scan request: 2.000000 sec
+wifid:I(495263):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(495263):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(496991):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728962us,result=0,rfcli=1
+wpa:I(496992):Scan completed in 1.728000 seconds
+hitf:W(496992):get scan result: empty
+wpa:I(496992):Setting scan request: 2.000000 sec
+wifid:I(498993):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(498993):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(500720):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1729169us,result=0,rfcli=1
+wpa:I(500721):Scan completed in 1.726000 seconds
+hitf:W(500721):get scan result: empty
+wpa:I(500721):Setting scan request: 2.000000 sec
+wifid:I(502723):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(502724):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(504450):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728823us,result=0,rfcli=1
+wpa:I(504452):Scan completed in 1.727000 seconds
+hitf:W(504452):get scan result: empty
+wpa:I(504453):Setting scan request: 2.000000 sec
+wifid:I(506454):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(506454):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(508181):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1729001us,result=0,rfcli=1
+wpa:I(508182):Scan completed in 1.727000 seconds
+hitf:W(508182):get scan result: empty
+wpa:I(508182):Setting scan request: 2.000000 sec
+wifid:I(510183):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(510183):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(511910):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1729076us,result=0,rfcli=1
+wpa:I(511911):Scan completed in 1.727000 seconds
+hitf:W(511911):get scan result: empty
+wpa:I(511911):Setting scan request: 2.000000 sec
+wifid:I(513912):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(513912):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(515639):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728696us,result=0,rfcli=1
+wpa:I(515640):Scan completed in 1.727000 seconds
+hitf:W(515640):get scan result: empty
+wpa:I(515640):Setting scan request: 2.000000 sec
+wifid:I(517641):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(517641):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(519368):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728820us,result=0,rfcli=1
+wpa:I(519369):Scan completed in 1.727000 seconds
+hitf:W(519369):get scan result: empty
+wpa:I(519369):Setting scan request: 2.000000 sec
+wifid:I(521371):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(521371):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(523097):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728409us,result=0,rfcli=1
+wpa:I(523098):Scan completed in 1.726000 seconds
+hitf:W(523098):get scan result: empty
+wpa:I(523098):Setting scan request: 2.000000 sec
+wifid:I(525099):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(525099):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(526826):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728364us,result=0,rfcli=1
+wpa:I(526827):Scan completed in 1.727000 seconds
+hitf:W(526827):get scan result: empty
+wpa:I(526827):Setting scan request: 2.000000 sec
+wifid:I(528828):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(528828):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(530555):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728578us,result=0,rfcli=1
+wpa:I(530556):Scan completed in 1.727000 seconds
+hitf:W(530556):get scan result: empty
+wpa:I(530556):Setting scan request: 2.000000 sec
+wifid:I(532557):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(532557):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(534284):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1729310us,result=0,rfcli=1
+wpa:I(534285):Scan completed in 1.727000 seconds
+hitf:W(534285):get scan result: empty
+wpa:I(534285):Setting scan request: 2.000000 sec
+wifid:I(536286):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(536286):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(538013):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728696us,result=0,rfcli=1
+wpa:I(538014):Scan completed in 1.727000 seconds
+hitf:W(538014):get scan result: empty
+wpa:I(538014):Setting scan request: 2.000000 sec
+wifid:I(540015):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(540015):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(541742):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=15,time=1728829us,result=0,rfcli=1
+wpa:I(541743):Scan completed in 1.727000 seconds
+hitf:W(541743):get scan result: empty
+wpa:I(541743):Setting scan request: 2.000000 sec
+wifid:I(543744):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(543744):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(545471):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728900us,result=0,rfcli=1
+wpa:I(545472):Scan completed in 1.727000 seconds
+hitf:W(545472):get scan result: empty
+wpa:I(545472):Setting scan request: 2.000000 sec
+wifid:I(547473):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(547473):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(549201):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=16,time=1729179us,result=0,rfcli=1
+wpa:I(549202):Scan completed in 1.728000 seconds
+hitf:W(549202):get scan result: empty
+wpa:I(549202):Setting scan request: 2.000000 sec
+wifid:I(551203):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(551203):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(552930):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728338us,result=0,rfcli=1
+wpa:I(552931):Scan completed in 1.727000 seconds
+hitf:W(552931):get scan result: empty
+wpa:I(552931):Setting scan request: 2.000000 sec
+wifid:I(554932):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(554932):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(556659):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728417us,result=0,rfcli=1
+wpa:I(556660):Scan completed in 1.727000 seconds
+hitf:W(556660):get scan result: empty
+wpa:I(556660):Setting scan request: 2.000000 sec
+wifid:I(558661):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(558661):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(560387):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=15,time=1728098us,result=0,rfcli=1
+wpa:I(560388):Scan completed in 1.726000 seconds
+hitf:W(560388):get scan result: empty
+wpa:I(560388):Setting scan request: 2.000000 sec
+wifid:I(562389):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(562389):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(564116):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728580us,result=0,rfcli=1
+wpa:I(564117):Scan completed in 1.727000 seconds
+hitf:W(564117):get scan result: empty
+wpa:I(564117):Setting scan request: 2.000000 sec
+wifid:I(566118):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(566118):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(567845):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728356us,result=0,rfcli=1
+wpa:I(567846):Scan completed in 1.727000 seconds
+hitf:W(567846):get scan result: empty
+wpa:I(567846):Setting scan request: 2.000000 sec
+wifid:I(569847):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(569847):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(571574):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728283us,result=0,rfcli=1
+wpa:I(571575):Scan completed in 1.727000 seconds
+hitf:W(571575):get scan result: empty
+wpa:I(571575):Setting scan request: 2.000000 sec
+wifid:I(573576):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(573576):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(575303):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728326us,result=0,rfcli=1
+wpa:I(575304):Scan completed in 1.727000 seconds
+hitf:W(575304):get scan result: empty
+wpa:I(575304):Setting scan request: 2.000000 sec
+wifid:I(577305):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(577305):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(579031):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728383us,result=0,rfcli=1
+wpa:I(579032):Scan completed in 1.726000 seconds
+hitf:W(579032):get scan result: empty
+wpa:I(579032):Setting scan request: 2.000000 sec
+wifid:I(581033):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(581033):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(582759):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728382us,result=0,rfcli=1
+wpa:I(582760):Scan completed in 1.726000 seconds
+hitf:W(582760):get scan result: empty
+wpa:I(582760):Setting scan request: 2.000000 sec
+wifid:I(584761):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(584761):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(586488):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728499us,result=0,rfcli=1
+wpa:I(586489):Scan completed in 1.727000 seconds
+hitf:W(586489):get scan result: empty
+wpa:I(586489):Setting scan request: 2.000000 sec
+wifid:I(588490):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(588490):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(590217):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728514us,result=0,rfcli=1
+wpa:I(590218):Scan completed in 1.727000 seconds
+hitf:W(590218):get scan result: empty
+wpa:I(590218):Setting scan request: 2.000000 sec
+wifid:I(592219):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(592219):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(593946):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728658us,result=0,rfcli=1
+wpa:I(593947):Scan completed in 1.727000 seconds
+hitf:W(593947):get scan result: empty
+wpa:I(593947):Setting scan request: 2.000000 sec
+wifid:I(595948):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(595948):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(597676):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728834us,result=0,rfcli=1
+wpa:I(597677):Scan completed in 1.728000 seconds
+hitf:W(597677):get scan result: empty
+wpa:I(597677):Setting scan request: 2.000000 sec
+wifid:I(599678):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(599678):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(601406):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1729622us,result=0,rfcli=1
+wpa:I(601407):Scan completed in 1.727000 seconds
+hitf:W(601407):get scan result: empty
+wpa:I(601408):Setting scan request: 2.000000 sec
+wifid:I(603409):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(603409):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(605136):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1729083us,result=0,rfcli=1
+wpa:I(605138):Scan completed in 1.727000 seconds
+hitf:W(605138):get scan result: empty
+wpa:I(605138):Setting scan request: 2.000000 sec
+wifid:I(607139):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(607139):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(608866):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728804us,result=0,rfcli=1
+wpa:I(608867):Scan completed in 1.727000 seconds
+hitf:W(608867):get scan result: empty
+wpa:I(608867):Setting scan request: 2.000000 sec
+wifid:I(610868):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(610868):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(612595):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728884us,result=0,rfcli=1
+wpa:I(612596):Scan completed in 1.727000 seconds
+hitf:W(612596):get scan result: empty
+wpa:I(612596):Setting scan request: 2.000000 sec
+wifid:I(614597):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(614597):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(616324):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728822us,result=0,rfcli=1
+wpa:I(616325):Scan completed in 1.727000 seconds
+hitf:W(616325):get scan result: empty
+wpa:I(616325):Setting scan request: 2.000000 sec
+wifid:I(618326):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(618326):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(620053):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728626us,result=0,rfcli=1
+wpa:I(620054):Scan completed in 1.727000 seconds
+hitf:W(620054):get scan result: empty
+wpa:I(620054):Setting scan request: 2.000000 sec
+wifid:I(622055):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(622055):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(623782):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1728714us,result=0,rfcli=1
+wpa:I(623783):Scan completed in 1.727000 seconds
+hitf:W(623783):get scan result: empty
+wpa:I(623783):Setting scan request: 2.000000 sec
+wifid:I(625784):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(625784):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(627511):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728607us,result=0,rfcli=1
+wpa:I(627512):Scan completed in 1.727000 seconds
+hitf:W(627512):get scan result: empty
+wpa:I(627512):Setting scan request: 2.000000 sec
+wifid:I(629513):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(629513):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(631239):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728605us,result=0,rfcli=1
+wpa:I(631240):Scan completed in 1.726000 seconds
+hitf:W(631240):get scan result: empty
+wpa:I(631240):Setting scan request: 2.000000 sec
+wifid:I(633241):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(633241):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(634968):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728452us,result=0,rfcli=1
+wpa:I(634969):Scan completed in 1.727000 seconds
+hitf:W(634969):get scan result: empty
+wpa:I(634969):Setting scan request: 2.000000 sec
+wifid:I(636970):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(636971):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(638697):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728506us,result=0,rfcli=1
+wpa:I(638698):Scan completed in 1.726000 seconds
+hitf:W(638698):get scan result: empty
+wpa:I(638698):Setting scan request: 2.000000 sec
+wifid:I(640699):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(640699):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(642426):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728638us,result=0,rfcli=1
+wpa:I(642427):Scan completed in 1.727000 seconds
+hitf:W(642427):get scan result: empty
+wpa:I(642427):Setting scan request: 2.000000 sec
+wifid:I(644428):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(644428):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(646155):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728497us,result=0,rfcli=1
+wpa:I(646156):Scan completed in 1.727000 seconds
+hitf:W(646156):get scan result: empty
+wpa:I(646156):Setting scan request: 2.000000 sec
+wifid:I(648157):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(648157):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(649884):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728512us,result=0,rfcli=1
+wpa:I(649885):Scan completed in 1.727000 seconds
+hitf:W(649885):get scan result: empty
+wpa:I(649885):Setting scan request: 2.000000 sec
+wifid:I(651886):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(651886):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(653613):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728525us,result=0,rfcli=1
+wpa:I(653614):Scan completed in 1.727000 seconds
+hitf:W(653614):get scan result: empty
+wpa:I(653614):Setting scan request: 2.000000 sec
+wifid:I(655615):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(655615):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(657341):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728427us,result=0,rfcli=1
+wpa:I(657342):Scan completed in 1.726000 seconds
+hitf:W(657342):get scan result: empty
+wpa:I(657342):Setting scan request: 2.000000 sec
+wifid:I(659343):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(659343):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(661070):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1729085us,result=0,rfcli=1
+wpa:I(661071):Scan completed in 1.727000 seconds
+hitf:W(661071):get scan result: empty
+wpa:I(661071):Setting scan request: 2.000000 sec
+wifid:I(663073):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(663073):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(664799):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728269us,result=0,rfcli=1
+wpa:I(664800):Scan completed in 1.726000 seconds
+hitf:W(664800):get scan result: empty
+wpa:I(664800):Setting scan request: 2.000000 sec
+wifid:I(666801):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(666801):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(668528):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=34,time=1728767us,result=0,rfcli=1
+wpa:I(668529):Scan completed in 1.727000 seconds
+hitf:W(668529):get scan result: empty
+wpa:I(668529):Setting scan request: 2.000000 sec
+wifid:I(670530):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(670530):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(672257):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=16,time=1728218us,result=0,rfcli=1
+wpa:I(672258):Scan completed in 1.727000 seconds
+hitf:W(672258):get scan result: empty
+wpa:I(672258):Setting scan request: 2.000000 sec
+wifid:I(674259):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(674259):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(675986):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728427us,result=0,rfcli=1
+wpa:I(675987):Scan completed in 1.727000 seconds
+hitf:W(675987):get scan result: empty
+wpa:I(675987):Setting scan request: 2.000000 sec
+wifid:I(677988):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(677988):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(679715):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728690us,result=0,rfcli=1
+wpa:I(679716):Scan completed in 1.727000 seconds
+hitf:W(679716):get scan result: empty
+wpa:I(679716):Setting scan request: 2.000000 sec
+wifid:I(681717):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(681717):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(683444):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728821us,result=0,rfcli=1
+wpa:I(683445):Scan completed in 1.727000 seconds
+hitf:W(683445):get scan result: empty
+wpa:I(683445):Setting scan request: 2.000000 sec
+wifid:I(685446):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(685446):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(687173):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=33,time=1729039us,result=0,rfcli=1
+wpa:I(687174):Scan completed in 1.727000 seconds
+hitf:W(687174):get scan result: empty
+wpa:I(687174):Setting scan request: 2.000000 sec
+wifid:I(689175):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(689175):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(690902):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1729373us,result=0,rfcli=1
+wpa:I(690903):Scan completed in 1.727000 seconds
+hitf:W(690903):get scan result: empty
+wpa:I(690903):Setting scan request: 2.000000 sec
+wifid:I(692904):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(692904):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(694631):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=34,time=1729130us,result=0,rfcli=1
+wpa:I(694632):Scan completed in 1.727000 seconds
+hitf:W(694632):get scan result: empty
+wpa:I(694632):Setting scan request: 2.000000 sec
+wifid:I(696633):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(696633):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(698360):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728864us,result=0,rfcli=1
+wpa:I(698361):Scan completed in 1.727000 seconds
+hitf:W(698361):get scan result: empty
+wpa:I(698361):Setting scan request: 2.000000 sec
+wifid:I(700362):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(700362):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(702088):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728660us,result=0,rfcli=1
+wpa:I(702089):Scan completed in 1.726000 seconds
+hitf:W(702089):get scan result: empty
+wpa:I(702089):Setting scan request: 2.000000 sec
+wifid:I(704090):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(704090):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(705817):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728614us,result=0,rfcli=1
+wpa:I(705818):Scan completed in 1.727000 seconds
+hitf:W(705818):get scan result: empty
+wpa:I(705818):Setting scan request: 2.000000 sec
+wifid:I(707819):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(707819):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(709546):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728473us,result=0,rfcli=1
+wpa:I(709547):Scan completed in 1.727000 seconds
+hitf:W(709547):get scan result: empty
+wpa:I(709547):Setting scan request: 2.000000 sec
+wifid:I(711548):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(711548):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(713275):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728467us,result=0,rfcli=1
+wpa:I(713276):Scan completed in 1.727000 seconds
+hitf:W(713276):get scan result: empty
+wpa:I(713276):Setting scan request: 2.000000 sec
+wifid:I(715277):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(715277):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(717004):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728228us,result=0,rfcli=1
+wpa:I(717005):Scan completed in 1.727000 seconds
+hitf:W(717005):get scan result: empty
+wpa:I(717005):Setting scan request: 2.000000 sec
+wifid:I(719006):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(719006):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(720733):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728774us,result=0,rfcli=1
+wpa:I(720734):Scan completed in 1.726000 seconds
+hitf:W(720734):get scan result: empty
+wpa:I(720734):Setting scan request: 2.000000 sec
+wifid:I(722735):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(722735):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(724462):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728790us,result=0,rfcli=1
+wpa:I(724463):Scan completed in 1.727000 seconds
+hitf:W(724463):get scan result: empty
+wpa:I(724463):Setting scan request: 2.000000 sec
+wifid:I(726464):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(726464):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(728191):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=34,time=1728978us,result=0,rfcli=1
+wpa:I(728192):Scan completed in 1.726000 seconds
+hitf:W(728192):get scan result: empty
+wpa:I(728192):Setting scan request: 2.000000 sec
+wifid:I(730193):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(730193):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(731920):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1729311us,result=0,rfcli=1
+wpa:I(731921):Scan completed in 1.726000 seconds
+hitf:W(731921):get scan result: empty
+wpa:I(731921):Setting scan request: 2.000000 sec
+wifid:I(733922):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(733922):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(735650):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728594us,result=0,rfcli=1
+wpa:I(735651):Scan completed in 1.728000 seconds
+hitf:W(735651):get scan result: empty
+wpa:I(735652):Setting scan request: 2.000000 sec
+wifid:I(737653):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(737653):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(739380):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=33,time=1729064us,result=0,rfcli=1
+wpa:I(739381):Scan completed in 1.727000 seconds
+hitf:W(739381):get scan result: empty
+wpa:I(739381):Setting scan request: 2.000000 sec
+wifid:I(741382):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(741382):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(743109):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728738us,result=0,rfcli=1
+wpa:I(743110):Scan completed in 1.727000 seconds
+hitf:W(743110):get scan result: empty
+wpa:I(743110):Setting scan request: 2.000000 sec
+wifid:I(745111):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(745111):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(746838):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728436us,result=0,rfcli=1
+wpa:I(746839):Scan completed in 1.727000 seconds
+hitf:W(746839):get scan result: empty
+wpa:I(746839):Setting scan request: 2.000000 sec
+wifid:I(748840):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(748840):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(750567):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728676us,result=0,rfcli=1
+wpa:I(750568):Scan completed in 1.727000 seconds
+hitf:W(750568):get scan result: empty
+wpa:I(750568):Setting scan request: 2.000000 sec
+wifid:I(752569):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(752569):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(754295):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728618us,result=0,rfcli=1
+wpa:I(754296):Scan completed in 1.726000 seconds
+hitf:W(754296):get scan result: empty
+wpa:I(754296):Setting scan request: 2.000000 sec
+wifid:I(756297):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(756297):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(758024):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728380us,result=0,rfcli=1
+wpa:I(758025):Scan completed in 1.727000 seconds
+hitf:W(758025):get scan result: empty
+wpa:I(758025):Setting scan request: 2.000000 sec
+wifid:I(760026):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(760026):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(761753):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=32,time=1729001us,result=0,rfcli=1
+wpa:I(761754):Scan completed in 1.727000 seconds
+hitf:W(761754):get scan result: empty
+wpa:I(761754):Setting scan request: 2.000000 sec
+wifid:I(763756):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(763756):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(765483):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728695us,result=0,rfcli=1
+wpa:I(765484):Scan completed in 1.727000 seconds
+hitf:W(765484):get scan result: empty
+wpa:I(765484):Setting scan request: 2.000000 sec
+wifid:I(767485):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(767485):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(769212):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728746us,result=0,rfcli=1
+wpa:I(769213):Scan completed in 1.727000 seconds
+hitf:W(769213):get scan result: empty
+wpa:I(769213):Setting scan request: 2.000000 sec
+wifid:I(771214):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(771214):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(772942):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1729046us,result=0,rfcli=1
+wpa:I(772943):Scan completed in 1.728000 seconds
+hitf:W(772943):get scan result: empty
+wpa:I(772943):Setting scan request: 2.000000 sec
+wifid:I(774944):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(774944):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(776671):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728760us,result=0,rfcli=1
+wpa:I(776672):Scan completed in 1.727000 seconds
+hitf:W(776672):get scan result: empty
+wpa:I(776672):Setting scan request: 2.000000 sec
+wifid:I(778673):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(778673):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(780400):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=34,time=1728515us,result=0,rfcli=1
+wpa:I(780401):Scan completed in 1.727000 seconds
+hitf:W(780401):get scan result: empty
+wpa:I(780401):Setting scan request: 2.000000 sec
+wifid:I(782402):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(782402):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(784129):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728032us,result=0,rfcli=1
+wpa:I(784130):Scan completed in 1.727000 seconds
+hitf:W(784130):get scan result: empty
+wpa:I(784130):Setting scan request: 2.000000 sec
+wifid:I(786131):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(786131):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(787857):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728123us,result=0,rfcli=1
+wpa:I(787858):Scan completed in 1.726000 seconds
+hitf:W(787858):get scan result: empty
+wpa:I(787858):Setting scan request: 2.000000 sec
+wifid:I(789859):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(789859):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(791586):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728451us,result=0,rfcli=1
+wpa:I(791587):Scan completed in 1.727000 seconds
+hitf:W(791587):get scan result: empty
+wpa:I(791587):Setting scan request: 2.000000 sec
+wifid:I(793588):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(793588):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(795314):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728615us,result=0,rfcli=1
+wpa:I(795315):Scan completed in 1.726000 seconds
+hitf:W(795315):get scan result: empty
+wpa:I(795315):Setting scan request: 2.000000 sec
+wifid:I(797316):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(797316):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(799042):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728642us,result=0,rfcli=1
+wpa:I(799043):Scan completed in 1.726000 seconds
+hitf:W(799043):get scan result: empty
+wpa:I(799043):Setting scan request: 2.000000 sec
+wifid:I(801044):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(801044):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(802772):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1729072us,result=0,rfcli=1
+wpa:I(802773):Scan completed in 1.728000 seconds
+hitf:W(802773):get scan result: empty
+wpa:I(802773):Setting scan request: 2.000000 sec
+wifid:I(804774):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(804774):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(806501):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=31,time=1728498us,result=0,rfcli=1
+wpa:I(806502):Scan completed in 1.727000 seconds
+hitf:W(806502):get scan result: empty
+wpa:I(806502):Setting scan request: 2.000000 sec
+wifid:I(808503):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(808503):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(810230):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728396us,result=0,rfcli=1
+wpa:I(810231):Scan completed in 1.727000 seconds
+hitf:W(810231):get scan result: empty
+wpa:I(810231):Setting scan request: 2.000000 sec
+wifid:I(812232):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(812232):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(813959):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728695us,result=0,rfcli=1
+wpa:I(813960):Scan completed in 1.727000 seconds
+hitf:W(813960):get scan result: empty
+wpa:I(813960):Setting scan request: 2.000000 sec
+wifid:I(815961):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(815961):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(817688):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728622us,result=0,rfcli=1
+wpa:I(817689):Scan completed in 1.727000 seconds
+hitf:W(817689):get scan result: empty
+wpa:I(817689):Setting scan request: 2.000000 sec
+wifid:I(819690):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(819690):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(821418):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1729037us,result=0,rfcli=1
+wpa:I(821419):Scan completed in 1.727000 seconds
+hitf:W(821419):get scan result: empty
+wpa:I(821419):Setting scan request: 2.000000 sec
+wifid:I(823420):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(823421):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(825148):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728750us,result=0,rfcli=1
+wpa:I(825149):Scan completed in 1.727000 seconds
+hitf:W(825149):get scan result: empty
+wpa:I(825149):Setting scan request: 2.000000 sec
+wifid:I(827152):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(827152):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(828879):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728970us,result=0,rfcli=1
+wpa:I(828880):Scan completed in 1.727000 seconds
+hitf:W(828880):get scan result: empty
+wpa:I(828880):Setting scan request: 2.000000 sec
+wifid:I(830881):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(830881):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(832608):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=39,time=1728774us,result=0,rfcli=1
+wpa:I(832609):Scan completed in 1.727000 seconds
+hitf:W(832609):get scan result: empty
+wpa:I(832609):Setting scan request: 2.000000 sec
+wifid:I(834610):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(834610):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(836337):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728462us,result=0,rfcli=1
+wpa:I(836338):Scan completed in 1.727000 seconds
+hitf:W(836338):get scan result: empty
+wpa:I(836338):Setting scan request: 2.000000 sec
+wifid:I(838339):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(838339):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(840066):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728779us,result=0,rfcli=1
+wpa:I(840067):Scan completed in 1.727000 seconds
+hitf:W(840067):get scan result: empty
+wpa:I(840067):Setting scan request: 2.000000 sec
+wifid:I(842068):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(842068):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(843795):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728534us,result=0,rfcli=1
+wpa:I(843796):Scan completed in 1.727000 seconds
+hitf:W(843796):get scan result: empty
+wpa:I(843796):Setting scan request: 2.000000 sec
+wifid:I(845797):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(845797):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(847525):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728383us,result=0,rfcli=1
+wpa:I(847526):Scan completed in 1.728000 seconds
+hitf:W(847526):get scan result: empty
+wpa:I(847526):Setting scan request: 2.000000 sec
+wifid:I(849528):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(849528):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(851255):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728872us,result=0,rfcli=1
+wpa:I(851256):Scan completed in 1.727000 seconds
+hitf:W(851256):get scan result: empty
+wpa:I(851256):Setting scan request: 2.000000 sec
+wifid:I(853257):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(853257):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(854984):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1729242us,result=0,rfcli=1
+wpa:I(854985):Scan completed in 1.727000 seconds
+hitf:W(854985):get scan result: empty
+wpa:I(854985):Setting scan request: 2.000000 sec
+wifid:I(856986):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(856986):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(858713):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1729203us,result=0,rfcli=1
+wpa:I(858714):Scan completed in 1.727000 seconds
+hitf:W(858714):get scan result: empty
+wpa:I(858714):Setting scan request: 2.000000 sec
+wifid:I(860715):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(860715):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(862442):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728402us,result=0,rfcli=1
+wpa:I(862443):Scan completed in 1.727000 seconds
+hitf:W(862443):get scan result: empty
+wpa:I(862443):Setting scan request: 2.000000 sec
+wifid:I(864444):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(864444):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(866171):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1729192us,result=0,rfcli=1
+wpa:I(866172):Scan completed in 1.727000 seconds
+hitf:W(866172):get scan result: empty
+wpa:I(866172):Setting scan request: 2.000000 sec
+wifid:I(868173):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(868173):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(869900):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728547us,result=0,rfcli=1
+wpa:I(869901):Scan completed in 1.727000 seconds
+hitf:W(869901):get scan result: empty
+wpa:I(869901):Setting scan request: 2.000000 sec
+wifid:I(871902):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(871902):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(873629):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728619us,result=0,rfcli=1
+wpa:I(873630):Scan completed in 1.727000 seconds
+hitf:W(873630):get scan result: empty
+wpa:I(873630):Setting scan request: 2.000000 sec
+wifid:I(875631):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(875631):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(877358):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728205us,result=0,rfcli=1
+wpa:I(877359):Scan completed in 1.727000 seconds
+hitf:W(877359):get scan result: empty
+wpa:I(877359):Setting scan request: 2.000000 sec
+wifid:I(879360):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(879360):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(881087):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728415us,result=0,rfcli=1
+wpa:I(881088):Scan completed in 1.727000 seconds
+hitf:W(881088):get scan result: empty
+wpa:I(881088):Setting scan request: 2.000000 sec
+wifid:I(883089):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(883089):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(884816):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728650us,result=0,rfcli=1
+wpa:I(884817):Scan completed in 1.727000 seconds
+hitf:W(884817):get scan result: empty
+wpa:I(884817):Setting scan request: 2.000000 sec
+wifid:I(886819):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(886819):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(888546):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1729120us,result=0,rfcli=1
+wpa:I(888547):Scan completed in 1.726000 seconds
+hitf:W(888547):get scan result: empty
+wpa:I(888547):Setting scan request: 2.000000 sec
+wifid:I(890548):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(890548):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(892276):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728590us,result=0,rfcli=1
+wpa:I(892277):Scan completed in 1.728000 seconds
+hitf:W(892277):get scan result: empty
+wpa:I(892278):Setting scan request: 2.000000 sec
+wifid:I(894279):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(894280):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(896007):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1729628us,result=0,rfcli=1
+wpa:I(896008):Scan completed in 1.727000 seconds
+hitf:W(896008):get scan result: empty
+wpa:I(896008):Setting scan request: 2.000000 sec
+wifid:I(898009):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(898009):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(899736):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1729102us,result=0,rfcli=1
+wpa:I(899737):Scan completed in 1.727000 seconds
+hitf:W(899737):get scan result: empty
+wpa:I(899737):Setting scan request: 2.000000 sec
+wifid:I(901738):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(901738):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(903465):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1729074us,result=0,rfcli=1
+wpa:I(903466):Scan completed in 1.727000 seconds
+hitf:W(903466):get scan result: empty
+wpa:I(903466):Setting scan request: 2.000000 sec
+wifid:I(905468):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(905468):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(907194):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728618us,result=0,rfcli=1
+wpa:I(907195):Scan completed in 1.726000 seconds
+hitf:W(907195):get scan result: empty
+wpa:I(907195):Setting scan request: 2.000000 sec
+wifid:I(909196):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(909196):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(910923):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1729238us,result=0,rfcli=1
+wpa:I(910925):Scan completed in 1.728000 seconds
+hitf:W(910925):get scan result: empty
+wpa:I(910925):Setting scan request: 2.000000 sec
+wifid:I(912927):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(912927):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(914654):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728792us,result=0,rfcli=1
+wpa:I(914655):Scan completed in 1.727000 seconds
+hitf:W(914655):get scan result: empty
+wpa:I(914655):Setting scan request: 2.000000 sec
+wifid:I(916656):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(916656):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(918383):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1729073us,result=0,rfcli=1
+wpa:I(918384):Scan completed in 1.727000 seconds
+hitf:W(918384):get scan result: empty
+wpa:I(918384):Setting scan request: 2.000000 sec
+wifid:I(920385):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(920385):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(922112):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1729177us,result=0,rfcli=1
+wpa:I(922113):Scan completed in 1.727000 seconds
+hitf:W(922113):get scan result: empty
+wpa:I(922113):Setting scan request: 2.000000 sec
+wifid:I(924114):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(924114):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(925841):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1728579us,result=0,rfcli=1
+wpa:I(925842):Scan completed in 1.727000 seconds
+hitf:W(925842):get scan result: empty
+wpa:I(925842):Setting scan request: 2.000000 sec
+wifid:I(927843):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(927843):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(929570):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728882us,result=0,rfcli=1
+wpa:I(929571):Scan completed in 1.727000 seconds
+hitf:W(929571):get scan result: empty
+wpa:I(929571):Setting scan request: 2.000000 sec
+wifid:I(931572):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(931572):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(933298):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728411us,result=0,rfcli=1
+wpa:I(933299):Scan completed in 1.726000 seconds
+hitf:W(933299):get scan result: empty
+wpa:I(933299):Setting scan request: 2.000000 sec
+wifid:I(935300):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(935300):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(937027):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728420us,result=0,rfcli=1
+wpa:I(937028):Scan completed in 1.727000 seconds
+hitf:W(937028):get scan result: empty
+wpa:I(937028):Setting scan request: 2.000000 sec
+wifid:I(939029):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(939029):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(940756):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728870us,result=0,rfcli=1
+wpa:I(940757):Scan completed in 1.727000 seconds
+hitf:W(940757):get scan result: empty
+wpa:I(940757):Setting scan request: 2.000000 sec
+wifid:I(942758):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(942758):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(944485):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728799us,result=0,rfcli=1
+wpa:I(944486):Scan completed in 1.727000 seconds
+hitf:W(944486):get scan result: empty
+wpa:I(944486):Setting scan request: 2.000000 sec
+wifid:I(946488):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(946488):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(948215):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1729139us,result=0,rfcli=1
+wpa:I(948216):Scan completed in 1.727000 seconds
+hitf:W(948216):get scan result: empty
+wpa:I(948216):Setting scan request: 2.000000 sec
+wifid:I(950217):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(950217):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(951945):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1729152us,result=0,rfcli=1
+wpa:I(951946):Scan completed in 1.727000 seconds
+hitf:W(951946):get scan result: empty
+wpa:I(951946):Setting scan request: 2.000000 sec
+wifid:I(953948):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(953948):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(955674):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=30,time=1728377us,result=0,rfcli=1
+wpa:I(955675):Scan completed in 1.726000 seconds
+hitf:W(955675):get scan result: empty
+wpa:I(955676):Setting scan request: 2.000000 sec
+wifid:I(957677):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(957678):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(959405):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=14,time=1729298us,result=0,rfcli=1
+wpa:I(959406):Scan completed in 1.727000 seconds
+hitf:W(959406):get scan result: empty
+wpa:I(959406):Setting scan request: 2.000000 sec
+wifid:I(961407):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(961407):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(963134):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1729037us,result=0,rfcli=1
+wpa:I(963135):Scan completed in 1.727000 seconds
+hitf:W(963135):get scan result: empty
+wpa:I(963136):Setting scan request: 2.000000 sec
+wifid:I(965137):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(965137):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(966864):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=24,time=1728780us,result=0,rfcli=1
+wpa:I(966865):Scan completed in 1.727000 seconds
+hitf:W(966865):get scan result: empty
+wpa:I(966865):Setting scan request: 2.000000 sec
+wifid:I(968866):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(968866):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(970593):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=28,time=1728446us,result=0,rfcli=1
+wpa:I(970594):Scan completed in 1.727000 seconds
+hitf:W(970594):get scan result: empty
+wpa:I(970594):Setting scan request: 2.000000 sec
+wifid:I(972595):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(972595):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(974322):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=17,time=1728919us,result=0,rfcli=1
+wpa:I(974323):Scan completed in 1.727000 seconds
+hitf:W(974323):get scan result: empty
+wpa:I(974323):Setting scan request: 2.000000 sec
+wifid:I(976324):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(976324):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(978050):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=13,time=1728227us,result=0,rfcli=1
+wpa:I(978051):Scan completed in 1.726000 seconds
+hitf:W(978051):get scan result: empty
+wpa:I(978051):Setting scan request: 2.000000 sec
+wifid:I(980052):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(980052):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(981779):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728609us,result=0,rfcli=1
+wpa:I(981780):Scan completed in 1.727000 seconds
+hitf:W(981780):get scan result: empty
+wpa:I(981780):Setting scan request: 2.000000 sec
+wifid:I(983781):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(983781):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(985508):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=27,time=1728395us,result=0,rfcli=1
+wpa:I(985509):Scan completed in 1.727000 seconds
+hitf:W(985509):get scan result: empty
+wpa:I(985509):Setting scan request: 2.000000 sec
+wifid:I(987510):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(987510):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(989237):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=18,time=1728404us,result=0,rfcli=1
+wpa:I(989238):Scan completed in 1.727000 seconds
+hitf:W(989238):get scan result: empty
+wpa:I(989238):Setting scan request: 2.000000 sec
+wifid:I(991239):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(991239):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(992966):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728284us,result=0,rfcli=1
+wpa:I(992967):Scan completed in 1.727000 seconds
+hitf:W(992967):get scan result: empty
+wpa:I(992967):Setting scan request: 2.000000 sec
+wifid:I(994968):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(994968):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(996694):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728139us,result=0,rfcli=1
+wpa:I(996695):Scan completed in 1.726000 seconds
+hitf:W(996695):get scan result: empty
+wpa:I(996695):Setting scan request: 2.000000 sec
+wifid:I(998696):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(998696):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1000422):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728559us,result=0,rfcli=1
+wpa:I(1000423):Scan completed in 1.726000 seconds
+hitf:W(1000423):get scan result: empty
+wpa:I(1000423):Setting scan request: 2.000000 sec
+wifid:I(1002424):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1002424):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1004151):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=22,time=1728552us,result=0,rfcli=1
+wpa:I(1004152):Scan completed in 1.727000 seconds
+hitf:W(1004152):get scan result: empty
+wpa:I(1004152):Setting scan request: 2.000000 sec
+wifid:I(1006153):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1006153):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1007880):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=26,time=1728615us,result=0,rfcli=1
+wpa:I(1007881):Scan completed in 1.727000 seconds
+hitf:W(1007881):get scan result: empty
+wpa:I(1007881):Setting scan request: 2.000000 sec
+wifid:I(1009882):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1009882):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1011609):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728461us,result=0,rfcli=1
+wpa:I(1011610):Scan completed in 1.727000 seconds
+hitf:W(1011610):get scan result: empty
+wpa:I(1011611):Setting scan request: 2.000000 sec
+wifid:I(1013612):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1013612):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1015339):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=29,time=1728805us,result=0,rfcli=1
+wpa:I(1015340):Scan completed in 1.727000 seconds
+hitf:W(1015340):get scan result: empty
+wpa:I(1015340):Setting scan request: 2.000000 sec
+wifid:I(1017341):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1017341):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1019068):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=16,time=1728603us,result=0,rfcli=1
+wpa:I(1019069):Scan completed in 1.727000 seconds
+hitf:W(1019069):get scan result: empty
+wpa:I(1019069):Setting scan request: 2.000000 sec
+wifid:I(1021070):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1021070):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1022797):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=36,time=1729005us,result=0,rfcli=1
+wpa:I(1022798):Scan completed in 1.727000 seconds
+hitf:W(1022798):get scan result: empty
+wpa:I(1022798):Setting scan request: 2.000000 sec
+wifid:I(1024799):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1024799):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1026526):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=19,time=1728418us,result=0,rfcli=1
+wpa:I(1026527):Scan completed in 1.727000 seconds
+hitf:W(1026527):get scan result: empty
+wpa:I(1026527):Setting scan request: 2.000000 sec
+wifid:I(1028528):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1028528):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1030254):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=20,time=1728637us,result=0,rfcli=1
+wpa:I(1030255):Scan completed in 1.726000 seconds
+hitf:W(1030255):get scan result: empty
+wpa:I(1030255):Setting scan request: 2.000000 sec
+wifid:I(1032256):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1032256):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1033983):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=23,time=1729056us,result=0,rfcli=1
+wpa:I(1033984):Scan completed in 1.727000 seconds
+hitf:W(1033984):get scan result: empty
+wpa:I(1033984):Setting scan request: 2.000000 sec
+wifid:I(1035985):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1035985):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1037712):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=25,time=1728944us,result=0,rfcli=1
+wpa:I(1037713):Scan completed in 1.727000 seconds
+hitf:W(1037713):get scan result: empty
+wpa:I(1037713):Setting scan request: 2.000000 sec
+wifid:I(1039714):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1039714):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(1041440):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=0,recv_cnt=21,time=1728439us,result=0,rfcli=1
+wpa:I(1041441):Scan completed in 1.726000 seconds
+hitf:W(1041441):get scan result: empty
+wpa:I(1041441):Setting scan request: 2.000000 sec
+wifid:I(1043442):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=14,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(1043442):[KW:]scanu_start_req:ssid=vivoX300
+os:I(1044644):psram:0x60700000,size:131072
+wifid:I(1045146):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=1,recv_cnt=29,time=1706176us,result=1,rfcli=1
+wpa:I(1045147):Scan completed in 1.704000 seconds
+hitf:I(1045147):get scan result:1
+wpa:I(1045148):State: SCANNING -> ASSOCIATING
+wifid:I(1045149):[KW:]conn vif0-0,auth_type:0,bssid:52ba-87bb-8f7b,ssid:vivoX300,is encryp:8.
+wifid:I(1045149):chan_ctxt_add: CTXT0,freq2462MHz,bw20MHz,pwr127dBm
+wifid:I(1045149):chan_reg_fix:VIF0,CTXT0,type3,ctxt_s0,nb_vif0
+wifid:I(1045150):mm_sta_add:vif 0,sta 0,status 0
+wifid:I(1045153):[KW:]auth_send:seq1, txtype0, auth_type0, seq12325
+wifid:I(1045176):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(1045176):[KW:]assoc_req_send:is ht, seq_num:12326
+wifid:I(1045271):[KW:]assoc_rsp:status0,tx_s0x80800100
+wifid:I(1045271):[KW:]mm_set_vif_state,vif=0,vif_type=0,is_active=1, aid=0x9,rssi=-75
+wpa:I(1045272):State: ASSOCIATING -> ASSOCIATED
+wpa:I(1045302):State: ASSOCIATED -> 4WAY_HANDSHAKE
+wpa:I(1045326):State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+hitf:I(1045330):add CCMP
+wpa:I(1045330):State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+hitf:I(1045331):add CCMP
+wpa:I(1045331):State: GROUP_HANDSHAKE -> COMPLETED
+ap0: netwatch: link=up; old IPv4 cleared
+ap0: bk7258_wifi: TX batch reached 1 frame(s)
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: netwatch: DHCP ready ip=10.109.88.138 lease=3599s
+ap0: netwatch: NTP sync active pid=13
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=111 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+
+--- exit ---
+
+Script done on 2026-09-11 15:36:24+08:00 [COMMAND_EXIT_CODE="0"]

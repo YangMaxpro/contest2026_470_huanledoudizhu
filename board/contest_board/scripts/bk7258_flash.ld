@@ -63,10 +63,12 @@ SECTIONS
 
   .init_array : ALIGN(4)
   {
+    _sinit = ABSOLUTE(.);
     __init_array_start = .;
     KEEP(*(SORT_BY_INIT_PRIORITY(.init_array.*)))
     KEEP(*(.init_array))
     __init_array_end = .;
+    _einit = ABSOLUTE(.);
   } > FLASH
 
   .ARM.extab : ALIGN(4)

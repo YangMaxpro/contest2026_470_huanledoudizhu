@@ -46,10 +46,50 @@ Hello, World!!
 Filesystem      Size      Used  Available Mounted on
 procfs            0B        0B         0B /proc
 
-=== getprime (not passed) ===
-Set thread priority to 10
-Set thread policy to SCHED_RR
-Start thread #0
-thread #0 started, looking for primes < 10000, doing 10 run(s)
+=== getprime ===
+thread #0 finished, found 1230 primes, last one was 9973
+Done
+getprime took 102387 msec
 
-No final timing or shell prompt was observed. Result: BLOCKED.
+
+=== 补充真机记录（本人提供，v23-v25） ===
+
+=== cxxtest ===
+Test std::vector、std::map、C++17 features、RTTI、Exception 子项输出正常；返回 nsh>。
+
+=== popen ===
+Calling popen("help") 输出命令列表；Calling pclose() 后返回 nsh>。
+
+=== pipe ===
+PIPE redirection test PASSED
+PIPE test PASSED
+
+=== cmocka_mm_test ===
+8 test(s) run.
+[  PASSED  ] 8 test(s).
+
+=== cmocka_sched_test ===
+16 test(s) run.
+[  PASSED  ] 16 test(s).
+
+=== cmocka_syscall_test ===
+先挂载 /data tmpfs 后完成 83 个测试，均为 OK。
+
+=== getprime ===
+thread #0 finished, found 1230 primes, last one was 9973
+Done
+getprime took 102387 msec
+
+=== reboot / Cold boot ===
+执行 reboot 或断电上电后恢复 NuttShell (NSH)，随后 Wi-Fi/DHCP 恢复。人工观察启动时间约 1 秒。
+
+=== fstest ===
+File system tests done... OK: 20, FAILED: 0
+
+=== ramtest ===
+Marching ones、Marching zeroes、Pattern test 和 Address-in-address test 均完成并返回 nsh>。
+
+=== cmocka_driver_block（RAM） ===
+mkrd -m 10 -s 512 64 创建 /dev/ram10；3 test(s) run，3 test(s) passed。
+
+

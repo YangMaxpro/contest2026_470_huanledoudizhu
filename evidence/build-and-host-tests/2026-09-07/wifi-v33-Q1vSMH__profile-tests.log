@@ -1,0 +1,29 @@
+PASS: profile ABI, missing, malformed, corruption, storage failure, readback, dedup, clear
+PASS: AP profile transport validation, old CP/short reply, timeout, status mapping
+wifi v33: no saved profile; use xiaopai wifi save <SSID>
+wifi v33: connection requested; netwatch owns DHCP
+wifi v33: boot connect error=110; use xiaopai wifi connect
+wifi v33: boot worker failed=12; console remains available
+wifi: operation failed error=16
+wifi: saves plaintext Wi-Fi credentials to board Flash; 8..63 ASCII password
+Wi-Fi password (hidden; turn local echo OFF; Ctrl-C cancels): 
+wifi: profile saved and read back; boot auto-connect enabled
+wifi v33: connection requested; netwatch owns DHCP
+wifi: saves plaintext Wi-Fi credentials to board Flash; 8..63 ASCII password
+Wi-Fi password (hidden; turn local echo OFF; Ctrl-C cancels): 
+wifi: operation failed error=125
+wifi: saves plaintext Wi-Fi credentials to board Flash; 8..63 ASCII password
+Wi-Fi password (hidden; turn local echo OFF; Ctrl-C cancels): 
+wifi: operation failed error=22
+wifi: saves plaintext Wi-Fi credentials to board Flash; 8..63 ASCII password
+Wi-Fi password (hidden; turn local echo OFF; Ctrl-C cancels): 
+wifi: operation failed error=110
+wifi: saves plaintext Wi-Fi credentials to board Flash; 8..63 ASCII password
+Wi-Fi password (hidden; turn local echo OFF; Ctrl-C cancels): 
+wifi: operation failed error=22
+wifi: saves plaintext Wi-Fi credentials to board Flash; 8..63 ASCII password
+Wi-Fi password (hidden; turn local echo OFF; Ctrl-C cancels): 
+wifi: operation failed error=5
+wifi: saved profile removed; current RAM connection unchanged
+wifi: configuration busy; retry shortly
+PASS: boot retries/no profile, console survives failure, single DHCP owner, hidden input, cancel, timeout, invalid input, no join on save failure, serialization

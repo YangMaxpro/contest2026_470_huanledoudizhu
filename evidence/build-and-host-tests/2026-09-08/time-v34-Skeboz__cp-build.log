@@ -1,0 +1,51 @@
+make: 进入目录“/home/yang/bk7258_sdk/projects/app_ab”
+"Project: app_ab"
+"SDK_DIR: /home/yang/bk7258_sdk"
+"TARGET: bk7258_cp"
+make bk7258_cp PROJECT=app_ab PROJECT_DIR=/home/yang/bk7258_sdk/projects/app_ab BUILD_DIR=/home/yang/bk7258_sdk/projects/app_ab/build -C /home/yang/bk7258_sdk
+make[1]: 进入目录“/home/yang/bk7258_sdk”
+MAKECMDGOALS is bk7258_cp
+ARMINO_SOC is set to bk7258
+ARMINO_TARGET is set to build
+armino project path=/home/yang/bk7258_sdk/projects/app_ab
+armino ap path=/home/yang/bk7258_sdk/ap
+armino cp path=/home/yang/bk7258_sdk/cp
+armino build path=/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab
+===================== Partitions Table =====================
+Name                              Offset            Size    
+------------------------------------------------------------
+primary_bootloader              0x00000000          68K     
+primary_cp_app                  0x00011000         1360K    
+primary_ap_app                  0x00165000         4148K    
+s_app                           0x00572000         2516K    
+ota_fina_executive              0x007e7000           4K     
+usr_config                      0x007e8000          56K     
+(unused)                        0x007f6000          16K     
+easyflash                       0x007fa000           8K     
+easyflash_ap                    0x007fc000           8K     
+sys_rf                          0x007fe000           4K     
+sys_net                         0x007ff000           4K     
+============================================================
+make[2]: 进入目录“/home/yang/bk7258_sdk/cp”
+build bk7258
+Changing ARMINO_PATH environment variable to: /home/yang/bk7258_sdk
+Executing action: set-target
+Target is same as cached target, not full clean
+Done
+Changing ARMINO_PATH environment variable to: /home/yang/bk7258_sdk
+[1/6] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/common/wpa_common.c.obj
+[2/6] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/wpa_auth.c.obj
+[3/6] Linking C static library armino/wpa_supplicant-2.10/libwpa_supplicant-2.10.a
+[4/6] Linking C executable app.elf
+/opt/arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: missing --end-group; added as last command line option
+[5/6] Generating binary image from built executable
+[6/6] cd /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258 && /usr/bin/python3 /home/yang/bk7258_sdk/tools/build_tools/map_helper.py /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/app.map
+['/home/yang/bk7258_sdk/tools/build_tools/map_helper.py', '/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/app.map']
+Executing action: all (aliases: build)
+Running ninja in directory /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258
+Executing "ninja all"...
+Done
+Found all libs in /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/armino_as_lib
+make[2]: 离开目录“/home/yang/bk7258_sdk/cp”
+make[1]: 离开目录“/home/yang/bk7258_sdk”
+make: 离开目录“/home/yang/bk7258_sdk/projects/app_ab”

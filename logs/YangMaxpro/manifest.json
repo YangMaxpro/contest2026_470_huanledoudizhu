@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "team_id": "contest2026_470_huanledoudizhu",
   "github_login": "YangMaxpro",
-  "generator": "qoderwork@0.1.60-qw",
-  "updated_at": "2026-08-31T12:59:42.000+00:00",
+  "generator": "codex-desktop-rollout-export@1.0",
+  "updated_at": "2026-09-11T17:13:38+08:00",
   "sessions": [
     {
       "session_id": "e06d80c6-72d7-44cb-88f7-c65861b19c4d",
@@ -14,6 +14,210 @@
       "file_path": "logs/YangMaxpro/2026-08-31/claude-code__e06d80c6-72d7-44cb-88f7-c65861b19c4d.jsonl",
       "collection_mode": "cli",
       "health": "ok"
+    },
+    {
+      "session_id": "01a06f5a-7697-78f1-9d35-23c1e3dec7f8",
+      "tool": "codex",
+      "started_at": "2026-09-08T02:30:00.034Z",
+      "last_event_at": "2026-09-08T07:44:21.311Z",
+      "event_count": 901,
+      "file_path": "logs/YangMaxpro/2026-09-08/codex__01a06f5a-7697-78f1-9d35-23c1e3dec7f8.jsonl",
+      "collection_mode": "vscode_extension_partial",
+      "data_completeness_warning": "Recovered from Codex Desktop rollout files; encrypted reasoning blocks are unavailable. User, assistant and tool events are retained.",
+      "redacted_count_total": 1,
+      "health": "degraded",
+      "source_rollouts": [
+        {
+          "name": "rollout-2026-09-08T10-29-58-01a06f5a-7697-78f1-9d35-23c1e3dec7f8_01a07ed9-cec5-7aa1-840c-857595f30925.jsonl",
+          "sha256": "1b860b47a306169bd5ad7cc57192caa3b624d851cdda295bdf101afdd1841c36",
+          "size": 55408
+        },
+        {
+          "name": "rollout-2026-09-08T10-38-29-01a06f5a-7697-78f1-9d35-23c1e3dec7f8_01a07ee1-9889-73b0-8e0f-8eac2ccb3fee.jsonl",
+          "sha256": "291a8b388985be15563ea58f89a053331b8f74b780e1eb21e8ea9379d2817e42",
+          "size": 24417
+        },
+        {
+          "name": "rollout-2026-09-08T10-41-12-01a06f5a-7697-78f1-9d35-23c1e3dec7f8_01a07ee4-18fe-76f3-8e4d-defcc9f20f5d.jsonl",
+          "sha256": "cbcfe0b7d4b70ea20317b46c32aa885aee491013ef6b4520a9aa723ab70b5a88",
+          "size": 21000383
+        }
+      ]
+    },
+    {
+      "session_id": "01a07ffb-0c3c-7533-9eeb-1b94a797d354",
+      "tool": "codex",
+      "started_at": "2026-09-08T07:46:17.069Z",
+      "last_event_at": "2026-09-08T13:50:42.873Z",
+      "event_count": 707,
+      "file_path": "logs/YangMaxpro/2026-09-08/codex__01a07ffb-0c3c-7533-9eeb-1b94a797d354.jsonl",
+      "collection_mode": "vscode_extension_partial",
+      "data_completeness_warning": "Recovered from Codex Desktop rollout files; encrypted reasoning blocks are unavailable. User, assistant and tool events are retained.",
+      "redacted_count_total": 0,
+      "health": "degraded",
+      "source_rollouts": [
+        {
+          "name": "rollout-2026-09-08T15-45-54-01a07ffb-0c3c-7533-9eeb-1b94a797d354.jsonl",
+          "sha256": "08e3611ba8ba41127ecb7686a9b69feaafd7dc5aa979a79e6bd81f31ccea0ad4",
+          "size": 11067463
+        }
+      ]
+    },
+    {
+      "session_id": "01a0805f-97f3-74e2-a505-6aaec59b3da5",
+      "tool": "codex",
+      "started_at": "2026-09-08T10:17:08.738Z",
+      "last_event_at": "2026-09-08T11:34:10.330Z",
+      "event_count": 250,
+      "file_path": "logs/YangMaxpro/2026-09-08/codex__01a0805f-97f3-74e2-a505-6aaec59b3da5.jsonl",
+      "collection_mode": "vscode_extension_partial",
+      "data_completeness_warning": "Recovered from Codex Desktop rollout files; encrypted reasoning blocks are unavailable. User, assistant and tool events are retained.",
+      "redacted_count_total": 0,
+      "health": "degraded",
+      "source_rollouts": [
+        {
+          "name": "rollout-2026-09-08T17-35-43-01a0805f-97f3-74e2-a505-6aaec59b3da5.jsonl",
+          "sha256": "ae3421e947d54f0b20752e31191879d8c95c476d253a526a884236bea07b7e7a",
+          "size": 3477477
+        },
+        {
+          "name": "rollout-2026-09-08T19-33-54-01a0805f-97f3-74e2-a505-6aaec59b3da5_01a080cb-cb8b-7f21-8087-5ee834dff8ce.jsonl",
+          "sha256": "2d089c41b339724552d1543f130df3444968cbdc29a4899a1f2c8061307e2466",
+          "size": 27249
+        },
+        {
+          "name": "rollout-2026-09-08T19-34-02-01a0805f-97f3-74e2-a505-6aaec59b3da5_01a080cb-e8fb-7fc1-ba78-739bab928180.jsonl",
+          "sha256": "97a50b061d9b00ad3982952139e3c7a4993eef77ead30adea0c2a11220a9be2e",
+          "size": 33775
+        }
+      ]
+    },
+    {
+      "session_id": "01a080cc-29e5-7760-a42f-50e4c3b8c911",
+      "tool": "codex",
+      "started_at": "2026-09-08T11:34:19.368Z",
+      "last_event_at": "2026-09-08T11:55:10.556Z",
+      "event_count": 266,
+      "file_path": "logs/YangMaxpro/2026-09-08/codex__01a080cc-29e5-7760-a42f-50e4c3b8c911.jsonl",
+      "collection_mode": "vscode_extension_partial",
+      "data_completeness_warning": "Recovered from Codex Desktop rollout files; encrypted reasoning blocks are unavailable. User, assistant and tool events are retained.",
+      "redacted_count_total": 0,
+      "health": "degraded",
+      "source_rollouts": [
+        {
+          "name": "rollout-2026-09-08T19-34-18-01a080cc-29e5-7760-a42f-50e4c3b8c911.jsonl",
+          "sha256": "19d45e942d3a35793199b84a9f595dfa383f832219bfb6f3228046c59198c91f",
+          "size": 702052
+        }
+      ]
+    },
+    {
+      "session_id": "01a080e0-f358-7732-8346-e034913bb8f6",
+      "tool": "codex",
+      "started_at": "2026-09-08T11:57:06.760Z",
+      "last_event_at": "2026-09-08T12:11:55.400Z",
+      "event_count": 64,
+      "file_path": "logs/YangMaxpro/2026-09-08/codex__01a080e0-f358-7732-8346-e034913bb8f6.jsonl",
+      "collection_mode": "vscode_extension_partial",
+      "data_completeness_warning": "Recovered from Codex Desktop rollout files; encrypted reasoning blocks are unavailable. User, assistant and tool events are retained.",
+      "redacted_count_total": 0,
+      "health": "degraded",
+      "source_rollouts": [
+        {
+          "name": "rollout-2026-09-08T19-57-01-01a080e0-f358-7732-8346-e034913bb8f6.jsonl",
+          "sha256": "d85ccb0f886b150646d16f3e65cbbba2c9cf55c1a81bb7062284d89b77de079c",
+          "size": 32641
+        },
+        {
+          "name": "rollout-2026-09-08T19-58-04-01a080e0-f358-7732-8346-e034913bb8f6_01a080e1-eb31-7af1-b186-1ddaa6cdd3f5.jsonl",
+          "sha256": "01c7c18bea386b3eb1060277109f2026187150889ebd566a700595a35c79f630",
+          "size": 2893527
+        }
+      ]
+    },
+    {
+      "session_id": "01a080ee-b671-7213-b25a-7562861e02db",
+      "tool": "codex",
+      "started_at": "2026-09-08T12:12:11.306Z",
+      "last_event_at": "2026-09-11T09:13:32.562Z",
+      "event_count": 4042,
+      "file_path": "logs/YangMaxpro/2026-09-08/codex__01a080ee-b671-7213-b25a-7562861e02db.jsonl",
+      "collection_mode": "vscode_extension_partial",
+      "data_completeness_warning": "Recovered from Codex Desktop rollout files; encrypted reasoning blocks are unavailable. User, assistant and tool events are retained.",
+      "redacted_count_total": 58,
+      "health": "degraded",
+      "source_rollouts": [
+        {
+          "name": "rollout-2026-09-08T20-12-03-01a080ee-b671-7213-b25a-7562861e02db.jsonl",
+          "sha256": "65792b131452e37efe2543bd80af4651f849ae6597351c320cbad7f2265b637c",
+          "size": 4340122
+        },
+        {
+          "name": "rollout-2026-09-09T11-47-41-01a080ee-b671-7213-b25a-7562861e02db_01a08447-524d-7470-9a45-9f010798d3a8.jsonl",
+          "sha256": "f958610818c91edad0904d7668ada35a8de83a227c68762e0b6bdce7d98eddba",
+          "size": 29660
+        },
+        {
+          "name": "rollout-2026-09-09T11-49-22-01a080ee-b671-7213-b25a-7562861e02db_01a08448-dd3d-7810-b38b-6a84c2b6494f.jsonl",
+          "sha256": "5dd198ec63d78c4f7bb267c8b2a4393f1bd31abb3c2c7e06b89edcc3ad5c449b",
+          "size": 3658788
+        },
+        {
+          "name": "rollout-2026-09-09T13-08-08-01a080ee-b671-7213-b25a-7562861e02db_01a08490-f943-77e1-aab1-fb7e33bd4961.jsonl",
+          "sha256": "297619e677bf71bc3f8766218a35ac9bfe3e1dd74a4002bfffff21cc338b1402",
+          "size": 59616162
+        },
+        {
+          "name": "rollout-2026-09-09T21-36-01-01a080ee-b671-7213-b25a-7562861e02db_01a08661-f41e-7bf0-9a17-9afa655dbe0b.jsonl",
+          "sha256": "3acc3d212deeadef70f08d4d50084b91d117b773eb11ba0c43a12bad6db17df2",
+          "size": 13644093
+        },
+        {
+          "name": "rollout-2026-09-10T17-07-22-01a080ee-b671-7213-b25a-7562861e02db_01a08a92-59ae-76e0-9c70-b290258377d6.jsonl",
+          "sha256": "087ed92472dc45b464657135da3159fa7f4ffacfe66c854afdf47439ec835e41",
+          "size": 72995
+        },
+        {
+          "name": "rollout-2026-09-10T19-20-22-01a080ee-b671-7213-b25a-7562861e02db_01a08b0c-1ef7-7a73-b320-4f89e55c14bf.jsonl",
+          "sha256": "5115ffed5bf7bedcac0fac2b36891762aafff91e1d2a20dd739d90abef8376dc",
+          "size": 1313437
+        },
+        {
+          "name": "rollout-2026-09-10T21-28-35-01a080ee-b671-7213-b25a-7562861e02db_01a08b81-809a-7a42-8801-14ddaff64b77.jsonl",
+          "sha256": "6bf39ce4ce2b2a5cedae15e29b7e8b1624fd539cfbe59fb521345d260fdb7447",
+          "size": 4353971
+        },
+        {
+          "name": "rollout-2026-09-11T13-00-00-01a080ee-b671-7213-b25a-7562861e02db_01a08ed6-3ce6-7d23-8fc6-b81be1e40b61.jsonl",
+          "sha256": "961b02405619c477299865151fbdc1186fe3101e1c2a6c33fd852e93dde7e5ed",
+          "size": 3356078
+        },
+        {
+          "name": "rollout-2026-09-11T14-25-21-01a080ee-b671-7213-b25a-7562861e02db_01a08f24-61e4-7402-aea0-2ad3077ed96f.jsonl",
+          "sha256": "8c8776184758722db6a0b8a2fab6e675a8e1b553f1cbee39fc811668c8efe0f5",
+          "size": 25138970
+        },
+        {
+          "name": "rollout-2026-09-11T16-31-14-01a080ee-b671-7213-b25a-7562861e02db_01a08f97-a0d6-7092-8b79-605ae0297bd2.jsonl",
+          "sha256": "944a4f0e8a6d39565de61ddc1b4108ffa11791d84306a61a5af9c9c2207823f4",
+          "size": 539160
+        },
+        {
+          "name": "rollout-2026-09-11T16-49-43-01a080ee-b671-7213-b25a-7562861e02db_01a08fa8-8d57-75d0-b44b-96c0318a8c4c.jsonl",
+          "sha256": "1fb8d2b0696420e7c3db40c07f2ab273942e2eaeb268bdeebe7bf9e9ca9f3bc3",
+          "size": 237236
+        },
+        {
+          "name": "rollout-2026-09-11T16-54-41-01a080ee-b671-7213-b25a-7562861e02db_01a08fad-1bb2-7ac0-bbf9-d15de16f59df.jsonl",
+          "sha256": "e545970f18e7c3850e8998b7a56194b367a23cee390f4d0a48da060a1b2df222",
+          "size": 120992
+        },
+        {
+          "name": "rollout-2026-09-11T16-55-27-01a080ee-b671-7213-b25a-7562861e02db_01a08fad-cfbc-7f52-b0d8-118f1adc5b9e.jsonl",
+          "sha256": "6112193044969848d5f1e9b6f40c33c155b79d567754f1e9a68f6c3166cc6825",
+          "size": 608414
+        }
+      ]
     }
   ]
 }

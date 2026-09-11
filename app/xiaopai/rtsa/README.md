@@ -107,7 +107,7 @@ recursive mutexes and loopback while disabling legacy MiMo text/voice to leave
 room in the unchanged AP flash partition. Normal Wi-Fi, time, heartbeat and
 local audio diagnostics are retained. The v36 build/config are not replaced.
 
-See `tools/V37_RTSA_PROBE.md` in the project root for exact artifacts and steps.
+See `tools/rtsa/V37_RTSA_PROBE.md` in the project root for exact artifacts and steps.
 Native execution, channel entry and audio remain unverified until board results
 are collected. Host tests cover lifecycle failure cleanup and worker state;
 they are not a substitute for those results.

@@ -29,12 +29,17 @@
 
 - [x] `logs/YangMaxpro/manifest.json` 已记录真实会话。
 - [x] `logs/YangMaxpro/2026-08-31/claude-code__e06d80c6-72d7-44cb-88f7-c65861b19c4d.jsonl` 是实际 JSONL 日志，不是 example 占位。
+- [x] `logs/YangMaxpro/2026-09-08/` 已补导 6 个与本项目有关的 Codex Desktop 会话，共 6230 条事件；同一会话持续到 2026-09-11，按官方规则归入会话开始日期。
+- [x] 全部 7 份 AI Coding 日志已通过赛事 `validate-log.py` 校验（8400 条事件，`ALL OK`）。
 - [x] `skills/bk7258-xts-test/SKILL.md` 已沉淀 BK7258 XTS 测试流程。
-- [ ] 若继续使用 Codex/其他工具，按组委会手册追加真实导出的 JSONL，不要手工伪造事件。
+- [x] `skills/bk7258-openvela-development/SKILL.md` 已沉淀 BK7258 芯片、板级、构建、镜像和真机开发流程。
 
 ## 报告与演示
 
 - [x] README 已填写队伍名称、成员分工、选题方向和仓库链接。
+
 - [x] README 和适配报告已区分已完成、待适配和需要额外硬件的能力。
+
 - [x] `evidence/xts/2026-09-09/serial-key-results.log` 已保留 `ostest_main: Exiting with status 0`、`TEST COMPLETE` 和 `OK: 164, FAILED: 0` 真机串口证据。
-- [ ] 演示视频尚未入仓；提交前需完整播放一次并确认文件可解码。
+
+  

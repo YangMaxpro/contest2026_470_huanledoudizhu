@@ -12,6 +12,7 @@
 #include <stdio.h>
 
 #include <nuttx/board.h>
+#include <nuttx/arch.h>
 #include <nuttx/config.h>
 #include <nuttx/irq.h>
 #include <nuttx/spinlock.h>
@@ -298,5 +299,20 @@ int board_app_initialize(uintptr_t arg)
 }
 
 #endif /* CONFIG_BOARDCTL */
+
+#ifdef CONFIG_BOARDCTL_RESET
+
+/****************************************************************************
+ * Name: board_reset
+ ****************************************************************************/
+
+int board_reset(int status)
+{
+  UNUSED(status);
+  up_systemreset();
+  return 0;
+}
+
+#endif /* CONFIG_BOARDCTL_RESET */
 
 #endif /* CONFIG_ARCH_BOARD_BK7258_DEVKIT */

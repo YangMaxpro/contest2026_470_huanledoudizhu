@@ -1,0 +1,26 @@
+[1/21] cd /home/yang/openvela/cmake_out/configs_nsh/libs/libc/misc && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/yang/openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/21] Generating bin output directories
+[3/21] cd /home/yang/openvela/nuttx && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh/defconfig -DNUTTX_DIR=/home/yang/openvela/nuttx -DCMAKE_BINARY_DIR=/home/yang/openvela/cmake_out/configs_nsh -P /home/yang/openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[4/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_lowputc.c.o
+[5/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_syslog.c.o
+[6/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_serial.c.o
+[7/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_start.c.o
+/home/yang/openvela/nuttx/arch/arm/src/bk7258/bk7258_start.c: In function 'bk7258_cpu_private_initialize':
+/home/yang/openvela/nuttx/arch/arm/src/bk7258/bk7258_start.c:124:16: warning: unused variable 'region_count' [-Wunused-variable]
+  124 |   const size_t region_count = sizeof(g_bk7258_mpu_regions) /
+      |                ^~~~~~~~~~~~
+[8/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_mbox0.c.o
+[9/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_mb_uart.c.o
+[10/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_ipc_heartbeat.c.o
+[11/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_mailbox_channel.c.o
+[12/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_aud.c.o
+[13/21] Building C object boards/CMakeFiles/board.dir/home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/src/board_boot.c.o
+[14/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_pm_pwc.c.o
+[15/21] Linking C static library boards/libboard.a
+[16/21] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_wifi.c.o
+[17/21] Linking C static library arch/libarch.a
+[18/21] Linking C executable nuttx
+/home/yang/openvela/prebuilts/gcc/linux-x86_64/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.4.0/../../../../arm-none-eabi/bin/ld: warning: .note.gnu.build-id section discarded, --build-id ignored
+[19/21] Generating nuttx.bin
+[20/21] Generating nuttx.hex
+[21/21] Generating System.map

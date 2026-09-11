@@ -1,0 +1,68 @@
+MAKECMDGOALS is bk7258_cp
+ARMINO_SOC is set to bk7258
+ARMINO_TARGET is set to build
+armino project path=/home/yang/bk7258_sdk/projects/app_ab
+armino ap path=/home/yang/bk7258_sdk/ap
+armino cp path=/home/yang/bk7258_sdk/cp
+armino build path=/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab
+===================== Partitions Table =====================
+Name                              Offset            Size    
+------------------------------------------------------------
+primary_bootloader              0x00000000          68K     
+primary_cp_app                  0x00011000         1360K    
+primary_ap_app                  0x00165000         4148K    
+s_app                           0x00572000         2516K    
+ota_fina_executive              0x007e7000           4K     
+usr_config                      0x007e8000          56K     
+(unused)                        0x007f6000          16K     
+easyflash                       0x007fa000           8K     
+easyflash_ap                    0x007fc000           8K     
+sys_rf                          0x007fe000           4K     
+sys_net                         0x007ff000           4K     
+============================================================
+make[1]: Entering directory '/home/yang/bk7258_sdk/cp'
+build bk7258
+Executing action: set-target
+Target is same as cached target, not full clean
+Done
+Changing ARMINO_PATH environment variable to: /home/yang/bk7258_sdk
+[1/30] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_mem_mgmt.c.obj
+[2/30] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_wifi_dp.c.obj
+[3/30] Building C object armino/driver/CMakeFiles/__armino_driver.dir/trng/trng_driver.c.obj
+[4/30] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_ipc.c.obj
+[5/30] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_wifi_api.c.obj
+[6/30] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_ps.c.obj
+[7/30] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/port/wlanif.c.obj
+[8/30] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_cntrl.c.obj
+[9/30] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_main.c.obj
+[10/30] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/port/net.c.obj
+[11/30] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwnx_rx.c.obj
+[12/30] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/notify.c.obj
+[13/30] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rw_task.c.obj
+[14/30] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/wpa_scan.c.obj
+[15/30] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwnx_tx.c.obj
+[16/30] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/skbuff.c.obj
+[17/30] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_init.c.obj
+[18/30] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_api.c.obj
+[19/30] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/events.c.obj
+[20/30] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_wifi.c.obj
+[21/30] Linking C static library armino/bk_cli/libbk_cli.a
+[22/30] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_v2.c.obj
+[23/30] Linking C static library armino/bk_wifi/libbk_wifi.a
+whoami: cannot find name for user ID 1000
+[24/30] Linking C static library armino/wpa_supplicant-2.10/libwpa_supplicant-2.10.a
+[25/30] Linking C static library armino/lwip_intf_v2_1/liblwip_intf_v2_1.a
+[26/30] Linking C static library armino/controller_if/libcontroller_if.a
+[27/30] Linking C static library armino/driver/libdriver.a
+[28/30] Linking C executable app.elf
+/opt/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: missing --end-group; added as last command line option
+[29/30] Generating binary image from built executable
+[30/30] cd /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258 && /usr/bin/python3 /home/yang/bk7258_sdk/tools/build_tools/map_helper.py /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/app.map
+['/home/yang/bk7258_sdk/tools/build_tools/map_helper.py', '/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/app.map']
+Changing ARMINO_PATH environment variable to: /home/yang/bk7258_sdk
+Executing action: all (aliases: build)
+Running ninja in directory /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258
+Executing "ninja all"...
+Done
+Found all libs in /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/armino_as_lib
+make[1]: Leaving directory '/home/yang/bk7258_sdk/cp'

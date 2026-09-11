@@ -1,0 +1,693 @@
+make: 进入目录“/home/yang/bk7258_sdk/projects/app_ab”
+"Project: app_ab"
+"SDK_DIR: /home/yang/bk7258_sdk"
+"TARGET: bk7258_cp"
+make bk7258_cp PROJECT=app_ab PROJECT_DIR=/home/yang/bk7258_sdk/projects/app_ab BUILD_DIR=/home/yang/bk7258_sdk/projects/app_ab/build -C /home/yang/bk7258_sdk
+make[1]: 进入目录“/home/yang/bk7258_sdk”
+MAKECMDGOALS is bk7258_cp
+ARMINO_SOC is set to bk7258
+ARMINO_TARGET is set to build
+armino project path=/home/yang/bk7258_sdk/projects/app_ab
+armino ap path=/home/yang/bk7258_sdk/ap
+armino cp path=/home/yang/bk7258_sdk/cp
+armino build path=/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab
+===================== Partitions Table =====================
+Name                              Offset            Size    
+------------------------------------------------------------
+primary_bootloader              0x00000000          68K     
+primary_cp_app                  0x00011000         1360K    
+primary_ap_app                  0x00165000         4148K    
+s_app                           0x00572000         2516K    
+ota_fina_executive              0x007e7000           4K     
+usr_config                      0x007e8000          56K     
+(unused)                        0x007f6000          16K     
+easyflash                       0x007fa000           8K     
+easyflash_ap                    0x007fc000           8K     
+sys_rf                          0x007fe000           4K     
+sys_net                         0x007ff000           4K     
+============================================================
+make[2]: 进入目录“/home/yang/bk7258_sdk/cp”
+build bk7258
+Changing ARMINO_PATH environment variable to: /home/yang/bk7258_sdk
+Executing action: set-target
+Target is same as cached target, not full clean
+Done
+Changing ARMINO_PATH environment variable to: /home/yang/bk7258_sdk
+[0/1] Re-running CMake...
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- [32mARMINO_TOOLS_PATH is /home/yang/bk7258_sdk/tools[m
+-- [32mLIB_HASH IS "fbe925f7559e16a00e7fe7bdeafb9509"[m
+-- [32mglobal toolchain file: /home/yang/bk7258_sdk/cp/middleware/soc/bk7258/toolchain-bk7258.cmake[m
+-- [32mBuilding Beken ARMINO components for target bk7258[m
+-- enter check_verify_env_varible
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/kconfigs.in
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/components_kconfigs.in
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/kconfigs.in
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/middleware_kconfigs.in
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/kconfigs.in
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/projects_kconfigs.in
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/kconfigs.in
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/properties_kconfigs.in
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/kconfigs.in
+/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/extra_kconfigs.in
+warning: The int symbol UART_ATE_PORT (defined at /home/yang/bk7258_sdk/cp/middleware/driver/uart/Kconfig:31) is being evaluated in a logical context somewhere. It will always evaluate to n.
+Loading defaults file /home/yang/bk7258_sdk/cp/middleware/soc/bk7258/bk7258.defconfig...
+-- enter check_verify_env_varible
+WARINIG bt_host_exist 0
+WARINIG bt_host_basename .a
+WARINIG bt_controller_basename libbluetooth_controller_controller_only_ble.a
+-- [32mInclude directory '/home/yang/bk7258_sdk/cp/middleware/driver/jpeg_enc' is not a directory.[m
+-- [32mInclude directory '/home/yang/bk7258_sdk/cp/components/bk_pm/include' is not a directory.[m
+-- [32mInclude directory '/home/yang/bk7258_sdk/cp/components/controller_if/include' is not a directory.[m
+-- [32mInclude directory '/home/yang/bk7258_sdk/cp/components/wpa_supplicant-2.10/include/bk_private' is not a directory.[m
+-- [32mInclude directory '/home/yang/bk7258_sdk/cp/components/bk_net/include' is not a directory.[m
+-- bk_libs and toolchain version verify success...
+-- enter check_verify_env_varible
+-- [32m[Select ld file]: /home/yang/bk7258_sdk/cp/middleware/soc/bk7258/bk7258_bsp.ld.[m
+-- [32mAdding linker script /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/armino/bk7258/bk7258_out.ld[m
+-- [32mInclude directory '/home/yang/bk7258_sdk/cp/components/at_server/atsvr_cmd' is not a directory.[m
+Check defconfig: /home/yang/bk7258_sdk/cp/middleware/soc/bk7258/bk7258.defconfig
+-- [32mComponents: adc_key app at at_server base64 bk7258 bk_adapter bk_ate bk_bluetooth bk_cli bk_common bk_event bk_httpc bk_init bk_libs bk_log bk_netif bk_phy bk_pm bk_ps bk_rtos bk_startup bk_system bk_uid bk_wifi bt cm33 cmsis common compal console controller_if coredump cp driver easy_flash embeded_gcov hmac_sha_256 include iperf json key_handle lwip_intf_v2_1 mesh os os_source part_table partitions psa_mbedtls release saradc_intf temp_detect touch uart_debug unity utf8 vnd_cal webclient wpa_supplicant-2.10[m
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258
+[1/610] armino ====> gen file /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/project_elf_src.c...
+[2/610] Generating linker script...
+[3/610] Building C object CMakeFiles/app.elf.dir/project_elf_src.c.obj
+[4/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_dbl.c.obj
+[5/610] Building C object armino/bk_rtos/CMakeFiles/__armino_bk_rtos.dir/freertos/v10/rtos_debug.c.obj
+[6/610] Building C object armino/utf8/CMakeFiles/__armino_utf8.dir/conv_utf8.c.obj
+[7/610] Building C object armino/bk_rtos/CMakeFiles/__armino_bk_rtos.dir/platform_stub.c.obj
+[8/610] Building C object armino/bk_rtos/CMakeFiles/__armino_bk_rtos.dir/freertos/mem_arch.c.obj
+[9/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/list.c.obj
+[10/610] Building C object armino/bk_rtos/CMakeFiles/__armino_bk_rtos.dir/freertos/v10/rtos_pub.c.obj
+[11/610] Building C object armino/bk_rtos/CMakeFiles/__armino_bk_rtos.dir/freertos/posix/freertos_impl/source/pthread_local_storage.c.obj
+[12/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/croutine.c.obj
+[13/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/event_groups.c.obj
+[14/610] Building C object armino/coredump/CMakeFiles/__armino_coredump.dir/cm_backtrace/cm_backtrace.c.obj
+[15/610] Building C object armino/bk_rtos/CMakeFiles/__armino_bk_rtos.dir/freertos/str_arch.c.obj
+[16/610] Building C object armino/bk_rtos/CMakeFiles/__armino_bk_rtos.dir/rtos_ext.c.obj
+[17/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/queue.c.obj
+[18/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/timers.c.obj
+[19/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/portable/GCC/ARM_CM33_NTZ/non_secure/port.c.obj
+[20/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/stream_buffer.c.obj
+[21/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/portable/Common/mpu_wrappers.c.obj
+[22/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c.obj
+[23/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/portable/MemMang/heap_4.c.obj
+[24/610] Building C object armino/cmsis/CMakeFiles/__armino_cmsis.dir/CMSIS_5/Device/Beken/bk7236xx/Source/system_bk7236xx.c.obj
+[25/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/arm.c.obj
+[26/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/stack_base.c.obj
+[27/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/fpb.c.obj
+[28/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/arch_delay.c.obj
+[29/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/jump.c.obj
+[30/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/mpu.c.obj
+[31/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/trap_base.c.obj
+[32/610] Building C object armino/cmsis/CMakeFiles/__armino_cmsis.dir/CMSIS_5/Device/Beken/bk7236xx/Source/startup_bk7236.c.obj
+[33/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/dwt.c.obj
+[34/610] Building C object armino/bk_log/CMakeFiles/__armino_bk_log.dir/log.c.obj
+[35/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/os/freertos/cpu.c.obj
+[36/610] Building C object armino/easy_flash/CMakeFiles/__armino_easy_flash.dir/easy_flash_V4.X/src/easyflash.c.obj
+[37/610] Building C object armino/easy_flash/CMakeFiles/__armino_easy_flash.dir/bk_ef.c.obj
+[38/610] Building C object armino/cm33/CMakeFiles/__armino_cm33.dir/arch_interrupt.c.obj
+[39/610] Building C object armino/base64/CMakeFiles/__armino_base64.dir/base_64.c.obj
+[40/610] Building C object armino/easy_flash/CMakeFiles/__armino_easy_flash.dir/easy_flash_V4.X/src/ef_iap.c.obj
+[41/610] Building C object armino/easy_flash/CMakeFiles/__armino_easy_flash.dir/easy_flash_V4.X/src/ef_env_legacy.c.obj
+[42/610] Building C object armino/easy_flash/CMakeFiles/__armino_easy_flash.dir/easy_flash_V4.X/src/ef_env_legacy_wl.c.obj
+[43/610] Building C object armino/easy_flash/CMakeFiles/__armino_easy_flash.dir/easy_flash_V4.X/src/ef_log.c.obj
+[44/610] Building C object armino/easy_flash/CMakeFiles/__armino_easy_flash.dir/easy_flash_V4.X/src/ef_utils.c.obj
+[45/610] Building C object armino/easy_flash/CMakeFiles/__armino_easy_flash.dir/easy_flash_V4.X/port/ef_port.c.obj
+[46/610] Building C object armino/os_source/CMakeFiles/__armino_os_source.dir/freertos_v10/tasks.c.obj
+[47/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_cmd.c.obj
+[48/610] Building C object armino/unity/CMakeFiles/__armino_unity.dir/extras/fixture/src/unity_fixture.c.obj
+[49/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/reset_reason/reset_reason.c.obj
+[50/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_driver.c.obj
+[51/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_dstr.c.obj
+[52/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_file.c.obj
+[53/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_end.c.obj
+[54/610] Building C object armino/unity/CMakeFiles/__armino_unity.dir/src/unity.c.obj
+[55/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_int.c.obj
+[56/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_lit.c.obj
+[57/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_rem.c.obj
+[58/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_date.c.obj
+[59/610] Building C object armino/easy_flash/CMakeFiles/__armino_easy_flash.dir/easy_flash_V4.X/src/ef_env.c.obj
+[60/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_hashtable.c.obj
+[61/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_rex.c.obj
+[62/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ctr_drbg.c.obj
+[63/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_str.c.obj
+[64/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/arg_utils.c.obj
+[65/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/cipher_wrap.c.obj
+[66/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/dhm.c.obj
+[67/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls_port/mbedtls/library/ecp_curves.c.obj
+[68/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/cipher.c.obj
+[69/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/entropy_poll.c.obj
+[70/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ecdh.c.obj
+[71/610] Building C object armino/console/CMakeFiles/__armino_console.dir/argtable3/argtable3.c.obj
+[72/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ecdsa.c.obj
+[73/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_client.c.obj
+[74/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto.c.obj
+[75/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/bignum.c.obj
+[76/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/md.c.obj
+[77/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/x509write.c.obj
+[78/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/x509_crl.c.obj
+[79/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls_port/src/tls_mem.c.obj
+[80/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/oid.c.obj
+[81/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls_port/src/tls_hardware.c.obj
+[82/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/pkparse.c.obj
+[83/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ecp.c.obj
+[84/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls_port/mbedtls/library/threading.c.obj
+[85/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls_port/src/tls_connect.c.obj
+[86/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls_port/mbedtls/library/platform.c.obj
+[87/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls_port/mbedtls/library/net_sockets.c.obj
+[88/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/pkcs7.c.obj
+[89/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/x509_create.c.obj
+[90/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/rsa.c.obj
+[91/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls_port/mbedtls/programs/test/selftest.c.obj
+[92/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/tests/src/certs.c.obj
+[93/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/x509write_crt.c.obj
+[94/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/x509_csr.c.obj
+[95/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/x509write_csr.c.obj
+[96/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_ticket.c.obj
+[97/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/mps_trace.c.obj
+[98/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/debug.c.obj
+[99/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/mps_reader.c.obj
+[100/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_cache.c.obj
+[101/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_ciphersuites.c.obj
+[102/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_cookie.c.obj
+[103/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/x509.c.obj
+[104/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_tls12_server.c.obj
+[105/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_client.c.obj
+[106/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_debug_helpers_generated.c.obj
+[107/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_tls12_client.c.obj
+[108/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_tls13_keys.c.obj
+[109/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_tls13_client.c.obj
+[110/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/x509_crt.c.obj
+[111/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_tls13_generic.c.obj
+[112/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_tls13_server.c.obj
+[113/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/aria.c.obj
+[114/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/aesni.c.obj
+[115/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/asn1write.c.obj
+[116/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/asn1parse.c.obj
+[117/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/aes.c.obj
+[118/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/chachapoly.c.obj
+[119/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/base64.c.obj
+[120/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/chacha20.c.obj
+[121/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/camellia.c.obj
+[122/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/des.c.obj
+[123/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ccm.c.obj
+[124/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/error.c.obj
+[125/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ecjpake.c.obj
+[126/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/bignum_core.c.obj
+[127/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/gcm.c.obj
+[128/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ecp_curves_new.c.obj
+[129/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/entropy.c.obj
+[130/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/constant_time.c.obj
+[131/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/hmac_drbg.c.obj
+[132/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/rsa_alt_helpers.c.obj
+[133/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_msg.c.obj
+[134/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ssl_tls.c.obj
+[135/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/ripemd160.c.obj
+[136/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/sha512.c.obj
+[137/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/sha256.c.obj
+[138/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/sha3.c.obj
+[139/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/pem.c.obj
+[140/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/nist_kw.c.obj
+[141/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/md5.c.obj
+[142/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/poly1305.c.obj
+[143/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/pk_wrap.c.obj
+[144/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/pkcs12.c.obj
+[145/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/platform_util.c.obj
+[146/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/pk.c.obj
+[147/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_util.c.obj
+[148/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_hash.c.obj
+[149/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_ecp.c.obj
+[150/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/pkcs5.c.obj
+[151/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/cmac.c.obj
+[152/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_cipher.c.obj
+[153/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_slot_management.c.obj
+[154/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_rsa.c.obj
+[155/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_ffdh.c.obj
+[156/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/pkwrite.c.obj
+[157/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_se.c.obj
+[158/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_storage.c.obj
+[159/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_driver_wrappers_no_static.c.obj
+[160/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_aead.c.obj
+[161/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_pake.c.obj
+[162/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/sha1.c.obj
+[163/610] Building C object armino/bk_bluetooth/CMakeFiles/__armino_bk_bluetooth.dir/hci/hal_hci_core.c.obj
+[164/610] Building C object armino/psa_mbedtls/CMakeFiles/__armino_psa_mbedtls.dir/mbedtls/library/psa_crypto_mac.c.obj
+[165/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/wpa_auth_ie.c.obj
+[166/610] Building C object armino/bk_bluetooth/CMakeFiles/__armino_bk_bluetooth.dir/feat_config/bt_feature_config.c.obj
+[167/610] Building C object armino/bk_bluetooth/CMakeFiles/__armino_bk_bluetooth.dir/hci/hci_distinguish.c.obj
+[168/610] Building C object armino/bk_bluetooth/CMakeFiles/__armino_bk_bluetooth.dir/api/bt_main.c.obj
+[169/610] Building C object armino/bk_bluetooth/CMakeFiles/__armino_bk_bluetooth.dir/hci/hci_parse.c.obj
+[170/610] Building C object armino/temp_detect/CMakeFiles/__armino_temp_detect.dir/bk_sensor.c.obj
+[171/610] Building C object armino/temp_detect/CMakeFiles/__armino_temp_detect.dir/volt_detect.c.obj
+[172/610] Building C object armino/bk_bluetooth/CMakeFiles/__armino_bk_bluetooth.dir/api/bk_cli_ble.c.obj
+[173/610] Building C object armino/bk_bluetooth/CMakeFiles/__armino_bk_bluetooth.dir/soc/bk7236/bluetooth.c.obj
+[174/610] Building C object armino/bk_phy/CMakeFiles/__armino_bk_phy.dir/src/bk_phy_api.c.obj
+[175/610] Building C object armino/bk_phy/CMakeFiles/__armino_bk_phy.dir/src/bk_rf_adapter.c.obj
+[176/610] Building C object armino/bk_bluetooth/CMakeFiles/__armino_bk_bluetooth.dir/ipc/src/bt_ipc_core.c.obj
+[177/610] Building C object armino/temp_detect/CMakeFiles/__armino_temp_detect.dir/temp_detect.c.obj
+[178/610] Building C object armino/bk_phy/CMakeFiles/__armino_bk_phy.dir/src/bk_phy_notify.c.obj
+[179/610] Building C object armino/bk_phy/CMakeFiles/__armino_bk_phy.dir/src/bk_phy_server.c.obj
+[180/610] Building C object armino/temp_detect/CMakeFiles/__armino_temp_detect.dir/cli_temp_detect.c.obj
+[181/610] Building C object armino/bk_phy/CMakeFiles/__armino_bk_phy.dir/src/cli_phy.c.obj
+[182/610] Building C object armino/bk_bluetooth/CMakeFiles/__armino_bk_bluetooth.dir/api/ble_gap_export_api.c.obj
+[183/610] Building C object armino/bk_system/CMakeFiles/__armino_bk_system.dir/mac.c.obj
+[184/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_clock_driver.c.obj
+[185/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/common/driver.c.obj
+[186/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_bt_driver.c.obj
+[187/610] Building C object armino/bk_phy/CMakeFiles/__armino_bk_phy.dir/src/bk_phy_adapter.c.obj
+[188/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/common/drv_model.c.obj
+[189/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_int_driver.c.obj
+[190/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_driver_common.c.obj
+[191/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/common/dd.c.obj
+[192/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_ps_driver.c.obj
+[193/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_touch_driver.c.obj
+[194/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_psram_driver.c.obj
+[195/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_wifi_driver.c.obj
+[196/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_video_driver.c.obj
+[197/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/uart/uart_statis.c.obj
+[198/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_audio_driver.c.obj
+[199/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/icu/interrupt_base.c.obj
+[200/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/icu/icu_driver.c.obj
+[201/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/saradc/adc_driver.c.obj
+[202/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/pmu/aon_pmu_driver.c.obj
+[203/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/wdt/wdt_driver.c.obj
+[204/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/timer/timer_driver.c.obj
+[205/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/uart/printf.c.obj
+[206/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sys_ctrl/sys_ctrl.c.obj
+[207/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/pwr_clk/low_pwr_misc.c.obj
+[208/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/saradc/cli_adc_api.c.obj
+[209/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/saradc/adc_statis.c.obj
+[210/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/pwr_clk/rosc_ppm.c.obj
+[211/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/saradc/cli_sadc_api.c.obj
+[212/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/saradc/adc_cmd_api.c.obj
+[213/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/pwr_clk/low_pwr_core.c.obj
+[214/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/saradc/saradc_notify.c.obj
+[215/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/gpio/gpio_driver_base.c.obj
+[216/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/pwr_clk/rosc_32k.c.obj
+[217/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/uart/uart_driver.c.obj
+[218/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/flash/flash_notify.c.obj
+[219/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/trng/trng_driver.c.obj
+[220/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/saradc/saradc_server.c.obj
+[221/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/flash/flash_partition.c.obj
+[222/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/aon_wdt/aon_wdt_driver.c.obj
+[223/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/chip_support/chip_support.c.obj
+[224/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/efuse/efuse_driver.c.obj
+[225/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/irda/irda.c.obj
+[226/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/pwr_clk/pwr_clk.c.obj
+[227/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/mbox0_drv.c.obj
+[228/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/flash/flash_bypass.c.obj
+[229/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/rtc/aon_rtc_driver_64bit.c.obj
+[230/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/flash/flash_server.c.obj
+[231/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/touch/touch_driver_v1_1.c.obj
+[232/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/flash/flash_svr_test.c.obj
+[233/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/flash/flash_driver_ext.c.obj
+[234/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/general_dma/dma_driver.c.obj
+[235/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/flash/flash_driver.c.obj
+[236/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/dsp/dsp.c.obj
+[237/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/mb_ipc_heartbeat.c.obj
+[238/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/psram/psram_driver.c.obj
+[239/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/bk_api_ipc.c.obj
+[240/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/mb_ipc_cmd.c.obj
+[241/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/mbox0_adapter.c.obj
+[242/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/bk_api_rpc_server.c.obj
+[243/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/otp/otp_driver_v1_1.c.obj
+[244/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/bk_api_ipc_test.c.obj
+[245/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/spinlock/spinlock.c.obj
+[246/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/mb_chnl_buff.c.obj
+[247/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/mb_ipc.c.obj
+[248/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/spinlock/amp_res_lock.c.obj
+[249/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/bk7258/interrupt_statis.c.obj
+[250/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/mailbox_channel.c.obj
+[251/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/bk7258/gpio_driver.c.obj
+[252/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/mailbox/mb_uart_driver.c.obj
+[253/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/bk7258/interrupt.c.obj
+[254/610] Building C object armino/bk_pm/CMakeFiles/__armino_bk_pm.dir/pm_model.c.obj
+[255/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/ckmn/ckmn_driver.c.obj
+[256/610] Building C object armino/driver/CMakeFiles/__armino_driver.dir/sdmadc/sdmadc_driver.c.obj
+[257/610] Building C object armino/bk_pm/CMakeFiles/__armino_bk_pm.dir/pm_misc.c.obj
+[258/610] Building C object armino/bk_pm/CMakeFiles/__armino_bk_pm.dir/low_vol.c.obj
+[259/610] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_co_list.c.obj
+[260/610] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_wifi_dp.c.obj
+[261/610] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_main.c.obj
+[262/610] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_ipc.c.obj
+[263/610] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_cntrl.c.obj
+[264/610] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_wifi_api.c.obj
+[265/610] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_ps.c.obj
+[266/610] Building C object armino/controller_if/CMakeFiles/__armino_controller_if.dir/cif_mem_mgmt.c.obj
+[267/610] Building C object armino/bk_pm/CMakeFiles/__armino_bk_pm.dir/pm.c.obj
+[268/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/port/sys_arch.c.obj
+[269/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/api/netbuf.c.obj
+[270/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/port/wlanif.c.obj
+[271/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/api/err.c.obj
+[272/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/api/api_lib.c.obj
+[273/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/api/netifapi.c.obj
+[274/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/apps/mdns/mdns.c.obj
+[275/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/api/netdb.c.obj
+[276/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/api/tcpip.c.obj
+[277/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/apps/ping/ping.c.obj
+[278/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/api/api_msg.c.obj
+[279/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/def.c.obj
+[280/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/port/net.c.obj
+[281/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv4/ip4_addr.c.obj
+[282/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/dns.c.obj
+[283/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv4/igmp.c.obj
+[284/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv4/icmp.c.obj
+[285/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/inet_chksum.c.obj
+[286/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ip.c.obj
+[287/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv4/autoip.c.obj
+[288/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/init.c.obj
+[289/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv4/etharp.c.obj
+[290/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv6/dhcp6.c.obj
+[291/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv4/ip4_napt.c.obj
+[292/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv4/ip4_frag.c.obj
+[293/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv6/ethip6.c.obj
+[294/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv4/ip4.c.obj
+[295/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv6/inet6.c.obj
+[296/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv6/icmp6.c.obj
+[297/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv6/ip6_addr.c.obj
+[298/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv6/ip6.c.obj
+[299/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv6/nd6.c.obj
+[300/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/mem.c.obj
+[301/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/memp.c.obj
+[302/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv6/ip6_frag.c.obj
+[303/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/api/sockets.c.obj
+[304/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv6/mld6.c.obj
+[305/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/sys.c.obj
+[306/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/netif.c.obj
+[307/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/raw.c.obj
+[308/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/ipv4/dhcp.c.obj
+[309/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/stats.c.obj
+[310/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/timeouts.c.obj
+[311/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/debug.c.obj
+[312/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/pbuf.c.obj
+[313/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/tcp_out.c.obj
+[314/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/netif/ethernet.c.obj
+[315/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/udp.c.obj
+[316/610] Building C object armino/bk_netif/CMakeFiles/__armino_bk_netif.dir/bk_at_netif.c.obj
+[317/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/tcp.c.obj
+[318/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/dhcpd/dhcp-server-main.c.obj
+[319/610] Building C object armino/bk_netif/CMakeFiles/__armino_bk_netif.dir/bk_netif.c.obj
+[320/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/bk_patch/signal.c.obj
+[321/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/bk_patch/fake_socket.c.obj
+[322/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/bk_patch/ddrv.c.obj
+[323/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/bk_patch/sk_intf.c.obj
+[324/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/dhcpd/dhcp-server.c.obj
+[325/610] Building C object armino/lwip_intf_v2_1/CMakeFiles/__armino_lwip_intf_v2_1.dir/lwip-2.1.2/src/core/tcp_in.c.obj
+[326/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ap_mlme.c.obj
+[327/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/hostapd/main_none.c.obj
+[328/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ap_list.c.obj
+[329/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/drv_callbacks.c.obj
+[330/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ap_config.c.obj
+[331/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ap_drv_ops.c.obj
+[332/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ieee802_11_ht.c.obj
+[333/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/dfs.c.obj
+[334/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ieee802_11_auth.c.obj
+[335/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/hw_features.c.obj
+[336/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/beacon.c.obj
+[337/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ieee802_11_he.c.obj
+[338/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/hostapd.c.obj
+[339/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ieee802_11_shared.c.obj
+[340/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/utils.c.obj
+[341/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ieee802_11_vht.c.obj
+[342/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ieee802_11.c.obj
+[343/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/pmksa_cache_auth.c.obj
+[344/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/wmm.c.obj
+[345/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/ieee802_1x.c.obj
+[346/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/tkip_countermeasures.c.obj
+[347/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/drivers/drivers.c.obj
+[348/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/sta_info.c.obj
+[349/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/common/ocv.c.obj
+[350/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/common/hw_features_common.c.obj
+[351/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/wpa_auth_glue.c.obj
+[352/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/common/wpa_psk_cache.c.obj
+[353/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/drivers/driver_common.c.obj
+[354/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/l2_packet/l2_packet_none.c.obj
+[355/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/common/wpa_common.c.obj
+[356/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/utils/os_none.c.obj
+[357/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/rsn_supp/wpa_ie.c.obj
+[358/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/common/ieee802_11_common.c.obj
+[359/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/utils/wpa_debug.c.obj
+[360/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/rsn_supp/pmksa_cache.c.obj
+[361/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/drivers/driver_beken.c.obj
+[362/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/utils/crc32.c.obj
+[363/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/utils/common.c.obj
+[364/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/ap/wpa_auth.c.obj
+[365/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/bssid_ignore.c.obj
+[366/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/utils/wpabuf.c.obj
+[367/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/utils/eloop.c.obj
+[368/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/config_none.c.obj
+[369/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/main_supplicant.c.obj
+[370/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/rsn_supp/wpa.c.obj
+[371/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/bss.c.obj
+[372/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/ctrl_iface.c.obj
+[373/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/notify.c.obj
+[374/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/cmd_reg.c.obj
+[375/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/cmd_help.c.obj
+[376/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/op_classes.c.obj
+[377/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/command_ate.c.obj
+[378/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/config.c.obj
+[379/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/sme.c.obj
+[380/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/wpas_glue.c.obj
+[381/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/wmm_ac.c.obj
+[382/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/aes-siv.c.obj
+[383/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/sha1-prf.c.obj
+[384/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/events.c.obj
+[385/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/dh_group5.c.obj
+[386/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/dh_groups.c.obj
+[387/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/sha256-kdf.c.obj
+[388/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/sha384-kdf.c.obj
+[389/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/sha256-prf.c.obj
+[390/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/sha512-prf.c.obj
+[391/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/sha384-prf.c.obj
+[392/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/sha512-kdf.c.obj
+[393/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/wpa_scan.c.obj
+[394/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/wnm_sta.c.obj
+[395/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/tls_none.c.obj
+[396/610] Building C object armino/bk_adapter/CMakeFiles/__armino_bk_adapter.dir/lib_adapter.c.obj
+[397/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/net_param.c.obj
+[398/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/common/dragonfly.c.obj
+[399/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/command_ate_adc.c.obj
+[400/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/command_ate_audio.c.obj
+[401/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/command_ate_memcheck.c.obj
+[402/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/command_ate_vdddig.c.obj
+[403/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/common/sae.c.obj
+[404/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/hostapd_intf.c.obj
+[405/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/command_table.c.obj
+[406/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/bk_wifi_adapter.c.obj
+[407/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/udebug.c.obj
+[408/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/pbuf.c.obj
+[409/610] Building C object armino/uart_debug/CMakeFiles/__armino_uart_debug.dir/command_line.c.obj
+[410/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/bk_workqueue.c.obj
+[411/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/phy.c.obj
+[412/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rw_msdu.c.obj
+[413/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/lsig_monitor.c.obj
+[414/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/wpa_supplicant/wpa_supplicant.c.obj
+[415/610] Building C object armino/wpa_supplicant-2.10/CMakeFiles/__armino_wpa_supplicant-2.10.dir/src/crypto/crypto_mbedtls.c.obj
+[416/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rw_ieee80211.c.obj
+[417/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rw_msg_rx.c.obj
+[418/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rw_task.c.obj
+[419/610] Building C object armino/iperf/CMakeFiles/__armino_iperf.dir/iperf.c.obj
+[420/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rw_tx_buffering.c.obj
+[421/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwm_proto.c.obj
+[422/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwnx_misc.c.obj
+[423/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rw_msg_tx.c.obj
+[424/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwnx_td.c.obj
+[425/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwnx_rx.c.obj
+[426/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwnx_utils.c.obj
+[427/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/sa_station.c.obj
+[428/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/sa_ap.c.obj
+[429/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_config.c.obj
+[430/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/skbuff.c.obj
+[431/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwnx_params.c.obj
+[432/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwnx_txq.c.obj
+[433/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_frame.c.obj
+[434/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/rwnx_tx.c.obj
+[435/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_netif.c.obj
+[436/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_init.c.obj
+[437/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/soft_encrypt.c.obj
+[438/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_api.c.obj
+[439/610] Building C object armino/bk_system/CMakeFiles/__armino_bk_system.dir/printf_base.c.obj
+[440/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_at.c.obj
+[441/610] Building C object armino/bk_system/CMakeFiles/__armino_bk_system.dir/bk_system_at.c.obj
+[442/610] Building C object armino/bk_system/CMakeFiles/__armino_bk_system.dir/reboot.c.obj
+[443/610] Building C object armino/bk_system/CMakeFiles/__armino_bk_system.dir/printf.c.obj
+[444/610] Building C object armino/bk_system/CMakeFiles/__armino_bk_system.dir/delay.c.obj
+[445/610] Building C object armino/bk_system/CMakeFiles/__armino_bk_system.dir/os/freertos/tick.c.obj
+[446/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_event.c.obj
+[447/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_wpa_cmd.c.obj
+[448/610] Building C object armino/vnd_cal/CMakeFiles/__armino_vnd_cal.dir/vnd_cal.c.obj
+[449/610] Building C object armino/bk_ate/CMakeFiles/__armino_bk_ate.dir/ate.c.obj
+[450/610] Building C object armino/bk_init/CMakeFiles/__armino_bk_init.dir/components_init.c.obj
+[451/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_gpio.c.obj
+[452/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_common.c.obj
+[453/610] Building C object armino/bk_init/CMakeFiles/__armino_bk_init.dir/bk_init.c.obj
+[454/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_mico.c.obj
+[455/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_os.c.obj
+[456/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_interrupt.c.obj
+[457/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_rpc.c.obj
+[458/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_misc.c.obj
+[459/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_mem.c.obj
+[460/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_main.c.obj
+[461/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_timer.c.obj
+[462/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_psram.c.obj
+[463/610] Building C object armino/bk_wifi/CMakeFiles/__armino_bk_wifi.dir/src/wifi_v2.c.obj
+[464/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_reg.c.obj
+[465/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_fpb.c.obj
+[466/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/shell_uart.c.obj
+[467/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_wdt.c.obj
+[468/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_iperf.c.obj
+[469/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_exception.c.obj
+[470/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_dwt.c.obj
+[471/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_uart.c.obj
+[472/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_flash.c.obj
+[473/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_pwr.c.obj
+[474/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_efuse.c.obj
+[475/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_trng.c.obj
+[476/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/rpc_client_gpio.c.obj
+[477/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_netif.c.obj
+[478/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_flash_test.c.obj
+[479/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_lwip.c.obj
+[480/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_dma.c.obj
+[481/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_easyflash.c.obj
+[482/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_touch.c.obj
+[483/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/shell_mailbox_ipc.c.obj
+[484/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_aon_rtc.c.obj
+[485/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/psram_ll.c.obj
+[486/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_puf.c.obj
+[487/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_uid.c.obj
+[488/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/timer_hal_debug.c.obj
+[489/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_ckmn.c.obj
+[490/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/cli_wifi.c.obj
+[491/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/mpu_cfg.c.obj
+[492/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/timer_ll.c.obj
+[493/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/uart_ll.c.obj
+[494/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/icu_hal_debug.c.obj
+[495/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/icu_ll.c.obj
+[496/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/gpio_hal_debug.c.obj
+[497/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/timer_hal.c.obj
+[498/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/dma_ll.c.obj
+[499/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/gpio_ll.c.obj
+[500/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/efuse_ll.c.obj
+[501/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/dma_hal_debug.c.obj
+[502/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/adc_ll.c.obj
+[503/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/wdt_ll.c.obj
+[504/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/uart_hal_debug.c.obj
+[505/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/trng_hal_debug.c.obj
+[506/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/efuse_hal_debug.c.obj
+[507/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/trng_ll.c.obj
+[508/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/adc_hal_debug.c.obj
+[509/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/wdt_hal_debug.c.obj
+[510/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/spi_ll.c.obj
+[511/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/lin_hal_debug.c.obj
+[512/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/ckmn_ll.c.obj
+[513/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/spi_hal_debug.c.obj
+[514/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/timer_hal.c.obj
+[515/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/i2s_hal.c.obj
+[516/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/sys_pm_hal_ctrl.c.obj
+[517/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/calendar_hal_debug.c.obj
+[518/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/calendar_ll.c.obj
+[519/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/sys_pm_hal_debug.c.obj
+[520/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/flash_ll.c.obj
+[521/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/aon_rtc_hal_debug.c.obj
+[522/610] Building C object armino/bk_cli/CMakeFiles/__armino_bk_cli.dir/shell_task.c.obj
+[523/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/flash_hal_debug.c.obj
+[524/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/sys_hal_debug.c.obj
+[525/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/sdio_hal_debug.c.obj
+[526/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/aon_pmu_hal.c.obj
+[527/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/aon_pmu_hal_debug.c.obj
+[528/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/sys_clock_hal_debug.c.obj
+[529/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/ckmn_hal_debug.c.obj
+[530/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/lin_ll.c.obj
+[531/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/sdmadc_hal_debug.c.obj
+[532/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/qspi_hal_debug.c.obj
+[533/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/sys_pm_hal.c.obj
+[534/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/icu_hal.c.obj
+[535/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/dma_hal.c.obj
+[536/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/wdt_hal.c.obj
+[537/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/aon_wdt_hal.c.obj
+[538/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/uart_hal.c.obj
+[539/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/adc_hal.c.obj
+[540/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/sdmadc_hal.c.obj
+[541/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/spi_hal.c.obj
+[542/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/flash_hal.c.obj
+[543/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/aon_rtc_hal_64bit.c.obj
+[544/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/efuse_hal.c.obj
+[545/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/psram_hal.c.obj
+[546/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/trng_hal.c.obj
+[547/610] Building C object armino/bk_startup/CMakeFiles/__armino_bk_startup.dir/freertos/rtos_init.c.obj
+[548/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/otp_hal.c.obj
+[549/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/ckmn_hal.c.obj
+[550/610] Building C object armino/bk7258/CMakeFiles/__armino_bk7258.dir/hal/sys_hal.c.obj
+[551/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/gpio_hal.c.obj
+[552/610] Building C object armino/common/CMakeFiles/__armino_common.dir/hal/mbox0_hal.c.obj
+[553/610] Building C object armino/bk_common/CMakeFiles/__armino_bk_common.dir/bk_feature.c.obj
+[554/610] Building C object armino/bk_common/CMakeFiles/__armino_bk_common.dir/bk_crc.c.obj
+[555/610] Building C object armino/at_server/CMakeFiles/__armino_at_server.dir/_at_server_port/atsvr_core.c.obj
+[556/610] Linking C static library armino/bk_common/libbk_common.a
+[557/610] Building C object armino/bk_startup/CMakeFiles/__armino_bk_startup.dir/system_main.c.obj
+[558/610] Building C object armino/at_server/CMakeFiles/__armino_at_server.dir/at_server.c.obj
+[559/610] Building C object armino/bk_event/CMakeFiles/__armino_bk_event.dir/event.c.obj
+[560/610] Building C object armino/at_server/CMakeFiles/__armino_at_server.dir/_at_server_port/atsvr_port.c.obj
+[561/610] Building C object armino/bk_uid/CMakeFiles/__armino_bk_uid.dir/bk_uid_adaptor.c.obj
+[562/610] Linking C static library armino/bk_event/libbk_event.a
+[563/610] Linking C static library armino/bk_startup/libbk_startup.a
+[564/610] Building C object armino/bk_uid/CMakeFiles/__armino_bk_uid.dir/bk_uid.c.obj
+[565/610] Linking C static library armino/common/libcommon.a
+[566/610] Building C object armino/at_server/CMakeFiles/__armino_at_server.dir/at_server_func/_atsvr_func.c.obj
+[567/610] Linking C static library armino/bk7258/libbk7258.a
+[568/610] Building C object armino/at_server/CMakeFiles/__armino_at_server.dir/at_task.c.obj
+[569/610] Linking C static library armino/bk_cli/libbk_cli.a
+[570/610] Building C object armino/hmac_sha_256/CMakeFiles/__armino_hmac_sha_256.dir/pbkdf2_sha256.c.obj
+[571/610] Linking C static library armino/bk_init/libbk_init.a
+[572/610] Building C object armino/cp/CMakeFiles/__armino_cp.dir/cp_main.c.obj
+[573/610] Linking C static library armino/vnd_cal/libvnd_cal.a
+[574/610] Building C object armino/at_server/CMakeFiles/__armino_at_server.dir/_at_server/_at_server.c.obj
+[575/610] Linking C static library armino/bk_ate/libbk_ate.a
+[576/610] Building C object armino/touch/CMakeFiles/__armino_touch.dir/touch_demo.c.obj
+[577/610] Linking C static library armino/iperf/libiperf.a
+[578/610] Linking C static library armino/bk_system/libbk_system.a
+[579/610] Linking C static library armino/bk_wifi/libbk_wifi.a
+[580/610] Linking C static library armino/uart_debug/libuart_debug.a
+[581/610] Linking C static library armino/bk_adapter/libbk_adapter.a
+[582/610] Linking C static library armino/wpa_supplicant-2.10/libwpa_supplicant-2.10.a
+[583/610] Linking C static library armino/bk_netif/libbk_netif.a
+[584/610] Linking C static library armino/lwip_intf_v2_1/liblwip_intf_v2_1.a
+[585/610] Linking C static library armino/controller_if/libcontroller_if.a
+[586/610] Linking C static library armino/bk_pm/libbk_pm.a
+[587/610] Linking C static library armino/driver/libdriver.a
+[588/610] Linking C static library armino/bk_phy/libbk_phy.a
+[589/610] Linking C static library armino/temp_detect/libtemp_detect.a
+[590/610] Linking C static library armino/bk_bluetooth/libbk_bluetooth.a
+[591/610] Linking C static library armino/psa_mbedtls/libpsa_mbedtls.a
+[592/610] Linking C static library armino/console/libconsole.a
+[593/610] Linking C static library armino/unity/libunity.a
+[594/610] Linking C static library armino/easy_flash/libeasy_flash.a
+[595/610] Linking C static library armino/base64/libbase64.a
+[596/610] Linking C static library armino/bk_log/libbk_log.a
+[597/610] Linking C static library armino/cm33/libcm33.a
+[598/610] Linking C static library armino/cmsis/libcmsis.a
+[599/610] Linking C static library armino/coredump/libcoredump.a
+[600/610] Linking C static library armino/os_source/libos_source.a
+[601/610] Linking C static library armino/bk_rtos/libbk_rtos.a
+[602/610] Linking C static library armino/utf8/libutf8.a
+[603/610] Linking C static library armino/touch/libtouch.a
+[604/610] Linking C static library armino/bk_uid/libbk_uid.a
+[605/610] Linking C static library armino/cp/libcp.a
+[606/610] Linking C static library armino/at_server/libat_server.a
+[607/610] Linking C static library armino/hmac_sha_256/libhmac_sha_256.a
+[608/610] Linking C executable app.elf
+/opt/arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: missing --end-group; added as last command line option
+[609/610] Generating binary image from built executable
+[610/610] cd /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258 && /usr/bin/python3 /home/yang/bk7258_sdk/tools/build_tools/map_helper.py /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/app.map
+['/home/yang/bk7258_sdk/tools/build_tools/map_helper.py', '/home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/app.map']
+Executing action: all (aliases: build)
+Running ninja in directory /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258
+Executing "ninja all"...
+Done
+Found all libs in /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/bk7258/armino_as_lib
+make[2]: 离开目录“/home/yang/bk7258_sdk/cp”
+make[1]: 离开目录“/home/yang/bk7258_sdk”
+make: 离开目录“/home/yang/bk7258_sdk/projects/app_ab”

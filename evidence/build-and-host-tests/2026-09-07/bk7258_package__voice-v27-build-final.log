@@ -1,0 +1,18 @@
+[1/12] cd /home/yang/openvela/cmake_out/configs_nsh/libs/libc/misc && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/yang/openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/12] Generating bin output directories
+[3/12] cd /home/yang/openvela/nuttx && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh/defconfig -DNUTTX_DIR=/home/yang/openvela/nuttx -DCMAKE_BINARY_DIR=/home/yang/openvela/cmake_out/configs_nsh -P /home/yang/openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[4/12] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_httpcheck.c.o
+[5/12] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_main.c.o
+[6/12] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_mimo.c.o
+[7/12] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_voice.c.o
+[8/12] Linking C static library apps/packages/demos/contest2026_470_xiaopai/libapps_xiaopai.a
+[9/12] Linking C executable nuttx
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      691520 B      3904 KB     17.30%
+             RAM:      176400 B       336 KB     51.27%
+            SWAP:           0 B         2 KB      0.00%
+   PSRAM_SECTION:           0 B         6 MB      0.00%
+/home/yang/openvela/prebuilts/gcc/linux-x86_64/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.4.0/../../../../arm-none-eabi/bin/ld: warning: .note.gnu.build-id section discarded, --build-id ignored
+[10/12] Generating nuttx.bin
+[11/12] Generating nuttx.hex
+[12/12] Generating System.map

@@ -11,11 +11,11 @@
 | 官方作品仓 | [`open-vela/contest2026_470_huanledoudizhu`](https://github.com/open-vela/contest2026_470_huanledoudizhu) |
 | 芯片上游贡献 | [`open-vela/nuttx` PR #360](https://github.com/open-vela/nuttx/pull/360) |
 
-## 小派项目定位
+## 项目定位
 
-**项目名称**：基于 R1 套件的离线语音控制终端——“小派”
+**项目名称：** BK7258 R1 开发套件 openvela 新硬件适配
 
-**一句话定位**：面向居家独居老人和儿童，提供本地离线语音唤醒，结合云端大模型完成语音问答、生活提醒和按需视觉看护，降低传统智能音箱的唤醒延迟并扩展居家陪护能力。
+**一句话定位：** 面向新硬件适配赛道，在 BK7258 双核 Cortex-M33F R1 开发套件上完成 openvela 芯片级 BSP、板级 BSP、启动、中断、SysTick、UART、内存与 PSRAM、Wi-Fi、NSH 及构建烧录链路适配，并通过真机 xTS 测试形成可复现的硬件适配基线；“小派”作为板级能力验证应用。
 
 ## 一、作品简介
 
@@ -32,8 +32,8 @@
 | 本地语音唤醒 | `audio` + I2S + 本地唤醒引擎 | 控制层已就绪，等待双麦克风/I2S 驱动 |
 | 采集与降噪 | `audio` + BK7258 DSP 封装 | 模拟音频/PCM 诊断链路已接入；标准 audio upper-half 与 DSP 降噪待完善 |
 | 云端 AI 对话 | `netdev` + TLS/HTTP 或 MQTT | CP IPC Wi-Fi netdev、DHCP、DNS 和 TLS 检查已接入；云端大模型业务协议待完成 |
-| 视觉看护（可选） | `video` + DVP/ISP | 按需能力探测，等待摄像头驱动 |
-| 屏幕反馈（可选） | `fb` + RGB LCD | 按需能力探测，等待 framebuffer 驱动 |
+| 视觉看护 | `video` + DVP/ISP | 按需能力探测，等待摄像头驱动 |
+| 屏幕反馈 | `fb` + RGB LCD | 按需能力探测，等待 framebuffer 驱动 |
 | LED/马达通知 | `gpio` / `pwm` | R1 红/绿 LED（GPIO40/41）已接入状态反馈；PWM/马达待驱动 |
 | 多任务调度 | NuttX scheduler、消息队列 | 当前控制状态机可验证，驱动接入后拆分音频/网络/UI 任务 |
 
@@ -46,19 +46,34 @@
 ## 三、目录结构
 
 ```
-├── board/contest_board/           # BK7258 DevKit 板级 BSP（映射到 vendor/openvela/boards/contest2026_470_board）
-│   ├── configs/bk7258-devkit/nsh/defconfig   # 最小 NSH 配置（BK7258 UART0 控制台 + SysTick + 2 段内存）
-│   ├── include/board.h           # 板级定义（26MHz 晶振、UART0 引脚等）
-│   ├── scripts/bk7258_flash.ld   # AP Flash 链接脚本（XIP @0x02150000，物理分区 0x165000）
-│   ├── src/board_boot.c          # 板级早期初始化 / 应用初始化
-│   ├── CMakeLists.txt            # 挂载 LD_SCRIPT 与 board 库源文件
-│   └── README.md                 # BSP 移植文档（含 5 个已验证的坑）
-├── app/hello_app/                # HelloWorld 示例应用（映射到 packages/demos/contest2026_470_hello_app）
-├── app/xiaopai/                  # 小派控制层（映射到 packages/demos/contest2026_470_xiaopai）
-├── app/demos/                    # packages/demos 顶层 CMake/Make 聚合入口
-├── logs/                         # AI Coding 真实会话日志（经官方 schema 校验）
-│   └── YangMaxpro/
-└── contest2026_470_huanledoudizhu.xml   # 本仓作品目录 → openvela 编译树映射
+├── board/contest_board/                 # BK7258 DevKit 板级 BSP
+│   ├── configs/bk7258-devkit/nsh/defconfig # NSH 配置（UART0 + SysTick + 内存）
+│   ├── include/board.h                   # 板级定义和 UART0 引脚
+│   ├── scripts/bk7258_flash.ld           # AP Flash 链接脚本
+│   ├── src/board_boot.c                  # 板级早期初始化
+│   └── README.md                         # BSP 移植说明
+├── app/hello_app/                        # HelloWorld 示例应用
+├── app/xiaopai/                          # 小派控制层和 RTSA 适配
+├── app/demos/                            # demos 顶层 CMake/Make 聚合入口
+├── docs/                                 # 硬件适配报告、XTS 覆盖矩阵和测试说明
+├── evidence/                             # 构建、主机测试和真机串口原始证据
+│   ├── build-and-host-tests/<date>/
+│   └── xts/<date>/
+├── logs/                                 # AI Coding 真实会话日志
+│   └── YangMaxpro/<date>/
+├── skills/                               # 自建 Skill
+│   ├── bk7258-openvela-development/SKILL.md
+│   └── bk7258-xts-test/SKILL.md
+├── tools/                                # 构建、网络、音频、RTSA 和诊断工具
+│   ├── build_image/
+│   ├── system/
+│   ├── network/
+│   ├── audio/
+│   ├── rtsa/
+│   └── convoai/
+├── SUBMISSION_CHECKLIST.md               # 赛事提交检查表
+├── openvela.xml                          # openvela 工程映射和版本固定
+└── contest2026_470_huanledoudizhu.xml   # 本仓作品目录映射
 ```
 
 配套提交：芯片 BSP 的上游提交为 [`open-vela/nuttx` PR #360](https://github.com/open-vela/nuttx/pull/360)。PR 合入前，本仓 `openvela.xml` 固定到 `YangMaxpro/nuttx@ebd2bba1677d695586860ee7050f987b60bdfe06` 以保证 `repo sync` 可复现；合入后应改回官方 `dev-ai-contest-2026` revision。
@@ -79,13 +94,18 @@ cd contest2026_470_huanledoudizhu/..
 # 3. 产物
 #    cmake_out/configs_nsh/nuttx.bin  （最近一次构建为 146560 B）
 #    BK7258 UART0（GPIO11 TX / GPIO10 RX，115200 8N1）为 NSH 串口控制台
-
+#
 # 4. 烧录与运行
+#
+#    烧录命令参考：
+#
+     ./bk_loader download -p 0 -b 1500000 -s 0x11000 -i /home/yang/openvela/bk7258_package/openvela-cp-ap-update-xts-block-v27-at-0x11000.bin
+#
 #    BK7258 的 flash_crc_enable 配置要求 CP/AP 分区按 32+2 字节 CRC16 编码；
 #    不要直接把 nuttx.bin 或未编码的 CP/AP 原始文件拼接进 8 MB Flash。
-#    使用 tools/make_bk7258_linear_crc_image.py 生成镜像时保留 R1 原厂
+#    使用 tools/build_image/make_bk7258_linear_crc_image.py 生成镜像时保留 R1 原厂
 #    bootloader，并将 OpenVela CP/AP 替换到 0x11000/0x165000：
-#    python3 tools/make_bk7258_linear_crc_image.py \
+#    python3 tools/build_image/make_bk7258_linear_crc_image.py \
 #      --factory bk7258_original_8MB_backup.bin \
 #      --cp app.bin --ap app1.bin --output openvela-bk7258-8MB.bin
 #    BKFIL 下载握手使用 1500000；烧录完成后的 NSH 控制台使用 115200：
@@ -121,10 +141,9 @@ nsh> xiaopai demo
 
 本作品使用 AI Coding 工具辅助完成 BK7258 芯片/板级适配、编译问题定位、串口测试排查和材料整理。真实会话日志按组委会格式保存在 `logs/YangMaxpro/`，清单见 `logs/YangMaxpro/manifest.json`；提交时保留 JSONL 原文，不使用示例占位日志。
 
-本仓新增 `skills/bk7258-xts-test/SKILL.md`，将 BK7258 XTS 测试的串口接管、`/tmp` tmpfs 前置条件、通过关键字、原始日志留存和失败记录规范固化，便于复测和复核。
+本仓新增两个自建 Skill：`skills/bk7258-openvela-development/SKILL.md` 固化芯片/板级/应用代码归属、构建、CRC 镜像、烧录和真机验证流程；`skills/bk7258-xts-test/SKILL.md` 固化 XTS 测试的串口接管、tmpfs 前置条件、通过关键字、原始日志留存和失败记录规范。
 
 ## 六、当前验收状态
 
 新硬件适配赛道的真机证据和限制见 [`docs/xts-test-evidence.md`](docs/xts-test-evidence.md)，与官方 35 项通用自测的逐项对照见 [`docs/xts-official-coverage.md`](docs/xts-official-coverage.md)，提交前检查项见 [`SUBMISSION_CHECKLIST.md`](SUBMISSION_CHECKLIST.md)。当前已确认 `ostest`、`mm`、`scanftest`（挂载 tmpfs 后）、`hello` 和烧写测试通过，RAM 占用统计已完成；其他项目按证据分别记录为部分完成、阻塞、未构建或未测试。
-
 

@@ -1,0 +1,34 @@
+LIBCLANG_PATH set to: /home/yang/openvela/prebuilts/rust/linux/extra_libs
+including vendor/infineon/boards/aurix/build/vendorsetup.sh
+including vendor/infineon/boards/aurix_tc3/build/vendorsetup.sh
+including vendor/openvela/boards/build/vendorsetup.sh
+ lunch ../contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh cmake_out/.._contest2026_470_huanledoudizhu 
+The current build configuration lunched with: [32m[nuttx]-[..]-[contest2026_470_huanledoudizhu]![0m
+
+[32m#### BINARY directory is set: /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu[0m
+
+  cmake --build /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu -j3  --
+[1/11] cd /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/libs/libc/misc && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/yang/openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/11] cd /home/yang/openvela/nuttx && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh/defconfig -DNUTTX_DIR=/home/yang/openvela/nuttx -DCMAKE_BINARY_DIR=/home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu -P /home/yang/openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[3/11] Generating bin output directories
+[4/11] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_httpcheck.c.o
+[5/11] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_netwatch.c.o
+[6/11] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_tls.c.o
+In file included from ../../apps/crypto/mbedtls/mbedtls/include/mbedtls/net_sockets.h:44,
+                 from ../../contest2026_470_huanledoudizhu/app/xiaopai/xiaopai_tls.c:16:
+../../apps/crypto/mbedtls/mbedtls/include/mbedtls/ssl.h:595:5: warning: "MBEDTLS_SSL_DTLS_CONNECTION_ID_COMPAT" is not defined, evaluates to 0 [-Wundef]
+  595 | #if MBEDTLS_SSL_DTLS_CONNECTION_ID_COMPAT == 0
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[7/11] Linking C static library apps/packages/demos/contest2026_470_xiaopai/libapps_xiaopai.a
+[8/11] Linking C executable nuttx
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      653120 B      3904 KB     16.34%
+             RAM:      167624 B       336 KB     48.72%
+            SWAP:           0 B         2 KB      0.00%
+   PSRAM_SECTION:           0 B         6 MB      0.00%
+/home/yang/openvela/prebuilts/gcc/linux-x86_64/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.4.0/../../../../arm-none-eabi/bin/ld: warning: .note.gnu.build-id section discarded, --build-id ignored
+[9/11] Generating nuttx.bin
+[10/11] Generating nuttx.hex
+[11/11] Generating System.map
+
+#### build completed successfully (1 seconds) ####

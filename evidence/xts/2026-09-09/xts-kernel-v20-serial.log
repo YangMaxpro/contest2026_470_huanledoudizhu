@@ -1,0 +1,298 @@
+Script started on 2026-09-09 21:37:01+08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="105" LINES="24"]
+--- Miniterm on /dev/ttyUSB0  115200,8,N,1 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+se␡ ap_bridg:I(3):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(6):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(8):EasyFlash V4.1.0 is initialize success.
+I(11):driver_init: psram init ok
+sensor:W(11):uncali sdmadc value:[0 0]
+cal:W(21):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(109):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+wakeup
+
+$ap0: PWC: worker ready
+ap0: PWC: CPU1 boot-ready acknowledged by CP transport
+ap0: IPC: v31 heartbeat worker active, interval=2000 ms; use xiaopai ipc status
+ap0: BK7258 mailbox, heartbeat and CPU1 boot-ready services active
+ap0: PWC: v36 PSRAM ready; dedicated AP heap online
+ap0: BK7258 Wi-Fi netdev initialized
+ap0: 
+ap0: NuttShell (NSH)
+wifi:I(817):fast_connect
+wifid:I(830):mm_add_if_req: vif_idx=0, type=0, p2p=0, status=0
+wpa:I(838):State: DISCONNECTED -> INACTIVE
+wpa:I(839):State: INACTIVE -> DISCONNECTED
+lwip:I(839):mac c8:47:8c:4b:cd:d7
+wpa:I(842):update psk, scan pending 0
+wpa:I(842):State: DISCONNECTED -> INACTIVE
+wpa:I(842):Setting scan request: 0.000000 sec
+wpa:I(843):State: INACTIVE -> SCANNING
+wifid:I(844):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=1,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(845):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(845):[KW:]scanu_start_req:chan_idx=11
+ap0: nsh> ␛[Knetwatch v20: DHCP monitor started on xiaopai
+os:I(850):psram:0x60700000,size:131072
+ap0: netwatch: link=down; old IPv4 cleared
+ap0: wifi v33: connection requested; netwatch owns DHCP
+wifid:I(885):chan_unregister_once_req: VIF0,type=11
+wifid:I(885):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=3,recv_cnt=3,time=42613us,result=1,rfcli=1
+wpa:I(886):Scan completed in 0.039000 seconds
+hitf:I(886):get scan result:1
+wpa:I(887):State: SCANNING -> ASSOCIATING
+wifid:I(889):[KW:]conn vif0-0,auth_type:0,bssid:52ba-87bb-8f7b,ssid:vivoX300,is encryp:8.
+wifid:I(890):chan_ctxt_add: CTXT0,freq2462MHz,bw20MHz,pwr127dBm
+wifid:I(890):chan_reg_fix:VIF0,CTXT0,type3,ctxt_s0,nb_vif0
+wifid:I(892):mm_sta_add:vif 0,sta 0,status 0
+wifid:I(894):[KW:]auth_send:seq1, txtype0, auth_type0, seq3
+wifid:I(912):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(912):[KW:]assoc_req_send:is ht, seq_num:4
+wifid:I(914):[KW:]sm_deauth_handler: reason code 6, state 8
+wifid:W(916):sm_tx_cfm:Err frame cfm.
+wifid:I(916):[KW:]auth_send:seq1, txtype0, auth_type0, seq6
+wifid:I(978):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(978):[KW:]assoc_req_send:is ht, seq_num:7
+wifid:I(1006):[KW:]assoc_rsp:status0,tx_s0x80800000
+wifid:I(1006):[KW:]mm_set_vif_state,vif=0,vif_type=0,is_active=1, aid=0x17,rssi=-45
+wpa:I(1007):State: ASSOCIATING -> ASSOCIATED
+wpa:I(1016):State: ASSOCIATED -> 4WAY_HANDSHAKE
+wpa:I(1033):State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+hitf:I(1035):add CCMP
+wpa:I(1035):State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+hitf:I(1036):add CCMP
+wpa:I(1036):State: GROUP_HANDSHAKE -> COMPLETED
+ap0: netwatch: link=up; old IPv4 cleared
+ap0: bk7258_wifi: TX batch reached 1 frame(s)
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: netwatch: DHCP ready ip=10.109.88.138 lease=3599s
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: netwatch: NTP sync active pid=13
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=111 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+
+$
+$ap_console open
+switching UART0 to AP console...
+
+$
+AP console open; exit with Ctrl-], release, then press .
+
+nsh> ␛[K
+nsh> ␛[Khello
+Hello, World!!
+nsh> ␛[K
+nsh> ␛[Kbk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+helloxx
+helloxx_main: Saying hello from the dynamically constructed instance
+CHelloWorld::HelloWorld: Hello, World!!
+helloxx_main: Saying hello from the instance constructed on the stack
+CHelloWorld::HelloWorld: Hello, World!!
+helloxx_main: Saying hello from the statically constructed instance
+CHelloWorld::HelloWorld: Hello, World!!
+nsh> ␛[K
+nsh> ␛[Kcxxtest
+Test std::vector =============================
+v1=1 2 3
+s1=Hello, World!
+
+AP link down; returned to CP CLI
+$CIF:E(75682):cif_rxbuf_push,210,error type:-4107
+CIF:E(75682):cif_rxdata_pre_process,ipc send fail,0xffffeff5
+CIF:E(76662):cif_rxbuf_push,210,error type:-4107
+CIF:E(76663):cif_rxdata_pre_process,ipc send fail,0xffffeff5
+hrt:E(77022):IPC[1]heartbeat timeout 69022,77022
+(77022)Assert at: mb_ipc_task:297
+set�ap_bridg:I(2):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(4):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(6):EasyFlash V4.1.0 is initialize success.
+I(9):driver_init: psram init ok
+sensor:W(9):uncali sdmadc value:[0 0]
+cal:W(22):te:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(120):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+wakeup
+
+$ap0: PWC: worker ready
+ap0: PWC: CPU1 boot-ready acknowledged by CP transport
+ap0: IPC: v31 heartbeat worker active, interval=2000 ms; use xiaopai ipc status
+ap0: BK7258 mailbox, heartbeat and CPU1 boot-ready services active
+ap0: PWC: v36 PSRAM ready; dedicated AP heap online
+ap0: BK7258 Wi-Fi netdev initialized
+ap0: 
+ap0: NuttShell (NSH)
+wifi:I(831):fast_connect
+wifid:I(844):mm_add_if_req: vif_idx=0, type=0, p2p=0, status=0
+wpa:I(853):State: DISCONNECTED -> INACTIVE
+wpa:I(854):State: INACTIVE -> DISCONNECTED
+lwip:I(854):mac c8:47:8c:4b:cd:d7
+wpa:I(856):update psk, scan pending 0
+wpa:I(856):State: DISCONNECTED -> INACTIVE
+wpa:I(857):Setting scan request: 0.000000 sec
+wpa:I(857):State: INACTIVE -> SCANNING
+wifid:I(859):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=1,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(859):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(859):[KW:]scanu_start_req:chan_idx=11
+ap0: nsh> ␛[Knetwatch v20: DHCP monitor started on xiaopai
+os:I(865):psram:0x60700000,size:131072
+ap0: netwatch: link=down; old IPv4 cleared
+ap0: wifi v33: connection requested; netwatch owns DHCP
+wifid:I(902):chan_unregister_once_req: VIF0,type=11
+wifid:I(902):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=2,recv_cnt=7,time=43410us,result=1,rfcli=1
+wpa:I(903):Scan completed in 0.041000 seconds
+hitf:I(903):get scan result:1
+wpa:I(904):State: SCANNING -> ASSOCIATING
+wifid:I(905):[KW:]conn vif0-0,auth_type:0,bssid:52ba-87bb-8f7b,ssid:vivoX300,is encryp:8.
+wifid:I(905):chan_ctxt_add: CTXT0,freq2462MHz,bw20MHz,pwr127dBm
+wifid:I(905):chan_reg_fix:VIF0,CTXT0,type3,ctxt_s0,nb_vif0
+wifid:I(906):mm_sta_add:vif 0,sta 0,status 0
+wifid:I(908):[KW:]auth_send:seq1, txtype0, auth_type0, seq3
+wifid:I(926):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(926):[KW:]assoc_req_send:is ht, seq_num:4
+wifid:I(927):[KW:]sm_deauth_handler: reason code 6, state 8
+wifid:W(930):sm_tx_cfm:Err frame cfm.
+wifid:I(930):[KW:]auth_send:seq1, txtype0, auth_type0, seq6
+wifid:I(985):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(985):[KW:]assoc_req_send:is ht, seq_num:7
+wifid:I(1018):[KW:]assoc_rsp:status0,tx_s0x80800000
+wifid:I(1018):[KW:]mm_set_vif_state,vif=0,vif_type=0,is_active=1, aid=0x18,rssi=-34
+wpa:I(1020):State: ASSOCIATING -> ASSOCIATED
+wpa:I(1029):State: ASSOCIATED -> 4WAY_HANDSHAKE
+wpa:I(1045):State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+hitf:I(1047):add CCMP
+wpa:I(1047):State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+hitf:I(1048):add CCMP
+wpa:I(1048):State: GROUP_HANDSHAKE -> COMPLETED
+ap0: netwatch: link=up; old IPv4 cleared
+ap0: bk7258_wifi: TX batch reached 1 frame(s)
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: netwatch: DHCP ready ip=10.109.88.138 lease=3599s
+ap0: netwatch: NTP sync active pid=13
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=111 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+v
+cmd NOT found: v.
+
+$
+$
+$
+$ap_console open
+switching UART0 to AP console...
+
+$
+AP console open; exit with Ctrl-], release, then press .
+
+nsh> ␛[K
+nsh> ␛[Kcxxtest
+Test std::vector =============================
+v1=1 2 3
+s1=Hello, World!
+hrt:E(46887):IPC[1]heartbeat timeout 38887,46887
+(46887)Assert at: mb_ipc_task:297
+set�ap_bridg:I(2):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(4):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(6):EasyFlash V4.1.0 is initialize success.
+I(9):driver_init: psram init ok
+sensor:W(9):uncali sdmadc value:[0 0]
+cal:W(22):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(119):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+wakeup
+
+$ap0: PWC: worker ready
+ap0: PWC: CPU1 boot-ready acknowledged by CP transport
+ap0: IPC: v31 heartbeat worker active, interval=2000 ms; use xiaopai ipc status
+ap0: BK7258 mailbox, heartbeat and CPU1 boot-ready services active
+ap0: PWC: v36 PSRAM ready; dedicated AP heap online
+ap0: BK7258 Wi-Fi netdev initialized
+ap0: 
+ap0: NuttShell (NSH)
+wifi:I(831):fast_connect
+wifid:I(843):mm_add_if_req: vif_idx=0, type=0, p2p=0, status=0
+wpa:I(852):State: DISCONNECTED -> INACTIVE
+wpa:I(853):State: INACTIVE -> DISCONNECTED
+lwip:I(853):mac c8:47:8c:4b:cd:d7
+wpa:I(855):update psk, scan pending 0
+wpa:I(856):State: DISCONNECTED -> INACTIVE
+wpa:I(856):Setting scan request: 0.000000 sec
+wpa:I(856):State: INACTIVE -> SCANNING
+wifid:I(858):[KW:]scanu_start_req:src_id=15,vif=0,dur=0,chan_cnt=1,ssid_len=8,bssid=0xffff-ffff-ffff
+wifid:I(858):[KW:]scanu_start_req:ssid=vivoX300
+wifid:I(858):[KW:]scanu_start_req:chan_idx=11
+ap0: nsh> ␛[Knetwatch v20: DHCP monitor started on xiaopai
+os:I(867):psram:0x60700000,size:131072
+ap0: netwatch: link=down; old IPv4 cleared
+ap0: wifi v33: connection requested; netwatch owns DHCP
+wifid:I(901):chan_unregister_once_req: VIF0,type=11
+wifid:I(901):[KW:]scanu_confirm:status=0,req_type=0,upload_cnt=2,recv_cnt=6,time=43462us,result=1,rfcli=1
+wpa:I(902):Scan completed in 0.041000 seconds
+hitf:I(902):get scan result:1
+wpa:I(903):State: SCANNING -> ASSOCIATING
+wifid:I(904):[KW:]conn vif0-0,auth_type:0,bssid:52ba-87bb-8f7b,ssid:vivoX300,is encryp:8.
+wifid:I(904):chan_ctxt_add: CTXT0,freq2462MHz,bw20MHz,pwr127dBm
+wifid:I(904):chan_reg_fix:VIF0,CTXT0,type3,ctxt_s0,nb_vif0
+wifid:I(905):mm_sta_add:vif 0,sta 0,status 0
+wifid:I(908):[KW:]auth_send:seq1, txtype0, auth_type0, seq3
+wifid:I(922):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(922):[KW:]assoc_req_send:is ht, seq_num:4
+wifid:I(938):[KW:]sm_deauth_handler: reason code 6, state 8
+wifid:I(940):[KW:]auth_send:seq1, txtype0, auth_type0, seq6
+wifid:I(1007):[KW:]sm_auth_handler: status code 0, tx status 0x80800000
+wifid:I(1007):[KW:]assoc_req_send:is ht, seq_num:7
+wifid:I(1059):[KW:]assoc_rsp:status0,tx_s0x80800000
+wifid:I(1059):[KW:]mm_set_vif_state,vif=0,vif_type=0,is_active=1, aid=0x1a,rssi=-39
+wpa:I(1060):State: ASSOCIATING -> ASSOCIATED
+wpa:I(1074):State: ASSOCIATED -> 4WAY_HANDSHAKE
+wpa:I(1104):State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+hitf:I(1105):add CCMP
+wpa:I(1105):State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+hitf:I(1105):add CCMP
+wpa:I(1106):State: GROUP_HANDSHAKE -> COMPLETED
+ap0: netwatch: link=up; old IPv4 cleared
+ap0: bk7258_wifi: TX batch reached 1 frame(s)
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=352 eth=0x0800
+ap0: netwatch: DHCP ready ip=10.109.88.138 lease=3600s
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: netwatch: NTP sync active pid=13
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=138 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=111 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=90 eth=0x0800
+ap0: bk7258_wifi: AP RX vif=0 len=42 eth=0x0806
+ap0: bk7258_wifi: AP RX vif=0 len=122 eth=0x0800
+
+--- exit ---
+
+Script done on 2026-09-09 21:50:11+08:00 [COMMAND_EXIT_CODE="0"]

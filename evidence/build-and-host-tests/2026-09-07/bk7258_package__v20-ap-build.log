@@ -1,0 +1,31 @@
+LIBCLANG_PATH set to: /home/yang/openvela/prebuilts/rust/linux/extra_libs
+including vendor/infineon/boards/aurix/build/vendorsetup.sh
+including vendor/infineon/boards/aurix_tc3/build/vendorsetup.sh
+including vendor/openvela/boards/build/vendorsetup.sh
+ lunch ../contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh cmake_out/.._contest2026_470_huanledoudizhu 
+The current build configuration lunched with: [32m[nuttx]-[..]-[contest2026_470_huanledoudizhu]![0m
+
+[32m#### BINARY directory is set: /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu[0m
+
+  cmake --build /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu -j3  --
+[1/13] cd /home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu/libs/libc/misc && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/yang/openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/13] cd /home/yang/openvela/nuttx && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh/defconfig -DNUTTX_DIR=/home/yang/openvela/nuttx -DCMAKE_BINARY_DIR=/home/yang/openvela/cmake_out/.._contest2026_470_huanledoudizhu -P /home/yang/openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[3/13] Generating bin output directories
+[4/13] Building C object libs/libc/CMakeFiles/c.dir/misc/lib_utsname.c.o
+[5/13] Building C object apps/packages/demos/contest2026_470_xiaopai/CMakeFiles/apps_xiaopai.dir/xiaopai_netwatch.c.o
+[6/13] Linking C static library apps/packages/demos/contest2026_470_xiaopai/libapps_xiaopai.a
+[7/13] Building C object arch/CMakeFiles/arch.dir/arm/src/bk7258/bk7258_wifi.c.o
+[8/13] Linking C static library arch/libarch.a
+[9/13] Linking C static library libs/libc/libc.a
+[10/13] Linking C executable nuttx
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      404800 B      3904 KB     10.13%
+             RAM:      158576 B       336 KB     46.09%
+            SWAP:           0 B         2 KB      0.00%
+   PSRAM_SECTION:           0 B         6 MB      0.00%
+/home/yang/openvela/prebuilts/gcc/linux-x86_64/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.4.0/../../../../arm-none-eabi/bin/ld: warning: .note.gnu.build-id section discarded, --build-id ignored
+[11/13] Generating nuttx.bin
+[12/13] Generating nuttx.hex
+[13/13] Generating System.map
+
+#### build completed successfully (3 seconds) ####

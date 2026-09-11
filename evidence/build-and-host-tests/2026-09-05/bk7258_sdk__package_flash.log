@@ -1,0 +1,24 @@
+cmdline: |/home/yang/桌面/BEKEN_BKFIL_V2.1.11.8_20240509/bk_loader download -p 0 -b 1500000 -s 0x0 -i /home/yang/bk7258_sdk/projects/app_ab/build/bk7258/app_ab/package/all-app.bin |
+bk_loader version 2.1.11.8: build @May  8 2024 23:15:55
+2026-09-05 21:06:26.504    Current port : /dev/ttyUSB0 + BaudRate : 115200 connect success
+2026-09-05 21:06:26.505    do_reset_signal
+2026-09-05 21:06:26.505    Getting Bus...
+2026-09-05 21:06:27.668    Getting Bus...
+2026-09-05 21:06:42.685    LinkCheck Timeout
+2026-09-05 21:06:42.685    GetBus fail!
+2026-09-05 21:06:42.686    Total Test Time : 0.001 s
+2026-09-05 21:06:42.716    Boot_Reboot
+
+2026-09-05 21:06:42.812    Writing Flash Failed, code 0                
+
+2026-09-05 21:06:42.812    
+==============================================================
+				   (warning)
+	                         (_)            
+	__      ____ _ _ __ _ __  _ _ __   __ _ 
+	\ \ /\ / / _` | '__| '_ \| | '_ \ / _` |
+	 \ V  V / (_| | |  | | | | | | | | (_| |
+	  \_/\_/ \__,_|_|  |_| |_|_|_| |_|\__, |
+	                                   __/ |
+	                                  |___/ 
+

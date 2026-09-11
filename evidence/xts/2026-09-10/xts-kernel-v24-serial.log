@@ -1,0 +1,52 @@
+Script started on 2026-09-10 15:05:25+08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+--- Miniterm on /dev/ttyUSB0  115200,8,N,1 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+se�ap_bridg:I(3):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(6):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(8):EasyFlash V4.1.0 is initialize success.
+I(11):driver_init: psram init ok
+sensor:W(11):uncali sdmadc value:[0 0]
+cal:W(21):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(112):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+se␡ ap_bridg:I(3):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(5):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(8):EasyFlash V4.1.0 is initialize success.
+I(11):driver_init: psram init ok
+sensor:W(11):uncali sdmadc value:[0 0]
+cal:W(21):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(112):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+set�ap_bridg:I(2):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(4):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(6):EasyFlash V4.1.0 is initialize success.
+I(9):driver_init: psram init ok
+sensor:W(9):uncali sdmadc value:[0 0]
+cal:W(22):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(115):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+set�ap_bridg:I(2):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(4):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(7):EasyFlash V4.1.0 is initialize success.
+I(9):driver_init: psram init ok
+sensor:W(9):uncali sdmadc value:[0 0]
+cal:W(22):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(113):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+set�ap_bridg:I(2):init owner=MB_UART0 tx_ring=1024 mode=LOG
+ef:I(4):ENV start address is 0x007FA000, size is 8192 bytes.
+ef:I(7):EasyFlash V4.1.0 is initialize success.
+I(9):driver_init: psram init ok
+sensor:W(9):uncali sdmadc value:[0 0]
+cal:W(22):temp in otp is:558
+flash txpwr table:0xf
+xtal_cali:46
+cal:I(121):idx:40=40+(0),r:54,xtal:46,pwr_gain:a0ab7128
+
+--- exit ---
+
+Script done on 2026-09-10 15:05:59+08:00 [COMMAND_EXIT_CODE="0"]

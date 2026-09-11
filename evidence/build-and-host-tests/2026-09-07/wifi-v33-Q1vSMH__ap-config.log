@@ -1,0 +1,14 @@
+[0/1] Re-running CMake...
+-- NuttX Host Tools
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yang/openvela/cmake_out/configs_nsh/bin_host
+-- ╭─────────────────────────────────────────────────╮
+-- │  Vela build custom modules base on NuttX build  |
+-- ╰─────────────────────────────────────────────────╯
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yang/openvela/cmake_out/configs_nsh
+[1/2] cd /home/yang/openvela/nuttx && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E copy /home/yang/openvela/contest2026_470_huanledoudizhu/board/contest_board/configs/bk7258-devkit/nsh/defconfig /home/yang/openvela/cmake_out/configs_nsh/.config && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E env KCONFIG_CONFIG=/home/yang/openvela/cmake_out/configs_nsh/.config EXTERNALDIR=dummy APPSDIR=/home/yang/openvela/apps DRIVERS_PLATFORM_DIR=dummy APPSBINDIR=/home/yang/openvela/cmake_out/configs_nsh/apps BINDIR=/home/yang/openvela/cmake_out/configs_nsh olddefconfig && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E copy /home/yang/openvela/cmake_out/configs_nsh/.config /home/yang/openvela/cmake_out/configs_nsh/.config.orig && /home/yang/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/yang/openvela/nuttx/CMakeLists.txt
+Loaded configuration '/home/yang/openvela/cmake_out/configs_nsh/.config'
+Configuration saved to '/home/yang/openvela/cmake_out/configs_nsh/.config'
